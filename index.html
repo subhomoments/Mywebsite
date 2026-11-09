@@ -1,58 +1,882 @@
+
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Subhomoments | Wedding Photography & Films</title>
-<meta name="description" content="Subhomoments — wedding photography, cinematic films, pre-wedding and family celebrations.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-:root{--ink:#26201c;--paper:#fbf8f3;--sand:#f0e8dd;--gold:#a77a58;--muted:#786f68}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:80px}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 'DM Sans',sans-serif}h1,h2,h3,.brand{font-family:'Playfair Display',Georgia,serif;font-weight:500}h1,h2,h3,p{margin-top:0}h2{font-size:clamp(2rem,4.5vw,3.7rem);line-height:1.2}h3{font-size:1.5rem}a{color:inherit;text-decoration:none}button,input,textarea,select{font:inherit}button{cursor:pointer}img{display:block;max-width:100%}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}.section{padding:100px 0}.center{text-align:center}.eyebrow{font-size:.74rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700}.intro{max-width:650px;margin:0 auto 45px;color:var(--muted)}.button{display:inline-block;padding:13px 26px;background:var(--gold);color:#fff;border:1px solid var(--gold);transition:.2s}.button:hover{background:#805638}.button.outline{background:transparent;color:var(--ink)}.button.outline:hover{background:var(--sand)}.header{position:sticky;top:0;z-index:30;background:rgba(251,248,243,.97);border-bottom:1px solid #e7ddd1}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-size:1.8rem;letter-spacing:-.05em}.brand span{color:var(--gold)}.links{display:flex;gap:22px;align-items:center}.links a{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700}.links a:hover{color:var(--gold)}.menu{display:none;background:none;border:0;font-size:1.7rem}.hero{position:relative;min-height:calc(100svh - 76px);display:grid;place-items:center;text-align:center;color:#fff;background:#51453d}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(#0004,#0009)}.hero-content{position:relative;padding:70px 20px;max-width:900px}.hero h1{font-size:clamp(3rem,8vw,6.4rem);line-height:1.08;margin:20px 0}.hero p{letter-spacing:.1em}.hero .eyebrow{color:#e6c7ab}.photo-slot{background:linear-gradient(135deg,#d4c3b0,#f1e8dc);position:relative;overflow:hidden;display:grid;place-items:center;color:#66564a;text-align:center;min-height:250px}.photo-slot:after{content:attr(data-placeholder);position:absolute;inset:0;display:grid;place-items:center;padding:20px;text-align:center;font-size:.85rem;letter-spacing:.06em;background:linear-gradient(145deg,#d3c2b1,#eee3d7)}.photo-slot.has-image:after{display:none}.photo-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.hero.photo-slot{min-height:calc(100svh - 76px)}.hero.photo-slot:after{z-index:0;background:linear-gradient(145deg,#7d6b5a,#b79d86);color:#fff;content:'YOUR HERO WEDDING PHOTO — replace in the PHOTO SETTINGS';letter-spacing:.18em}.hero.photo-slot.has-image:after{display:none}.hero.photo-slot img{z-index:0}.hero.photo-slot:before{z-index:1}.hero-content{z-index:2}.split{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:7%}.split .photo-slot{height:550px}.body-copy{color:var(--muted)}.sand{background:var(--sand)}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.card{background:#fff}.card .photo-slot{height:310px}.card-content{padding:25px;text-align:center}.card-content p{color:var(--muted);font-size:.92rem}.text-link{font-size:.8rem;text-transform:uppercase;letter-spacing:.15em;color:var(--gold);font-weight:700}.gallery-filters{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-bottom:30px}.filter{padding:9px 16px;border:1px solid #d6c8ba;background:transparent;color:var(--ink)}.filter.active,.filter:hover{background:var(--ink);color:#fff}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.gallery button{border:0;padding:0;background:none;display:block;min-width:0}.gallery .photo-slot{height:320px}.gallery button:hover .photo-slot{filter:brightness(.9)}.quote{font:clamp(1.5rem,3vw,2.3rem)/1.6 'Playfair Display',serif;max-width:780px;margin:20px auto}.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:8%}.contact p{color:var(--muted)}form{display:grid;gap:13px}input,select,textarea{width:100%;padding:15px;border:1px solid #ddd2c6;background:#fff;color:var(--ink)}textarea{min-height:130px;resize:vertical}.form-note{font-size:.8rem;color:var(--muted)}.footer{padding:65px 0 25px;background:#211d1b;color:#fff;text-align:center}.footer p{color:#c5bcb5}.footer-links{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;margin:25px 0}.footer-links a:hover{color:#e4b18b}.copyright{font-size:.8rem;border-top:1px solid #49413d;padding-top:25px}.lightbox{position:fixed;inset:0;z-index:100;background:#000e;display:none;align-items:center;justify-content:center;padding:65px 20px 30px}.lightbox.open{display:flex}.lightbox img{max-width:95vw;max-height:85vh;object-fit:contain}.lightbox button{position:absolute;top:15px;right:22px;background:transparent;border:0;color:#fff;font-size:2.3rem}.hidden{display:none!important}@media(max-width:850px){.menu{display:block}.links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--paper);padding:22px;flex-direction:column;align-items:flex-start;border-bottom:1px solid #e7ddd1}.links.open{display:flex}.split,.contact{grid-template-columns:1fr;gap:35px}.cards,.gallery{grid-template-columns:repeat(2,1fr)}.section{padding:70px 0}}@media(max-width:540px){.cards,.gallery{grid-template-columns:1fr}.split .photo-slot{height:400px}.gallery .photo-slot{height:360px}.brand{font-size:1.5rem}}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
-/* FIX: Hero text always readable, including when hero.jpg is missing */
-.hero.photo-slot{color:#fff!important;background:linear-gradient(135deg,#5a473c,#302721)}
-.hero.photo-slot:after{content:none!important;display:none!important}
-.hero.photo-slot:before{z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.32),rgba(0,0,0,.62))}
-.hero.photo-slot .hero-content{position:relative;z-index:3;color:#fff!important;opacity:1!important}
-.hero.photo-slot h1{color:#fff!important;opacity:1!important;text-shadow:0 3px 22px rgba(0,0,0,.45)}
-.hero.photo-slot p{color:#f7f0ea!important;opacity:1!important}
-.hero.photo-slot .eyebrow{color:#f1cfb3!important}
-.hero.photo-slot .button{color:#fff!important}
-.hero.photo-slot img{z-index:0}
+<title>Subhomoments | Wedding Photography & Films</title>
+
+<meta name="description" content="Subhomoments — wedding photography, cinematic films, pre-wedding and family celebrations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --ink:#26201c;
+  --paper:#fbf8f3;
+  --sand:#f0e8dd;
+  --gold:#a77a58;
+  --muted:#786f68;
+}
+
+* { box-sizing:border-box; }
+
+html {
+  scroll-behavior:smooth;
+  scroll-padding-top:80px;
+}
+
+body {
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.7 'DM Sans',sans-serif;
+}
+
+h1,h2,h3,.brand {
+  font-family:'Playfair Display',Georgia,serif;
+  font-weight:500;
+}
+
+h1,h2,h3,p { margin-top:0; }
+
+h2 {
+  font-size:clamp(2rem,4.5vw,3.7rem);
+  line-height:1.2;
+}
+
+h3 { font-size:1.5rem; }
+
+a {
+  color:inherit;
+  text-decoration:none;
+}
+
+button,input,textarea,select { font:inherit; }
+button { cursor:pointer; }
+img { display:block;max-width:100%; }
+
+.wrap {
+  width:min(1180px,calc(100% - 40px));
+  margin:auto;
+}
+
+.section { padding:100px 0; }
+.center { text-align:center; }
+
+.eyebrow {
+  font-size:.74rem;
+  letter-spacing:.25em;
+  text-transform:uppercase;
+  color:var(--gold);
+  font-weight:700;
+}
+
+.intro {
+  max-width:650px;
+  margin:0 auto 45px;
+  color:var(--muted);
+}
+
+.button {
+  display:inline-block;
+  padding:13px 26px;
+  background:var(--gold);
+  color:#fff;
+  border:1px solid var(--gold);
+  transition:.2s;
+  text-align:center;
+}
+
+.button:hover { background:#805638; }
+
+.button.outline {
+  background:transparent;
+  color:var(--ink);
+}
+
+.button.outline:hover { background:var(--sand); }
+
+/* HEADER */
+
+.header {
+  position:sticky;
+  top:0;
+  z-index:30;
+  background:rgba(251,248,243,.97);
+  border-bottom:1px solid #e7ddd1;
+}
+
+.nav {
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:24px;
+}
+
+.brand {
+  font-size:1.8rem;
+  letter-spacing:-.05em;
+}
+
+.brand span { color:var(--gold); }
+
+.links {
+  display:flex;
+  gap:22px;
+  align-items:center;
+}
+
+.links a {
+  font-size:.78rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:700;
+}
+
+.links a:hover { color:var(--gold); }
+
+.menu {
+  display:none;
+  background:none;
+  border:0;
+  font-size:1.7rem;
+}
+
+/* HERO */
+
+.hero {
+  position:relative;
+  min-height:calc(100svh - 76px);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  color:#fff;
+  background:#51453d;
+}
+
+.hero:before {
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  pointer-events:none;
+  background:linear-gradient(
+    rgba(0,0,0,.32),
+    rgba(0,0,0,.62)
+  );
+}
+
+.hero-content {
+  position:relative;
+  z-index:3;
+  padding:70px 20px;
+  max-width:900px;
+  color:white;
+}
+
+.hero h1 {
+  font-size:clamp(3rem,8vw,6.4rem);
+  line-height:1.08;
+  margin:20px 0;
+  color:#fff;
+  text-shadow:0 3px 22px rgba(0,0,0,.45);
+}
+
+.hero p {
+  letter-spacing:.1em;
+  color:#f7f0ea;
+}
+
+.hero .eyebrow { color:#f1cfb3; }
+
+/* IMAGE PLACEHOLDERS */
+
+.photo-slot {
+  background:linear-gradient(135deg,#d4c3b0,#f1e8dc);
+  position:relative;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  color:#66564a;
+  text-align:center;
+  min-height:250px;
+}
+
+.photo-slot:after {
+  content:attr(data-placeholder);
+  position:absolute;
+  inset:0;
+  display:grid;
+  place-items:center;
+  padding:20px;
+  font-size:.85rem;
+  letter-spacing:.06em;
+  background:linear-gradient(145deg,#d3c2b1,#eee3d7);
+}
+
+.photo-slot.has-image:after { display:none; }
+
+.photo-slot img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  position:absolute;
+  inset:0;
+}
+
+.hero.photo-slot {
+  min-height:calc(100svh - 76px);
+  color:#fff;
+  background:linear-gradient(135deg,#5a473c,#302721);
+}
+
+.hero.photo-slot:after {
+  content:none;
+  display:none;
+}
+
+.hero.photo-slot img { z-index:0; }
+
+/* ABOUT */
+
+.split {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:7%;
+}
+
+.split .photo-slot { height:550px; }
+
+.body-copy { color:var(--muted); }
+.sand { background:var(--sand); }
+
+/* SERVICES */
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:24px;
+}
+
+.card { background:#fff; }
+.card .photo-slot { height:310px; }
+
+.card-content {
+  padding:25px;
+  text-align:center;
+}
+
+.card-content p {
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.text-link {
+  font-size:.8rem;
+  text-transform:uppercase;
+  letter-spacing:.15em;
+  color:var(--gold);
+  font-weight:700;
+}
+
+/* GALLERY */
+
+.gallery-filters {
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.filter {
+  padding:9px 16px;
+  border:1px solid #d6c8ba;
+  background:transparent;
+  color:var(--ink);
+}
+
+.filter.active,
+.filter:hover {
+  background:var(--ink);
+  color:#fff;
+}
+
+.gallery {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.gallery button {
+  border:0;
+  padding:0;
+  background:none;
+  display:block;
+  min-width:0;
+}
+
+.gallery .photo-slot { height:320px; }
+
+.gallery button:hover .photo-slot {
+  filter:brightness(.9);
+}
+
+/* TESTIMONIALS */
+
+.quote {
+  font:clamp(1.5rem,3vw,2.3rem)/1.6 'Playfair Display',serif;
+  max-width:780px;
+  margin:20px auto;
+}
+
+/* CONTACT */
+
+.contact {
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:8%;
+}
+
+.contact p { color:var(--muted); }
+
+form {
+  display:grid;
+  gap:13px;
+}
+
+input,select,textarea {
+  width:100%;
+  padding:15px;
+  border:1px solid #ddd2c6;
+  background:#fff;
+  color:var(--ink);
+}
+
+textarea {
+  min-height:130px;
+  resize:vertical;
+}
+
+.form-note {
+  font-size:.8rem;
+  color:var(--muted);
+}
+
+.whatsapp-button {
+  background:#168f4e;
+  border-color:#168f4e;
+  color:#fff;
+}
+
+.whatsapp-button:hover {
+  background:#08783c;
+}
+
+.contact-actions {
+  display:grid;
+  gap:12px;
+}
+
+/* FOOTER */
+
+.footer {
+  padding:65px 0 25px;
+  background:#211d1b;
+  color:#fff;
+  text-align:center;
+}
+
+.footer p { color:#c5bcb5; }
+
+.footer-links {
+  display:flex;
+  gap:20px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin:25px 0;
+}
+
+.footer-links a:hover { color:#e4b18b; }
+
+.copyright {
+  font-size:.8rem;
+  border-top:1px solid #49413d;
+  padding-top:25px;
+}
+
+/* LIGHTBOX */
+
+.lightbox {
+  position:fixed;
+  inset:0;
+  z-index:100;
+  background:#000e;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:65px 20px 30px;
+}
+
+.lightbox.open { display:flex; }
+
+.lightbox img {
+  max-width:95vw;
+  max-height:85vh;
+  object-fit:contain;
+}
+
+.lightbox button {
+  position:absolute;
+  top:15px;
+  right:22px;
+  background:transparent;
+  border:0;
+  color:#fff;
+  font-size:2.3rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:850px) {
+  .menu { display:block; }
+
+  .links {
+    display:none;
+    position:absolute;
+    top:76px;
+    left:0;
+    right:0;
+    background:var(--paper);
+    padding:22px;
+    flex-direction:column;
+    align-items:flex-start;
+    border-bottom:1px solid #e7ddd1;
+  }
+
+  .links.open { display:flex; }
+
+  .split,.contact {
+    grid-template-columns:1fr;
+    gap:35px;
+  }
+
+  .cards,.gallery {
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .section { padding:70px 0; }
+}
+
+@media(max-width:540px) {
+  .cards,.gallery { grid-template-columns:1fr; }
+  .split .photo-slot { height:400px; }
+  .gallery .photo-slot { height:360px; }
+  .brand { font-size:1.5rem; }
+}
 </style>
 </head>
+
 <body>
-<!-- PHOTO SETTINGS: Add your images in an 'images' folder next to index.html.
-     Change the paths in the photoSettings object near the bottom of this file.
-     Empty paths display labeled placeholders. -->
-<header class="header"><nav class="nav wrap"><a href="#home" class="brand">Subho<span>moments.</span></a><button class="menu" id="menuButton" aria-label="Toggle navigation" aria-expanded="false">☰</button><div class="links" id="links"><a href="#home">Home</a><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#stories">Stories</a><a href="#testimonials">Testimonials</a><a href="#contact">Contact</a></div></nav></header>
+
+<!-- HEADER -->
+
+<header class="header">
+  <nav class="nav wrap">
+    <a href="#home" class="brand">
+      Subho<span>moments.</span>
+    </a>
+
+    <button class="menu" id="menuButton"
+      aria-label="Toggle navigation"
+      aria-expanded="false">☰</button>
+
+    <div class="links" id="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#stories">Stories</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
 <main>
-<section id="home" class="hero photo-slot" data-photo="hero" data-placeholder="Hero wedding photograph"><div class="hero-content"><div class="eyebrow">Subhomoments • Wedding Photography & Films</div><h1>Moments That Speak Forever</h1><p>Timeless frames. Real emotions. Forever memories.</p><a href="#contact" class="button">Let's Tell Your Story</a></div></section>
-<section id="about" class="section"><div class="wrap split"><div class="photo-slot" data-photo="about" data-placeholder="ADD YOUR ABOUT / COUPLE PHOTO"></div><div><div class="eyebrow">Our Story</div><h2>Capturing Love, Creating Memories</h2><p class="body-copy">Welcome to Subhomoments We believe the most meaningful photographs are the ones that bring you back to how a moment felt.</p><p class="body-copy">From joyful rituals and family celebrations to quiet, heartfelt details, we document your story with an artistic, personal approach.</p><p class="body-copy"><strong></p><a href="#gallery" class="button outline">Explore Our Work</a></div></div></section>
-<section id="services" class="section sand"><div class="wrap"><div class="center"><div class="eyebrow">What We Offer</div><h2>Our Photography Services</h2><p class="intro">Every celebration deserves a thoughtful story. Explore our photography and film services.</p></div><div class="cards">
-<article class="card"><div class="photo-slot" data-photo="serviceWedding" data-placeholder="WEDDING PHOTOGRAPHY PHOTO"></div><div class="card-content"><h3>Wedding Photography</h3><p>From timeless traditions to the smallest candid moments, we capture the full story of your special day.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-<article class="card"><div class="photo-slot" data-photo="servicePreWedding" data-placeholder="PRE-WEDDING PHOTO"></div><div class="card-content"><h3>Pre-Wedding Shoots</h3><p>Beautiful portraits and natural moments that celebrate your journey together.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-<article class="card"><div class="photo-slot" data-photo="serviceRice" data-placeholder="RICE CEREMONY PHOTO"></div><div class="card-content"><h3>Rice Ceremony</h3><p>Preserve the joy and traditions of your child's special family milestone.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-<article class="card"><div class="photo-slot" data-photo="serviceCandid" data-placeholder="CANDID PHOTOGRAPHY PHOTO"></div><div class="card-content"><h3>Candid Photography</h3><p>Unscripted smiles, laughter, and the little details that matter most.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-<article class="card"><div class="photo-slot" data-photo="serviceFilm" data-placeholder="CINEMATIC FILMS PHOTO"></div><div class="card-content"><h3>Cinematic Wedding Films</h3><p>Emotional films that preserve the energy and atmosphere of your celebration.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-<article class="card"><div class="photo-slot" data-photo="serviceEvent" data-placeholder="EVENT PHOTOGRAPHY PHOTO"></div><div class="card-content"><h3>Special Events</h3><p>Photography for engagements, anniversaries, birthdays and family gatherings.</p><a href="#contact" class="text-link">Enquire Now →</a></div></article>
-</div></div></section>
-<section id="gallery" class="section"><div class="wrap"><div class="center"><div class="eyebrow">The Portfolio</div><h2>Moments We Love</h2><p class="intro">Your best photographs will live here. Select a category to explore each collection.</p></div><div class="gallery-filters" id="filters"><button class="filter active" data-filter="all">All Photos</button><button class="filter" data-filter="wedding">Wedding</button><button class="filter" data-filter="prewedding">Pre-Wedding</button><button class="filter" data-filter="rice">Rice Ceremony</button><button class="filter" data-filter="events">Events</button></div><div class="gallery" id="galleryGrid"></div></div></section>
-<section id="stories" class="section sand"><div class="wrap"><div class="center"><div class="eyebrow">Featured Stories</div><h2>Beautiful Stories, Beautiful Memories</h2><p class="intro">A collection of moments worth remembering. Replace these example story titles with your real clients' stories, with their permission.</p></div><div class="cards"><article class="card"><div class="photo-slot" data-photo="story1" data-placeholder="STORY 1 COVER PHOTO"></div><div class="card-content"><h3>A Timeless Celebration</h3></p><a class="text-link" href="#gallery">View Gallery →</a></div></article><article class="card"><div class="photo-slot" data-photo="story2" data-placeholder="STORY 2 COVER PHOTO"></div><div class="card-content"><h3>Forever Begins Here</h3><p>EDIT HERE: Add your next featured wedding story.</p><a class="text-link" href="#gallery">View Gallery →</a></div></article><article class="card"><div class="photo-slot" data-photo="story3" data-placeholder="STORY 3 COVER PHOTO"></div><div class="card-content"><h3>Moments of Togetherness</h3><p>EDIT HERE: Add a pre-wedding or family celebration story.</p><a class="text-link" href="#gallery">View Gallery →</a></div></article></div></div></section>
-<section id="testimonials" class="section center"><div class="wrap"><div class="eyebrow">Kind Words</div><h2>What Our Clients Say</h2><p class="quote">“Add a genuine client testimonial here once you have permission to share it.”</p><p class="body-copy">— Your Client's Name</p></div></section>
-<section id="contact" class="section sand"><div class="wrap contact"><div><div class="eyebrow">Get in Touch</div><h2>Let's Make Something Beautiful</h2><p>Tell us about your celebration. We'd love to hear your plans and help preserve your memories.</p><p><strong>Location:</strong> Tollygunge, Kolkata, West Bengal 700040
-</p><p><strong>Email:</strong> subhomoments@gmail.com </p><p><strong>Phone:</strong> +91 8159868088 / +91 7001950046 </p><p><strong>Website:</strong> subhomoments.online</p></div><form id="contactForm"><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Email address" required><input name="phone" type="tel" placeholder="Phone number" required><select name="service" required><option value="">Select a service</option><option>Wedding Photography</option><option>Pre-Wedding Shoot</option><option>Rice Ceremony</option><option>Candid Photography</option><option>Cinematic Films</option><option>Special Event</option></select><input name="date" type="date" aria-label="Event date"><textarea name="message" placeholder="Tell us about your event"></textarea><button class="button" type="submit">Send Enquiry</button><div class="form-note">Demo form: connect a form service or backend before publishing to receive enquiries.</div></form></div></section>
+
+<!-- HOME -->
+
+<section id="home" class="hero photo-slot"
+  data-photo="hero"
+  data-placeholder="Hero wedding photograph">
+
+  <div class="hero-content">
+    <div class="eyebrow">
+      Subhomoments • Wedding Photography & Films
+    </div>
+
+    <h1>Moments That Speak Forever</h1>
+
+    <p>Timeless frames. Real emotions. Forever memories.</p>
+
+    <a href="#contact" class="button">
+      Let's Tell Your Story
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section id="about" class="section">
+  <div class="wrap split">
+
+    <div class="photo-slot"
+      data-photo="about"
+      data-placeholder="ADD YOUR ABOUT / COUPLE PHOTO">
+    </div>
+
+    <div>
+      <div class="eyebrow">Our Story</div>
+      <h2>Capturing Love, Creating Memories</h2>
+
+      <p class="body-copy">
+        Welcome to Subhomoments. We believe the most
+        meaningful photographs are the ones that bring
+        you back to how a moment felt.
+      </p>
+
+      <p class="body-copy">
+        From joyful rituals and family celebrations
+        to quiet, heartfelt details, we document
+        your story with an artistic, personal approach.
+      </p>
+
+      <a href="#gallery" class="button outline">
+        Explore Our Work
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services" class="section sand">
+  <div class="wrap">
+
+    <div class="center">
+      <div class="eyebrow">What We Offer</div>
+      <h2>Our Photography Services</h2>
+      <p class="intro">
+        Every celebration deserves a thoughtful story.
+        Explore our photography and film services.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="serviceWedding"
+          data-placeholder="WEDDING PHOTOGRAPHY PHOTO"></div>
+        <div class="card-content">
+          <h3>Wedding Photography</h3>
+          <p>From timeless traditions to the smallest candid moments, we capture the full story of your special day.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="servicePreWedding"
+          data-placeholder="PRE-WEDDING PHOTO"></div>
+        <div class="card-content">
+          <h3>Pre-Wedding Shoots</h3>
+          <p>Beautiful portraits and natural moments that celebrate your journey together.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="serviceRice"
+          data-placeholder="RICE CEREMONY PHOTO"></div>
+        <div class="card-content">
+          <h3>Rice Ceremony</h3>
+          <p>Preserve the joy and traditions of your child's special family milestone.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="serviceCandid"
+          data-placeholder="CANDID PHOTOGRAPHY PHOTO"></div>
+        <div class="card-content">
+          <h3>Candid Photography</h3>
+          <p>Unscripted smiles, laughter, and the little details that matter most.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="serviceFilm"
+          data-placeholder="CINEMATIC FILMS PHOTO"></div>
+        <div class="card-content">
+          <h3>Cinematic Wedding Films</h3>
+          <p>Emotional films that preserve the energy and atmosphere of your celebration.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="serviceEvent"
+          data-placeholder="EVENT PHOTOGRAPHY PHOTO"></div>
+        <div class="card-content">
+          <h3>Special Events</h3>
+          <p>Photography for engagements, anniversaries, birthdays and family gatherings.</p>
+          <a href="#contact" class="text-link">Enquire Now →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery" class="section">
+  <div class="wrap">
+
+    <div class="center">
+      <div class="eyebrow">The Portfolio</div>
+      <h2>Moments We Love</h2>
+      <p class="intro">
+        Your best photographs will live here.
+        Select a category to explore each collection.
+      </p>
+    </div>
+
+    <div class="gallery-filters" id="filters">
+      <button class="filter active" data-filter="all">All Photos</button>
+      <button class="filter" data-filter="wedding">Wedding</button>
+      <button class="filter" data-filter="prewedding">Pre-Wedding</button>
+      <button class="filter" data-filter="rice">Rice Ceremony</button>
+      <button class="filter" data-filter="events">Events</button>
+    </div>
+
+    <div class="gallery" id="galleryGrid"></div>
+
+  </div>
+</section>
+
+<!-- STORIES -->
+
+<section id="stories" class="section sand">
+  <div class="wrap">
+
+    <div class="center">
+      <div class="eyebrow">Featured Stories</div>
+      <h2>Beautiful Stories, Beautiful Memories</h2>
+      <p class="intro">
+        A collection of moments worth remembering.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="story1"
+          data-placeholder="STORY 1 COVER PHOTO"></div>
+        <div class="card-content">
+          <h3>A Timeless Celebration</h3>
+          <a class="text-link" href="#gallery">View Gallery →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="story2"
+          data-placeholder="STORY 2 COVER PHOTO"></div>
+        <div class="card-content">
+          <h3>Forever Begins Here</h3>
+          <p>Add your featured wedding story here.</p>
+          <a class="text-link" href="#gallery">View Gallery →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="photo-slot"
+          data-photo="story3"
+          data-placeholder="STORY 3 COVER PHOTO"></div>
+        <div class="card-content">
+          <h3>Moments of Togetherness</h3>
+          <p>Add your pre-wedding or family celebration story here.</p>
+          <a class="text-link" href="#gallery">View Gallery →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+
+<section id="testimonials" class="section center">
+  <div class="wrap">
+    <div class="eyebrow">Kind Words</div>
+    <h2>What Our Clients Say</h2>
+
+    <p class="quote">
+      “Add a genuine client testimonial here once you have permission to share it.”
+    </p>
+
+    <p class="body-copy">— Your Client's Name</p>
+  </div>
+</section>
+
+<!-- CONTACT & WHATSAPP ENQUIRY -->
+
+<section id="contact" class="section sand">
+  <div class="wrap contact">
+
+    <div>
+      <div class="eyebrow">Get in Touch</div>
+      <h2>Let's Make Something Beautiful</h2>
+
+      <p>
+        Tell us about your celebration. We'd love
+        to hear your plans and help preserve your memories.
+      </p>
+
+      <p><strong>Location:</strong> Tollygunge, Kolkata, West Bengal 700040</p>
+      <p><strong>Email:</strong> subhomoments@gmail.com</p>
+      <p><strong>Phone:</strong> +91 8159868088 / +91 7001950046</p>
+      <p><strong>Website:</strong> subhomoments.online</p>
+
+      <a
+        class="button whatsapp-button"
+        href="https://wa.me/918159868088?text=Hello%20Subhomoments%2C%20I%20want%20to%20enquire%20about%20photography%20services."
+        target="_blank"
+        rel="noopener noreferrer">
+        Chat Directly on WhatsApp
+      </a>
+    </div>
+
+    <form id="contactForm">
+
+      <input
+        name="name"
+        type="text"
+        placeholder="Your name"
+        required>
+
+      <input
+        name="email"
+        type="email"
+        placeholder="Email address"
+        required>
+
+      <input
+        name="phone"
+        type="tel"
+        placeholder="Phone number"
+        required>
+
+      <select name="service" required>
+        <option value="">Select a service</option>
+        <option>Wedding Photography</option>
+        <option>Pre-Wedding Shoot</option>
+        <option>Rice Ceremony</option>
+        <option>Candid Photography</option>
+        <option>Cinematic Films</option>
+        <option>Special Event</option>
+      </select>
+
+      <input
+        name="date"
+        type="date"
+        aria-label="Event date">
+
+      <textarea
+        name="message"
+        placeholder="Tell us about your event"></textarea>
+
+      <div class="contact-actions">
+        <button class="button whatsapp-button" type="submit">
+          Send Enquiry on WhatsApp
+        </button>
+      </div>
+
+      <div class="form-note">
+        After submitting, WhatsApp will open with your enquiry details.
+        Please press Send in WhatsApp to complete your enquiry.
+      </div>
+
+    </form>
+  </div>
+</section>
+
 </main>
-<footer class="footer"><div class="wrap"><a class="brand" href="#home">Subho<span>moments.</span></a><p>Capturing Love • Creating Memories • Telling Stories</p><div class="footer-links"><a href="#about">About</a><a href="#services">Services</a><a href="#gallery">Gallery</a><a href="#stories">Stories</a><a href="#contact">Contact</a></div><div class="copyright">© <span id="year"></span> Subhomoments All rights reserved. • subhomoments.online</div></div></footer>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo preview"><button type="button" id="closeLightbox" aria-label="Close photo preview">×</button><img id="lightboxImage" alt="Selected gallery photograph"></div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  <div class="wrap">
+
+    <a class="brand" href="#home">
+      Subho<span>moments.</span>
+    </a>
+
+    <p>Capturing Love • Creating Memories • Telling Stories</p>
+
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#stories">Stories</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Subhomoments.
+      All rights reserved. • subhomoments.online
+    </div>
+
+  </div>
+</footer>
+
+<!-- GALLERY LIGHTBOX -->
+
+<div class="lightbox" id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Photo preview">
+
+  <button type="button" id="closeLightbox"
+    aria-label="Close photo preview">×</button>
+
+  <img id="lightboxImage"
+    alt="Selected gallery photograph">
+
+</div>
+
 <script>
-/* =========== YOUR GITHUB IMAGES FOLDER ===========
-   Upload photos to: Mywebsite/images/
-   Use the EXACT filename, capitalization and extension.
-   Example: images/wedding1.jpg
-   You may use .jpg, .jpeg, .png, .webp, etc.
-   Missing images display placeholders until uploaded.
-   Add as many gallery entries as you like.
-================================================== */
+
+/* ======================================
+   SUBHOMOMENTS PHOTO SETTINGS
+   ====================================== */
+
 const photoSettings = {
   hero: 'images/hero.jpg',
   about: 'images/about.jpg',
@@ -66,30 +890,201 @@ const photoSettings = {
   story2: 'images/story2.jpg',
   story3: 'images/story3.jpg'
 };
+
+/* ======================================
+   GALLERY PHOTOS
+   ====================================== */
+
 const galleryPhotos = [
-  {src:'images/wedding1.jpg', category:'wedding', label:'Wedding Photo 1'},
-  {src:'images/wedding2.jpg', category:'wedding', label:'Wedding Photo 2'},
-  {src:'images/wedding3.jpg', category:'wedding', label:'Wedding Photo 3'},
-  {src:'images/DSC_1390.JPG', category:'prewedding', label:'Pre-Wedding Photo 1'},
-  {src:'images/DSC_1393.JPG', category:'prewedding', label:'Pre-Wedding Photo 2'},
-  {src:'images/DSC_1400.JPG', category:'prewedding', label:'Pre-Wedding Photo 3'},
-  {src:'images/rice1.jpg', category:'rice', label:'Rice Ceremony Photo 1'},
-  {src:'images/rice2.jpg', category:'rice', label:'Rice Ceremony Photo 2'},
-  {src:'images/rice3.jpg', category:'rice', label:'Rice Ceremony Photo 3'},
-  {src:'images/event1.jpg', category:'events', label:'Event Photo 1'},
-  {src:'images/event2.jpg', category:'events', label:'Event Photo 2'},
-  {src:'images/event3.jpg', category:'events', label:'Event Photo 3'}
+  {src:'images/wedding1.jpg',category:'wedding',label:'Wedding Photo 1'},
+  {src:'images/wedding2.jpg',category:'wedding',label:'Wedding Photo 2'},
+  {src:'images/wedding3.jpg',category:'wedding',label:'Wedding Photo 3'},
+
+  {src:'images/DSC_1390.JPG',category:'prewedding',label:'Pre-Wedding Photo 1'},
+  {src:'images/DSC_1393.JPG',category:'prewedding',label:'Pre-Wedding Photo 2'},
+  {src:'images/DSC_1400.JPG',category:'prewedding',label:'Pre-Wedding Photo 3'},
+
+  {src:'images/rice1.jpg',category:'rice',label:'Rice Ceremony Photo 1'},
+  {src:'images/rice2.jpg',category:'rice',label:'Rice Ceremony Photo 2'},
+  {src:'images/rice3.jpg',category:'rice',label:'Rice Ceremony Photo 3'},
+
+  {src:'images/event1.jpg',category:'events',label:'Event Photo 1'},
+  {src:'images/event2.jpg',category:'events',label:'Event Photo 2'},
+  {src:'images/event3.jpg',category:'events',label:'Event Photo 3'}
 ];
-function createPhoto(el,src,alt){if(!src)return;const img=document.createElement('img');img.src=src;img.alt=alt;img.loading=el.id==='home'?'eager':'lazy';img.onerror=()=>{img.remove();el.classList.remove('has-image')};el.prepend(img);el.classList.add('has-image')}
-document.querySelectorAll('[data-photo]').forEach(el=>createPhoto(el,photoSettings[el.dataset.photo],el.dataset.placeholder||'Subhomoments photograph'));
-const grid=document.getElementById('galleryGrid');
-function renderGallery(category='all') {grid.innerHTML='';galleryPhotos.filter(p=>category==='all'||p.category===category).forEach(p=>{const button=document.createElement('button');button.type='button';button.setAttribute('aria-label','View '+p.label);const tile=document.createElement('div');tile.className='photo-slot';tile.dataset.placeholder='ADD '+p.label.toUpperCase();createPhoto(tile,p.src,p.label);button.append(tile);button.addEventListener('click',()=>{if(!p.src || !tile.classList.contains('has-image'))return;const modal=document.getElementById('lightbox');document.getElementById('lightboxImage').src=p.src;modal.classList.add('open');document.body.style.overflow='hidden'});grid.append(button)})}
+
+/* ======================================
+   LOAD WEBSITE PHOTOGRAPHS
+   ====================================== */
+
+function createPhoto(el,src,alt) {
+  if (!src) return;
+
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = alt;
+  img.loading = el.id === 'home' ? 'eager' : 'lazy';
+
+  img.onerror = () => {
+    img.remove();
+    el.classList.remove('has-image');
+  };
+
+  el.prepend(img);
+  el.classList.add('has-image');
+}
+
+document.querySelectorAll('[data-photo]').forEach(el => {
+  createPhoto(
+    el,
+    photoSettings[el.dataset.photo],
+    el.dataset.placeholder || 'Subhomoments photograph'
+  );
+});
+
+/* ======================================
+   GALLERY FILTER AND LIGHTBOX
+   ====================================== */
+
+const grid = document.getElementById('galleryGrid');
+
+function renderGallery(category='all') {
+  grid.innerHTML = '';
+
+  galleryPhotos
+    .filter(p => category === 'all' || p.category === category)
+    .forEach(p => {
+
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label','View ' + p.label);
+
+      const tile = document.createElement('div');
+      tile.className = 'photo-slot';
+      tile.dataset.placeholder = 'ADD ' + p.label.toUpperCase();
+
+      createPhoto(tile,p.src,p.label);
+      button.append(tile);
+
+      button.addEventListener('click',() => {
+        if (!p.src || !tile.classList.contains('has-image')) return;
+
+        const modal = document.getElementById('lightbox');
+        document.getElementById('lightboxImage').src = p.src;
+
+        modal.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      grid.append(button);
+    });
+}
+
 renderGallery();
-document.querySelectorAll('.filter').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(b=>b.classList.remove('active'));btn.classList.add('active');renderGallery(btn.dataset.filter)}));
-function closeModal(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow=''}
-document.getElementById('closeLightbox').addEventListener('click',closeModal);document.getElementById('lightbox').addEventListener('click',e=>{if(e.target.id==='lightbox')closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
-const menu=document.getElementById('menuButton'),links=document.getElementById('links');menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open))});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.setAttribute('aria-expanded','false')}));
-document.getElementById('contactForm').addEventListener('submit',e=>{e.preventDefault();alert('This form is a demo. Connect an email service or backend to receive enquiries.')});
-document.getElementById('year').textContent=new Date().getFullYear();
+
+document.querySelectorAll('.filter').forEach(btn => {
+  btn.addEventListener('click',() => {
+    document.querySelectorAll('.filter').forEach(b =>
+      b.classList.remove('active')
+    );
+
+    btn.classList.add('active');
+    renderGallery(btn.dataset.filter);
+  });
+});
+
+function closeModal() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('closeLightbox')
+  .addEventListener('click',closeModal);
+
+document.getElementById('lightbox')
+  .addEventListener('click',e => {
+    if (e.target.id === 'lightbox') closeModal();
+  });
+
+document.addEventListener('keydown',e => {
+  if (e.key === 'Escape') closeModal();
+});
+
+/* ======================================
+   MOBILE NAVIGATION
+   ====================================== */
+
+const menu = document.getElementById('menuButton');
+const links = document.getElementById('links');
+
+menu.addEventListener('click',() => {
+  const open = links.classList.toggle('open');
+  menu.setAttribute('aria-expanded',String(open));
+});
+
+links.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click',() => {
+    links.classList.remove('open');
+    menu.setAttribute('aria-expanded','false');
+  });
+});
+
+/* ======================================
+   WHATSAPP ENQUIRY FORM
+   ====================================== */
+
+// Your WhatsApp number with country code
+const whatsappNumber = "918159868088";
+
+document.getElementById('contactForm')
+  .addEventListener('submit',function(event) {
+
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    const name = String(formData.get('name') || '').trim();
+    const email = String(formData.get('email') || '').trim();
+    const phone = String(formData.get('phone') || '').trim();
+    const service = String(formData.get('service') || '');
+    const date = String(formData.get('date') || '');
+    const message = String(formData.get('message') || '').trim();
+
+    const enquiryMessage =
+`*NEW PHOTOGRAPHY ENQUIRY*
+*SUBHOMOMENTS*
+
+*Customer Name:* ${name}
+*Email Address:* ${email}
+*Phone Number:* ${phone}
+*Service Required:* ${service}
+*Event Date:* ${date || 'Not specified'}
+
+*Event Details:*
+${message || 'Not provided'}
+
+-------------------------
+Enquiry submitted from:
+https://subhomoments.online`;
+
+    const whatsappURL =
+      'https://wa.me/' +
+      whatsappNumber +
+      '?text=' +
+      encodeURIComponent(enquiryMessage);
+
+    window.location.href = whatsappURL;
+  });
+
+/* ======================================
+   FOOTER YEAR
+   ====================================== */
+
+document.getElementById('year').textContent =
+  new Date().getFullYear();
+
 </script>
-</body></html>
+
+</body>
+</html>
