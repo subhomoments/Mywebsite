@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Subhomoments | Wedding Photography & Films</title>
-<meta name="description" content="Subhomoments wedding photography, pre-wedding shoots, cinematic wedding films and family celebrations in Kolkata.">
+<meta name="description" content="Subhomoments wedding photography, pre-wedding shoots, cinematic films and family celebrations in Kolkata.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +21,11 @@
   --muted:#786f68;
 }
 
-* {
-  box-sizing:border-box;
-}
+* {box-sizing:border-box}
 
 html {
   scroll-behavior:smooth;
-  scroll-padding-top:80px;
+  scroll-padding-top:85px;
 }
 
 body {
@@ -42,53 +40,35 @@ h1,h2,h3,.brand {
   font-weight:500;
 }
 
-h1,h2,h3,p {
-  margin-top:0;
-}
+h1,h2,h3,p {margin-top:0}
 
 h2 {
   font-size:clamp(2rem,4.5vw,3.7rem);
   line-height:1.2;
 }
 
-h3 {
-  font-size:1.5rem;
-}
+h3 {font-size:1.5rem}
 
 a {
   color:inherit;
   text-decoration:none;
 }
 
-button,input,textarea,select {
-  font:inherit;
-}
-
-button {
-  cursor:pointer;
-}
-
-img {
-  display:block;
-  max-width:100%;
-}
+button,input,textarea,select {font:inherit}
+button {cursor:pointer}
+img {display:block;max-width:100%}
 
 .wrap {
   width:min(1180px,calc(100% - 40px));
   margin:auto;
 }
 
-.section {
-  padding:100px 0;
-}
-
-.center {
-  text-align:center;
-}
+.section {padding:95px 0}
+.center {text-align:center}
 
 .eyebrow {
-  font-size:.74rem;
-  letter-spacing:.25em;
+  font-size:.75rem;
+  letter-spacing:.23em;
   text-transform:uppercase;
   color:var(--gold);
   font-weight:700;
@@ -110,18 +90,16 @@ img {
   text-align:center;
 }
 
-.button:hover {
-  background:#805638;
-}
+.button:hover {background:#805638}
 
 .button.outline {
   background:transparent;
   color:var(--ink);
 }
 
-.button.outline:hover {
-  background:var(--sand);
-}
+.button.outline:hover {background:var(--sand)}
+
+.sand {background:var(--sand)}
 
 /* HEADER */
 
@@ -138,7 +116,7 @@ img {
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:24px;
+  gap:20px;
 }
 
 .brand {
@@ -147,26 +125,22 @@ img {
   white-space:nowrap;
 }
 
-.brand span {
-  color:var(--gold);
-}
+.brand span {color:var(--gold)}
 
 .links {
   display:flex;
-  gap:22px;
+  gap:18px;
   align-items:center;
 }
 
 .links a {
-  font-size:.78rem;
-  letter-spacing:.08em;
+  font-size:.75rem;
+  letter-spacing:.07em;
   text-transform:uppercase;
   font-weight:700;
 }
 
-.links a:hover {
-  color:var(--gold);
-}
+.links a:hover {color:var(--gold)}
 
 .menu {
   display:none;
@@ -194,8 +168,8 @@ img {
   z-index:1;
   pointer-events:none;
   background:linear-gradient(
-    rgba(0,0,0,.32),
-    rgba(0,0,0,.62)
+    rgba(0,0,0,.30),
+    rgba(0,0,0,.65)
   );
 }
 
@@ -220,9 +194,7 @@ img {
   color:#f7f0ea;
 }
 
-.hero .eyebrow {
-  color:#f1cfb3;
-}
+.hero .eyebrow {color:#f1cfb3}
 
 /* IMAGE PLACEHOLDERS */
 
@@ -249,9 +221,7 @@ img {
   background:linear-gradient(145deg,#d3c2b1,#eee3d7);
 }
 
-.photo-slot.has-image:after {
-  display:none;
-}
+.photo-slot.has-image:after {display:none}
 
 .photo-slot img {
   width:100%;
@@ -267,14 +237,8 @@ img {
   background:linear-gradient(135deg,#5a473c,#302721);
 }
 
-.hero.photo-slot:after {
-  content:none;
-  display:none;
-}
-
-.hero.photo-slot img {
-  z-index:0;
-}
+.hero.photo-slot:after {display:none}
+.hero.photo-slot img {z-index:0}
 
 /* ABOUT */
 
@@ -285,33 +249,19 @@ img {
   gap:7%;
 }
 
-.split .photo-slot {
-  height:550px;
-}
-
-.body-copy {
-  color:var(--muted);
-}
-
-.sand {
-  background:var(--sand);
-}
+.split .photo-slot {height:550px}
+.body-copy {color:var(--muted)}
 
 /* SERVICES */
 
 .cards {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:24px;
 }
 
-.card {
-  background:white;
-}
-
-.card .photo-slot {
-  height:310px;
-}
+.card {background:white}
+.card .photo-slot {height:310px}
 
 .card-content {
   padding:25px;
@@ -326,7 +276,7 @@ img {
 .text-link {
   font-size:.8rem;
   text-transform:uppercase;
-  letter-spacing:.15em;
+  letter-spacing:.12em;
   color:var(--gold);
   font-weight:700;
 }
@@ -348,15 +298,14 @@ img {
   color:var(--ink);
 }
 
-.filter.active,
-.filter:hover {
+.filter.active,.filter:hover {
   background:var(--ink);
   color:white;
 }
 
 .gallery {
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(3,minmax(0,1fr));
   gap:14px;
 }
 
@@ -366,22 +315,15 @@ img {
   background:none;
   display:block;
   min-width:0;
-  text-align:inherit;
+  width:100%;
 }
 
-.gallery .photo-slot {
-  height:320px;
-}
+.gallery .photo-slot {height:320px}
+.gallery button:hover .photo-slot {filter:brightness(.9)}
 
-.gallery button:hover .photo-slot {
-  filter:brightness(.9);
-}
+/* YOUTUBE FILMS */
 
-/* WEDDING FILMS */
-
-.films-section {
-  background:#faf7f4;
-}
+.films-section {background:#faf7f4}
 
 .youtube-grid {
   display:grid;
@@ -402,14 +344,13 @@ img {
   background:#302a28;
   display:grid;
   place-items:center;
-  position:relative;
 }
 
 .youtube-player iframe {
-  display:block;
   width:100%;
   height:100%;
   border:0;
+  display:block;
 }
 
 .video-placeholder {
@@ -421,14 +362,12 @@ img {
 .video-placeholder span {
   display:block;
   font-size:42px;
-  margin-bottom:10px;
 }
 
 .youtube-video h3 {
   padding:18px 18px 5px;
   font-size:19px;
   margin:0;
-  color:#302a28;
 }
 
 .youtube-video p {
@@ -436,6 +375,35 @@ img {
   font-size:13px;
   color:var(--muted);
   margin:0;
+}
+
+/* FILMS DRAWER */
+
+.films-drawer {
+  margin-top:28px;
+}
+
+.films-drawer[hidden] {
+  display:none;
+}
+
+.films-actions {
+  text-align:center;
+  margin-top:30px;
+}
+
+.films-toggle {
+  background:var(--gold);
+  color:white;
+  padding:14px 32px;
+  min-width:220px;
+  border:1px solid var(--gold);
+  font-weight:700;
+  transition:.2s;
+}
+
+.films-toggle:hover {
+  background:#805638;
 }
 
 /* TESTIMONIALS */
@@ -454,11 +422,9 @@ img {
   gap:8%;
 }
 
-.contact p {
-  color:var(--muted);
-}
+.contact p {color:var(--muted)}
 
-form {
+.contact-form {
   display:grid;
   gap:13px;
 }
@@ -487,8 +453,44 @@ textarea {
   color:white;
 }
 
-.whatsapp-button:hover {
-  background:#08783c;
+.whatsapp-button:hover {background:#08783c}
+
+/* SOCIAL MEDIA BUTTONS */
+
+.social-links {
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:25px 0;
+}
+
+.social-button {
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:11px 18px;
+  border-radius:7px;
+  color:white !important;
+  font-weight:700;
+  font-size:14px;
+  transition:transform .2s,opacity .2s;
+}
+
+.social-button:hover {
+  transform:translateY(-2px);
+  opacity:.9;
+}
+
+.instagram {background:#b83280}
+.facebook {background:#1877f2}
+.youtube {background:#dc2626}
+
+.social-icon {
+  width:19px;
+  height:19px;
+  flex-shrink:0;
+  fill:currentColor;
 }
 
 /* FOOTER */
@@ -500,9 +502,7 @@ textarea {
   text-align:center;
 }
 
-.footer p {
-  color:#c5bcb5;
-}
+.footer p {color:#c5bcb5}
 
 .footer-links {
   display:flex;
@@ -512,8 +512,10 @@ textarea {
   margin:25px 0;
 }
 
-.footer-links a:hover {
-  color:#e4b18b;
+.footer-links a:hover {color:#e4b18b}
+
+.footer .social-links {
+  justify-content:center;
 }
 
 .copyright {
@@ -528,16 +530,14 @@ textarea {
   position:fixed;
   inset:0;
   z-index:100;
-  background:#000e;
+  background:rgba(0,0,0,.93);
   display:none;
   align-items:center;
   justify-content:center;
   padding:65px 20px 30px;
 }
 
-.lightbox.open {
-  display:flex;
-}
+.lightbox.open {display:flex}
 
 .lightbox img {
   max-width:95vw;
@@ -555,12 +555,10 @@ textarea {
   font-size:2.3rem;
 }
 
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE */
 
 @media(max-width:950px) {
-  .menu {
-    display:block;
-  }
+  .menu {display:block}
 
   .links {
     display:none;
@@ -575,9 +573,7 @@ textarea {
     border-bottom:1px solid #e7ddd1;
   }
 
-  .links.open {
-    display:flex;
-  }
+  .links.open {display:flex}
 
   .split,.contact {
     grid-template-columns:1fr;
@@ -588,9 +584,7 @@ textarea {
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 
-  .section {
-    padding:70px 0;
-  }
+  .section {padding:70px 0}
 }
 
 @media(max-width:600px) {
@@ -598,21 +592,15 @@ textarea {
     grid-template-columns:1fr;
   }
 
-  .split .photo-slot {
-    height:400px;
-  }
-
-  .gallery .photo-slot {
-    height:360px;
-  }
-
-  .brand {
-    font-size:1.5rem;
-  }
+  .split .photo-slot {height:400px}
+  .gallery .photo-slot {height:360px}
+  .brand {font-size:1.5rem}
 
   .hero h1 {
     font-size:clamp(2.7rem,12vw,4.5rem);
   }
+
+  .social-links {justify-content:center}
 }
 </style>
 </head>
@@ -689,7 +677,7 @@ textarea {
       <h2>Capturing Love, Creating Memories</h2>
 
       <p class="body-copy">
-        Welcome to Subhomoments We believe the most
+        Welcome to Subhomoments. We believe the most
         meaningful photographs are the ones that bring
         you back to how a moment felt.
       </p>
@@ -716,6 +704,7 @@ textarea {
     <div class="center">
       <div class="eyebrow">What We Offer</div>
       <h2>Our Photography Services</h2>
+
       <p class="intro">
         Every celebration deserves a thoughtful story.
         Explore our photography and film services.
@@ -730,7 +719,7 @@ textarea {
           data-placeholder="WEDDING PHOTOGRAPHY PHOTO"></div>
         <div class="card-content">
           <h3>Wedding Photography</h3>
-          <p>Capturing timeless traditions and the smallest candid moments</p>
+          <p>Capturing timeless traditions and beautiful candid moments.</p>
           <a href="#contact" class="text-link">Enquire Now →</a>
         </div>
       </article>
@@ -763,7 +752,7 @@ textarea {
           data-placeholder="CANDID PHOTO"></div>
         <div class="card-content">
           <h3>Candid Photography</h3>
-          <p>Unscripted smiles, laughter and meaningful moments</p>
+          <p>Unscripted smiles, laughter and meaningful moments.</p>
           <a href="#contact" class="text-link">Enquire Now →</a>
         </div>
       </article>
@@ -802,6 +791,7 @@ textarea {
     <div class="center">
       <div class="eyebrow">The Portfolio</div>
       <h2>Moments We Love</h2>
+
       <p class="intro">
         Explore our wedding, pre-wedding and event photography.
       </p>
@@ -828,9 +818,7 @@ textarea {
     <div class="center">
       <div class="eyebrow">Featured Stories</div>
       <h2>Beautiful Stories, Beautiful Memories</h2>
-      <p class="intro">
-        A collection of moments worth remembering.
-      </p>
+      <p class="intro">A collection of moments worth remembering.</p>
     </div>
 
     <div class="cards">
@@ -872,7 +860,7 @@ textarea {
   </div>
 </section>
 
-<!-- 9 YOUTUBE WEDDING FILMS -->
+<!-- 9 WEDDING FILMS WITH DRAWER -->
 
 <section id="films" class="section films-section">
   <div class="wrap">
@@ -880,13 +868,30 @@ textarea {
     <div class="center">
       <div class="eyebrow">Cinematic Wedding Films</div>
       <h2>Our Wedding Films</h2>
+
       <p class="intro">
         Watch our beautiful wedding moments,
         cinematic stories and pre-wedding films.
       </p>
     </div>
 
+    <!-- FIRST THREE VIDEOS -->
     <div class="youtube-grid" id="youtubeGrid"></div>
+
+    <!-- REMAINING SIX VIDEOS -->
+    <div class="films-drawer" id="filmsDrawer" hidden>
+      <div class="youtube-grid" id="moreYoutubeGrid"></div>
+    </div>
+
+    <div class="films-actions">
+      <button class="films-toggle"
+        id="filmsToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="filmsDrawer">
+        View All 9 Films ↓
+      </button>
+    </div>
 
   </div>
 </section>
@@ -916,7 +921,6 @@ textarea {
 
     <div>
       <div class="eyebrow">Get in Touch</div>
-
       <h2>Let's Make Something Beautiful</h2>
 
       <p>
@@ -936,27 +940,22 @@ textarea {
         rel="noopener noreferrer">
         Chat Directly on WhatsApp
       </a>
+
+      <!-- SOCIAL MEDIA -->
+      <div class="social-links" id="contactSocial"></div>
+
     </div>
 
-    <form id="contactForm">
+    <form id="contactForm" class="contact-form">
 
-      <input
-        name="name"
-        type="text"
-        placeholder="Your name"
-        required>
+      <input name="name" type="text"
+        placeholder="Your name" required>
 
-      <input
-        name="email"
-        type="email"
-        placeholder="Email address"
-        required>
+      <input name="email" type="email"
+        placeholder="Email address" required>
 
-      <input
-        name="phone"
-        type="tel"
-        placeholder="Phone number"
-        required>
+      <input name="phone" type="tel"
+        placeholder="Phone number" required>
 
       <select name="service" required>
         <option value="">Select a service</option>
@@ -968,18 +967,13 @@ textarea {
         <option>Special Event</option>
       </select>
 
-      <input
-        name="date"
-        type="date"
+      <input name="date" type="date"
         aria-label="Event date">
 
-      <textarea
-        name="message"
+      <textarea name="message"
         placeholder="Tell us about your event"></textarea>
 
-      <button
-        class="button whatsapp-button"
-        type="submit">
+      <button class="button whatsapp-button" type="submit">
         Send Enquiry on WhatsApp
       </button>
 
@@ -1015,9 +1009,12 @@ textarea {
       <a href="#contact">Contact</a>
     </div>
 
+    <!-- FOOTER SOCIAL BUTTONS -->
+    <div class="social-links" id="footerSocial"></div>
+
     <div class="copyright">
-      © <span id="year"></span> Subhomoments
-      All rights reserved.  subhomoments.online
+      © <span id="year"></span> Subhomoments.
+      All rights reserved. • subhomoments.online
     </div>
 
   </div>
@@ -1040,297 +1037,359 @@ textarea {
 
 <script>
 
-/* ==========================================
-   SUBHOMOMENTS IMAGE FOLDER SETTINGS
-========================================== */
+/* ======================================
+   WEBSITE SETTINGS
+====================================== */
 
-const photoSettings = {
-  hero:'images/hero.jpg',
-  about:'images/about.jpg',
-  serviceWedding:'images/wedding1.jpg',
-  servicePreWedding:'images/prewedding1.jpg',
-  serviceRice:'images/rice1.jpg',
-  serviceCandid:'images/candid1.jpg',
-  serviceFilm:'images/film1.jpg',
-  serviceEvent:'images/event1.jpg',
-  story1:'images/story1.jpg',
-  story2:'images/story2.jpg',
-  story3:'images/story3.jpg'
+// Replace these with your real social media URLs.
+
+const socialSettings = {
+  instagram: "https://www.instagram.com/YOUR_USERNAME/",
+  facebook: "https://www.facebook.com/YOUR_PAGE/",
+  youtube: "https://www.youtube.com/@YOUR_CHANNEL/"
 };
 
-/* ==========================================
-   PHOTO GALLERY SETTINGS
-========================================== */
+// WhatsApp destination number
+const whatsappNumber = "918159868088";
+
+/* ======================================
+   PHOTO SETTINGS
+====================================== */
+
+const photoSettings = {
+  hero:"images/hero.jpg",
+  about:"images/about.jpg",
+  serviceWedding:"images/wedding1.jpg",
+  servicePreWedding:"images/prewedding1.jpg",
+  serviceRice:"images/rice1.jpg",
+  serviceCandid:"images/candid1.jpg",
+  serviceFilm:"images/film1.jpg",
+  serviceEvent:"images/event1.jpg",
+  story1:"images/story1.jpg",
+  story2:"images/story2.jpg",
+  story3:"images/story3.jpg"
+};
+
+/* ======================================
+   PHOTO GALLERY
+====================================== */
 
 const galleryPhotos = [
-  {src:'images/wedding1.jpg',category:'wedding',label:'Wedding Photo 1'},
-  {src:'images/wedding2.jpg',category:'wedding',label:'Wedding Photo 2'},
-  {src:'images/wedding3.jpg',category:'wedding',label:'Wedding Photo 3'},
+  {src:"images/wedding1.jpg",category:"wedding",label:"Wedding Photo 1"},
+  {src:"images/wedding2.jpg",category:"wedding",label:"Wedding Photo 2"},
+  {src:"images/wedding3.jpg",category:"wedding",label:"Wedding Photo 3"},
 
-  {src:'images/DSC_1390.JPG',category:'prewedding',label:'Pre-Wedding Photo 1'},
-  {src:'images/DSC_1393.JPG',category:'prewedding',label:'Pre-Wedding Photo 2'},
-  {src:'images/DSC_1400.JPG',category:'prewedding',label:'Pre-Wedding Photo 3'},
+  {src:"images/DSC_1390.JPG",category:"prewedding",label:"Pre-Wedding Photo 1"},
+  {src:"images/DSC_1393.JPG",category:"prewedding",label:"Pre-Wedding Photo 2"},
+  {src:"images/DSC_1400.JPG",category:"prewedding",label:"Pre-Wedding Photo 3"},
 
-  {src:'images/rice1.jpg',category:'rice',label:'Rice Ceremony Photo 1'},
-  {src:'images/rice2.jpg',category:'rice',label:'Rice Ceremony Photo 2'},
-  {src:'images/rice3.jpg',category:'rice',label:'Rice Ceremony Photo 3'},
+  {src:"images/rice1.jpg",category:"rice",label:"Rice Ceremony Photo 1"},
+  {src:"images/rice2.jpg",category:"rice",label:"Rice Ceremony Photo 2"},
+  {src:"images/rice3.jpg",category:"rice",label:"Rice Ceremony Photo 3"},
 
-  {src:'images/event1.jpg',category:'events',label:'Event Photo 1'},
-  {src:'images/event2.jpg',category:'events',label:'Event Photo 2'},
-  {src:'images/event3.jpg',category:'events',label:'Event Photo 3'}
+  {src:"images/event1.jpg",category:"events",label:"Event Photo 1"},
+  {src:"images/event2.jpg",category:"events",label:"Event Photo 2"},
+  {src:"images/event3.jpg",category:"events",label:"Event Photo 3"}
 ];
 
-/* ==========================================
-   9 YOUTUBE VIDEO SETTINGS
+/* ======================================
+   9 YOUTUBE FILMS
 
-   Replace VIDEO_ID_1 etc. with your
-   real YouTube video IDs.
-========================================== */
+   Replace each VIDEO_ID with a real
+   11-character YouTube video ID.
+====================================== */
 
 const weddingFilms = [
-  {
-    id:'VIDEO_ID_1',
-    title:'Beautiful Wedding Film'
-  },
-  {
-    id:'VIDEO_ID_2',
-    title:'Wedding Highlights'
-  },
-  {
-    id:'VIDEO_ID_3',
-    title:'Pre-Wedding Shoot'
-  },
-  {
-    id:'VIDEO_ID_4',
-    title:'Wedding Ceremony'
-  },
-  {
-    id:'VIDEO_ID_5',
-    title:'Cinematic Wedding Story'
-  },
-  {
-    id:'VIDEO_ID_6',
-    title:'Engagement Highlights'
-  },
-  {
-    id:'VIDEO_ID_7',
-    title:'Traditional Wedding Film'
-  },
-  {
-    id:'VIDEO_ID_8',
-    title:'Couple Love Story'
-  },
-  {
-    id:'VIDEO_ID_9',
-    title:'Special Moments'
-  }
+  {id:"VIDEO_ID_1",title:"Beautiful Wedding Film"},
+  {id:"VIDEO_ID_2",title:"Wedding Highlights"},
+  {id:"VIDEO_ID_3",title:"Pre-Wedding Shoot"},
+  {id:"VIDEO_ID_4",title:"Wedding Ceremony"},
+  {id:"VIDEO_ID_5",title:"Cinematic Wedding Story"},
+  {id:"VIDEO_ID_6",title:"Engagement Highlights"},
+  {id:"VIDEO_ID_7",title:"Traditional Wedding Film"},
+  {id:"VIDEO_ID_8",title:"Couple Love Story"},
+  {id:"VIDEO_ID_9",title:"Special Moments"}
 ];
 
-/* ==========================================
+/* ======================================
    LOAD PHOTOGRAPHS
-========================================== */
+====================================== */
 
 function createPhoto(el,src,alt) {
   if (!src) return;
 
-  const img = document.createElement('img');
+  const img = document.createElement("img");
   img.src = src;
   img.alt = alt;
-  img.loading = el.id === 'home' ? 'eager' : 'lazy';
+  img.loading = el.id === "home" ? "eager" : "lazy";
 
   img.onerror = () => {
     img.remove();
-    el.classList.remove('has-image');
+    el.classList.remove("has-image");
   };
 
   el.prepend(img);
-  el.classList.add('has-image');
+  el.classList.add("has-image");
 }
 
-document.querySelectorAll('[data-photo]').forEach(el => {
+document.querySelectorAll("[data-photo]").forEach(el => {
   createPhoto(
     el,
     photoSettings[el.dataset.photo],
-    el.dataset.placeholder || 'Subhomoments photograph'
+    el.dataset.placeholder || "Subhomoments photograph"
   );
 });
 
-/* ==========================================
-   PHOTO GALLERY
-========================================== */
+/* ======================================
+   RENDER PHOTO GALLERY
+====================================== */
 
-const grid = document.getElementById('galleryGrid');
+const galleryGrid = document.getElementById("galleryGrid");
 
-function renderGallery(category='all') {
-  grid.innerHTML = '';
+function renderGallery(category="all") {
+  galleryGrid.innerHTML = "";
 
   galleryPhotos
-    .filter(p => category === 'all' || p.category === category)
+    .filter(p => category === "all" || p.category === category)
     .forEach(p => {
 
-      const button = document.createElement('button');
-      button.type = 'button';
-      button.setAttribute('aria-label','View ' + p.label);
+      const button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("aria-label","View " + p.label);
 
-      const tile = document.createElement('div');
-      tile.className = 'photo-slot';
-      tile.dataset.placeholder = 'ADD ' + p.label.toUpperCase();
+      const tile = document.createElement("div");
+      tile.className = "photo-slot";
+      tile.dataset.placeholder = "ADD " + p.label.toUpperCase();
 
       createPhoto(tile,p.src,p.label);
       button.append(tile);
 
-      button.addEventListener('click',() => {
-        if (!p.src || !tile.classList.contains('has-image')) return;
+      button.addEventListener("click",() => {
+        if (!p.src || !tile.classList.contains("has-image")) return;
 
-        const modal = document.getElementById('lightbox');
-        document.getElementById('lightboxImage').src = p.src;
-
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        document.getElementById("lightboxImage").src = p.src;
+        document.getElementById("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
       });
 
-      grid.append(button);
+      galleryGrid.append(button);
     });
 }
 
 renderGallery();
 
-document.querySelectorAll('.filter').forEach(btn => {
-  btn.addEventListener('click',() => {
-    document.querySelectorAll('.filter').forEach(b =>
-      b.classList.remove('active')
+document.querySelectorAll(".filter").forEach(btn => {
+  btn.addEventListener("click",() => {
+    document.querySelectorAll(".filter").forEach(b =>
+      b.classList.remove("active")
     );
 
-    btn.classList.add('active');
+    btn.classList.add("active");
     renderGallery(btn.dataset.filter);
   });
 });
 
-/* ==========================================
-   RENDER 9 PLAYABLE YOUTUBE VIDEOS
-========================================== */
+/* ======================================
+   YOUTUBE FILMS: 3 VISIBLE + 6 DRAWER
+====================================== */
 
-function renderWeddingFilms() {
-  const youtubeGrid = document.getElementById('youtubeGrid');
-  youtubeGrid.innerHTML = '';
+const youtubeGrid = document.getElementById("youtubeGrid");
+const moreYoutubeGrid = document.getElementById("moreYoutubeGrid");
+const filmsDrawer = document.getElementById("filmsDrawer");
+const filmsToggle = document.getElementById("filmsToggle");
+
+function createFilmCard(film,index) {
+  const card = document.createElement("article");
+  card.className = "youtube-video";
+
+  const player = document.createElement("div");
+  player.className = "youtube-player";
+
+  const videoId = String(film.id || "").trim();
+  const validId = /^[A-Za-z0-9_-]{11}$/.test(videoId)
+    && !videoId.startsWith("VIDEO_ID");
+
+  if (validId) {
+    const iframe = document.createElement("iframe");
+    iframe.src = "https://www.youtube-nocookie.com/embed/" +
+      encodeURIComponent(videoId);
+
+    iframe.title = film.title;
+    iframe.loading = "lazy";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; " +
+      "gyroscope; picture-in-picture; web-share";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+
+    player.append(iframe);
+  } else {
+    const placeholder = document.createElement("div");
+    placeholder.className = "video-placeholder";
+
+    const symbol = document.createElement("span");
+    symbol.textContent = "▶";
+
+    const message = document.createElement("div");
+    message.textContent = "Add YouTube Video " + (index + 1);
+
+    placeholder.append(symbol,message);
+    player.append(placeholder);
+  }
+
+  const title = document.createElement("h3");
+  title.textContent = film.title;
+
+  const desc = document.createElement("p");
+  desc.textContent = validId
+    ? "Watch this wedding film"
+    : "YouTube video ID required";
+
+  card.append(player,title,desc);
+  return card;
+}
+
+function renderFilms() {
+  youtubeGrid.innerHTML = "";
+  moreYoutubeGrid.innerHTML = "";
 
   weddingFilms.forEach((film,index) => {
-    const card = document.createElement('article');
-    card.className = 'youtube-video';
+    const card = createFilmCard(film,index);
 
-    const player = document.createElement('div');
-    player.className = 'youtube-player';
-
-    const videoId = film.id.trim();
-
-    // Accept valid YouTube video IDs only.
-    const validId = /^[A-Za-z0-9_-]{11}$/.test(videoId);
-
-    if (validId) {
-      const iframe = document.createElement('iframe');
-
-      iframe.src =
-        'https://www.youtube-nocookie.com/embed/' +
-        encodeURIComponent(videoId);
-
-      iframe.title = film.title;
-      iframe.loading = 'lazy';
-      iframe.allow =
-        'accelerometer; autoplay; clipboard-write; ' +
-        'encrypted-media; gyroscope; picture-in-picture; ' +
-        'web-share';
-
-      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
-      iframe.allowFullscreen = true;
-
-      player.appendChild(iframe);
+    if (index < 3) {
+      youtubeGrid.append(card);
     } else {
-      const placeholder = document.createElement('div');
-      placeholder.className = 'video-placeholder';
-
-      const icon = document.createElement('span');
-      icon.textContent = '▶';
-
-      const text = document.createElement('div');
-      text.textContent = 'Add YouTube Video ' + (index + 1);
-
-      placeholder.append(icon,text);
-      player.appendChild(placeholder);
+      moreYoutubeGrid.append(card);
     }
-
-    const title = document.createElement('h3');
-    title.textContent = film.title;
-
-    const description = document.createElement('p');
-    description.textContent =
-      validId ? 'Play this film here' : 'YouTube video ID required';
-
-    card.append(player,title,description);
-    youtubeGrid.appendChild(card);
   });
 }
 
-renderWeddingFilms();
+renderFilms();
 
-/* ==========================================
+filmsToggle.addEventListener("click",() => {
+  const opening = filmsDrawer.hidden;
+
+  filmsDrawer.hidden = !opening;
+  filmsToggle.setAttribute("aria-expanded",String(opening));
+
+  filmsToggle.textContent = opening
+    ? "Show Less ↑"
+    : "View All 9 Films ↓";
+
+  // Stop hidden videos from continuing to play.
+  if (!opening) {
+    moreYoutubeGrid.querySelectorAll("iframe").forEach(frame => {
+      const source = frame.src;
+      frame.src = "about:blank";
+      frame.src = source;
+    });
+  }
+});
+
+/* ======================================
+   SOCIAL MEDIA BUTTONS
+====================================== */
+
+const socialIcons = {
+  instagram: `<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="6" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="18" cy="6" r="1.3"/>
+  </svg>`,
+
+  facebook: `<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M14 22v-8h3l.5-4H14V8c0-1.1.4-2 2-2h2V2.4A22 22 0 0015 2c-3.2 0-5 1.9-5 5.3V10H7v4h3v8z"/>
+  </svg>`,
+
+  youtube: `<svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M22 7.3a3 3 0 00-2.1-2.1C18 4.7 12 4.7 12 4.7s-6 0-7.9.5A3 3 0 002 7.3a31 31 0 000 9.4 3 3 0 002.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 002.1-2.1 31 31 0 000-9.4z"/>
+    <path d="M10 9l6 3-6 3z" fill="white"/>
+  </svg>`
+};
+
+function renderSocialLinks(containerId) {
+  const container = document.getElementById(containerId);
+
+  const platforms = [
+    {name:"Instagram",key:"instagram"},
+    {name:"Facebook",key:"facebook"},
+    {name:"YouTube",key:"youtube"}
+  ];
+
+  platforms.forEach(platform => {
+    const link = document.createElement("a");
+
+    link.className = "social-button " + platform.key;
+    link.href = socialSettings[platform.key];
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    link.innerHTML = socialIcons[platform.key] +
+      "<span>" + platform.name + "</span>";
+
+    container.append(link);
+  });
+}
+
+renderSocialLinks("contactSocial");
+renderSocialLinks("footerSocial");
+
+/* ======================================
    PHOTO LIGHTBOX
-========================================== */
+====================================== */
 
 function closeModal() {
-  document.getElementById('lightbox').classList.remove('open');
-  document.body.style.overflow = '';
+  document.getElementById("lightbox").classList.remove("open");
+  document.body.style.overflow = "";
 }
 
-document.getElementById('closeLightbox')
-  .addEventListener('click',closeModal);
+document.getElementById("closeLightbox")
+  .addEventListener("click",closeModal);
 
-document.getElementById('lightbox')
-  .addEventListener('click',e => {
-    if (e.target.id === 'lightbox') closeModal();
+document.getElementById("lightbox")
+  .addEventListener("click",event => {
+    if (event.target.id === "lightbox") closeModal();
   });
 
-document.addEventListener('keydown',e => {
-  if (e.key === 'Escape') closeModal();
+document.addEventListener("keydown",event => {
+  if (event.key === "Escape") closeModal();
 });
 
-/* ==========================================
-   MOBILE MENU
-========================================== */
+/* ======================================
+   MOBILE NAVIGATION
+====================================== */
 
-const menu = document.getElementById('menuButton');
-const links = document.getElementById('links');
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("links");
 
-menu.addEventListener('click',() => {
-  const open = links.classList.toggle('open');
-  menu.setAttribute('aria-expanded',String(open));
+menuButton.addEventListener("click",() => {
+  const open = navLinks.classList.toggle("open");
+  menuButton.setAttribute("aria-expanded",String(open));
 });
 
-links.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click',() => {
-    links.classList.remove('open');
-    menu.setAttribute('aria-expanded','false');
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click",() => {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded","false");
   });
 });
 
-/* ==========================================
-   WHATSAPP ENQUIRY
-========================================== */
+/* ======================================
+   WHATSAPP ENQUIRY FORM
+====================================== */
 
-const whatsappNumber = '918159868088';
-
-document.getElementById('contactForm')
-  .addEventListener('submit',function(event) {
-
+document.getElementById("contactForm")
+  .addEventListener("submit",function(event) {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);
 
-    const name = String(formData.get('name') || '').trim();
-    const email = String(formData.get('email') || '').trim();
-    const phone = String(formData.get('phone') || '').trim();
-    const service = String(formData.get('service') || '');
-    const date = String(formData.get('date') || '');
-    const message = String(formData.get('message') || '').trim();
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const service = String(formData.get("service") || "");
+    const date = String(formData.get("date") || "");
+    const message = String(formData.get("message") || "").trim();
 
     const enquiryMessage =
 `*NEW PHOTOGRAPHY ENQUIRY*
@@ -1340,29 +1399,29 @@ document.getElementById('contactForm')
 *Email Address:* ${email}
 *Phone Number:* ${phone}
 *Service Required:* ${service}
-*Event Date:* ${date || 'Not specified'}
+*Event Date:* ${date || "Not specified"}
 
 *Event Details:*
-${message || 'Not provided'}
+${message || "Not provided"}
 
 -------------------------
 Enquiry submitted from:
 https://subhomoments.online`;
 
     const whatsappURL =
-      'https://wa.me/' +
+      "https://wa.me/" +
       whatsappNumber +
-      '?text=' +
+      "?text=" +
       encodeURIComponent(enquiryMessage);
 
     window.location.href = whatsappURL;
   });
 
-/* ==========================================
-   FOOTER YEAR
-========================================== */
+/* ======================================
+   COPYRIGHT YEAR
+====================================== */
 
-document.getElementById('year').textContent =
+document.getElementById("year").textContent =
   new Date().getFullYear();
 
 </script>
@@ -1370,4 +1429,3 @@ document.getElementById('year').textContent =
 </body>
 </html>
 
-</html>
