@@ -1,0 +1,650 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weddistory | Wedding Photography & Films</title>
+  <meta name="description" content="Wedding photography, cinematic films, pre-wedding shoots and beautiful love stories.">
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --dark: #24211f;
+      --cream: #faf7f2;
+      --accent: #a47859;
+      --muted: #77716b;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--dark);
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+    }
+
+    h1, h2, h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 500;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    .section { padding: 100px 0; }
+    .center { text-align: center; }
+
+    .eyebrow {
+      color: var(--accent);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .section-title {
+      font-size: clamp(34px, 5vw, 54px);
+      margin: 15px 0 25px;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      margin: 0 auto 45px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      background: var(--accent);
+      color: white;
+      border: 1px solid var(--accent);
+      font: inherit;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn:hover { background: #80563a; }
+
+    /* Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(250,247,242,.97);
+      border-bottom: 1px solid #e9e1d8;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+    }
+
+    .logo {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      font-weight: 600;
+      letter-spacing: -1px;
+    }
+
+    .logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.48)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?w=1800") center/cover;
+    }
+
+    .hero-content { padding: 120px 20px 50px; }
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 95px);
+      margin: 20px 0;
+      line-height: 1.12;
+    }
+
+    .hero p {
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 35px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-grid img {
+      height: 570px;
+      border-radius: 3px;
+    }
+
+    .about-text p {
+      line-height: 2;
+      color: var(--muted);
+    }
+
+    /* Services */
+    .services { background: #f0e9e0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 28px;
+    }
+
+    .service-card {
+      background: white;
+      overflow: hidden;
+    }
+
+    .service-card img {
+      height: 300px;
+      transition: transform .4s;
+    }
+
+    .service-card:hover img { transform: scale(1.04); }
+
+    .service-body {
+      padding: 28px;
+      text-align: center;
+    }
+
+    .service-body h3 { font-size: 25px; }
+
+    .service-body p {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 15px;
+    }
+
+    .gallery-grid img {
+      height: 350px;
+      cursor: pointer;
+      transition: opacity .3s;
+    }
+
+    .gallery-grid img:hover { opacity: .75; }
+
+    /* Stories */
+    .story-card img { height: 330px; }
+    .story-card h3 { font-size: 25px; }
+    .story-card p { color: var(--muted); }
+
+    /* Testimonials */
+    .testimonials {
+      background: #eee5da;
+      text-align: center;
+    }
+
+    .quote {
+      max-width: 750px;
+      margin: auto;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(22px,3vw,34px);
+      line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      line-height: 2;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      width: 100%;
+      padding: 17px;
+      border: 1px solid #ddd4ca;
+      background: white;
+      font: inherit;
+      outline-color: var(--accent);
+    }
+
+    .contact-form textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #211e1c;
+      color: white;
+      text-align: center;
+      padding: 55px 20px;
+    }
+
+    footer p { color: #bbb0a8; }
+
+    /* Image lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,.94);
+      align-items: center;
+      justify-content: center;
+      padding: 35px;
+    }
+
+    .lightbox.active { display: flex; }
+
+    .lightbox img {
+      max-width: 95%;
+      max-height: 85vh;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .close-lightbox {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      color: white;
+      background: none;
+      border: 0;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 850px) {
+      .menu-toggle { display: block; }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        flex-direction: column;
+        padding: 30px;
+      }
+
+      .nav-links.open { display: flex; }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .grid { grid-template-columns: repeat(2,1fr); }
+      .gallery-grid { grid-template-columns: repeat(2,1fr); }
+      .section { padding: 65px 0; }
+    }
+
+    @media (max-width: 550px) {
+      .grid, .gallery-grid { grid-template-columns: 1fr; }
+      .about-grid img { height: 400px; }
+      .hero h1 { font-size: 49px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <nav class="container">
+      <a href="#home" class="logo">Weddi<span>story.</span></a>
+
+      <button class="menu-toggle" aria-label="Toggle menu"
+        aria-expanded="false" onclick="toggleMenu()">☰</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#stories">Stories</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="eyebrow" style="color:#e5c6a9">
+        Wedding Photography & Films
+      </div>
+      <h1>Every Love Story<br>Deserves to Be Told</h1>
+      <p>Timeless Memories • Beautiful Emotions • Forever Stories</p>
+      <a href="#contact" class="btn">Book Your Wedding</a>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container about-grid">
+      <img
+        src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900"
+        alt="Wedding couple">
+
+      <div class="about-text">
+        <div class="eyebrow">Welcome to Weddistory</div>
+        <h2 class="section-title">Capturing Love, Creating Memories</h2>
+
+        <p>
+          At Weddistory, we believe that every wedding tells a
+          beautiful and unique story. Our passion is preserving
+          those genuine moments that make your celebration
+          unforgettable.
+        </p>
+
+        <p>
+          From joyful celebrations to heartfelt emotions, we
+          capture each special moment with creativity, care
+          and artistic storytelling.
+        </p>
+
+        <a href="#services" class="btn">Explore Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="container">
+      <div class="center">
+        <div class="eyebrow">What We Do</div>
+        <h2 class="section-title">Our Photography Services</h2>
+        <p class="subtitle">
+          Creative photography and cinematic storytelling
+          for your most memorable occasions.
+        </p>
+      </div>
+
+      <div class="grid">
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900" alt="Wedding">
+          <div class="service-body">
+            <h3>Wedding Photography</h3>
+            <p>Capturing every beautiful moment of your wedding day.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=900" alt="Couple">
+          <div class="service-body">
+            <h3>Pre-Wedding Shoots</h3>
+            <p>Romantic portraits that celebrate your love story.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900" alt="Celebration">
+          <div class="service-body">
+            <h3>Event Photography</h3>
+            <p>Memorable photography for special family occasions.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900" alt="Wedding celebration">
+          <div class="service-body">
+            <h3>Candid Photography</h3>
+            <p>Real emotions, genuine laughter and unscripted memories.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=900" alt="Wedding ceremony">
+          <div class="service-body">
+            <h3>Cinematic Wedding Films</h3>
+            <p>Beautiful visual storytelling for your special day.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900" alt="Family occasion">
+          <div class="service-body">
+            <h3>Family Celebrations</h3>
+            <p>Thoughtful photography for milestones and ceremonies.</p>
+            <a href="#contact">Enquire Now →</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="center">
+        <div class="eyebrow">Our Portfolio</div>
+        <h2 class="section-title">Moments We Love</h2>
+        <p class="subtitle">
+          A glimpse of the love, laughter and celebrations
+          we love to photograph.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900" alt="Wedding gallery 1" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900" alt="Wedding gallery 2" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=900" alt="Wedding gallery 3" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=900" alt="Wedding gallery 4" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900" alt="Wedding gallery 5" onclick="openLightbox(this.src)">
+        <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=900" alt="Wedding gallery 6" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+  </section>
+
+  <!-- WEDDING STORIES -->
+  <section class="section services" id="stories">
+    <div class="container">
+      <div class="center">
+        <div class="eyebrow">Love Stories</div>
+        <h2 class="section-title">Beautiful Wedding Stories</h2>
+        <p class="subtitle">
+          Every couple has a story worth remembering.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=900" alt="Romantic wedding">
+          <h3>A Timeless Celebration</h3>
+          <p>Wedding moments filled with warmth, love and happiness.</p>
+        </article>
+
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900" alt="Wedding ceremony">
+          <h3>Forever Begins Here</h3>
+          <p>A celebration of beautiful promises and new beginnings.</p>
+        </article>
+
+        <article class="story-card">
+          <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=900" alt="Couple photography">
+          <h3>Moments of Togetherness</h3>
+          <p>Beautiful portraits that capture a special connection.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL -->
+  <section class="section testimonials">
+    <div class="container">
+      <div class="eyebrow">Our Philosophy</div>
+      <h2 class="section-title">Stories That Last Forever</h2>
+      <p class="quote">
+        “The most beautiful photographs are the ones
+        that bring back the emotions of a moment.”
+      </p>
+      <p style="margin-top:25px;color:#826b59">
+        — Weddistory
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div class="contact-info">
+        <div class="eyebrow">Get In Touch</div>
+        <h2 class="section-title">Let's Create Something Beautiful</h2>
+        <p>
+          Planning your wedding or a special celebration?
+          Tell us about your event and let's create
+          unforgettable memories together.
+        </p>
+        <p><strong>Location:</strong> Kolkata, West Bengal, India</p>
+        <p><strong>Website:</strong> weddistory.com</p>
+      </div>
+
+      <form class="contact-form" id="bookingForm">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number" required>
+
+        <select name="service" required>
+          <option value="">Select Service</option>
+          <option>Wedding Photography</option>
+          <option>Pre-Wedding Photography</option>
+          <option>Cinematic Wedding Films</option>
+          <option>Family Event Photography</option>
+        </select>
+
+        <input type="date" name="date">
+        <textarea name="message" placeholder="Tell us about your event"></textarea>
+        <button type="submit" class="btn">Send Enquiry</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo">Weddi<span>story.</span></div>
+    <p>Capturing Love • Creating Memories • Telling Stories</p>
+    <p>© <span id="year"></span> Weddistory. All Rights Reserved.</p>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Photo preview" onclick="closeLightbox()">
+    <button class="close-lightbox" aria-label="Close preview">×</button>
+    <img id="lightboxImage" src="" alt="Enlarged gallery photograph" onclick="event.stopPropagation()">
+  </div>
+
+  <script>
+    // Mobile navigation
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      const button = document.querySelector(".menu-toggle");
+      const isOpen = menu.classList.toggle("open");
+      button.setAttribute("aria-expanded", isOpen);
+    }
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("open");
+        document.querySelector(".menu-toggle")
+          .setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Gallery preview
+    function openLightbox(src) {
+      document.getElementById("lightboxImage").src = src;
+      document.getElementById("lightbox").classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") closeLightbox();
+    });
+
+    // Booking form demonstration
+    document.getElementById("bookingForm")
+      .addEventListener("submit", function(event) {
+        event.preventDefault();
+        alert("Demo form only. Connect an email service or backend to receive enquiries.");
+      });
+
+    // Footer year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
