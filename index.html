@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,7 @@
 <meta name="theme-color" content="#fbf8f3">
 
 <title>Subhomoments | Wedding Photography & Cinematic Films</title>
-<meta name="description" content="Subhomoments wedding photography, pre-wedding shoots, special celebrations and cinematic wedding films in Kolkata.">
+<meta name="description" content="Subhomoments offers wedding photography, pre-wedding shoots, rice ceremony photography, special events and cinematic wedding films in Kolkata.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +27,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 85px;
 }
 
 body {
@@ -85,7 +87,7 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--gold);
   color: white;
   font-weight: 600;
-  transition: background .3s,transform .3s;
+  transition: .3s;
 }
 
 .button:hover {
@@ -247,8 +249,10 @@ img { display: block; max-width: 100%; }
   position: absolute;
   inset: 0;
   background: linear-gradient(
-    90deg,rgba(0,0,0,.65),
-    rgba(0,0,0,.38) 42%,rgba(0,0,0,.08)
+    90deg,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.38) 42%,
+    rgba(0,0,0,.08)
   );
 }
 
@@ -397,7 +401,9 @@ img { display: block; max-width: 100%; }
   text-transform: uppercase;
 }
 
-/* SERVICES DOTS */
+.text-link:hover { text-decoration: underline; }
+
+/* SERVICES SLIDER DOTS */
 
 .services-dots {
   display: none;
@@ -420,7 +426,7 @@ img { display: block; max-width: 100%; }
   background: var(--gold);
 }
 
-/* PREMIUM STORIES */
+/* FEATURED STORIES */
 
 .stories-section { background: #f8f4ed; }
 
@@ -437,7 +443,6 @@ img { display: block; max-width: 100%; }
   border-radius: 18px;
   background: #332822;
   box-shadow: 0 25px 60px rgba(55,39,28,.17);
-  isolation: isolate;
 }
 
 .story-feature-image {
@@ -446,34 +451,18 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: opacity .8s ease,transform 3s ease;
-}
-
-.story-feature-image.entering {
-  animation: storyPhotoEnter .8s ease both;
-}
-
-@keyframes storyPhotoEnter {
-  from {
-    opacity: .25;
-    transform: scale(1.07);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
 }
 
 .story-feature::after {
   content: "";
   position: absolute;
   inset: 0;
-  z-index: 1;
   background: linear-gradient(
-    0deg,rgba(0,0,0,.85),
-    rgba(0,0,0,.2) 55%,transparent
+    0deg,
+    rgba(0,0,0,.85),
+    rgba(0,0,0,.2) 55%,
+    transparent
   );
-  pointer-events: none;
 }
 
 .story-feature-content {
@@ -494,48 +483,22 @@ img { display: block; max-width: 100%; }
 
 .story-feature-content p {
   color: rgba(255,255,255,.88);
-  margin: 0 0 20px;
 }
 
-.story-feature-content .eyebrow {
-  color: #eac6a6;
-}
+.story-feature-content .eyebrow { color: #eac6a6; }
 
 .story-open {
   padding: 12px 24px;
   border: 1px solid rgba(255,255,255,.75);
   border-radius: 40px;
   background: rgba(255,255,255,.14);
-  backdrop-filter: blur(10px);
   color: white;
   font-weight: 700;
-  transition: .3s;
 }
 
 .story-open:hover {
   background: white;
-  color: #2b211c;
-}
-
-.story-photo-dots {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 16px;
-}
-
-.story-photo-dot {
-  width: 8px;
-  height: 8px;
-  border: 0;
-  border-radius: 20px;
-  background: rgba(255,255,255,.45);
-  padding: 0;
-}
-
-.story-photo-dot.active {
-  width: 27px;
-  background: #eac6a6;
+  color: var(--ink);
 }
 
 .story-navigation {
@@ -547,8 +510,6 @@ img { display: block; max-width: 100%; }
 }
 
 .story-nav-button {
-  display: grid;
-  place-items: center;
   width: 48px;
   height: 48px;
   background: white;
@@ -556,12 +517,6 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   color: #6d4c37;
   font-size: 27px;
-  transition: .3s;
-}
-
-.story-nav-button:hover {
-  background: var(--gold);
-  color: white;
 }
 
 .story-counter {
@@ -571,7 +526,7 @@ img { display: block; max-width: 100%; }
   font-weight: 700;
 }
 
-/* VERTICAL PHOTO GALLERY */
+/* STORY PHOTO GALLERY */
 
 .story-gallery {
   position: fixed;
@@ -595,22 +550,15 @@ img { display: block; max-width: 100%; }
   margin-bottom: 35px;
 }
 
-.story-gallery-header h2 {
-  color: white;
-  font-size: clamp(28px,4vw,48px);
-}
+.story-gallery-header h2 { color: white; }
 
-.story-gallery-header p {
-  color: #c8b9ae;
-}
+.story-gallery-header p { color: #c8b9ae; }
 
 .story-gallery-close {
   position: fixed;
   top: 18px;
   right: 22px;
   z-index: 1010;
-  display: grid;
-  place-items: center;
   width: 46px;
   height: 46px;
   background: rgba(255,255,255,.14);
@@ -628,7 +576,6 @@ img { display: block; max-width: 100%; }
 
 .vertical-story-photo {
   margin: 0;
-  animation: verticalPhotoEnter .7s ease both;
 }
 
 .vertical-story-photo img {
@@ -649,17 +596,6 @@ img { display: block; max-width: 100%; }
   text-align: center;
 }
 
-@keyframes verticalPhotoEnter {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .story-gallery-bottom {
   display: flex;
   justify-content: center;
@@ -675,7 +611,7 @@ img { display: block; max-width: 100%; }
   border-radius: 30px;
 }
 
-/* FULL SCREEN PHOTO VIEWER */
+/* FULLSCREEN PHOTO VIEWER */
 
 .photo-viewer {
   position: fixed;
@@ -724,7 +660,7 @@ img { display: block; max-width: 100%; }
   color: white;
 }
 
-/* FILMS */
+/* YOUTUBE FILMS */
 
 .youtube-grid {
   display: grid;
@@ -773,6 +709,8 @@ img { display: block; max-width: 100%; }
   color: white;
   font-weight: 700;
 }
+
+.film-mobile-dots { display: none; }
 
 /* CONTACT */
 
@@ -946,7 +884,8 @@ textarea { min-height: 125px; }
 
   .hero-slide::after {
     background: linear-gradient(
-      0deg,rgba(0,0,0,.78),
+      0deg,
+      rgba(0,0,0,.78),
       rgba(0,0,0,.35) 65%,
       rgba(0,0,0,.08)
     );
@@ -971,7 +910,7 @@ textarea { min-height: 125px; }
 
   .split .photo-slot { height: 370px; }
 
-  /* SERVICES - 2 SECONDS */
+  /* MOBILE SERVICE SLIDER */
 
   #servicesGrid {
     display: flex;
@@ -1012,17 +951,13 @@ textarea { min-height: 125px; }
 
   .services-dots { display: flex; }
 
-  /* STORIES */
-
   .story-feature {
     height: 540px;
     border-radius: 14px;
   }
 
   .story-feature-content { padding: 28px 23px; }
-
   .story-feature-content h3 { font-size: 32px; }
-
   .story-feature-content p { font-size: 14px; }
 
   .story-gallery-inner { padding-top: 80px; }
@@ -1044,63 +979,62 @@ textarea { min-height: 125px; }
     height: 35px;
     font-size: 23px;
   }
+
+  /* MOBILE FILM SLIDER */
+
+  #youtubeGrid,
+  #moreYoutubeGrid {
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    border-radius: 12px;
+  }
+
+  #youtubeGrid::-webkit-scrollbar,
+  #moreYoutubeGrid::-webkit-scrollbar {
+    display: none;
+  }
+
+  #youtubeGrid .youtube-video,
+  #moreYoutubeGrid .youtube-video {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: start;
+  }
+
+  .film-mobile-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0 4px;
+  }
+
+  .film-mobile-dots button {
+    width: 9px;
+    height: 9px;
+    padding: 0;
+    border: 0;
+    border-radius: 20px;
+    background: #c9b9a8;
+  }
+
+  .film-mobile-dots button.active {
+    width: 27px;
+    background: var(--gold);
+  }
 }
 
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
-
-  .hero-track,
-  .story-feature-image {
-    transition: none;
-    animation: none;
-  }
-
-  .vertical-story-photo {
-    animation: none;
-  }
-
-  #servicesGrid { scroll-behavior: auto; }
+  .hero-track { transition: none; }
+  #servicesGrid,
+  #youtubeGrid,
+  #moreYoutubeGrid { scroll-behavior: auto; }
 }
-
-/* MOBILE FILMS: ONE VIDEO CARD AT A TIME */
-@media (max-width:600px) {
-  #youtubeGrid, #moreYoutubeGrid {
-    display:flex;
-    gap:0;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    scroll-behavior:smooth;
-    scrollbar-width:none;
-    border-radius:12px;
-  }
-  #youtubeGrid::-webkit-scrollbar,
-  #moreYoutubeGrid::-webkit-scrollbar { display:none; }
-  #youtubeGrid .youtube-video,
-  #moreYoutubeGrid .youtube-video {
-    flex:0 0 100%;
-    min-width:100%;
-    scroll-snap-align:start;
-  }
-  .film-mobile-dots {
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:8px;
-    margin:16px 0 4px;
-  }
-  .film-mobile-dots button {
-    width:9px;height:9px;padding:0;border:0;
-    border-radius:20px;background:#c9b9a8;
-  }
-  .film-mobile-dots button.active {
-    width:27px;background:var(--gold);
-  }
-}
-@media (min-width:601px) { .film-mobile-dots { display:none; } }
-@media (prefers-reduced-motion:reduce) {
-  #youtubeGrid, #moreYoutubeGrid { scroll-behavior:auto; }
-}
-
 </style>
 </head>
 
@@ -1111,135 +1045,171 @@ textarea { min-height: 125px; }
 <header class="header">
 <nav class="nav wrap">
 
-<a href="#home" class="brand">
-  Subho<span>moments</span>
-</a>
+  <a href="#home" class="brand">
+    Subho<span>moments</span>
+  </a>
 
-<button class="menu" id="menuButton"
-  type="button" aria-label="Open navigation"
-  aria-expanded="false">☰</button>
+  <button class="menu" id="menuButton"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false">☰</button>
 
-<div class="links" id="navLinks">
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#services">Services</a>
+  <div class="links" id="navLinks">
 
-  <div class="gallery-dropdown" id="galleryDropdown">
-    <button class="gallery-dropdown-toggle"
-      id="galleryDropdownToggle" type="button"
-      aria-expanded="false">
-      Gallery <span>⌄</span>
-    </button>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
 
-    <div class="gallery-dropdown-menu">
-     
-<!-- WEDDING -->
-<a href="wedding.html">Wedding</a>
+    <!-- SEVEN GALLERY LINKS -->
 
-<!-- PRE-WEDDING -->
-<a href="pre-wedding.html">Pre-Wedding</a>
+    <div class="gallery-dropdown" id="galleryDropdown">
 
-<!-- ANNIVERSARY -->
-<a href="anniversary.html">Anniversary</a>
+      <button class="gallery-dropdown-toggle"
+        id="galleryDropdownToggle"
+        type="button"
+        aria-expanded="false">
+        Gallery <span>⌄</span>
+      </button>
 
-<!-- ENGAGEMENT -->
-<a href="engagement.html">Engagement</a>
+      <div class="gallery-dropdown-menu">
 
-<!-- BIRTHDAY -->
-<a href="birthday.html">Birthday</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="pre-wedding.html">Pre-Wedding</a>
+        <a href="anniversary.html">Anniversary</a>
+        <a href="engagement.html">Engagement</a>
+        <a href="birthday.html">Birthday</a>
+        <a href="baby-shower.html">Baby Shower</a>
+        <a href="rice-ceremony.html">Rice Ceremony</a>
 
-<!-- BABY SHOWER -->
-<a href="baby-shower.html">Baby Shower</a>
-
-<!-- RICE CEREMONY -->
-<a href="rice-ceremony.html">Rice Ceremony</a>
-
+      </div>
     </div>
+
+    <a href="#stories">Stories</a>
+    <a href="#films">Films</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#contact">Contact</a>
+
   </div>
-
-  <a href="#stories">Stories</a>
-  <a href="#films">Films</a>
-  <a href="#testimonials">Testimonials</a>
-  <a href="#contact">Contact</a>
-</div>
-
 </nav>
 </header>
 
 <main>
 
-<!-- HERO -->
+<!-- HERO SLIDER -->
 
 <section id="home" class="hero-slider">
 
-<div class="hero-track" id="heroTrack">
+  <div class="hero-track" id="heroTrack">
 
-  <article class="hero-slide">
-    <div class="hero-image"
-      style="background-image:url('images/hero.jpg')"></div>
+    <!-- SLIDE 1 -->
 
-    <div class="hero-info">
-      <div class="eyebrow">Wedding Photography & Films</div>
-      <h1>Moments That Speak Forever</h1>
-      <p>Timeless frames. Real emotions. Forever memories.</p>
+    <article class="hero-slide">
 
-      <div class="hero-actions">
-        <a href="gallery.html" class="button">Explore Our Work</a>
-        <a href="#contact" class="button outline">Book Your Date</a>
+      <div class="hero-image"
+        style="background-image:url('images/hero.jpg')"></div>
+
+      <div class="hero-info">
+        <div class="eyebrow">Wedding Photography & Films</div>
+
+        <h1>Moments That Speak Forever</h1>
+
+        <p>Timeless frames. Real emotions. Forever memories.</p>
+
+        <div class="hero-actions">
+          <a href="#services" class="button">
+            Explore Our Work
+          </a>
+
+          <a href="#contact" class="button outline">
+            Book Your Date
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
 
-  <article class="hero-slide">
-    <div class="hero-image"
-      style="background-image:url('images/wedding1.jpg')"></div>
+    </article>
 
-    <div class="hero-info">
-      <div class="eyebrow">The Art of Storytelling</div>
-      <h2>Turning Moments Into Masterpieces</h2>
-      <p>Thoughtful wedding photography capturing meaningful details.</p>
+    <!-- SLIDE 2 -->
 
-      <div class="hero-actions">
-        <a href="gallery.html?category=wedding" class="button">Wedding Gallery</a>
-        <a href="#services" class="button outline">Our Services</a>
+    <article class="hero-slide">
+
+      <div class="hero-image"
+        style="background-image:url('images/wedding1.jpg')"></div>
+
+      <div class="hero-info">
+        <div class="eyebrow">The Art of Storytelling</div>
+
+        <h2>Turning Moments Into Masterpieces</h2>
+
+        <p>
+          Thoughtful wedding photography capturing meaningful details.
+        </p>
+
+        <div class="hero-actions">
+          <a href="wedding.html" class="button">
+            Wedding Gallery
+          </a>
+
+          <a href="#services" class="button outline">
+            Our Services
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
 
-  <article class="hero-slide">
-    <div class="hero-image"
-      style="background-image:url('images/DSC_1390.JPG')"></div>
+    </article>
 
-    <div class="hero-info">
-      <div class="eyebrow">Cinematic Stories</div>
-      <h2>Your Story, Beautifully Told</h2>
-      <p>From pre-wedding adventures to forever memories.</p>
+    <!-- SLIDE 3 -->
 
-      <div class="hero-actions">
-        <a href="gallery.html?category=prewedding" class="button">Pre-Wedding Gallery</a>
-        <a href="#films" class="button outline">Watch Films</a>
+    <article class="hero-slide">
+
+      <div class="hero-image"
+        style="background-image:url('images/DSC_1390.JPG')"></div>
+
+      <div class="hero-info">
+        <div class="eyebrow">Cinematic Stories</div>
+
+        <h2>Your Story, Beautifully Told</h2>
+
+        <p>
+          From pre-wedding adventures to forever memories.
+        </p>
+
+        <div class="hero-actions">
+          <a href="pre-wedding.html" class="button">
+            Pre-Wedding Gallery
+          </a>
+
+          <a href="#films" class="button outline">
+            Watch Films
+          </a>
+        </div>
       </div>
-    </div>
-  </article>
 
-</div>
+    </article>
 
-<div class="hero-controls">
-  <button class="hero-arrow" id="heroPrev"
-    type="button" aria-label="Previous slide">‹</button>
-
-  <div class="hero-dots">
-    <button class="hero-dot active" data-slide="0"
-      type="button" aria-label="Slide 1"></button>
-    <button class="hero-dot" data-slide="1"
-      type="button" aria-label="Slide 2"></button>
-    <button class="hero-dot" data-slide="2"
-      type="button" aria-label="Slide 3"></button>
   </div>
 
-  <button class="hero-arrow" id="heroNext"
-    type="button" aria-label="Next slide">›</button>
-</div>
+  <!-- HERO CONTROLS -->
+
+  <div class="hero-controls">
+
+    <button class="hero-arrow" id="heroPrev"
+      type="button" aria-label="Previous slide">‹</button>
+
+    <div class="hero-dots">
+      <button class="hero-dot active" data-slide="0"
+        type="button" aria-label="Slide 1"></button>
+
+      <button class="hero-dot" data-slide="1"
+        type="button" aria-label="Slide 2"></button>
+
+      <button class="hero-dot" data-slide="2"
+        type="button" aria-label="Slide 3"></button>
+    </div>
+
+    <button class="hero-arrow" id="heroNext"
+      type="button" aria-label="Next slide">›</button>
+
+  </div>
 
 </section>
 
@@ -1254,6 +1224,7 @@ textarea { min-height: 125px; }
 
   <div>
     <div class="eyebrow">Our Story</div>
+
     <h2>Capturing Love, Creating Memories</h2>
 
     <p class="copy">
@@ -1263,41 +1234,52 @@ textarea { min-height: 125px; }
 
     <p class="copy">
       From joyful rituals and family celebrations to quiet,
-      heartfelt details, we document your story with an artistic
-      and personal approach.
+      heartfelt details, we document your story with an
+      artistic and personal approach.
     </p>
 
-    <a href="gallery.html" class="button outline">Explore Our Work</a>
+    <a href="#services" class="button outline">
+      Explore Our Work
+    </a>
   </div>
 
 </div>
 </section>
 
-<!-- SERVICES -->
+<!-- PHOTOGRAPHY SERVICES -->
 
 <section id="services" class="section sand">
 <div class="wrap">
 
   <div class="center">
     <div class="eyebrow">What We Offer</div>
+
     <h2>Our Photography Services</h2>
-    <p class="intro">Every celebration deserves a thoughtful story.</p>
+
+    <p class="intro">
+      Every celebration deserves a thoughtful story.
+    </p>
   </div>
 
+  <!-- SIX SERVICE CARDS CREATED BY JAVASCRIPT -->
+
   <div class="cards" id="servicesGrid"></div>
+
   <div class="services-dots" id="servicesDots"></div>
 
 </div>
 </section>
 
-<!-- STORIES -->
+<!-- FEATURED STORIES -->
 
 <section id="stories" class="section stories-section">
 <div class="wrap">
 
   <div class="center">
     <div class="eyebrow">Featured Stories</div>
+
     <h2>Beautiful Stories, Beautiful Memories</h2>
+
     <p class="intro">
       Five photographs, one unforgettable story.
       Watch the moments unfold.
@@ -1305,6 +1287,7 @@ textarea { min-height: 125px; }
   </div>
 
   <div class="stories-stage">
+
     <article class="story-feature" id="storyFeature">
 
       <img id="storyCover"
@@ -1313,9 +1296,14 @@ textarea { min-height: 125px; }
         alt="Featured story photograph">
 
       <div class="story-feature-content">
-        <div class="eyebrow" id="storyType">Wedding Story</div>
 
-        <h3 id="storyTitle">A Timeless Celebration</h3>
+        <div class="eyebrow" id="storyType">
+          Wedding Story
+        </div>
+
+        <h3 id="storyTitle">
+          A Timeless Celebration
+        </h3>
 
         <p id="storyDescription">
           A beautiful celebration of love and unforgettable moments.
@@ -1325,21 +1313,24 @@ textarea { min-height: 125px; }
           Explore Photography ↗
         </button>
 
-        <div class="story-photo-dots" id="storyPhotoDots"
-          aria-label="Photograph indicators"></div>
       </div>
 
     </article>
 
     <div class="story-navigation">
+
       <button class="story-nav-button" id="storyPrev"
         type="button" aria-label="Previous story">‹</button>
 
-      <span class="story-counter" id="storyCounter">01 / 03</span>
+      <span class="story-counter" id="storyCounter">
+        01 / 03
+      </span>
 
       <button class="story-nav-button" id="storyNext"
         type="button" aria-label="Next story">›</button>
+
     </div>
+
   </div>
 
 </div>
@@ -1348,18 +1339,25 @@ textarea { min-height: 125px; }
 <!-- VERTICAL STORY GALLERY -->
 
 <div id="storyGallery" class="story-gallery"
-  role="dialog" aria-modal="true"
-  aria-labelledby="galleryStoryTitle" hidden>
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="galleryStoryTitle"
+  hidden>
 
   <button id="closeStoryGallery"
-    class="story-gallery-close" type="button"
+    class="story-gallery-close"
+    type="button"
     aria-label="Close story gallery">×</button>
 
   <div class="story-gallery-inner">
 
     <div class="story-gallery-header">
       <div class="eyebrow">The Complete Story</div>
-      <h2 id="galleryStoryTitle">A Timeless Celebration</h2>
+
+      <h2 id="galleryStoryTitle">
+        A Timeless Celebration
+      </h2>
+
       <p>Five photographs from one beautiful story.</p>
     </div>
 
@@ -1367,6 +1365,7 @@ textarea { min-height: 125px; }
       class="vertical-story-photos"></div>
 
     <div class="story-gallery-bottom">
+
       <button id="galleryPrevStory" type="button">
         ← Previous Story
       </button>
@@ -1374,6 +1373,7 @@ textarea { min-height: 125px; }
       <button id="galleryNextStory" type="button">
         Next Story →
       </button>
+
     </div>
 
   </div>
@@ -1382,49 +1382,65 @@ textarea { min-height: 125px; }
 <!-- FULLSCREEN PHOTO VIEWER -->
 
 <div id="photoViewer" class="photo-viewer"
-  role="dialog" aria-modal="true"
-  aria-label="Full screen story photograph" hidden>
+  role="dialog"
+  aria-modal="true"
+  aria-label="Full screen story photograph"
+  hidden>
 
   <button class="photo-viewer-close"
-    id="closePhotoViewer" type="button"
+    id="closePhotoViewer"
+    type="button"
     aria-label="Close photo viewer">×</button>
 
   <button class="photo-viewer-arrow"
-    id="photoPrev" type="button"
+    id="photoPrev"
+    type="button"
     aria-label="Previous photograph">‹</button>
 
   <img id="photoViewerImage" alt="Story photograph">
 
   <button class="photo-viewer-arrow"
-    id="photoNext" type="button"
+    id="photoNext"
+    type="button"
     aria-label="Next photograph">›</button>
 
   <div class="photo-viewer-counter"
     id="photoViewerCounter"></div>
+
 </div>
 
-<!-- FILMS -->
+<!-- CINEMATIC FILMS -->
 
 <section id="films" class="section">
 <div class="wrap">
 
   <div class="center">
     <div class="eyebrow">Cinematic Wedding Films</div>
+
     <h2>Our Wedding Films</h2>
-    <p class="intro">Watch our wedding and pre-wedding films.</p>
+
+    <p class="intro">
+      Watch our wedding and pre-wedding films.
+    </p>
   </div>
 
   <div class="youtube-grid" id="youtubeGrid"></div>
-  <div class="film-mobile-dots" id="filmDots" aria-label="Featured film navigation"></div>
+
+  <div class="film-mobile-dots" id="filmDots"></div>
 
   <div class="films-drawer" id="filmsDrawer" hidden>
+
     <div class="youtube-grid" id="moreYoutubeGrid"></div>
-    <div class="film-mobile-dots" id="moreFilmDots" aria-label="Additional film navigation"></div>
+
+    <div class="film-mobile-dots" id="moreFilmDots"></div>
+
   </div>
 
   <div class="films-actions">
-    <button class="films-toggle" id="filmsToggle"
-      type="button" aria-expanded="false">
+    <button class="films-toggle"
+      id="filmsToggle"
+      type="button"
+      aria-expanded="false">
       View All 9 Films ↓
     </button>
   </div>
@@ -1438,6 +1454,7 @@ textarea { min-height: 125px; }
 <div class="wrap">
 
   <div class="eyebrow">Kind Words</div>
+
   <h2>What Our Clients Say</h2>
 
   <p class="quote">
@@ -1455,7 +1472,9 @@ textarea { min-height: 125px; }
 <div class="wrap contact">
 
   <div>
+
     <div class="eyebrow">Get in Touch</div>
+
     <h2>Let's Make Something Beautiful</h2>
 
     <p>
@@ -1486,7 +1505,10 @@ textarea { min-height: 125px; }
       class="button call-now">
       ☎ Call Now
     </a>
+
   </div>
+
+  <!-- WHATSAPP CONTACT FORM -->
 
   <form id="contactForm" class="contact-form">
 
@@ -1500,6 +1522,7 @@ textarea { min-height: 125px; }
       placeholder="Phone number" required>
 
     <select name="service" required>
+
       <option value="">Select a service</option>
       <option>Wedding Photography</option>
       <option>Pre-Wedding Shoot</option>
@@ -1509,6 +1532,7 @@ textarea { min-height: 125px; }
       <option>Baby Shower</option>
       <option>Rice Ceremony</option>
       <option>Cinematic Wedding Film</option>
+
     </select>
 
     <input name="date" type="date" aria-label="Event date">
@@ -1541,48 +1565,72 @@ textarea { min-height: 125px; }
     Subho<span>moments</span>
   </a>
 
-  <p>Capturing Love • Creating Memories • Telling Stories</p>
+  <p>
+    Capturing Love • Creating Memories • Telling Stories
+  </p>
 
   <div class="footer-links">
+
     <a href="#about">About</a>
     <a href="#services">Services</a>
-    <a href="gallery.html">Gallery</a>
+    <a href="#services">Gallery</a>
     <a href="#stories">Stories</a>
     <a href="#films">Films</a>
     <a href="#contact">Contact</a>
+
   </div>
 
-  <!-- SOCIAL ICONS ONLY ONCE -->
+  <!-- SOCIAL MEDIA -->
 
   <div class="footer-social">
 
+    <!-- INSTAGRAM -->
+
     <a href="https://www.instagram.com/subho_moments"
-      target="_blank" rel="noopener noreferrer"
-      aria-label="Instagram" title="Instagram">
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Instagram"
+      title="Instagram">
+
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
       </svg>
     </a>
 
+    <!-- FACEBOOK -->
+
     <a href="https://www.facebook.com/share/1WsDJfL9ud/"
-      target="_blank" rel="noopener noreferrer"
-      aria-label="Facebook" title="Facebook">
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Facebook"
+      title="Facebook">
+
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
       </svg>
     </a>
 
+    <!-- YOUTUBE -->
+
     <a href="https://youtube.com/@subhomoments"
-      target="_blank" rel="noopener noreferrer"
-      aria-label="YouTube" title="YouTube">
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="YouTube"
+      title="YouTube">
+
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
       </svg>
     </a>
 
+    <!-- PINTEREST -->
+
     <a href="https://pin.it/2iv6SCFsO"
-      target="_blank" rel="noopener noreferrer"
-      aria-label="Pinterest" title="Pinterest">
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Pinterest"
+      title="Pinterest">
+
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.63 11.17-.1-.95-.19-2.4.04-3.43.22-.93 1.41-5.98 1.41-5.98s-.36-.72-.36-1.79c0-1.67.97-2.92 2.17-2.92 1.02 0 1.51.77 1.51 1.69 0 1.03-.66 2.58-1 4.01-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.89-5.02-4.89-3.45 0-5.48 2.59-5.48 5.27 0 1.04.4 2.15.9 2.75.1.12.11.22.08.35l-.34 1.39c-.05.22-.18.27-.41.16-1.52-.71-2.47-2.94-2.47-4.73 0-3.85 2.8-7.38 8.08-7.38 4.24 0 7.54 3.02 7.54 7.06 0 4.21-2.66 7.59-6.35 7.59-1.24 0-2.41-.65-2.81-1.42l-.76 2.9c-.27 1.05-1.02 2.37-1.52 3.27.99.31 2.04.48 3.13.48 6.63 0 12-5.37 12-12S18.63 0 12 0z"/>
       </svg>
@@ -1599,54 +1647,60 @@ textarea { min-height: 125px; }
 </footer>
 
 <script>
+
+/* COPYRIGHT YEAR */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
 /* PHOTO SETTINGS */
 
 const photos = {
   about: "images/about.jpg"
 };
 
-/* SERVICES */
+/* SERVICES - FINAL DIRECT LINKS */
 
 const services = [
   [
     "Wedding Photography",
     "Capturing timeless traditions and candid moments.",
     "images/wedding1.jpg",
-    "wedding"
+    "wedding.html"
   ],
   [
     "Pre-Wedding Shoots",
     "Beautiful portraits celebrating your journey together.",
     "images/prewedding1.jpg",
-    "prewedding"
+    "pre-wedding.html"
   ],
   [
     "Rice Ceremony",
     "Preserving your child's special day.",
     "images/rice1.jpg",
-    "riceceremony"
+    "rice-ceremony.html"
   ],
   [
     "Candid Photography",
     "Unscripted smiles and meaningful moments.",
     "images/candid1.jpg",
-    "wedding"
+    "wedding.html"
   ],
   [
     "Cinematic Wedding Films",
     "Emotional films of your celebration.",
     "images/film1.jpg",
-    "wedding"
+    "#films"
   ],
   [
     "Special Events",
     "Engagements, birthdays and family celebrations.",
     "images/event1.jpg",
-    "birthday"
+    "birthday.html"
   ]
 ];
 
-/* STORIES - 5 PHOTOS EACH */
+/* FEATURED STORIES */
 
 const stories = [
   {
@@ -1687,7 +1741,7 @@ const stories = [
   }
 ];
 
-/* YOUTUBE FILMS */
+/* YOUTUBE FILMS - REPLACE VIDEO IDS */
 
 const weddingFilms = [
   {id:"VIDEO_ID_1",title:"Beautiful Wedding Film"},
@@ -1703,7 +1757,7 @@ const weddingFilms = [
 
 /* PHOTO LOADER */
 
-function addPhoto(el,src,alt) {
+function addPhoto(el, src, alt) {
   if (!src) return;
 
   const img = document.createElement("img");
@@ -1721,22 +1775,24 @@ function addPhoto(el,src,alt) {
 }
 
 document.querySelectorAll("[data-photo]").forEach(el => {
-  addPhoto(el,photos[el.dataset.photo],el.dataset.placeholder);
+  addPhoto(el, photos[el.dataset.photo], el.dataset.placeholder);
 });
 
-/* SERVICE CARDS */
+/* RENDER SERVICE CARDS */
 
-function renderCards(items,target) {
+function renderCards(items, target) {
   const grid = document.getElementById(target);
 
-  items.forEach(([title,description,src,category]) => {
+  items.forEach(([title, description, src, page]) => {
+
     const card = document.createElement("article");
     card.className = "card";
 
     const photo = document.createElement("div");
     photo.className = "photo-slot";
     photo.dataset.placeholder = title.toUpperCase();
-    addPhoto(photo,src,title);
+
+    addPhoto(photo, src, title);
 
     const content = document.createElement("div");
     content.className = "card-content";
@@ -1749,36 +1805,39 @@ function renderCards(items,target) {
 
     const link = document.createElement("a");
     link.className = "text-link";
-    link.href = "gallery.html?category=" + category;
+
+    /* EACH BUTTON OPENS ITS CORRECT PAGE */
+    link.href = page;
+
     link.textContent = "View Gallery →";
 
-    content.append(h,p,link);
-    card.append(photo,content);
+    content.append(h, p, link);
+    card.append(photo, content);
     grid.append(card);
   });
 }
 
-renderCards(services,"servicesGrid");
+renderCards(services, "servicesGrid");
 
-/* SERVICES SLIDER - EVERY 2 SECONDS */
+/* MOBILE SERVICES AUTO SLIDER - 2 SECONDS */
 
-(function () {
+(function() {
   const slider = document.getElementById("servicesGrid");
   const dotsContainer = document.getElementById("servicesDots");
   const cards = [...slider.querySelectorAll(".card")];
-  const mobile = matchMedia("(max-width: 600px)");
-  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  const mobile = matchMedia("(max-width:600px)");
+  const reduceMotion = matchMedia("(prefers-reduced-motion:reduce)");
 
   let current = 0;
   let timer = null;
 
-  cards.forEach((card,index) => {
+  cards.forEach((card, index) => {
     const dot = document.createElement("button");
     dot.type = "button";
     dot.className = "services-dot";
-    dot.setAttribute("aria-label","Show service " + (index + 1));
+    dot.setAttribute("aria-label", "Show service " + (index + 1));
 
-    dot.addEventListener("click",() => {
+    dot.addEventListener("click", () => {
       goTo(index);
       start();
     });
@@ -1789,8 +1848,8 @@ renderCards(services,"servicesGrid");
   const dots = [...dotsContainer.children];
 
   function updateDots() {
-    dots.forEach((dot,index) => {
-      dot.classList.toggle("active",index === current);
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === current);
     });
   }
 
@@ -1822,613 +1881,431 @@ renderCards(services,"servicesGrid");
 
     timer = setInterval(() => {
       goTo(current + 1);
-    },2000);
+    }, 2000);
   }
 
-  function reset() {
-    stop();
-
-    if (!mobile.matches) {
-      current = 0;
-      slider.scrollLeft = 0;
-    } else {
-      goTo(current);
-    }
-
-    start();
-  }
-
-  slider.addEventListener("scroll",() => {
+  slider.addEventListener("scroll", () => {
     if (!mobile.matches) return;
 
     current = Math.max(
       0,
       Math.min(
-        Math.round(slider.scrollLeft / Math.max(slider.clientWidth,1)),
+        Math.round(slider.scrollLeft / Math.max(slider.clientWidth, 1)),
         cards.length - 1
       )
     );
 
     updateDots();
-  },{passive:true});
+  }, {passive:true});
 
-  slider.addEventListener("touchstart",stop,{passive:true});
-  slider.addEventListener("touchend",start,{passive:true});
-  slider.addEventListener("focusin",stop);
-  slider.addEventListener("focusout",start);
+  slider.addEventListener("mouseenter", stop);
+  slider.addEventListener("mouseleave", start);
+  slider.addEventListener("touchstart", stop, {passive:true});
+  slider.addEventListener("touchend", start, {passive:true});
 
-  mobile.addEventListener("change",reset);
-  reduceMotion.addEventListener("change",reset);
-
-  document.addEventListener("visibilitychange",() => {
-    if (document.hidden) stop();
-    else start();
-  });
+  document.addEventListener("visibilitychange", start);
+  window.addEventListener("resize", start);
 
   updateDots();
-  reset();
+  start();
 })();
 
-/* STORIES AUTO PHOTO SLIDER - EVERY 3 SECONDS */
+/* HERO SLIDER */
 
-let currentStory = 0;
-let currentPhoto = 0;
-let storyTimer = null;
-let lastStoryFocus = null;
-let lastGalleryFocus = null;
+(function() {
+  const track = document.getElementById("heroTrack");
+  const slides = [...track.children];
+  const dots = [...document.querySelectorAll(".hero-dot")];
 
-const storyCover = document.getElementById("storyCover");
-const storyGallery = document.getElementById("storyGallery");
-const verticalStoryPhotos = document.getElementById("verticalStoryPhotos");
-const photoViewer = document.getElementById("photoViewer");
-const photoViewerImage = document.getElementById("photoViewerImage");
-const storyPhotoDots = document.getElementById("storyPhotoDots");
+  let current = 0;
+  let timer;
 
-const reduceStoryMotion = matchMedia(
-  "(prefers-reduced-motion: reduce)"
-);
+  function show(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
 
-function updateStoryDots() {
-  storyPhotoDots.innerHTML = "";
-
-  stories[currentStory].photos.forEach((src,index) => {
-    const dot = document.createElement("button");
-    dot.type = "button";
-    dot.className = "story-photo-dot";
-
-    dot.setAttribute(
-      "aria-label",
-      "Show photograph " + (index + 1)
-    );
-
-    dot.classList.toggle("active",index === currentPhoto);
-
-    dot.onclick = () => {
-      showStoryPhoto(index);
-      startStoryTimer();
-    };
-
-    storyPhotoDots.append(dot);
-  });
-}
-
-function showStoryPhoto(index) {
-  const story = stories[currentStory];
-
-  currentPhoto =
-    (index + story.photos.length) % story.photos.length;
-
-  storyCover.src = story.photos[currentPhoto];
-  storyCover.alt =
-    story.title + " photograph " + (currentPhoto + 1);
-
-  if (!reduceStoryMotion.matches) {
-    storyCover.classList.remove("entering");
-    void storyCover.offsetWidth;
-    storyCover.classList.add("entering");
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === current);
+    });
   }
 
-  updateStoryDots();
-}
+  function start() {
+    clearInterval(timer);
+
+    if (document.hidden) return;
+
+    timer = setInterval(() => {
+      show(current + 1);
+    }, 5000);
+  }
+
+  document.getElementById("heroPrev").addEventListener("click", () => {
+    show(current - 1);
+    start();
+  });
+
+  document.getElementById("heroNext").addEventListener("click", () => {
+    show(current + 1);
+    start();
+  });
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      show(index);
+      start();
+    });
+  });
+
+  document.addEventListener("visibilitychange", start);
+
+  show(0);
+  start();
+})();
+
+/* MOBILE MENU AND GALLERY DROPDOWN */
+
+const menuButton = document.getElementById("menuButton");
+const navLinks = document.getElementById("navLinks");
+const galleryDropdown = document.getElementById("galleryDropdown");
+const galleryDropdownToggle =
+  document.getElementById("galleryDropdownToggle");
+
+menuButton.addEventListener("click", () => {
+  const opening = !navLinks.classList.contains("open");
+
+  navLinks.classList.toggle("open", opening);
+  menuButton.setAttribute("aria-expanded", String(opening));
+});
+
+galleryDropdownToggle.addEventListener("click", () => {
+  const opening = !galleryDropdown.classList.contains("open");
+
+  galleryDropdown.classList.toggle("open", opening);
+  galleryDropdownToggle.setAttribute("aria-expanded", String(opening));
+});
+
+document.addEventListener("click", event => {
+  if (!galleryDropdown.contains(event.target)) {
+    galleryDropdown.classList.remove("open");
+    galleryDropdownToggle.setAttribute("aria-expanded", "false");
+  }
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuButton.setAttribute("aria-expanded", "false");
+  });
+});
+
+/* FEATURED STORIES */
+
+let storyIndex = 0;
+let storyPhotoIndex = 0;
+
+const storyCover = document.getElementById("storyCover");
+const storyType = document.getElementById("storyType");
+const storyTitle = document.getElementById("storyTitle");
+const storyDescription = document.getElementById("storyDescription");
+const storyCounter = document.getElementById("storyCounter");
 
 function showStory(index) {
-  currentStory = (index + stories.length) % stories.length;
-  currentPhoto = 0;
+  storyIndex = (index + stories.length) % stories.length;
 
-  const story = stories[currentStory];
+  const story = stories[storyIndex];
 
-  document.getElementById("storyType").textContent =
-    story.type;
+  storyCover.src = story.photos[0];
+  storyType.textContent = story.type;
+  storyTitle.textContent = story.title;
+  storyDescription.textContent = story.description;
 
-  document.getElementById("storyTitle").textContent =
-    story.title;
-
-  document.getElementById("storyDescription").textContent =
-    story.description;
-
-  document.getElementById("storyCounter").textContent =
-    String(currentStory + 1).padStart(2,"0") +
+  storyCounter.textContent =
+    String(storyIndex + 1).padStart(2, "0") +
     " / " +
-    String(stories.length).padStart(2,"0");
-
-  showStoryPhoto(0);
-  startStoryTimer();
+    String(stories.length).padStart(2, "0");
 }
 
-function stopStoryTimer() {
-  clearInterval(storyTimer);
-  storyTimer = null;
-}
+document.getElementById("storyPrev").addEventListener("click", () => {
+  showStory(storyIndex - 1);
+});
 
-function startStoryTimer() {
-  stopStoryTimer();
+document.getElementById("storyNext").addEventListener("click", () => {
+  showStory(storyIndex + 1);
+});
 
-  if (
-    document.hidden ||
-    reduceStoryMotion.matches ||
-    !storyGallery.hidden ||
-    !photoViewer.hidden
-  ) return;
+const storyGallery = document.getElementById("storyGallery");
+const verticalStoryPhotos =
+  document.getElementById("verticalStoryPhotos");
 
-  storyTimer = setInterval(() => {
-    showStoryPhoto(currentPhoto + 1);
-  },3000);
-}
-
-document.getElementById("storyPrev").onclick = () => {
-  showStory(currentStory - 1);
-};
-
-document.getElementById("storyNext").onclick = () => {
-  showStory(currentStory + 1);
-};
-
-/* VERTICAL GALLERY */
-
-function renderVerticalGallery() {
-  const story = stories[currentStory];
+function openStoryGallery() {
+  const story = stories[storyIndex];
 
   document.getElementById("galleryStoryTitle").textContent =
     story.title;
 
   verticalStoryPhotos.innerHTML = "";
 
-  story.photos.forEach((src,index) => {
+  story.photos.forEach((src, index) => {
     const figure = document.createElement("figure");
     figure.className = "vertical-story-photo";
-    figure.style.animationDelay = (index * .08) + "s";
 
     const img = document.createElement("img");
     img.src = src;
-    img.alt = story.title + " photograph " + (index + 1);
-    img.loading = index === 0 ? "eager" : "lazy";
-    img.tabIndex = 0;
-    img.setAttribute("role","button");
+    img.alt = story.title + " - Photograph " + (index + 1);
+    img.loading = "lazy";
 
-    img.setAttribute(
-      "aria-label",
-      "Open photograph " + (index + 1) + " full screen"
-    );
-
-    img.onclick = () => openPhotoViewer(index);
-
-    img.addEventListener("keydown",e => {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        openPhotoViewer(index);
-      }
+    img.addEventListener("click", () => {
+      openPhotoViewer(index);
     });
 
     const caption = document.createElement("figcaption");
-    caption.textContent =
-      "Photograph " + String(index + 1).padStart(2,"0") +
-      " / " + String(story.photos.length).padStart(2,"0");
+    caption.textContent = "Photograph " + (index + 1);
 
-    figure.append(img,caption);
+    figure.append(img, caption);
     verticalStoryPhotos.append(figure);
   });
-}
-
-function openStoryGallery() {
-  lastStoryFocus = document.activeElement;
-
-  stopStoryTimer();
-  renderVerticalGallery();
 
   storyGallery.hidden = false;
-  storyGallery.scrollTop = 0;
   document.body.classList.add("modal-open");
-
+  storyGallery.scrollTop = 0;
   document.getElementById("closeStoryGallery").focus();
 }
-
-document.getElementById("openStory").onclick =
-  openStoryGallery;
 
 function closeStoryGallery() {
   storyGallery.hidden = true;
   document.body.classList.remove("modal-open");
+  document.getElementById("openStory").focus();
+}
 
-  startStoryTimer();
+document.getElementById("openStory").addEventListener(
+  "click",
+  openStoryGallery
+);
 
-  if (lastStoryFocus && lastStoryFocus.focus) {
-    lastStoryFocus.focus();
+document.getElementById("closeStoryGallery").addEventListener(
+  "click",
+  closeStoryGallery
+);
+
+document.getElementById("galleryPrevStory").addEventListener(
+  "click",
+  () => {
+    showStory(storyIndex - 1);
+    openStoryGallery();
   }
-}
+);
 
-document.getElementById("closeStoryGallery").onclick =
-  closeStoryGallery;
+document.getElementById("galleryNextStory").addEventListener(
+  "click",
+  () => {
+    showStory(storyIndex + 1);
+    openStoryGallery();
+  }
+);
 
-function switchGalleryStory(direction) {
-  currentStory =
-    (currentStory + direction + stories.length) % stories.length;
+/* FULLSCREEN STORY PHOTO VIEWER */
 
-  currentPhoto = 0;
+const photoViewer = document.getElementById("photoViewer");
+const photoViewerImage =
+  document.getElementById("photoViewerImage");
 
-  const story = stories[currentStory];
+function showPhoto(index) {
+  const photos = stories[storyIndex].photos;
 
-  document.getElementById("storyType").textContent = story.type;
-  document.getElementById("storyTitle").textContent = story.title;
-  document.getElementById("storyDescription").textContent =
-    story.description;
+  storyPhotoIndex = (index + photos.length) % photos.length;
 
-  document.getElementById("storyCounter").textContent =
-    String(currentStory + 1).padStart(2,"0") +
-    " / " +
-    String(stories.length).padStart(2,"0");
-
-  showStoryPhoto(0);
-  renderVerticalGallery();
-
-  storyGallery.scrollTo({top:0,behavior:"smooth"});
-}
-
-document.getElementById("galleryPrevStory").onclick = () => {
-  switchGalleryStory(-1);
-};
-
-document.getElementById("galleryNextStory").onclick = () => {
-  switchGalleryStory(1);
-};
-
-/* FULL SCREEN PHOTO VIEWER */
-
-function openPhotoViewer(index) {
-  currentPhoto = index;
-  lastGalleryFocus = document.activeElement;
-
-  photoViewer.hidden = false;
-  showFullPhoto();
-
-  document.getElementById("closePhotoViewer").focus();
-}
-
-function showFullPhoto() {
-  const story = stories[currentStory];
-
-  photoViewerImage.src = story.photos[currentPhoto];
+  photoViewerImage.src = photos[storyPhotoIndex];
   photoViewerImage.alt =
-    story.title + " photograph " + (currentPhoto + 1);
+    stories[storyIndex].title +
+    " - Photograph " +
+    (storyPhotoIndex + 1);
 
   document.getElementById("photoViewerCounter").textContent =
-    (currentPhoto + 1) + " / " + story.photos.length;
+    (storyPhotoIndex + 1) + " / " + photos.length;
 }
 
-function changeFullPhoto(direction) {
-  const total = stories[currentStory].photos.length;
-
-  currentPhoto =
-    (currentPhoto + direction + total) % total;
-
-  showFullPhoto();
+function openPhotoViewer(index) {
+  showPhoto(index);
+  photoViewer.hidden = false;
+  document.getElementById("closePhotoViewer").focus();
 }
 
 function closePhotoViewer() {
   photoViewer.hidden = true;
-
-  if (lastGalleryFocus && lastGalleryFocus.focus) {
-    lastGalleryFocus.focus();
-  }
+  photoViewerImage.removeAttribute("src");
 }
 
-document.getElementById("closePhotoViewer").onclick =
-  closePhotoViewer;
+document.getElementById("closePhotoViewer").addEventListener(
+  "click",
+  closePhotoViewer
+);
 
-document.getElementById("photoPrev").onclick = () => {
-  changeFullPhoto(-1);
-};
+document.getElementById("photoPrev").addEventListener(
+  "click",
+  () => showPhoto(storyPhotoIndex - 1)
+);
 
-document.getElementById("photoNext").onclick = () => {
-  changeFullPhoto(1);
-};
+document.getElementById("photoNext").addEventListener(
+  "click",
+  () => showPhoto(storyPhotoIndex + 1)
+);
 
-document.addEventListener("keydown",e => {
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") {
+    if (!photoViewer.hidden) {
+      closePhotoViewer();
+    } else if (!storyGallery.hidden) {
+      closeStoryGallery();
+    }
+  }
+
   if (!photoViewer.hidden) {
-    if (e.key === "Escape") closePhotoViewer();
-    if (e.key === "ArrowRight") changeFullPhoto(1);
-    if (e.key === "ArrowLeft") changeFullPhoto(-1);
-    return;
-  }
+    if (event.key === "ArrowLeft") {
+      showPhoto(storyPhotoIndex - 1);
+    }
 
-  if (!storyGallery.hidden && e.key === "Escape") {
-    closeStoryGallery();
+    if (event.key === "ArrowRight") {
+      showPhoto(storyPhotoIndex + 1);
+    }
   }
 });
-
-document.addEventListener("visibilitychange",() => {
-  if (document.hidden) stopStoryTimer();
-  else startStoryTimer();
-});
-
-reduceStoryMotion.addEventListener("change",startStoryTimer);
 
 showStory(0);
 
 /* YOUTUBE FILMS */
 
-function filmCard(film,index) {
+function createFilmCard(film) {
   const card = document.createElement("article");
   card.className = "youtube-video";
 
   const player = document.createElement("div");
   player.className = "youtube-player";
 
-  const valid =
-    /^[A-Za-z0-9_-]{11}$/.test(film.id) &&
-    !film.id.startsWith("VIDEO_ID");
+  if (film.id.startsWith("VIDEO_ID_")) {
+    player.textContent = "YouTube Video";
+  } else {
+    const iframe = document.createElement("iframe");
 
-  if (valid) {
-    const frame = document.createElement("iframe");
-
-    frame.src =
-      "https://www.youtube-nocookie.com/embed/" +
+    iframe.src =
+      "https://www.youtube.com/embed/" +
       encodeURIComponent(film.id);
 
-    frame.title = film.title;
-    frame.loading = "lazy";
+    iframe.title = film.title;
+    iframe.loading = "lazy";
+    iframe.allowFullscreen = true;
 
-    frame.allow =
-      "accelerometer; autoplay; clipboard-write; " +
-      "encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.setAttribute(
+      "allow",
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    );
 
-    frame.allowFullscreen = true;
-    player.append(frame);
-  } else {
-    player.textContent = "▶ Add YouTube Video " + (index + 1);
+    player.append(iframe);
   }
 
-  const h = document.createElement("h3");
-  h.textContent = film.title;
+  const heading = document.createElement("h3");
+  heading.textContent = film.title;
 
-  card.append(player,h);
+  card.append(player, heading);
   return card;
 }
 
-weddingFilms.forEach((film,index) => {
-  const target =
-    index < 3 ? "youtubeGrid" : "moreYoutubeGrid";
+const youtubeGrid = document.getElementById("youtubeGrid");
+const moreYoutubeGrid = document.getElementById("moreYoutubeGrid");
 
-  document.getElementById(target)
-    .append(filmCard(film,index));
+weddingFilms.slice(0, 3).forEach(film => {
+  youtubeGrid.append(createFilmCard(film));
 });
 
-const drawer = document.getElementById("filmsDrawer");
+weddingFilms.slice(3).forEach(film => {
+  moreYoutubeGrid.append(createFilmCard(film));
+});
+
+const filmsDrawer = document.getElementById("filmsDrawer");
 const filmsToggle = document.getElementById("filmsToggle");
 
-filmsToggle.onclick = () => {
-  const opening = drawer.hidden;
-  drawer.hidden = !opening;
+filmsToggle.addEventListener("click", () => {
+  const opening = filmsDrawer.hidden;
 
-  filmsToggle.setAttribute("aria-expanded",String(opening));
-  filmsToggle.textContent =
-    opening ? "Show Less ↑" : "View All 9 Films ↓";
+  filmsDrawer.hidden = !opening;
 
-  if (!opening) {
-    drawer.querySelectorAll("iframe").forEach(frame => {
-      frame.src = frame.src;
-    });
-  }
-};
+  filmsToggle.textContent = opening
+    ? "Show Fewer Films ↑"
+    : "View All 9 Films ↓";
 
-
-/* MOBILE FILMS CAROUSEL: 4 SECONDS, ONE CARD VISIBLE */
-(function () {
-  const mobile = matchMedia("(max-width:600px)");
-  const reduced = matchMedia("(prefers-reduced-motion:reduce)");
-  const sliders = [
-    {grid:document.getElementById("youtubeGrid"),dots:document.getElementById("filmDots")},
-    {grid:document.getElementById("moreYoutubeGrid"),dots:document.getElementById("moreFilmDots")}
-  ];
-  sliders.forEach(({grid,dots}) => {
-    const cards = [...grid.querySelectorAll(".youtube-video")];
-    let current=0,timer=null,interacting=false;
-    const indicators=cards.map((_,index)=>{
-      const dot=document.createElement("button");
-      dot.type="button";
-      dot.setAttribute("aria-label","Show film "+(index+1));
-      dot.addEventListener("click",()=>{go(index);start()});
-      dots.append(dot);
-      return dot;
-    });
-    function update(){indicators.forEach((dot,i)=>dot.classList.toggle("active",i===current));}
-    function go(index){
-      current=(index+cards.length)%cards.length;
-      grid.scrollTo({left:current*grid.clientWidth,behavior:reduced.matches?"instant":"smooth"});
-      update();
-    }
-    function stop(){clearInterval(timer);timer=null;}
-    function start(){
-      stop();
-      if (!mobile.matches||reduced.matches||document.hidden||interacting||cards.length<2||grid.closest("[hidden]")) return;
-      timer=setInterval(()=>go(current+1),4000);
-    }
-    grid.addEventListener("scroll",()=>{
-      if(!mobile.matches)return;
-      current=Math.min(cards.length-1,Math.max(0,Math.round(grid.scrollLeft/Math.max(1,grid.clientWidth))));
-      update();
-    },{passive:true});
-    grid.addEventListener("touchstart",()=>{interacting=true;stop()},{passive:true});
-    grid.addEventListener("touchend",()=>{interacting=false;start()},{passive:true});
-    grid.addEventListener("focusin",()=>{interacting=true;stop()});
-    grid.addEventListener("focusout",()=>{interacting=false;start()});
-    grid.addEventListener("pointerenter",stop);
-    grid.addEventListener("pointerleave",start);
-    mobile.addEventListener("change",()=>{if(!mobile.matches){current=0;grid.scrollLeft=0;}start()});
-    reduced.addEventListener("change",start);
-    document.addEventListener("visibilitychange",start);
-    if(grid.id==="moreYoutubeGrid") {
-      document.getElementById("filmsToggle").addEventListener("click",()=>setTimeout(()=>{if(!grid.closest("[hidden]"))go(0);start()},0));
-    }
-    update();start();
-  });
-})();
-
-/* MOBILE NAVIGATION */
-
-const menu = document.getElementById("menuButton");
-const nav = document.getElementById("navLinks");
-
-menu.onclick = () => {
-  const open = nav.classList.toggle("open");
-  menu.setAttribute("aria-expanded",String(open));
-};
-
-nav.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click",() => {
-    nav.classList.remove("open");
-    menu.setAttribute("aria-expanded","false");
-  });
+  filmsToggle.setAttribute("aria-expanded", String(opening));
 });
 
-/* GALLERY DROPDOWN */
+/* MOBILE FILM DOTS */
 
-const galleryDropdown =
-  document.getElementById("galleryDropdown");
+function setupFilmDots(gridId, dotsId) {
+  const grid = document.getElementById(gridId);
+  const dotsContainer = document.getElementById(dotsId);
+  const cards = [...grid.children];
 
-const galleryDropdownToggle =
-  document.getElementById("galleryDropdownToggle");
+  cards.forEach((card, index) => {
+    const dot = document.createElement("button");
+    dot.type = "button";
+    dot.setAttribute("aria-label", "Show film " + (index + 1));
 
-function closeGalleryDropdown() {
-  galleryDropdown.classList.remove("open");
-  galleryDropdownToggle.setAttribute("aria-expanded","false");
+    dot.addEventListener("click", () => {
+      grid.scrollTo({
+        left: index * grid.clientWidth,
+        behavior: "smooth"
+      });
+    });
+
+    dotsContainer.append(dot);
+  });
+
+  function update() {
+    const index = Math.round(
+      grid.scrollLeft / Math.max(grid.clientWidth, 1)
+    );
+
+    [...dotsContainer.children].forEach((dot, i) => {
+      dot.classList.toggle("active", i === index);
+    });
+  }
+
+  grid.addEventListener("scroll", update, {passive:true});
+  update();
 }
 
-galleryDropdownToggle.onclick = e => {
-  e.stopPropagation();
+setupFilmDots("youtubeGrid", "filmDots");
+setupFilmDots("moreYoutubeGrid", "moreFilmDots");
 
-  const open = galleryDropdown.classList.toggle("open");
-  galleryDropdownToggle.setAttribute("aria-expanded",String(open));
-};
+/* WHATSAPP CONTACT FORM */
 
-document.addEventListener("click",e => {
-  if (!galleryDropdown.contains(e.target)) {
-    closeGalleryDropdown();
+document.getElementById("contactForm").addEventListener(
+  "submit",
+  event => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+
+    const message = [
+      "Hello Subhomoments,",
+      "",
+      "I would like to enquire about photography.",
+      "",
+      "Name: " + data.get("name"),
+      "Email: " + data.get("email"),
+      "Phone: " + data.get("phone"),
+      "Service: " + data.get("service"),
+      "Event Date: " + (data.get("date") || "Not specified"),
+      "Message: " + (data.get("message") || "Not specified")
+    ].join("\n");
+
+    const url =
+      "https://wa.me/918159868088?text=" +
+      encodeURIComponent(message);
+
+    window.open(url, "_blank", "noopener,noreferrer");
   }
-});
-
-document.addEventListener("keydown",e => {
-  if (e.key === "Escape") closeGalleryDropdown();
-});
-
-/* WHATSAPP ENQUIRY */
-
-document.getElementById("contactForm").onsubmit = function(e) {
-  e.preventDefault();
-
-  const d = new FormData(this);
-
-  const message =
-`*SUBHOMOMENTS ENQUIRY*
-
-Name: ${d.get("name")}
-Email: ${d.get("email")}
-Phone: ${d.get("phone")}
-Service: ${d.get("service")}
-Date: ${d.get("date") || "Not specified"}
-
-Details:
-${d.get("message") || "Not provided"}`;
-
-  window.location.href =
-    "https://wa.me/918159868088?text=" +
-    encodeURIComponent(message);
-};
-
-/* HERO AUTO SLIDER */
-
-(function() {
-  const track = document.getElementById("heroTrack");
-  const slides = [...track.querySelectorAll(".hero-slide")];
-  const dots = [...document.querySelectorAll(".hero-dot")];
-  const slider = document.querySelector(".hero-slider");
-
-  let current = 0;
-  let timer;
-
-  function show(i) {
-    current = (i + slides.length) % slides.length;
-
-    track.style.transform =
-      "translateX(-" + current * 100 + "%)";
-
-    dots.forEach((dot,n) => {
-      dot.classList.toggle("active",n === current);
-    });
-
-    slides.forEach((slide,n) => {
-      slide.setAttribute("aria-hidden",String(n !== current));
-      slide.inert = n !== current;
-    });
-  }
-
-  function stop() { clearInterval(timer); }
-
-  function start() {
-    stop();
-
-    if (
-      document.hidden ||
-      matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) return;
-
-    timer = setInterval(() => {
-      show(current + 1);
-    },5000);
-  }
-
-  document.getElementById("heroPrev").onclick = () => {
-    show(current - 1);
-    start();
-  };
-
-  document.getElementById("heroNext").onclick = () => {
-    show(current + 1);
-    start();
-  };
-
-  dots.forEach((dot,n) => {
-    dot.onclick = () => {
-      show(n);
-      start();
-    };
-  });
-
-  slider.addEventListener("mouseenter",stop);
-  slider.addEventListener("mouseleave",start);
-  slider.addEventListener("focusin",stop);
-  slider.addEventListener("focusout",start);
-
-  document.addEventListener("visibilitychange",start);
-
-  show(0);
-  start();
-})();
-
-/* COPYRIGHT */
-
-document.getElementById("year").textContent =
-  new Date().getFullYear();
+);
 
 </script>
+
 </body>
 </html>
