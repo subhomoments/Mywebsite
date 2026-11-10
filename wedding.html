@@ -1,0 +1,678 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Explore wedding photography and cinematic wedding films by Subhomoments.">
+<title>Wedding Photography Album | Subhomoments</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #fbf8f3;
+  --ink: #26201c;
+  --gold: #a77a58;
+  --sand: #f0e8dd;
+  --muted: #786f68;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 5%;
+  border-bottom: 1px solid #eee5db;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.back-home {
+  font-size: 14px;
+  color: var(--gold);
+}
+
+/* ALBUM HEADING */
+
+.album-hero {
+  text-align: center;
+  padding: 75px 20px 55px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+h1, h2 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(38px, 6vw, 70px);
+  margin: 15px 0;
+}
+
+.album-hero p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+/* NAVIGATION */
+
+.album-nav {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  padding: 20px;
+  border-top: 1px solid #eee5db;
+  border-bottom: 1px solid #eee5db;
+}
+
+.album-nav a {
+  font-size: 14px;
+  transition: color .3s;
+}
+
+.album-nav a:hover {
+  color: var(--gold);
+}
+
+/* SECTIONS */
+
+.album-section {
+  max-width: 1350px;
+  margin: auto;
+  padding: 65px 20px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-heading h2 {
+  font-size: clamp(30px, 4vw, 48px);
+  margin: 12px 0;
+}
+
+/* PHOTOGRAPHY GALLERY */
+/* ORIGINAL ASPECT RATIO */
+/* NO CROP, NO BORDER */
+
+.photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  align-items: start;
+}
+
+.photo-gallery img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  cursor: zoom-in;
+}
+
+/* FULLSCREEN VIEWER */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.97);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 15px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+/* VIDEO SECTION */
+
+.films-section {
+  background: var(--sand);
+  padding: 70px 20px;
+}
+
+.films-container {
+  max-width: 1350px;
+  margin: auto;
+}
+
+.video-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.video-card {
+  width: 100%;
+}
+
+.video-card iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+.video-card h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 20px;
+  margin: 15px 0 5px;
+}
+
+/* CONTACT BUTTON */
+
+.contact-section {
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.contact-section h2 {
+  font-size: 38px;
+}
+
+.contact-section p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 15px 30px;
+  background: var(--gold);
+  color: white;
+  transition: background .3s;
+}
+
+.contact-button:hover {
+  background: #82583e;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--sand);
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.footer-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 28px;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.social-links a {
+  font-size: 14px;
+  color: var(--gold);
+}
+
+.social-links a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 768px) {
+
+  header {
+    padding: 18px 5%;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .back-home {
+    font-size: 12px;
+  }
+
+  .album-hero {
+    padding: 55px 20px 40px;
+  }
+
+  .album-section {
+    padding: 45px 0;
+  }
+
+  .section-heading {
+    padding: 0 15px;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .films-section {
+    padding: 50px 12px;
+  }
+
+  .video-gallery {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .contact-section h2 {
+    font-size: 30px;
+  }
+
+  .social-links {
+    gap: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a href="index.html" class="logo">
+    Subhomoments
+  </a>
+
+  <a href="index.html" class="back-home">
+    ← Back to Home
+  </a>
+</header>
+
+<!-- WEDDING INTRO -->
+
+<section class="album-hero">
+
+  <div class="eyebrow">
+    Subhomoments Wedding Collection
+  </div>
+
+  <h1>Wedding Photography</h1>
+
+  <p>
+    Every love story deserves to be remembered.
+    Explore our beautiful collection of wedding
+    moments, timeless emotions, and cinematic films.
+  </p>
+
+</section>
+
+<!-- SECTION NAVIGATION -->
+
+<nav class="album-nav" aria-label="Album navigation">
+  <a href="#photos">Photography</a>
+  <a href="#videos">Cinematic Films</a>
+</nav>
+
+<!-- PHOTO SECTION -->
+
+<section class="album-section" id="photos">
+
+  <div class="section-heading">
+    <div class="eyebrow">Beautiful Memories</div>
+    <h2>Wedding Photo Album</h2>
+  </div>
+
+  <div class="photo-gallery">
+
+    <img src="images/wedding1.jpg"
+         alt="Wedding Photography 1"
+         loading="lazy">
+
+    <img src="images/wedding2.jpg"
+         alt="Wedding Photography 2"
+         loading="lazy">
+
+    <img src="images/wedding3.jpg"
+         alt="Wedding Photography 3"
+         loading="lazy">
+
+    <img src="images/wedding4.jpg"
+         alt="Wedding Photography 4"
+         loading="lazy">
+
+    <img src="images/wedding5.jpg"
+         alt="Wedding Photography 5"
+         loading="lazy">
+
+    <img src="images/wedding6.jpg"
+         alt="Wedding Photography 6"
+         loading="lazy">
+
+    <img src="images/wedding7.jpg"
+         alt="Wedding Photography 7"
+         loading="lazy">
+
+    <img src="images/wedding8.jpg"
+         alt="Wedding Photography 8"
+         loading="lazy">
+
+    <img src="images/wedding9.jpg"
+         alt="Wedding Photography 9"
+         loading="lazy">
+
+    <img src="images/wedding10.jpg"
+         alt="Wedding Photography 10"
+         loading="lazy">
+
+  </div>
+
+</section>
+
+<!-- WEDDING FILMS -->
+
+<section class="films-section" id="videos">
+
+  <div class="films-container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Love in Motion</div>
+      <h2>Wedding Cinematic Films</h2>
+    </div>
+
+    <div class="video-gallery">
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_1"
+          title="Wedding Film 1"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+        <h3>Our Wedding Story</h3>
+      </div>
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_2"
+          title="Wedding Film 2"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+        <h3>Moments of Love</h3>
+      </div>
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_3"
+          title="Wedding Film 3"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+        <h3>Forever Together</h3>
+      </div>
+
+      <div class="video-card">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_4"
+          title="Wedding Film 4"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+        <h3>A Timeless Celebration</h3>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact-section">
+
+  <div class="eyebrow">
+    Let's Create Memories
+  </div>
+
+  <h2>Book Your Wedding Shoot</h2>
+
+  <p>
+    Let us capture your beautiful wedding
+    moments with creativity and emotion.
+  </p>
+
+  <a
+    href="https://wa.me/918159868088"
+    class="contact-button"
+    target="_blank"
+    rel="noopener noreferrer">
+    Contact on WhatsApp
+  </a>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-logo">
+    Subhomoments
+  </div>
+
+  <div class="social-links">
+
+    <a href="https://www.instagram.com/subho_moments"
+       target="_blank"
+       rel="noopener noreferrer">
+      Instagram
+    </a>
+
+    <a href="https://www.facebook.com/share/1WsDJfL9ud/"
+       target="_blank"
+       rel="noopener noreferrer">
+      Facebook
+    </a>
+
+    <a href="https://youtube.com/@subhomoments"
+       target="_blank"
+       rel="noopener noreferrer">
+      YouTube
+    </a>
+
+    <a href="https://pin.it/2iv6SCFsO"
+       target="_blank"
+       rel="noopener noreferrer">
+      Pinterest
+    </a>
+
+  </div>
+
+  <p class="copyright">
+    © 2026 Subhomoments. All Rights Reserved.
+  </p>
+
+</footer>
+
+<!-- FULLSCREEN PHOTO VIEWER -->
+
+<div class="lightbox"
+     id="lightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Wedding photo viewer">
+
+  <button class="lightbox-close"
+          id="closeLightbox"
+          aria-label="Close photo">
+    &times;
+  </button>
+
+  <img id="lightboxImage"
+       alt="Wedding photo enlarged">
+
+</div>
+
+<!-- JAVASCRIPT -->
+
+<script>
+const galleryPhotos = document.querySelectorAll(
+  ".photo-gallery img"
+);
+
+const lightbox = document.getElementById(
+  "lightbox"
+);
+
+const lightboxImage = document.getElementById(
+  "lightboxImage"
+);
+
+const closeLightboxButton = document.getElementById(
+  "closeLightbox"
+);
+
+let previousFocus = null;
+
+galleryPhotos.forEach(photo => {
+
+  photo.addEventListener("click", () => {
+
+    previousFocus = document.activeElement;
+
+    lightboxImage.src = photo.src;
+    lightboxImage.alt = photo.alt;
+
+    lightbox.classList.add("active");
+
+    document.body.style.overflow = "hidden";
+
+    closeLightboxButton.focus();
+
+  });
+
+});
+
+function closeViewer() {
+
+  lightbox.classList.remove("active");
+
+  lightboxImage.removeAttribute("src");
+
+  document.body.style.overflow = "";
+
+  if (previousFocus) {
+    previousFocus.focus();
+  }
+
+}
+
+closeLightboxButton.addEventListener(
+  "click",
+  closeViewer
+);
+
+lightbox.addEventListener("click", event => {
+
+  if (event.target === lightbox) {
+    closeViewer();
+  }
+
+});
+
+document.addEventListener("keydown", event => {
+
+  if (
+    event.key === "Escape" &&
+    lightbox.classList.contains("active")
+  ) {
+    closeViewer();
+  }
+
+});
+</script>
+
+</body>
+</html>
