@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#09162d">
+<meta name="description" content="You are invited to celebrate the royal wedding of Ankit and Sneha on 2 December 2026.">
+<title>Ankit & Sneha | Royal Wedding Invitation</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy: #09162d;
+  --navy-light: #142747;
+  --gold: #d9b76b;
+  --cream: #fff6e6;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--navy);
+  color: var(--cream);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Cinzel', serif;
+}
+
+h2 {
+  font-size: 1.7rem;
+  color: var(--gold);
+  margin-bottom: 25px;
+}
+
+p {
+  line-height: 1.8;
+}
+
+section {
+  padding: 75px 20px;
+}
+
+.gold {
+  color: var(--gold);
+}
+
+.divider {
+  color: var(--gold);
+  font-size: 25px;
+  margin: 20px 0;
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 18px;
+  background:
+    radial-gradient(circle at center, #20365b, #09162d 75%);
+}
+
+.royal-frame {
+  width: 100%;
+  max-width: 600px;
+  padding: 55px 20px;
+  border: 2px solid var(--gold);
+  outline: 1px solid rgba(217,183,107,.45);
+  outline-offset: -10px;
+  border-radius: 150px 150px 15px 15px;
+  box-shadow: 0 0 50px rgba(217,183,107,.12);
+  animation: fadeUp 1.5s ease;
+}
+
+.crown {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.subtitle {
+  letter-spacing: 4px;
+  font-size: 12px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.names {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(60px, 12vw, 95px);
+  color: var(--gold);
+  margin: 35px 0 15px;
+  line-height: 1.15;
+  font-weight: normal;
+}
+
+.names span {
+  display: block;
+  font-size: 42px;
+  margin: 5px 0;
+}
+
+.date {
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  margin: 25px 0;
+  letter-spacing: 2px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 25px;
+  background: var(--gold);
+  color: var(--navy);
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  transition: .3s;
+  margin: 10px 5px;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.intro {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.intro h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 45px;
+  color: #a47b31;
+}
+
+.intro p {
+  max-width: 650px;
+  margin: auto;
+}
+
+.countdown {
+  background: var(--navy-light);
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.time-box {
+  min-width: 75px;
+  padding: 17px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 10px;
+}
+
+.time-box strong {
+  display: block;
+  color: var(--gold);
+  font-size: 28px;
+}
+
+.time-box span {
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.events {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  max-width: 1050px;
+  margin: auto;
+}
+
+.event-card {
+  background: white;
+  padding: 35px 20px;
+  border-radius: 12px;
+  border: 1px solid #e1c88f;
+  box-shadow: 0 5px 25px rgba(0,0,0,.06);
+}
+
+.event-card h3 {
+  color: #98712e;
+  margin-bottom: 15px;
+}
+
+.event-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.event-card p {
+  font-size: 14px;
+}
+
+.gallery {
+  background: var(--navy);
+}
+
+.gallery-grid {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.photo {
+  aspect-ratio: 4 / 5;
+  border: 2px solid var(--gold);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #172849;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.venue {
+  background: var(--cream);
+  color: var(--navy);
+}
+
+.venue h3 {
+  color: #98712e;
+  margin-bottom: 15px;
+}
+
+.notice {
+  font-size: 12px;
+  color: #765b35;
+  margin-top: 10px;
+}
+
+.thanks {
+  background: var(--navy-light);
+}
+
+.thanks h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 50px;
+}
+
+footer {
+  background: #050e20;
+  padding: 30px 15px;
+  color: var(--gold);
+  font-size: 13px;
+}
+
+.music-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: none;
+  color: var(--navy);
+  font-size: 23px;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 3px 15px #0005;
+}
+
+#revealOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: radial-gradient(circle, #20365b, #09162d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: opacity .7s;
+}
+
+.reveal-card {
+  max-width: 440px;
+  width: 100%;
+  border: 2px solid var(--gold);
+  padding: 45px 20px;
+  border-radius: 130px 130px 15px 15px;
+}
+
+.reveal-card h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 48px;
+  margin: 25px 0;
+}
+
+.scratch-wrap {
+  position: relative;
+  max-width: 280px;
+  height: 105px;
+  margin: 25px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  touch-action: none;
+}
+
+.scratch-message {
+  position: absolute;
+  inset: 0;
+  background: var(--cream);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-weight: 600;
+}
+
+#scratchCanvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media(max-width: 480px) {
+  section { padding: 60px 16px; }
+  .royal-frame { padding: 50px 15px; }
+  .names { font-size: 65px; }
+  .date { font-size: 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- INVITATION REVEAL -->
+<div id="revealOverlay">
+  <div class="reveal-card">
+    <div class="crown">♛</div>
+    <p class="subtitle">A Royal Invitation</p>
+    <h2>Ankit & Sneha</h2>
+    <p>You are cordially invited</p>
+
+    <div class="scratch-wrap" id="scratchWrap">
+      <div class="scratch-message">
+        <span>2 December 2026</span>
+        <small>Our Wedding Day</small>
+      </div>
+      <canvas id="scratchCanvas"></canvas>
+    </div>
+
+    <p style="font-size:12px">Scratch to reveal the date</p>
+    <button class="btn" onclick="openInvitation()">
+      Open Invitation
+    </button>
+  </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop preload="none">
+  <source src="assets/background-music.mp3" type="audio/mpeg">
+</audio>
+<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Play or pause background music">♫</button>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="royal-frame">
+    <div class="crown gold">♛</div>
+    <p class="subtitle">Together With Our Families</p>
+    <p style="margin-top:20px">We joyfully invite you to celebrate</p>
+
+    <h1 class="names">
+      Ankit
+      <span>&</span>
+      Sneha
+    </h1>
+
+    <div class="divider">❦</div>
+    <p class="subtitle">The Royal Wedding</p>
+    <p class="date">02 · 12 · 2026</p>
+    <p>Wednesday | 7:00 PM</p>
+    <p>Gariahat, Kolkata</p>
+
+    <a class="btn" href="#events">Explore Our Celebration</a>
+  </div>
+</header>
+
+<!-- WELCOME -->
+<section class="intro">
+  <div class="divider">❦</div>
+  <h2>A Celebration of Love</h2>
+  <p>
+    With immense joy and happiness, we invite you
+    to join us as we begin a beautiful new chapter
+    together. Your presence and blessings will make
+    our special day even more memorable.
+  </p>
+  <div class="divider">❦</div>
+</section>
+
+<!-- COUNTDOWN -->
+<section class="countdown">
+  <h2>Counting Down to Forever</h2>
+  <div class="timer">
+    <div class="time-box"><strong id="days">00</strong><span>Days</span></div>
+    <div class="time-box"><strong id="hours">00</strong><span>Hours</span></div>
+    <div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div>
+    <div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div>
+  </div>
+  <p id="countdownMessage" style="margin-top:20px"></p>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <h2>Wedding Celebrations</h2>
+  <p style="margin-bottom:35px">
+    Join us for our unforgettable celebrations
+  </p>
+
+  <div class="events-grid">
+
+    <div class="event-card">
+      <div class="event-icon">🌸</div>
+      <h3>Mayra</h3>
+      <p>Sunday</p>
+      <p><strong>29 November 2026</strong></p>
+      <p>A beautiful family tradition</p>
+    </div>
+
+    <div class="event-card">
+      <div class="event-icon">🌿</div>
+      <h3>Mehendi</h3>
+      <p>Monday</p>
+      <p><strong>30 November 2026</strong></p>
+      <p>Colors, joy and beautiful traditions</p>
+    </div>
+
+    <div class="event-card">
+      <div class="event-icon">🎶</div>
+      <h3>Tilak & Sangeet</h3>
+      <p>Tuesday</p>
+      <p><strong>1 December 2026</strong></p>
+      <p>A night of music and celebration</p>
+    </div>
+
+    <div class="event-card">
+      <div class="event-icon">🌼</div>
+      <h3>Haldi</h3>
+      <p>Tuesday</p>
+      <p><strong>1 December 2026</strong></p>
+      <p>Golden moments and happy memories</p>
+    </div>
+
+    <div class="event-card">
+      <div class="event-icon">💍</div>
+      <h3>Wedding & Reception</h3>
+      <p>Wednesday</p>
+      <p><strong>2 December 2026</strong></p>
+      <p>Wedding Ceremony: 7:00 PM</p>
+      <p>Reception timing to be announced</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery">
+  <h2>Our Beautiful Moments</h2>
+  <p style="margin-bottom:30px">
+    A glimpse of our journey together
+  </p>
+
+  <div class="gallery-grid">
+    <div class="photo">
+      <img src="assets/photo1.jpg" alt="Ankit and Sneha photo one" onerror="this.style.display='none';this.parentElement.textContent='Photo 1';">
+    </div>
+    <div class="photo">
+      <img src="assets/photo2.jpg" alt="Ankit and Sneha photo two" onerror="this.style.display='none';this.parentElement.textContent='Photo 2';">
+    </div>
+    <div class="photo">
+      <img src="assets/photo3.jpg" alt="Ankit and Sneha photo three" onerror="this.style.display='none';this.parentElement.textContent='Photo 3';">
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue">
+  <h2>The Wedding Venue</h2>
+  <div class="divider">♛</div>
+  <h3>Royal Orchid Palace</h3>
+  <p>Gariahat, Kolkata, West Bengal</p>
+  <p>2 December 2026 | 7:00 PM</p>
+  <p class="notice">
+    Venue name is a fictional placeholder.
+    Exact address is yet to be confirmed.
+  </p>
+
+  <a class="btn"
+     href="https://www.google.com/maps/search/?api=1&query=Gariahat%2C%20Kolkata"
+     target="_blank" rel="noopener noreferrer">
+     View Gariahat on Map
+  </a>
+</section>
+
+<!-- THANK YOU -->
+<section class="thanks">
+  <div class="divider">❦</div>
+  <h2>With Love & Gratitude</h2>
+  <p>
+    Your blessings, love and presence mean the world
+    to us. We look forward to celebrating our special
+    moments with you.
+  </p>
+  <h2 style="margin-top:30px">Ankit & Sneha</h2>
+  <button class="btn" onclick="shareInvitation()">
+    Share Invitation
+  </button>
+</section>
+
+<footer>
+  <p>♛ Ankit & Sneha ♛</p>
+  <p>2 December 2026 | Made with Love</p>
+</footer>
+
+<script>
+// Wedding countdown: 2 December 2026, 7 PM IST
+const weddingDate = new Date("2026-12-02T19:00:00+05:30").getTime();
+
+function updateCountdown() {
+  const diff = weddingDate - Date.now();
+  const ids = ["days", "hours", "minutes", "seconds"];
+
+  if (diff <= 0) {
+    ids.forEach(id => document.getElementById(id).textContent = "00");
+    document.getElementById("countdownMessage").textContent =
+      "Our wedding day has arrived!";
+    return;
+  }
+
+  const values = [
+    Math.floor(diff / 86400000),
+    Math.floor((diff / 3600000) % 24),
+    Math.floor((diff / 60000) % 60),
+    Math.floor((diff / 1000) % 60)
+  ];
+
+  ids.forEach((id, i) => {
+    document.getElementById(id).textContent =
+      String(values[i]).padStart(2, "0");
+  });
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// Music controls
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+async function toggleMusic() {
+  if (music.paused) {
+    try {
+      await music.play();
+      musicBtn.textContent = "❚❚";
+    } catch (e) {
+      musicBtn.textContent = "♫";
+      alert("Please add assets/background-music.mp3 to enable music.");
+    }
+  } else {
+    music.pause();
+    musicBtn.textContent = "♫";
+  }
+}
+
+// Open invitation
+function openInvitation() {
+  const overlay = document.getElementById("revealOverlay");
+  overlay.style.opacity = "0";
+  setTimeout(() => overlay.remove(), 700);
+  sessionStorage.setItem("invitationOpened", "yes");
+}
+
+if (sessionStorage.getItem("invitationOpened") === "yes") {
+  document.getElementById("revealOverlay").remove();
+}
+
+// Scratch-to-reveal effect
+const canvas = document.getElementById("scratchCanvas");
+const ctx = canvas.getContext("2d");
+const scratchWrap = document.getElementById("scratchWrap");
+
+function initializeScratch() {
+  const rect = scratchWrap.getBoundingClientRect();
+  const scale = window.devicePixelRatio || 1;
+
+  canvas.width = rect.width * scale;
+  canvas.height = rect.height * scale;
+  ctx.setTransform(scale, 0, 0, scale, 0, 0);
+
+  ctx.fillStyle = "#d9b76b";
+  ctx.fillRect(0, 0, rect.width, rect.height);
+  ctx.fillStyle = "#09162d";
+  ctx.textAlign = "center";
+  ctx.font = "bold 17px Poppins";
+  ctx.fillText("Scratch Here ✨", rect.width / 2, rect.height / 2 + 6);
+}
+
+initializeScratch();
+
+let scratching = false;
+let lastPoint = null;
+let scratchMoves = 0;
+
+function getPoint(e) {
+  const rect = canvas.getBoundingClientRect();
+  return { x: e.clientX - rect.left, y: e.clientY - rect.top };
+}
+
+function scratchAt(point) {
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.lineWidth = 34;
+  ctx.lineCap = "round";
+  ctx.lineJoin = "round";
+
+  ctx.beginPath();
+  if (lastPoint) {
+    ctx.moveTo(lastPoint.x, lastPoint.y);
+    ctx.lineTo(point.x, point.y);
+  } else {
+    ctx.arc(point.x, point.y, 17, 0, Math.PI * 2);
+  }
+  ctx.stroke();
+  ctx.fill();
+
+  lastPoint = point;
+  scratchMoves++;
+
+  if (scratchMoves > 45) {
+    canvas.style.opacity = "0";
+    canvas.style.transition = "opacity .5s";
+    canvas.style.pointerEvents = "none";
+  }
+}
+
+canvas.addEventListener("pointerdown", e => {
+  scratching = true;
+  lastPoint = null;
+  canvas.setPointerCapture(e.pointerId);
+  scratchAt(getPoint(e));
+});
+
+canvas.addEventListener("pointermove", e => {
+  if (scratching) scratchAt(getPoint(e));
+});
+
+function stopScratch() {
+  scratching = false;
+  lastPoint = null;
+}
+
+canvas.addEventListener("pointerup", stopScratch);
+canvas.addEventListener("pointercancel", stopScratch);
+
+// WhatsApp sharing
+function shareInvitation() {
+  const text =
+    "You are cordially invited to the wedding of Ankit & Sneha! 💍\n" +
+    "Date: 2 December 2026\n" +
+    "Time: 7:00 PM\n" +
+    "Location: Gariahat, Kolkata\n\n" +
+    "Join us for our special celebration!\n" +
+    window.location.href;
+
+  window.open(
+    "https://wa.me/?text=" + encodeURIComponent(text),
+    "_blank",
+    "noopener,noreferrer"
+  );
+}
+</script>
+
+</body>
+</html>
