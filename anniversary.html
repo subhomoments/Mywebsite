@@ -1,0 +1,818 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Anniversary Photography | Subhomoments</title>
+
+<meta name="description" content="Anniversary photography and cinematic films by Subhomoments. Capture and celebrate your beautiful memories.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #a77a58;
+  --paper: #fbf8f3;
+  --ink: #26201c;
+  --sand: #f0e8dd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  font: inherit;
+}
+
+/* HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.back-button {
+  background: var(--gold);
+  color: white;
+  padding: 11px 22px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.back-button:hover {
+  background: #82583e;
+}
+
+/* ANNIVERSARY COVER PHOTO */
+
+.hero {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 60px 20px;
+
+  background-image:
+    linear-gradient(
+      rgba(0,0,0,0.40),
+      rgba(0,0,0,0.40)
+    ),
+    url("images/anniversary-cover.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(38px,6vw,70px);
+  margin: 15px 0;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hero .eyebrow {
+  color: #f3dcc6;
+}
+
+/* SEVEN GALLERY BUTTONS */
+
+.gallery-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 25px 15px;
+}
+
+.gallery-nav a {
+  padding: 11px 18px;
+  background: white;
+  border: 1px solid #e5d8ca;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.gallery-nav a:hover,
+.gallery-nav a.active {
+  background: var(--gold);
+  color: white;
+  border-color: var(--gold);
+}
+
+/* PHOTO AND VIDEO NAVIGATION */
+
+.section-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 18px;
+  border-top: 1px solid #e8dfd5;
+  border-bottom: 1px solid #e8dfd5;
+}
+
+.section-nav a:hover {
+  color: var(--gold);
+}
+
+/* SECTION HEADINGS */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 0 15px;
+}
+
+.section-title h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px,4vw,46px);
+  font-weight: 500;
+  margin: 12px 0;
+}
+
+/* PHOTO GALLERY */
+
+.photos {
+  padding: 65px 0;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  align-items: start;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.photo-grid button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* CINEMATIC FILMS */
+
+.videos {
+  padding: 65px 20px;
+  background: var(--sand);
+}
+
+.video-container {
+  max-width: 760px;
+  margin: auto;
+}
+
+.video-item {
+  margin-bottom: 20px;
+}
+
+.video-item iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: 0;
+  display: block;
+}
+
+.video-item h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.extra-videos[hidden] {
+  display: none;
+}
+
+.view-all {
+  display: block;
+  margin: 25px auto;
+  padding: 13px 27px;
+  background: var(--gold);
+  color: white;
+  border: 0;
+  border-radius: 30px;
+}
+
+.view-all:hover {
+  background: #82583e;
+}
+
+/* CONTACT */
+
+.contact {
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px,4vw,38px);
+  font-weight: 500;
+}
+
+.contact p {
+  line-height: 1.8;
+  color: #786f68;
+}
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.contact-buttons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 27px;
+  min-width: 160px;
+  border-radius: 30px;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.call {
+  background: var(--gold);
+}
+
+.call:hover {
+  background: #82583e;
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.whatsapp:hover {
+  background: #1da851;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--sand);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+footer h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.social-links a:hover {
+  color: var(--gold);
+}
+
+/* FULLSCREEN PHOTO VIEWER */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0,0,0,.95);
+  align-items: center;
+  justify-content: center;
+  padding: 50px 15px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.close-lightbox {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 38px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px) {
+  .logo {
+    font-size: 21px;
+  }
+
+  .back-button {
+    padding: 9px 17px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 330px;
+  }
+
+  .gallery-nav {
+    gap: 8px;
+  }
+
+  .gallery-nav a {
+    font-size: 12px;
+    padding: 9px 12px;
+  }
+
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 0;
+  }
+
+  .photos,
+  .videos {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+
+  .section-nav {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+  <a href="index.html" class="logo">
+    Subhomoments
+  </a>
+
+  <a href="index.html" class="back-button">
+    ← Back
+  </a>
+</header>
+
+<!-- ANNIVERSARY HERO -->
+
+<section class="hero">
+  <div>
+    <div class="eyebrow">
+      Subhomoments Anniversary Collection
+    </div>
+
+    <h1>Anniversary Photography</h1>
+
+    <p>
+      Celebrate the journey of love, togetherness
+      and unforgettable memories.
+      Every anniversary deserves to be captured
+      beautifully and cherished forever.
+    </p>
+  </div>
+</section>
+
+<!-- SEVEN GALLERY BUTTONS -->
+
+<nav class="gallery-nav" aria-label="Gallery categories">
+
+  <a href="wedding.html">
+    Wedding
+  </a>
+
+  <a href="pre-wedding.html">
+    Pre-Wedding
+  </a>
+
+  <a href="anniversary.html"
+     class="active"
+     aria-current="page">
+    Anniversary
+  </a>
+
+  <a href="engagement.html">
+    Engagement
+  </a>
+
+  <a href="birthday.html">
+    Birthday
+  </a>
+
+  <a href="baby-shower.html">
+    Baby Shower
+  </a>
+
+  <a href="rice-ceremony.html">
+    Rice Ceremony
+  </a>
+
+</nav>
+
+<!-- PHOTO AND VIDEO NAVIGATION -->
+
+<nav class="section-nav">
+  <a href="#photos">Photography</a>
+  <a href="#videos">Cinematic Films</a>
+</nav>
+
+<!-- ANNIVERSARY PHOTO ALBUM -->
+
+<section class="photos" id="photos">
+
+  <div class="section-title">
+    <div class="eyebrow">Beautiful Memories</div>
+    <h2>Anniversary Photo Album</h2>
+  </div>
+
+  <div class="photo-grid">
+
+    <button type="button" aria-label="Enlarge anniversary photo 1">
+      <img src="images/anniversary1.jpg" alt="Anniversary photograph 1" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 2">
+      <img src="images/anniversary2.jpg" alt="Anniversary photograph 2" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 3">
+      <img src="images/anniversary3.jpg" alt="Anniversary photograph 3" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 4">
+      <img src="images/anniversary4.jpg" alt="Anniversary photograph 4" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 5">
+      <img src="images/anniversary5.jpg" alt="Anniversary photograph 5" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 6">
+      <img src="images/anniversary6.jpg" alt="Anniversary photograph 6" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 7">
+      <img src="images/anniversary7.jpg" alt="Anniversary photograph 7" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 8">
+      <img src="images/anniversary8.jpg" alt="Anniversary photograph 8" loading="lazy">
+    </button>
+
+    <button type="button" aria-label="Enlarge anniversary photo 9">
+      <img src="images/anniversary9.jpg" alt="Anniversary photograph 9" loading="lazy">
+    </button>
+
+  </div>
+</section>
+
+<!-- ANNIVERSARY CINEMATIC FILMS -->
+
+<section class="videos" id="videos">
+
+  <div class="section-title">
+    <div class="eyebrow">Memories in Motion</div>
+    <h2>Anniversary Cinematic Films</h2>
+  </div>
+
+  <div class="video-container">
+
+    <!-- FIRST VIDEO ALWAYS VISIBLE -->
+
+    <div class="video-item">
+      <iframe
+        src="https://www.youtube.com/embed/VIDEO_ID_1"
+        title="Anniversary Film 1"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+
+      <h3>Our Anniversary Story</h3>
+    </div>
+
+    <!-- ADDITIONAL VIDEOS -->
+
+    <div class="extra-videos" id="extraVideos" hidden>
+
+      <div class="video-item">
+        <iframe
+          data-src="https://www.youtube.com/embed/VIDEO_ID_2"
+          title="Anniversary Film 2"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+        <h3>Anniversary Film 2</h3>
+      </div>
+
+      <div class="video-item">
+        <iframe
+          data-src="https://www.youtube.com/embed/VIDEO_ID_3"
+          title="Anniversary Film 3"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+        <h3>Anniversary Film 3</h3>
+      </div>
+
+      <div class="video-item">
+        <iframe
+          data-src="https://www.youtube.com/embed/VIDEO_ID_4"
+          title="Anniversary Film 4"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+        <h3>Anniversary Film 4</h3>
+      </div>
+
+    </div>
+
+    <button
+      type="button"
+      class="view-all"
+      id="viewAll"
+      aria-controls="extraVideos"
+      aria-expanded="false">
+      View All Films ↓
+    </button>
+
+  </div>
+</section>
+
+<!-- CALL AND WHATSAPP -->
+
+<section class="contact">
+
+  <div class="eyebrow">
+    Let's Celebrate Together
+  </div>
+
+  <h2>Book Your Anniversary Shoot</h2>
+
+  <p>
+    Contact Subhomoments to capture your
+    anniversary celebrations and special moments.
+  </p>
+
+  <div class="contact-buttons">
+
+    <a href="tel:+918159868088" class="call">
+      ☎ Call Now
+    </a>
+
+    <a
+      href="https://wa.me/918159868088?text=Hello%20Subhomoments%2C%20I%20want%20to%20enquire%20about%20anniversary%20photography."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="whatsapp">
+      WhatsApp
+    </a>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h2>Subhomoments</h2>
+
+  <div class="social-links">
+
+    <!-- INSTAGRAM -->
+
+    <a href="https://www.instagram.com/subho_moments"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram"
+       title="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+      </svg>
+    </a>
+
+    <!-- FACEBOOK -->
+
+    <a href="https://www.facebook.com/share/1WsDJfL9ud/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Facebook"
+       title="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+      </svg>
+    </a>
+
+    <!-- YOUTUBE -->
+
+    <a href="https://youtube.com/@subhomoments"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="YouTube"
+       title="YouTube">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5S5 4.5 3.1 5A3 3 0 0 0 1 7.1 31 31 0 0 0 .5 12c0 1.65.17 3.3.5 4.9A3 3 0 0 0 3.1 19C5 19.5 12 19.5 12 19.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9zM9.7 15.3V8.7l6 3.3-6 3.3z"/>
+      </svg>
+    </a>
+
+    <!-- PINTEREST -->
+
+    <a href="https://pin.it/2iv6SCFsO"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Pinterest"
+       title="Pinterest">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-3.65 19.31c-.03-.8-.01-1.76.19-2.62l1.3-5.51s-.33-.66-.33-1.64c0-1.54.89-2.69 2-2.69.95 0 1.41.71 1.41 1.56 0 .95-.61 2.37-.92 3.68-.26 1.1.55 2 1.63 2 1.95 0 3.46-2.06 3.46-5.04 0-2.63-1.89-4.47-4.59-4.47-3.15 0-5 2.36-5 4.8 0 .95.36 1.97.81 2.53.09.11.1.2.08.31l-.3 1.24c-.05.2-.16.25-.37.15-1.39-.65-2.26-2.69-2.26-4.32 0-3.52 2.56-6.75 7.38-6.75 3.88 0 6.9 2.77 6.9 6.48 0 3.87-2.44 6.98-5.83 6.98-1.14 0-2.21-.59-2.58-1.29l-.7 2.66c-.25.96-.92 2.16-1.37 2.98A10 10 0 1 0 12 2z"/>
+      </svg>
+    </a>
+
+  </div>
+
+  <p>© 2026 Subhomoments. All Rights Reserved.</p>
+
+</footer>
+
+<!-- FULLSCREEN PHOTO VIEWER -->
+
+<div class="lightbox"
+     id="lightbox"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Photo viewer"
+     aria-hidden="true">
+
+  <button type="button"
+          class="close-lightbox"
+          id="closeLightbox"
+          aria-label="Close photo">
+    &times;
+  </button>
+
+  <img id="lightboxImage" alt="">
+
+</div>
+
+<script>
+
+/* SHOW MORE FILMS */
+
+const viewAll = document.getElementById('viewAll');
+const extraVideos = document.getElementById('extraVideos');
+
+viewAll.addEventListener('click', () => {
+  const opening = extraVideos.hidden;
+
+  extraVideos.hidden = !opening;
+
+  viewAll.textContent = opening
+    ? 'Show Fewer Films ↑'
+    : 'View All Films ↓';
+
+  viewAll.setAttribute('aria-expanded', String(opening));
+
+  extraVideos.querySelectorAll('iframe').forEach(frame => {
+    if (opening) {
+      frame.src = frame.dataset.src;
+    } else {
+      frame.removeAttribute('src');
+    }
+  });
+});
+
+/* FULLSCREEN PHOTO VIEWER */
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('closeLightbox');
+
+let lastFocus = null;
+
+document.querySelectorAll('.photo-grid button')
+  .forEach(button => {
+    button.addEventListener('click', () => {
+      const photo = button.querySelector('img');
+
+      lastFocus = document.activeElement;
+      lightboxImage.src = photo.src;
+      lightboxImage.alt = photo.alt;
+
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      closeButton.focus();
+    });
+  });
+
+function closeViewer() {
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImage.removeAttribute('src');
+  document.body.style.overflow = '';
+
+  if (lastFocus) lastFocus.focus();
+}
+
+closeButton.addEventListener('click', closeViewer);
+
+lightbox.addEventListener('click', event => {
+  if (event.target === lightbox) closeViewer();
+});
+
+document.addEventListener('keydown', event => {
+  if (
+    event.key === 'Escape' &&
+    lightbox.classList.contains('active')
+  ) {
+    closeViewer();
+  }
+});
+
+</script>
+
+</body>
+</html>
