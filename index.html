@@ -1,8 +1,4 @@
 
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +7,7 @@
 <meta name="theme-color" content="#fbf8f3">
 
 <title>Subhomoments | Wedding Photography & Cinematic Films</title>
-<meta name="description" content="Subhomoments wedding photography, pre-wedding shoots, special celebrations and cinematic films in Kolkata.">
+<meta name="description" content="Subhomoments wedding photography, pre-wedding photography, celebrations and cinematic films in Kolkata.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -42,13 +38,17 @@ body {
   font: 16px/1.7 "DM Sans", sans-serif;
 }
 
+body.modal-open {
+  overflow: hidden;
+}
+
 h1, h2, h3, .brand {
   font-family: "Playfair Display", serif;
   font-weight: 500;
 }
 
 h2 {
-  font-size: clamp(30px, 4vw, 54px);
+  font-size: clamp(30px,4vw,54px);
   line-height: 1.2;
   margin: 12px 0 20px;
 }
@@ -72,12 +72,12 @@ button {
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
 
 .wrap {
-  width: min(1180px, calc(100% - 36px));
+  width: min(1180px,calc(100% - 36px));
   margin: auto;
 }
 
@@ -94,11 +94,11 @@ img {
 }
 
 .eyebrow {
+  color: var(--gold);
   font-size: 12px;
+  font-weight: 700;
   letter-spacing: .22em;
   text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
 }
 
 .intro {
@@ -109,16 +109,17 @@ img {
 
 .button {
   display: inline-block;
-  background: var(--gold);
-  color: white;
-  border: 1px solid var(--gold);
   padding: 12px 23px;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  color: white;
   font-weight: 600;
-  transition: background .3s, transform .3s;
+  transition: background .3s,transform .3s;
 }
 
 .button:hover {
   background: #805638;
+  transform: translateY(-2px);
 }
 
 .button.outline {
@@ -162,8 +163,8 @@ img {
 
 .links > a {
   font-size: 12px;
-  text-transform: uppercase;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .links a:hover {
@@ -172,12 +173,12 @@ img {
 
 .menu {
   display: none;
-  border: 0;
   background: transparent;
+  border: 0;
   font-size: 27px;
 }
 
-/* PREMIUM GALLERY DROPDOWN */
+/* GALLERY DROPDOWN */
 
 .gallery-dropdown {
   position: relative;
@@ -194,17 +195,10 @@ img {
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: .05em;
-}
-
-.gallery-dropdown-toggle:hover,
-.gallery-dropdown.open .gallery-dropdown-toggle {
-  color: var(--gold);
 }
 
 .gallery-dropdown-toggle span {
   font-size: 18px;
-  line-height: 1;
   transition: transform .3s;
 }
 
@@ -216,63 +210,49 @@ img {
   position: absolute;
   top: calc(100% + 12px);
   left: 50%;
-  transform: translate(-50%, -8px);
   width: 250px;
   padding: 12px;
+  transform: translate(-50%,-8px);
   background: rgba(255,252,247,.98);
   border: 1px solid rgba(167,122,88,.22);
   border-radius: 14px;
   box-shadow: 0 18px 55px rgba(38,32,28,.16);
-  backdrop-filter: blur(16px);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .25s, transform .25s, visibility .25s;
+  transition: .25s;
   z-index: 100;
-}
-
-.gallery-dropdown-menu::before {
-  content: "";
-  display: block;
-  width: 38px;
-  height: 2px;
-  margin: 3px auto 10px;
-  background: var(--gold);
 }
 
 .gallery-dropdown.open .gallery-dropdown-menu {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transform: translate(-50%, 0);
+  transform: translate(-50%,0);
 }
 
 .gallery-dropdown-menu a {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 12px 14px;
   border-radius: 8px;
-  color: #3c3028;
   font-size: 13px;
   font-weight: 600;
 }
 
 .gallery-dropdown-menu a::after {
   content: "↗";
-  color: #b99b83;
+  color: var(--gold);
 }
 
 .gallery-dropdown-menu a:hover {
   background: #f0e6db;
-  color: #8b6044;
 }
 
-/* HERO SLIDER */
+/* HERO */
 
 .hero-slider {
   position: relative;
-  width: 100%;
   overflow: hidden;
   background: #151211;
   color: white;
@@ -286,10 +266,8 @@ img {
 .hero-slide {
   position: relative;
   flex: 0 0 100%;
-  min-width: 0;
   height: calc(100svh - 76px);
   min-height: 580px;
-  overflow: hidden;
 }
 
 .hero-image {
@@ -297,7 +275,6 @@ img {
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
 .hero-slide::after {
@@ -310,8 +287,6 @@ img {
     rgba(0,0,0,.38) 42%,
     rgba(0,0,0,.08)
   );
-  z-index: 1;
-  pointer-events: none;
 }
 
 .hero-info {
@@ -337,8 +312,6 @@ img {
 .hero-info p {
   max-width: 650px;
   color: rgba(255,255,255,.92);
-  font-size: 17px;
-  margin-bottom: 26px;
 }
 
 .hero-info .eyebrow {
@@ -349,10 +322,6 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-}
-
-.hero-actions .button {
-  padding: 14px 26px;
 }
 
 .hero-actions .outline {
@@ -376,30 +345,26 @@ img {
 .hero-arrow {
   width: 42px;
   height: 42px;
+  background: rgba(0,0,0,.18);
   border: 1px solid rgba(255,255,255,.6);
   border-radius: 50%;
-  background: rgba(0,0,0,.18);
   color: white;
   font-size: 24px;
 }
 
-.hero-arrow:hover {
-  background: var(--gold);
-}
-
 .hero-dots {
   display: flex;
-  gap: 10px;
   align-items: center;
+  gap: 10px;
 }
 
 .hero-dot {
   width: 9px;
   height: 9px;
+  padding: 0;
   border: 0;
   border-radius: 20px;
   background: rgba(255,255,255,.5);
-  padding: 0;
 }
 
 .hero-dot.active {
@@ -407,17 +372,17 @@ img {
   background: #d4b28d;
 }
 
-/* PHOTOGRAPHS AND CARDS */
+/* COMMON PHOTO CARDS */
 
 .photo-slot {
   height: 310px;
-  background: #dfd0bf;
   position: relative;
   overflow: hidden;
   display: grid;
   place-items: center;
-  text-align: center;
+  background: #dfd0bf;
   color: #67594d;
+  text-align: center;
 }
 
 .photo-slot::after {
@@ -464,8 +429,8 @@ img {
 }
 
 .card-content {
-  text-align: center;
   padding: 22px;
+  text-align: center;
 }
 
 .card-content p {
@@ -480,7 +445,7 @@ img {
   text-transform: uppercase;
 }
 
-/* MOBILE SERVICES CAROUSEL INDICATORS */
+/* SERVICES INDICATORS */
 
 .services-dots {
   display: none;
@@ -496,7 +461,6 @@ img {
   border: 0;
   border-radius: 20px;
   background: #c9b9a8;
-  transition: width .3s, background .3s;
 }
 
 .services-dot.active {
@@ -504,7 +468,349 @@ img {
   background: var(--gold);
 }
 
-/* YOUTUBE FILMS */
+/* PREMIUM STORIES */
+
+.stories-section {
+  background: #f8f4ed;
+}
+
+.stories-stage {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.story-feature {
+  position: relative;
+  min-height: 550px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #332822;
+  box-shadow: 0 25px 60px rgba(55,39,28,.17);
+  isolation: isolate;
+}
+
+.story-feature-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: storyReveal .7s ease both;
+}
+
+@keyframes storyReveal {
+  from {
+    opacity: .45;
+    transform: scale(1.07);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.story-feature::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(0,0,0,.82),
+    rgba(0,0,0,.2) 55%,
+    transparent
+  );
+  pointer-events: none;
+}
+
+.story-feature-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 45px;
+  color: white;
+}
+
+.story-feature-content h3 {
+  margin: 8px 0;
+  color: white;
+  font-size: clamp(30px,4vw,48px);
+}
+
+.story-feature-content p {
+  color: rgba(255,255,255,.88);
+  margin: 0 0 20px;
+}
+
+.story-feature-content .eyebrow {
+  color: #eac6a6;
+}
+
+.story-open {
+  padding: 12px 24px;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 40px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  color: white;
+  font-weight: 700;
+  transition: .3s;
+}
+
+.story-open:hover {
+  background: white;
+  color: #2b211c;
+}
+
+.story-navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+.story-nav-button {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border: 1px solid #e1d3c4;
+  border-radius: 50%;
+  color: #6d4c37;
+  font-size: 27px;
+  transition: .3s;
+}
+
+.story-nav-button:hover {
+  background: var(--gold);
+  color: white;
+}
+
+.story-counter {
+  min-width: 65px;
+  text-align: center;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* FLOATING PHOTO GALLERY */
+
+.story-gallery {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  overflow-y: auto;
+  background: rgba(19,15,13,.96);
+  backdrop-filter: blur(18px);
+  color: white;
+}
+
+.story-gallery[hidden] {
+  display: none;
+}
+
+.story-gallery-inner {
+  width: min(1120px,calc(100% - 32px));
+  margin: auto;
+  padding: 85px 0 55px;
+}
+
+.story-gallery-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.story-gallery-header h2 {
+  color: white;
+  font-size: clamp(28px,4vw,48px);
+}
+
+.story-gallery-header p {
+  color: #c8b9ae;
+}
+
+.story-gallery-close {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 1010;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+}
+
+.story-cover-expanded {
+  width: min(780px,100%);
+  height: 420px;
+  margin: 0 auto 45px;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(0,0,0,.35);
+  animation: coverFloatIn .8s ease both;
+}
+
+.story-cover-expanded img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: zoom-in;
+}
+
+@keyframes coverFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(45px) scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.floating-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4,minmax(0,1fr));
+  gap: 20px;
+  align-items: center;
+  padding: 15px 10px 45px;
+}
+
+.floating-photo-card {
+  position: relative;
+  height: 270px;
+  padding: 8px;
+  background: #fffaf4;
+  border: 0;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0,0,0,.35);
+  cursor: zoom-in;
+  opacity: 0;
+  animation: floatingCardEnter .75s ease forwards,
+             gentleFloat 5s ease-in-out infinite;
+  animation-delay: var(--delay),calc(var(--delay) + .75s);
+  transition: box-shadow .3s;
+}
+
+.floating-photo-card:nth-child(1) {
+  --angle: -7deg;
+  --float: -8px;
+}
+
+.floating-photo-card:nth-child(2) {
+  --angle: 5deg;
+  --float: -13px;
+}
+
+.floating-photo-card:nth-child(3) {
+  --angle: -4deg;
+  --float: -7px;
+}
+
+.floating-photo-card:nth-child(4) {
+  --angle: 7deg;
+  --float: -12px;
+}
+
+.floating-photo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.floating-photo-card:hover {
+  box-shadow: 0 28px 55px rgba(0,0,0,.5);
+}
+
+@keyframes floatingCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(85px) rotate(0deg) scale(.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--angle)) scale(1);
+  }
+}
+
+@keyframes gentleFloat {
+  0%,100% {
+    transform: translateY(0) rotate(var(--angle));
+  }
+  50% {
+    transform: translateY(var(--float)) rotate(var(--angle));
+  }
+}
+
+.story-gallery-note {
+  text-align: center;
+  color: #cbb8a7;
+  font-size: 13px;
+}
+
+/* FULL SCREEN PHOTO VIEWER */
+
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 65px 15px;
+  background: rgba(0,0,0,.97);
+}
+
+.photo-viewer[hidden] {
+  display: none;
+}
+
+.photo-viewer img {
+  max-width: min(1000px,78vw);
+  max-height: 82vh;
+  object-fit: contain;
+}
+
+.photo-viewer-close {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  background: none;
+  border: 0;
+  color: white;
+  font-size: 38px;
+}
+
+.photo-viewer-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255,255,255,.17);
+  color: white;
+  font-size: 28px;
+}
+
+.photo-viewer-counter {
+  position: absolute;
+  bottom: 20px;
+  color: white;
+}
+
+/* FILMS */
 
 .youtube-grid {
   display: grid;
@@ -513,17 +819,17 @@ img {
 }
 
 .youtube-video {
-  background: white;
-  border-radius: 10px;
   overflow: hidden;
+  border-radius: 10px;
+  background: white;
   box-shadow: 0 5px 20px #00000012;
 }
 
 .youtube-player {
   aspect-ratio: 16/9;
-  background: #302a28;
   display: grid;
   place-items: center;
+  background: #302a28;
   color: white;
 }
 
@@ -534,8 +840,8 @@ img {
 }
 
 .youtube-video h3 {
-  font-size: 18px;
   margin: 14px;
+  font-size: 18px;
 }
 
 .films-drawer {
@@ -552,14 +858,14 @@ img {
 }
 
 .films-toggle {
-  background: var(--gold);
-  border: 0;
-  color: white;
   padding: 14px 30px;
+  border: 0;
+  background: var(--gold);
+  color: white;
   font-weight: 700;
 }
 
-/* CONTACT */
+/* TESTIMONIALS AND CONTACT */
 
 .quote {
   font: clamp(24px,3vw,36px)/1.5 "Playfair Display",serif;
@@ -594,35 +900,26 @@ textarea {
 .whatsapp {
   background: #168f4e;
   border-color: #168f4e;
-  color: white;
 }
 
 .call-now {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   padding: 15px 32px;
+  border-radius: 6px;
   background: var(--gold);
   color: white;
-  border: 1px solid var(--gold);
-  border-radius: 6px;
   font-weight: 700;
-  transition: .3s ease;
-}
-
-.call-now:hover {
-  background: #805638;
-  transform: translateY(-2px);
 }
 
 /* FOOTER */
 
 .footer {
+  padding: 60px 20px 25px;
   background: #211d1b;
   color: white;
   text-align: center;
-  padding: 60px 20px 25px;
 }
 
 .footer p {
@@ -637,38 +934,26 @@ textarea {
   margin: 25px 0;
 }
 
-.copyright {
-  border-top: 1px solid #49413d;
-  padding-top: 20px;
-  font-size: 13px;
-}
-
-/* SOCIAL ICONS - FOOTER ONLY */
-
 .footer-social {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   gap: 16px;
   margin: 30px 0;
 }
 
 .footer-social a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   width: 46px;
   height: 46px;
   border: 1px solid rgba(255,255,255,.25);
   border-radius: 50%;
   color: #e9d6c4;
-  transition: background .3s, color .3s, transform .3s;
+  transition: .3s;
 }
 
 .footer-social a:hover {
   background: var(--gold);
-  border-color: var(--gold);
   color: white;
   transform: translateY(-4px);
 }
@@ -677,6 +962,12 @@ textarea {
   width: 21px;
   height: 21px;
   fill: currentColor;
+}
+
+.copyright {
+  padding-top: 20px;
+  border-top: 1px solid #49413d;
+  font-size: 13px;
 }
 
 /* TABLET */
@@ -692,10 +983,10 @@ textarea {
     top: 76px;
     left: 0;
     right: 0;
-    background: var(--paper);
-    padding: 20px;
     flex-direction: column;
     align-items: stretch;
+    padding: 20px;
+    background: var(--paper);
     max-height: calc(100vh - 76px);
     overflow-y: auto;
   }
@@ -711,31 +1002,25 @@ textarea {
   .gallery-dropdown-toggle {
     width: 100%;
     justify-content: space-between;
-    padding: 5px 0;
   }
 
   .gallery-dropdown-menu {
     position: static;
     width: 100%;
     max-height: 0;
-    padding: 0 10px;
     margin: 0;
+    padding: 0 10px;
+    overflow: hidden;
     border: 0;
     box-shadow: none;
     transform: none;
-    overflow: hidden;
     background: #f4ede5;
-    opacity: 0;
-    visibility: hidden;
-    transition: max-height .3s, opacity .3s, padding .3s;
   }
 
   .gallery-dropdown.open .gallery-dropdown-menu {
     max-height: 500px;
     padding: 10px;
     margin-top: 10px;
-    opacity: 1;
-    visibility: visible;
     transform: none;
   }
 
@@ -750,6 +1035,11 @@ textarea {
   .section {
     padding: 65px 0;
   }
+
+  .floating-photo-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 28px;
+  }
 }
 
 /* MOBILE */
@@ -757,6 +1047,10 @@ textarea {
 @media(max-width:600px) {
   .cards, .youtube-grid {
     grid-template-columns: 1fr;
+  }
+
+  .brand {
+    font-size: 24px;
   }
 
   .hero-slide {
@@ -792,27 +1086,22 @@ textarea {
     font-size: 13px;
   }
 
-  .brand {
-    font-size: 24px;
-  }
-
   .split .photo-slot {
     height: 370px;
   }
 
-  /* AUTOMATIC HORIZONTAL SERVICES SLIDER */
+  /* SERVICES - 2 SECOND HORIZONTAL ROTATION */
 
   #servicesGrid {
     display: flex;
     gap: 0;
+    width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    width: 100%;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
     border-radius: 14px;
-    touch-action: pan-x pan-y;
   }
 
   #servicesGrid::-webkit-scrollbar {
@@ -822,9 +1111,7 @@ textarea {
   #servicesGrid .card {
     flex: 0 0 100%;
     min-width: 100%;
-    width: 100%;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
   }
 
   #servicesGrid .photo-slot {
@@ -832,22 +1119,72 @@ textarea {
   }
 
   #servicesGrid .card-content {
-    padding: 20px;
     min-height: 165px;
+    padding: 20px;
   }
 
   #servicesGrid .card-content h3 {
-    font-size: 21px;
     margin: 4px 0;
+    font-size: 21px;
   }
 
   #servicesGrid .card-content p {
-    font-size: 13px;
     margin: 5px 0 10px;
+    font-size: 13px;
   }
 
   .services-dots {
     display: flex;
+  }
+
+  /* STORIES - PREMIUM MOBILE VIEW */
+
+  .story-feature {
+    min-height: 540px;
+    border-radius: 14px;
+  }
+
+  .story-feature-content {
+    padding: 28px 23px;
+  }
+
+  .story-feature-content h3 {
+    font-size: 32px;
+  }
+
+  .story-feature-content p {
+    font-size: 14px;
+  }
+
+  .story-cover-expanded {
+    height: 330px;
+    margin-bottom: 40px;
+  }
+
+  .floating-photo-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+    gap: 25px 16px;
+    padding: 15px 6px 45px;
+  }
+
+  .floating-photo-card {
+    height: 205px;
+    padding: 6px;
+  }
+
+  .story-gallery-inner {
+    padding-top: 80px;
+  }
+
+  .photo-viewer img {
+    max-width: 74vw;
+    max-height: 75vh;
+  }
+
+  .photo-viewer-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 23px;
   }
 }
 
@@ -856,8 +1193,16 @@ textarea {
     scroll-behavior: auto;
   }
 
-  .hero-track {
+  .hero-track,
+  .story-feature-image {
     transition: none;
+    animation: none;
+  }
+
+  .floating-photo-card {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 
   #servicesGrid {
@@ -888,23 +1233,20 @@ textarea {
 </button>
 
 <div class="links" id="navLinks">
-
   <a href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#services">Services</a>
 
   <div class="gallery-dropdown" id="galleryDropdown">
-
     <button
-      type="button"
       class="gallery-dropdown-toggle"
       id="galleryDropdownToggle"
-      aria-expanded="false"
-      aria-controls="galleryDropdownMenu">
-      Gallery <span aria-hidden="true">⌄</span>
+      type="button"
+      aria-expanded="false">
+      Gallery <span>⌄</span>
     </button>
 
-    <div class="gallery-dropdown-menu" id="galleryDropdownMenu">
+    <div class="gallery-dropdown-menu">
       <a href="gallery.html?category=wedding">Wedding</a>
       <a href="gallery.html?category=prewedding">Pre-Wedding</a>
       <a href="gallery.html?category=anniversary">Anniversary</a>
@@ -913,31 +1255,28 @@ textarea {
       <a href="gallery.html?category=babyshower">Baby Shower</a>
       <a href="gallery.html?category=riceceremony">Rice Ceremony</a>
     </div>
-
   </div>
 
   <a href="#stories">Stories</a>
   <a href="#films">Films</a>
   <a href="#testimonials">Testimonials</a>
   <a href="#contact">Contact</a>
-
 </div>
+
 </nav>
 </header>
 
 <main>
 
-<!-- HERO SLIDER -->
+<!-- HERO -->
 
 <section id="home" class="hero-slider">
 
 <div class="hero-track" id="heroTrack">
 
   <article class="hero-slide">
-    <div
-      class="hero-image"
-      style="background-image:url('images/hero.jpg')">
-    </div>
+    <div class="hero-image"
+      style="background-image:url('images/hero.jpg')"></div>
 
     <div class="hero-info">
       <div class="eyebrow">Wedding Photography & Films</div>
@@ -952,10 +1291,8 @@ textarea {
   </article>
 
   <article class="hero-slide">
-    <div
-      class="hero-image"
-      style="background-image:url('images/wedding1.jpg')">
-    </div>
+    <div class="hero-image"
+      style="background-image:url('images/wedding1.jpg')"></div>
 
     <div class="hero-info">
       <div class="eyebrow">The Art of Storytelling</div>
@@ -970,10 +1307,8 @@ textarea {
   </article>
 
   <article class="hero-slide">
-    <div
-      class="hero-image"
-      style="background-image:url('images/DSC_1390.JPG')">
-    </div>
+    <div class="hero-image"
+      style="background-image:url('images/DSC_1390.JPG')"></div>
 
     <div class="hero-info">
       <div class="eyebrow">Cinematic Stories</div>
@@ -1008,11 +1343,9 @@ textarea {
 <section id="about" class="section">
 <div class="wrap split">
 
-  <div
-    class="photo-slot"
+  <div class="photo-slot"
     data-photo="about"
-    data-placeholder="ABOUT PHOTOGRAPH">
-  </div>
+    data-placeholder="ABOUT PHOTOGRAPH"></div>
 
   <div>
     <div class="eyebrow">Our Story</div>
@@ -1046,30 +1379,130 @@ textarea {
     <p class="intro">Every celebration deserves a thoughtful story.</p>
   </div>
 
-  <div class="cards" id="servicesGrid" aria-label="Photography services"></div>
-
-  <div class="services-dots" id="servicesDots" aria-label="Service slide indicators"></div>
+  <div class="cards" id="servicesGrid"></div>
+  <div class="services-dots" id="servicesDots"></div>
 
 </div>
 </section>
 
-<!-- HOMEPAGE PORTFOLIO GALLERY REMOVED -->
+<!-- PREMIUM STORIES -->
 
-<!-- STORIES -->
-
-<section id="stories" class="section sand">
+<section id="stories" class="section stories-section">
 <div class="wrap">
 
   <div class="center">
     <div class="eyebrow">Featured Stories</div>
     <h2>Beautiful Stories, Beautiful Memories</h2>
-    <p class="intro">A collection of moments worth remembering.</p>
+    <p class="intro">
+      Every photograph holds a feeling.
+      Explore the complete story behind each moment.
+    </p>
   </div>
 
-  <div class="cards" id="storiesGrid"></div>
+  <div class="stories-stage">
+    <article class="story-feature" id="storyFeature">
+
+      <img
+        id="storyCover"
+        class="story-feature-image"
+        src="images/story1.jpg"
+        alt="Featured wedding story">
+
+      <div class="story-feature-content">
+        <div class="eyebrow" id="storyType">Wedding Story</div>
+
+        <h3 id="storyTitle">A Timeless Celebration</h3>
+
+        <p id="storyDescription">
+          Five beautiful photographs from one unforgettable story.
+        </p>
+
+        <button class="story-open" id="openStory" type="button">
+          Explore 5 Photographs ↗
+        </button>
+      </div>
+
+    </article>
+
+    <div class="story-navigation">
+      <button class="story-nav-button" id="storyPrev"
+        type="button" aria-label="Previous story">‹</button>
+
+      <span class="story-counter" id="storyCounter">01 / 03</span>
+
+      <button class="story-nav-button" id="storyNext"
+        type="button" aria-label="Next story">›</button>
+    </div>
+  </div>
 
 </div>
 </section>
+
+<!-- FLOATING STORY GALLERY -->
+
+<div
+  id="storyGallery"
+  class="story-gallery"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="galleryStoryTitle"
+  hidden>
+
+  <button
+    id="closeStoryGallery"
+    class="story-gallery-close"
+    type="button"
+    aria-label="Close story gallery">×</button>
+
+  <div class="story-gallery-inner">
+
+    <div class="story-gallery-header">
+      <div class="eyebrow">The Complete Story</div>
+      <h2 id="galleryStoryTitle">A Timeless Celebration</h2>
+      <p>One beautiful story, five unforgettable photographs.</p>
+    </div>
+
+    <div class="story-cover-expanded">
+      <img id="expandedStoryCover"
+        src="images/story1.jpg"
+        alt="Story cover photograph"
+        tabindex="0"
+        role="button"
+        aria-label="View cover photograph fullscreen">
+    </div>
+
+    <div id="floatingPhotoGrid" class="floating-photo-grid"></div>
+
+    <p class="story-gallery-note">
+      Select any photograph to view it in full screen.
+    </p>
+
+  </div>
+</div>
+
+<!-- FULLSCREEN PHOTO VIEWER -->
+
+<div
+  id="photoViewer"
+  class="photo-viewer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Full screen story photograph"
+  hidden>
+
+  <button class="photo-viewer-close" id="closePhotoViewer"
+    type="button" aria-label="Close photo viewer">×</button>
+
+  <button class="photo-viewer-arrow" id="photoPrev"
+    type="button" aria-label="Previous photograph">‹</button>
+
+  <img id="photoViewerImage" alt="Story photograph">
+
+  <button class="photo-viewer-arrow" id="photoNext"
+    type="button" aria-label="Next photograph">›</button>
+
+  <div class="photo-viewer-counter" id="photoViewerCounter"></div>
+</div>
 
 <!-- FILMS -->
 
@@ -1089,12 +1522,8 @@ textarea {
   </div>
 
   <div class="films-actions">
-    <button
-      class="films-toggle"
-      id="filmsToggle"
-      type="button"
-      aria-expanded="false"
-      aria-controls="filmsDrawer">
+    <button class="films-toggle" id="filmsToggle"
+      type="button" aria-expanded="false">
       View All 9 Films ↓
     </button>
   </div>
@@ -1152,19 +1581,22 @@ textarea {
       <a href="tel:+917001950046">+91 7001950046</a>
     </p>
 
-    <a
-      href="tel:+918159868088"
-      class="button call-now"
-      aria-label="Call Subhomoments">
+    <a href="tel:+918159868088"
+      class="button call-now">
       ☎ Call Now
     </a>
   </div>
 
   <form id="contactForm" class="contact-form">
 
-    <input name="name" type="text" placeholder="Your name" required>
-    <input name="email" type="email" placeholder="Email address" required>
-    <input name="phone" type="tel" placeholder="Phone number" required>
+    <input name="name" type="text"
+      placeholder="Your name" required>
+
+    <input name="email" type="email"
+      placeholder="Email address" required>
+
+    <input name="phone" type="tel"
+      placeholder="Phone number" required>
 
     <select name="service" required>
       <option value="">Select a service</option>
@@ -1180,10 +1612,8 @@ textarea {
 
     <input name="date" type="date" aria-label="Event date">
 
-    <textarea
-      name="message"
-      placeholder="Tell us about your event">
-    </textarea>
+    <textarea name="message"
+      placeholder="Tell us about your event"></textarea>
 
     <button class="button whatsapp" type="submit">
       Send Enquiry on WhatsApp
@@ -1221,52 +1651,37 @@ textarea {
     <a href="#contact">Contact</a>
   </div>
 
-  <!-- SOCIAL LOGOS: FOOTER ONLY, ONE TIME EACH -->
+  <!-- SOCIAL LOGOS APPEAR ONLY HERE -->
+
   <div class="footer-social">
 
-    <!-- INSTAGRAM -->
-    <a
-      href="https://www.instagram.com/YOUR_USERNAME/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Instagram"
-      title="Instagram">
+    <a href="https://www.instagram.com/YOUR_USERNAME/"
+      target="_blank" rel="noopener noreferrer"
+      aria-label="Instagram" title="Instagram">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M7 2C4.24 2 2 4.24 2 7v10c0 2.76 2.24 5 5 5h10c2.76 0 5-2.24 5-5V7c0-2.76-2.24-5-5-5H7zm0 2h10c1.66 0 3 1.34 3 3v10c0 1.66-1.34 3-3 3H7c-1.66 0-3-1.34-3-3V7c0-1.66 1.34-3 3-3zm5 3a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6zm5.5-2.5a1.25 1.25 0 100 2.5 1.25 1.25 0 000-2.5z"/>
       </svg>
     </a>
 
-    <!-- FACEBOOK -->
-    <a
-      href="https://www.facebook.com/YOUR_PAGE/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Facebook"
-      title="Facebook">
+    <a href="https://www.facebook.com/YOUR_PAGE/"
+      target="_blank" rel="noopener noreferrer"
+      aria-label="Facebook" title="Facebook">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/>
       </svg>
     </a>
 
-    <!-- YOUTUBE -->
-    <a
-      href="https://www.youtube.com/@YOUR_CHANNEL/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="YouTube"
-      title="YouTube">
+    <a href="https://www.youtube.com/@YOUR_CHANNEL/"
+      target="_blank" rel="noopener noreferrer"
+      aria-label="YouTube" title="YouTube">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M23.5 6.2a3 3 0 00-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 00.5 6.2 31 31 0 000 12a31 31 0 00.5 5.8 3 3 0 002.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 002.1-2.1A31 31 0 0024 12a31 31 0 00-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/>
       </svg>
     </a>
 
-    <!-- PINTEREST -->
-    <a
-      href="https://www.pinterest.com/YOUR_USERNAME/"
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Pinterest"
-      title="Pinterest">
+    <a href="https://www.pinterest.com/YOUR_USERNAME/"
+      target="_blank" rel="noopener noreferrer"
+      aria-label="Pinterest" title="Pinterest">
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="M12 0C5.37 0 0 5.37 0 12c0 5.08 3.16 9.42 7.63 11.17-.1-.95-.19-2.4.04-3.43.22-.93 1.41-5.98 1.41-5.98s-.36-.72-.36-1.79c0-1.67.97-2.92 2.17-2.92 1.02 0 1.51.77 1.51 1.69 0 1.03-.66 2.58-1 4.01-.28 1.2.6 2.17 1.78 2.17 2.14 0 3.78-2.26 3.78-5.52 0-2.88-2.07-4.89-5.02-4.89-3.45 0-5.48 2.59-5.48 5.27 0 1.04.4 2.15.9 2.75.1.12.11.22.08.35l-.34 1.39c-.05.22-.18.27-.41.16-1.52-.71-2.47-2.94-2.47-4.73 0-3.85 2.8-7.38 8.08-7.38 4.24 0 7.54 3.02 7.54 7.06 0 4.21-2.66 7.59-6.35 7.59-1.24 0-2.41-.65-2.81-1.42l-.76 2.9c-.27 1.05-1.02 2.37-1.52 3.27.99.31 2.04.48 3.13.48 6.63 0 12-5.37 12-12S18.63 0 12 0z"/>
       </svg>
@@ -1275,7 +1690,8 @@ textarea {
   </div>
 
   <div class="copyright">
-    © <span id="year"></span> Subhomoments. All rights reserved.
+    © <span id="year"></span> Subhomoments.
+    All rights reserved.
   </div>
 
 </div>
@@ -1329,30 +1745,48 @@ const services = [
   ]
 ];
 
-/* STORIES */
+/* STORIES - 5 PHOTOS EACH */
 
 const stories = [
-  [
-    "A Timeless Celebration",
-    "Beautiful moments from a memorable wedding.",
-    "images/story1.jpg",
-    "wedding"
-  ],
-  [
-    "Forever Begins Here",
-    "A beautiful story of togetherness.",
-    "images/story2.jpg",
-    "prewedding"
-  ],
-  [
-    "Moments of Togetherness",
-    "Celebrations worth remembering.",
-    "images/story3.jpg",
-    "engagement"
-  ]
+  {
+    title: "A Timeless Celebration",
+    type: "Wedding Story",
+    description: "A beautiful celebration of love, traditions and unforgettable moments.",
+    photos: [
+      "images/story1.jpg",
+      "images/story1-2.jpg",
+      "images/story1-3.jpg",
+      "images/story1-4.jpg",
+      "images/story1-5.jpg"
+    ]
+  },
+  {
+    title: "Forever Begins Here",
+    type: "Pre-Wedding Story",
+    description: "A journey of togetherness, laughter and beautiful memories.",
+    photos: [
+      "images/story2.jpg",
+      "images/story2-2.jpg",
+      "images/story2-3.jpg",
+      "images/story2-4.jpg",
+      "images/story2-5.jpg"
+    ]
+  },
+  {
+    title: "Moments of Togetherness",
+    type: "Engagement Story",
+    description: "Beautiful beginnings captured through five meaningful photographs.",
+    photos: [
+      "images/story3.jpg",
+      "images/story3-2.jpg",
+      "images/story3-3.jpg",
+      "images/story3-4.jpg",
+      "images/story3-5.jpg"
+    ]
+  }
 ];
 
-/* YOUTUBE FILMS - REPLACE VIDEO IDs */
+/* YOUTUBE FILMS */
 
 const weddingFilms = [
   {id:"VIDEO_ID_1",title:"Beautiful Wedding Film"},
@@ -1366,7 +1800,7 @@ const weddingFilms = [
   {id:"VIDEO_ID_9",title:"Special Moments"}
 ];
 
-/* LOAD PHOTOS */
+/* PHOTO LOADER */
 
 function addPhoto(el,src,alt) {
   if (!src) return;
@@ -1393,7 +1827,7 @@ document.querySelectorAll("[data-photo]").forEach(el => {
   );
 });
 
-/* RENDER SERVICE AND STORY CARDS */
+/* SERVICE CARDS */
 
 function renderCards(items,target) {
   const grid = document.getElementById(target);
@@ -1429,17 +1863,16 @@ function renderCards(items,target) {
 }
 
 renderCards(services,"servicesGrid");
-renderCards(stories,"storiesGrid");
 
-/* MOBILE SERVICES AUTO SLIDER - 4 SECONDS */
+/* SERVICES AUTO SLIDER - EVERY 2 SECONDS */
 
 (function () {
   const slider = document.getElementById("servicesGrid");
   const dotsContainer = document.getElementById("servicesDots");
   const cards = [...slider.querySelectorAll(".card")];
 
-  const mobile = window.matchMedia("(max-width: 600px)");
-  const reduceMotion = window.matchMedia(
+  const mobile = matchMedia("(max-width: 600px)");
+  const reduceMotion = matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
 
@@ -1465,16 +1898,10 @@ renderCards(stories,"storiesGrid");
   function updateDots() {
     dots.forEach((dot,index) => {
       dot.classList.toggle("active",index === current);
-      dot.setAttribute(
-        "aria-current",
-        index === current ? "true" : "false"
-      );
     });
   }
 
   function goTo(index) {
-    if (!cards.length) return;
-
     current = (index + cards.length) % cards.length;
 
     slider.scrollTo({
@@ -1502,7 +1929,7 @@ renderCards(stories,"storiesGrid");
 
     timer = setInterval(() => {
       goTo(current + 1);
-    },4000);
+    },2000);
   }
 
   function reset() {
@@ -1521,34 +1948,27 @@ renderCards(stories,"storiesGrid");
   slider.addEventListener("scroll",() => {
     if (!mobile.matches) return;
 
-    const index = Math.round(
-      slider.scrollLeft / Math.max(slider.clientWidth,1)
+    current = Math.max(
+      0,
+      Math.min(
+        Math.round(slider.scrollLeft / Math.max(slider.clientWidth,1)),
+        cards.length - 1
+      )
     );
 
-    current = Math.max(0,Math.min(index,cards.length - 1));
     updateDots();
   },{passive:true});
 
   slider.addEventListener("touchstart",stop,{passive:true});
   slider.addEventListener("touchend",start,{passive:true});
-  slider.addEventListener("mouseenter",stop);
-  slider.addEventListener("mouseleave",start);
   slider.addEventListener("focusin",stop);
 
   slider.addEventListener("focusout",() => {
-    if (!slider.contains(document.activeElement)) {
-      start();
-    }
+    if (!slider.contains(document.activeElement)) start();
   });
 
   mobile.addEventListener("change",reset);
   reduceMotion.addEventListener("change",reset);
-
-  window.addEventListener("resize",() => {
-    if (mobile.matches) {
-      goTo(current);
-    }
-  });
 
   document.addEventListener("visibilitychange",() => {
     if (document.hidden) stop();
@@ -1559,7 +1979,193 @@ renderCards(stories,"storiesGrid");
   reset();
 })();
 
-/* YOUTUBE VIDEO CARDS */
+/* PREMIUM STORY NAVIGATION */
+
+let currentStory = 0;
+let currentPhoto = 0;
+let lastStoryFocus = null;
+let lastGalleryFocus = null;
+
+const storyCover = document.getElementById("storyCover");
+const storyType = document.getElementById("storyType");
+const storyTitle = document.getElementById("storyTitle");
+const storyDescription = document.getElementById("storyDescription");
+const storyGallery = document.getElementById("storyGallery");
+const floatingGrid = document.getElementById("floatingPhotoGrid");
+const photoViewer = document.getElementById("photoViewer");
+const photoViewerImage = document.getElementById("photoViewerImage");
+
+function showStory(index) {
+  currentStory = (index + stories.length) % stories.length;
+
+  const story = stories[currentStory];
+
+  storyCover.src = story.photos[0];
+  storyCover.alt = story.title;
+
+  storyCover.style.animation = "none";
+  void storyCover.offsetWidth;
+  storyCover.style.animation = "";
+
+  storyType.textContent = story.type;
+  storyTitle.textContent = story.title;
+  storyDescription.textContent = story.description;
+
+  document.getElementById("storyCounter").textContent =
+    String(currentStory + 1).padStart(2,"0") +
+    " / " +
+    String(stories.length).padStart(2,"0");
+}
+
+document.getElementById("storyPrev").onclick = () => {
+  showStory(currentStory - 1);
+};
+
+document.getElementById("storyNext").onclick = () => {
+  showStory(currentStory + 1);
+};
+
+function openStoryGallery() {
+  const story = stories[currentStory];
+
+  lastStoryFocus = document.activeElement;
+
+  document.getElementById("galleryStoryTitle").textContent =
+    story.title;
+
+  const expandedCover =
+    document.getElementById("expandedStoryCover");
+
+  expandedCover.src = story.photos[0];
+  expandedCover.alt = story.title + " cover photograph";
+
+  floatingGrid.innerHTML = "";
+
+  story.photos.slice(1).forEach((src,index) => {
+    const card = document.createElement("button");
+    card.type = "button";
+    card.className = "floating-photo-card";
+    card.style.setProperty("--delay",(index * .15) + "s");
+    card.setAttribute(
+      "aria-label",
+      "Open photograph " + (index + 2)
+    );
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.alt = story.title + " photo " + (index + 2);
+    img.loading = "lazy";
+
+    card.append(img);
+
+    card.addEventListener("click",() => {
+      openPhotoViewer(index + 1);
+    });
+
+    floatingGrid.append(card);
+  });
+
+  storyGallery.hidden = false;
+  document.body.classList.add("modal-open");
+  storyGallery.scrollTop = 0;
+
+  document.getElementById("closeStoryGallery").focus();
+}
+
+document.getElementById("openStory").onclick =
+  openStoryGallery;
+
+document.getElementById("expandedStoryCover").onclick = () => {
+  openPhotoViewer(0);
+};
+
+document.getElementById("expandedStoryCover")
+  .addEventListener("keydown",e => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      openPhotoViewer(0);
+    }
+  });
+
+function closeStoryGallery() {
+  storyGallery.hidden = true;
+  document.body.classList.remove("modal-open");
+
+  if (lastStoryFocus && lastStoryFocus.focus) {
+    lastStoryFocus.focus();
+  }
+}
+
+document.getElementById("closeStoryGallery").onclick =
+  closeStoryGallery;
+
+/* FULL SCREEN PHOTO VIEWER */
+
+function openPhotoViewer(index) {
+  currentPhoto = index;
+  lastGalleryFocus = document.activeElement;
+
+  photoViewer.hidden = false;
+  showPhoto();
+
+  document.getElementById("closePhotoViewer").focus();
+}
+
+function showPhoto() {
+  const story = stories[currentStory];
+
+  photoViewerImage.src = story.photos[currentPhoto];
+  photoViewerImage.alt =
+    story.title + " photograph " + (currentPhoto + 1);
+
+  document.getElementById("photoViewerCounter").textContent =
+    (currentPhoto + 1) + " / " + story.photos.length;
+}
+
+function changePhoto(direction) {
+  const total = stories[currentStory].photos.length;
+
+  currentPhoto =
+    (currentPhoto + direction + total) % total;
+
+  showPhoto();
+}
+
+function closePhotoViewer() {
+  photoViewer.hidden = true;
+
+  if (lastGalleryFocus && lastGalleryFocus.focus) {
+    lastGalleryFocus.focus();
+  }
+}
+
+document.getElementById("closePhotoViewer").onclick =
+  closePhotoViewer;
+
+document.getElementById("photoPrev").onclick = () => {
+  changePhoto(-1);
+};
+
+document.getElementById("photoNext").onclick = () => {
+  changePhoto(1);
+};
+
+document.addEventListener("keydown",e => {
+  if (!photoViewer.hidden) {
+    if (e.key === "Escape") closePhotoViewer();
+    if (e.key === "ArrowRight") changePhoto(1);
+    if (e.key === "ArrowLeft") changePhoto(-1);
+    return;
+  }
+
+  if (!storyGallery.hidden && e.key === "Escape") {
+    closeStoryGallery();
+  }
+});
+
+showStory(0);
+
+/* YOUTUBE FILMS */
 
 function filmCard(film,index) {
   const card = document.createElement("article");
@@ -1607,19 +2213,21 @@ weddingFilms.forEach((film,index) => {
     .append(filmCard(film,index));
 });
 
-/* FILMS DRAWER */
-
 const drawer = document.getElementById("filmsDrawer");
-const toggle = document.getElementById("filmsToggle");
+const filmsToggle = document.getElementById("filmsToggle");
 
-toggle.onclick = () => {
+filmsToggle.onclick = () => {
   const opening = drawer.hidden;
+
   drawer.hidden = !opening;
 
-  toggle.setAttribute("aria-expanded",String(opening));
-  toggle.textContent = opening
-    ? "Show Less ↑"
-    : "View All 9 Films ↓";
+  filmsToggle.setAttribute(
+    "aria-expanded",
+    String(opening)
+  );
+
+  filmsToggle.textContent =
+    opening ? "Show Less ↑" : "View All 9 Films ↓";
 
   if (!opening) {
     drawer.querySelectorAll("iframe").forEach(frame => {
@@ -1628,7 +2236,7 @@ toggle.onclick = () => {
   }
 };
 
-/* MOBILE MENU */
+/* MOBILE NAVIGATION */
 
 const menu = document.getElementById("menuButton");
 const nav = document.getElementById("navLinks");
@@ -1638,8 +2246,8 @@ menu.onclick = () => {
   menu.setAttribute("aria-expanded",String(open));
 };
 
-nav.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click",() => {
+nav.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click",() => {
     nav.classList.remove("open");
     menu.setAttribute("aria-expanded","false");
   });
@@ -1658,33 +2266,28 @@ function closeGalleryDropdown() {
   galleryDropdownToggle.setAttribute("aria-expanded","false");
 }
 
-galleryDropdownToggle.addEventListener("click",function(e) {
+galleryDropdownToggle.onclick = e => {
   e.stopPropagation();
 
-  const isOpen = galleryDropdown.classList.toggle("open");
+  const open = galleryDropdown.classList.toggle("open");
+
   galleryDropdownToggle.setAttribute(
     "aria-expanded",
-    String(isOpen)
+    String(open)
   );
-});
+};
 
-document.addEventListener("click",function(e) {
+document.addEventListener("click",e => {
   if (!galleryDropdown.contains(e.target)) {
     closeGalleryDropdown();
   }
 });
 
-document.addEventListener("keydown",function(e) {
-  if (e.key === "Escape") {
-    closeGalleryDropdown();
-  }
+document.addEventListener("keydown",e => {
+  if (e.key === "Escape") closeGalleryDropdown();
 });
 
-galleryDropdown.querySelectorAll("a").forEach(link => {
-  link.addEventListener("click",closeGalleryDropdown);
-});
-
-/* WHATSAPP ENQUIRY FORM */
+/* WHATSAPP ENQUIRY */
 
 document.getElementById("contactForm").onsubmit = function(e) {
   e.preventDefault();
@@ -1785,7 +2388,7 @@ ${d.get("message") || "Not provided"}`;
   start();
 })();
 
-/* COPYRIGHT YEAR */
+/* COPYRIGHT */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
