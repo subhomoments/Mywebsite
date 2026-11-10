@@ -3,9 +3,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Explore wedding photography and cinematic wedding films by Subhomoments.">
-<title>Wedding Photography Album | Subhomoments</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wedding photography and cinematic films by Subhomoments.">
+<title>Wedding Album | Subhomoments</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 }
 
 a {
@@ -42,108 +42,132 @@ a {
 
 button {
   font: inherit;
+  cursor: pointer;
 }
 
 /* HEADER */
 
-header {
+.site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 5%;
-  border-bottom: 1px solid #eee5db;
+  padding: 20px 5%;
+  background: var(--paper);
 }
 
 .logo {
-  font-family: "Playfair Display", serif;
-  font-size: 27px;
-  font-weight: 600;
+  font: 600 26px 'Playfair Display', serif;
 }
 
 .back-home {
-  font-size: 14px;
   color: var(--gold);
+  font-size: 14px;
 }
 
-/* ALBUM HEADING */
+/* WEDDING BACKGROUND HEADING */
 
 .album-hero {
+  min-height: 390px;
+  display: grid;
+  place-items: center;
   text-align: center;
-  padding: 75px 20px 55px;
+  padding: 65px 20px;
+  color: #fff;
+
+  background-image:
+    linear-gradient(
+      rgba(20,15,12,.48),
+      rgba(20,15,12,.48)
+    ),
+    url('images/wedding1.jpg');
+
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-content {
+  max-width: 750px;
 }
 
 .eyebrow {
-  color: var(--gold);
   text-transform: uppercase;
   letter-spacing: 3px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
+  color: var(--gold);
 }
 
-h1, h2 {
-  font-family: "Playfair Display", serif;
+.album-hero .eyebrow {
+  color: #f3dcc6;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
   font-weight: 500;
 }
 
 h1 {
-  font-size: clamp(38px, 6vw, 70px);
+  font-size: clamp(38px, 6vw, 72px);
   margin: 15px 0;
 }
 
 .album-hero p {
-  max-width: 650px;
-  margin: auto;
-  line-height: 1.9;
-  color: var(--muted);
+  line-height: 1.8;
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
-/* NAVIGATION */
+/* ALBUM NAVIGATION */
 
 .album-nav {
   display: flex;
   justify-content: center;
   gap: 35px;
-  padding: 20px;
-  border-top: 1px solid #eee5db;
-  border-bottom: 1px solid #eee5db;
-}
-
-.album-nav a {
-  font-size: 14px;
-  transition: color .3s;
+  padding: 18px;
+  border-bottom: 1px solid #e8dfd5;
 }
 
 .album-nav a:hover {
   color: var(--gold);
 }
 
-/* SECTIONS */
-
-.album-section {
-  max-width: 1350px;
-  margin: auto;
-  padding: 65px 20px;
-}
+/* SECTION HEADINGS */
 
 .section-heading {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 0 16px;
+  margin-bottom: 30px;
 }
 
 .section-heading h2 {
-  font-size: clamp(30px, 4vw, 48px);
-  margin: 12px 0;
+  font-size: clamp(30px, 4vw, 46px);
+  margin: 10px 0;
 }
 
-/* PHOTOGRAPHY GALLERY */
-/* ORIGINAL ASPECT RATIO */
-/* NO CROP, NO BORDER */
+/* PHOTO GALLERY - NO CROP, NO BORDER */
+
+.album-section {
+  padding: 65px 0;
+}
 
 .photo-gallery {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
   align-items: start;
+  padding: 0 10px;
+}
+
+.photo-gallery button {
+  display: block;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  width: 100%;
+  text-align: left;
+  cursor: zoom-in;
 }
 
 .photo-gallery img {
@@ -151,23 +175,139 @@ h1 {
   width: 100%;
   height: auto;
   object-fit: contain;
-  border: none;
+  border: 0;
   border-radius: 0;
   box-shadow: none;
-  cursor: zoom-in;
 }
 
-/* FULLSCREEN VIEWER */
+/* FILMS SECTION */
+
+.films-section {
+  background: var(--sand);
+  padding: 65px 20px;
+}
+
+.films-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.video-gallery {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.video-card {
+  margin-bottom: 20px;
+}
+
+.video-card iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.video-card h3 {
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.extra-films[hidden] {
+  display: none;
+}
+
+.view-films {
+  display: block;
+  margin: 25px auto 0;
+  background: var(--gold);
+  color: white;
+  border: 0;
+  padding: 13px 27px;
+}
+
+.view-films:hover {
+  background: #82583e;
+}
+
+/* CONTACT */
+
+.contact-section {
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.contact-section h2 {
+  font-size: clamp(30px, 4vw, 40px);
+}
+
+.contact-section p {
+  color: var(--muted);
+}
+
+.contact-button {
+  display: inline-block;
+  margin-top: 18px;
+  background: var(--gold);
+  color: white;
+  padding: 14px 28px;
+}
+
+/* FOOTER */
+
+footer {
+  text-align: center;
+  background: var(--sand);
+  padding: 40px 20px;
+}
+
+.footer-logo {
+  font: 500 27px 'Playfair Display', serif;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 23px 0;
+}
+
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 43px;
+  height: 43px;
+  color: var(--ink);
+  transition: color .2s, transform .2s;
+}
+
+.social-links a:hover {
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.social-links svg {
+  width: 23px;
+  height: 23px;
+  fill: currentColor;
+}
+
+.copyright {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* FULLSCREEN PHOTO VIEWER */
 
 .lightbox {
   position: fixed;
   inset: 0;
   z-index: 9999;
-  background: rgba(0,0,0,.97);
+  background: rgba(0,0,0,.96);
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 45px 15px;
+  padding: 55px 15px;
 }
 
 .lightbox.active {
@@ -175,6 +315,7 @@ h1 {
 }
 
 .lightbox img {
+  display: block;
   max-width: 100%;
   max-height: 100%;
   width: auto;
@@ -184,125 +325,19 @@ h1 {
 
 .lightbox-close {
   position: absolute;
-  top: 12px;
-  right: 20px;
+  right: 15px;
+  top: 10px;
   background: transparent;
-  border: none;
   color: white;
-  font-size: 38px;
-  cursor: pointer;
-}
-
-/* VIDEO SECTION */
-
-.films-section {
-  background: var(--sand);
-  padding: 70px 20px;
-}
-
-.films-container {
-  max-width: 1350px;
-  margin: auto;
-}
-
-.video-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
-}
-
-.video-card {
-  width: 100%;
-}
-
-.video-card iframe {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  border: none;
-}
-
-.video-card h3 {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
-  font-size: 20px;
-  margin: 15px 0 5px;
-}
-
-/* CONTACT BUTTON */
-
-.contact-section {
-  text-align: center;
-  padding: 65px 20px;
-}
-
-.contact-section h2 {
+  border: 0;
   font-size: 38px;
 }
 
-.contact-section p {
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.contact-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 30px;
-  background: var(--gold);
-  color: white;
-  transition: background .3s;
-}
-
-.contact-button:hover {
-  background: #82583e;
-}
-
-/* FOOTER */
-
-footer {
-  background: var(--sand);
-  text-align: center;
-  padding: 45px 20px;
-}
-
-.footer-logo {
-  font-family: "Playfair Display", serif;
-  font-size: 28px;
-}
-
-.social-links {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-  margin: 25px 0;
-}
-
-.social-links a {
-  font-size: 14px;
-  color: var(--gold);
-}
-
-.social-links a:hover {
-  text-decoration: underline;
-}
-
-.copyright {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 
 @media (max-width: 768px) {
-
-  header {
-    padding: 18px 5%;
-  }
-
   .logo {
-    font-size: 22px;
+    font-size: 21px;
   }
 
   .back-home {
@@ -310,43 +345,36 @@ footer {
   }
 
   .album-hero {
-    padding: 55px 20px 40px;
+    min-height: 330px;
+  }
+
+  .photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 7px;
+    padding: 0;
   }
 
   .album-section {
     padding: 45px 0;
   }
 
-  .section-heading {
-    padding: 0 15px;
-  }
-
-  .photo-gallery {
-    grid-template-columns: 1fr;
-    gap: 6px;
-  }
-
   .films-section {
-    padding: 50px 12px;
+    padding: 45px 12px;
   }
 
-  .video-gallery {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .contact-section h2 {
-    font-size: 30px;
-  }
-
-  .social-links {
-    gap: 18px;
+  .album-nav {
+    gap: 22px;
+    font-size: 14px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .social-links a {
+    transition: none;
   }
 }
 </style>
@@ -356,7 +384,7 @@ footer {
 
 <!-- HEADER -->
 
-<header>
+<header class="site-header">
   <a href="index.html" class="logo">
     Subhomoments
   </a>
@@ -366,27 +394,27 @@ footer {
   </a>
 </header>
 
-<!-- WEDDING INTRO -->
+<!-- HERO WITH WEDDING BACKGROUND -->
 
-<section class="album-hero">
+<section class="album-hero" aria-label="Wedding collection">
+  <div class="hero-content">
+    <div class="eyebrow">
+      Subhomoments Wedding Collection
+    </div>
 
-  <div class="eyebrow">
-    Subhomoments Wedding Collection
+    <h1>Wedding Photography</h1>
+
+    <p>
+      Every love story deserves to be remembered.
+      Explore timeless wedding moments and
+      cinematic films.
+    </p>
   </div>
-
-  <h1>Wedding Photography</h1>
-
-  <p>
-    Every love story deserves to be remembered.
-    Explore our beautiful collection of wedding
-    moments, timeless emotions, and cinematic films.
-  </p>
-
 </section>
 
-<!-- SECTION NAVIGATION -->
+<!-- NAVIGATION -->
 
-<nav class="album-nav" aria-label="Album navigation">
+<nav class="album-nav" aria-label="Album sections">
   <a href="#photos">Photography</a>
   <a href="#videos">Cinematic Films</a>
 </nav>
@@ -402,54 +430,48 @@ footer {
 
   <div class="photo-gallery">
 
-    <img src="images/wedding1.jpg"
-         alt="Wedding Photography 1"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 1">
+      <img src="images/wedding1.jpg" alt="Wedding photograph 1" loading="lazy">
+    </button>
 
-    <img src="images/wedding2.jpg"
-         alt="Wedding Photography 2"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 2">
+      <img src="images/wedding2.jpg" alt="Wedding photograph 2" loading="lazy">
+    </button>
 
-    <img src="images/wedding3.jpg"
-         alt="Wedding Photography 3"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 3">
+      <img src="images/wedding3.jpg" alt="Wedding photograph 3" loading="lazy">
+    </button>
 
-    <img src="images/wedding4.jpg"
-         alt="Wedding Photography 4"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 4">
+      <img src="images/wedding4.jpg" alt="Wedding photograph 4" loading="lazy">
+    </button>
 
-    <img src="images/wedding5.jpg"
-         alt="Wedding Photography 5"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 5">
+      <img src="images/wedding5.jpg" alt="Wedding photograph 5" loading="lazy">
+    </button>
 
-    <img src="images/wedding6.jpg"
-         alt="Wedding Photography 6"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 6">
+      <img src="images/wedding6.jpg" alt="Wedding photograph 6" loading="lazy">
+    </button>
 
-    <img src="images/wedding7.jpg"
-         alt="Wedding Photography 7"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 7">
+      <img src="images/wedding7.jpg" alt="Wedding photograph 7" loading="lazy">
+    </button>
 
-    <img src="images/wedding8.jpg"
-         alt="Wedding Photography 8"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 8">
+      <img src="images/wedding8.jpg" alt="Wedding photograph 8" loading="lazy">
+    </button>
 
-    <img src="images/wedding9.jpg"
-         alt="Wedding Photography 9"
-         loading="lazy">
-
-    <img src="images/wedding10.jpg"
-         alt="Wedding Photography 10"
-         loading="lazy">
+    <button type="button" aria-label="Enlarge wedding photo 9">
+      <img src="images/wedding9.jpg" alt="Wedding photograph 9" loading="lazy">
+    </button>
 
   </div>
-
 </section>
 
-<!-- WEDDING FILMS -->
+<!-- CINEMATIC FILMS -->
 
 <section class="films-section" id="videos">
-
   <div class="films-container">
 
     <div class="section-heading">
@@ -458,6 +480,8 @@ footer {
     </div>
 
     <div class="video-gallery">
+
+      <!-- FIRST VIDEO ALWAYS VISIBLE -->
 
       <div class="video-card">
         <iframe
@@ -470,102 +494,128 @@ footer {
         <h3>Our Wedding Story</h3>
       </div>
 
-      <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID_2"
-          title="Wedding Film 2"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-        <h3>Moments of Love</h3>
+      <!-- HIDDEN FILMS -->
+
+      <div class="extra-films" id="extraFilms" hidden>
+
+        <div class="video-card">
+          <iframe
+            data-src="https://www.youtube.com/embed/VIDEO_ID_2"
+            title="Wedding Film 2"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <h3>Moments of Love</h3>
+        </div>
+
+        <div class="video-card">
+          <iframe
+            data-src="https://www.youtube.com/embed/VIDEO_ID_3"
+            title="Wedding Film 3"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <h3>Forever Together</h3>
+        </div>
+
+        <div class="video-card">
+          <iframe
+            data-src="https://www.youtube.com/embed/VIDEO_ID_4"
+            title="Wedding Film 4"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+          </iframe>
+          <h3>A Timeless Celebration</h3>
+        </div>
+
       </div>
 
-      <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID_3"
-          title="Wedding Film 3"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-        <h3>Forever Together</h3>
-      </div>
-
-      <div class="video-card">
-        <iframe
-          src="https://www.youtube.com/embed/VIDEO_ID_4"
-          title="Wedding Film 4"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
-        <h3>A Timeless Celebration</h3>
-      </div>
+      <button
+        class="view-films"
+        id="toggleFilms"
+        type="button"
+        aria-controls="extraFilms"
+        aria-expanded="false">
+        View All Films ↓
+      </button>
 
     </div>
-
   </div>
-
 </section>
 
 <!-- CONTACT -->
 
 <section class="contact-section">
-
-  <div class="eyebrow">
-    Let's Create Memories
-  </div>
+  <div class="eyebrow">Let's Create Memories</div>
 
   <h2>Book Your Wedding Shoot</h2>
 
   <p>
-    Let us capture your beautiful wedding
-    moments with creativity and emotion.
+    Let us capture your wedding moments
+    with creativity and emotion.
   </p>
 
   <a
-    href="https://wa.me/918159868088"
     class="contact-button"
+    href="https://wa.me/918159868088"
     target="_blank"
     rel="noopener noreferrer">
     Contact on WhatsApp
   </a>
-
 </section>
 
-<!-- FOOTER -->
+<!-- FOOTER WITH ICON-ONLY SOCIAL LINKS -->
 
 <footer>
+  <div class="footer-logo">Subhomoments</div>
 
-  <div class="footer-logo">
-    Subhomoments
-  </div>
+  <div class="social-links" aria-label="Social media">
 
-  <div class="social-links">
-
+    <!-- INSTAGRAM -->
     <a href="https://www.instagram.com/subho_moments"
        target="_blank"
-       rel="noopener noreferrer">
-      Instagram
+       rel="noopener noreferrer"
+       aria-label="Instagram"
+       title="Instagram">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-3.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+      </svg>
     </a>
 
+    <!-- FACEBOOK -->
     <a href="https://www.facebook.com/share/1WsDJfL9ud/"
        target="_blank"
-       rel="noopener noreferrer">
-      Facebook
+       rel="noopener noreferrer"
+       aria-label="Facebook"
+       title="Facebook">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.23.19 2.23.19v2.46h-1.26c-1.24 0-1.62.77-1.62 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+      </svg>
     </a>
 
+    <!-- YOUTUBE -->
     <a href="https://youtube.com/@subhomoments"
        target="_blank"
-       rel="noopener noreferrer">
-      YouTube
+       rel="noopener noreferrer"
+       aria-label="YouTube"
+       title="YouTube">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M23 7.1a3 3 0 0 0-2.1-2.1C19 4.5 12 4.5 12 4.5S5 4.5 3.1 5A3 3 0 0 0 1 7.1 31 31 0 0 0 .5 12c0 1.65.17 3.3.5 4.9A3 3 0 0 0 3.1 19C5 19.5 12 19.5 12 19.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.9 31 31 0 0 0-.5-4.9zM9.7 15.3V8.7l6 3.3-6 3.3z"/>
+      </svg>
     </a>
 
+    <!-- PINTEREST -->
     <a href="https://pin.it/2iv6SCFsO"
        target="_blank"
-       rel="noopener noreferrer">
-      Pinterest
+       rel="noopener noreferrer"
+       aria-label="Pinterest"
+       title="Pinterest">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2a10 10 0 0 0-3.65 19.31c-.03-.8-.01-1.76.19-2.62l1.3-5.51s-.33-.66-.33-1.64c0-1.54.89-2.69 2-2.69.95 0 1.41.71 1.41 1.56 0 .95-.61 2.37-.92 3.68-.26 1.1.55 2 1.63 2 1.95 0 3.46-2.06 3.46-5.04 0-2.63-1.89-4.47-4.59-4.47-3.15 0-5 2.36-5 4.8 0 .95.36 1.97.81 2.53.09.11.1.2.08.31l-.3 1.24c-.05.2-.16.25-.37.15-1.39-.65-2.26-2.69-2.26-4.32 0-3.52 2.56-6.75 7.38-6.75 3.88 0 6.9 2.77 6.9 6.48 0 3.87-2.44 6.98-5.83 6.98-1.14 0-2.21-.59-2.58-1.29l-.7 2.66c-.25.96-.92 2.16-1.37 2.98A10 10 0 1 0 12 2z"/>
+      </svg>
     </a>
 
   </div>
@@ -573,106 +623,118 @@ footer {
   <p class="copyright">
     © 2026 Subhomoments. All Rights Reserved.
   </p>
-
 </footer>
 
 <!-- FULLSCREEN PHOTO VIEWER -->
 
-<div class="lightbox"
-     id="lightbox"
-     role="dialog"
-     aria-modal="true"
-     aria-label="Wedding photo viewer">
+<div
+  class="lightbox"
+  id="lightbox"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Wedding photo viewer"
+  aria-hidden="true">
 
-  <button class="lightbox-close"
-          id="closeLightbox"
-          aria-label="Close photo">
+  <button
+    class="lightbox-close"
+    id="closeLightbox"
+    type="button"
+    aria-label="Close photo">
     &times;
   </button>
 
-  <img id="lightboxImage"
-       alt="Wedding photo enlarged">
-
+  <img id="lightboxImage" alt="">
 </div>
 
-<!-- JAVASCRIPT -->
-
 <script>
-const galleryPhotos = document.querySelectorAll(
-  ".photo-gallery img"
-);
 
-const lightbox = document.getElementById(
-  "lightbox"
-);
+/* EXPAND / COLLAPSE WEDDING FILMS */
 
-const lightboxImage = document.getElementById(
-  "lightboxImage"
-);
+const toggleFilms = document.getElementById('toggleFilms');
+const extraFilms = document.getElementById('extraFilms');
 
-const closeLightboxButton = document.getElementById(
-  "closeLightbox"
-);
+toggleFilms.addEventListener('click', () => {
+  const opening = extraFilms.hidden;
 
-let previousFocus = null;
+  extraFilms.hidden = !opening;
 
-galleryPhotos.forEach(photo => {
+  toggleFilms.setAttribute(
+    'aria-expanded',
+    String(opening)
+  );
 
-  photo.addEventListener("click", () => {
+  toggleFilms.textContent = opening
+    ? 'Show Fewer Films ↑'
+    : 'View All Films ↓';
 
-    previousFocus = document.activeElement;
+  if (opening) {
+    extraFilms.querySelectorAll('iframe[data-src]')
+      .forEach(frame => {
+        frame.src = frame.dataset.src;
+      });
+  } else {
+    extraFilms.querySelectorAll('iframe')
+      .forEach(frame => frame.removeAttribute('src'));
+  }
+});
 
-    lightboxImage.src = photo.src;
-    lightboxImage.alt = photo.alt;
+/* FULLSCREEN WEDDING PHOTO VIEWER */
 
-    lightbox.classList.add("active");
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('closeLightbox');
 
-    document.body.style.overflow = "hidden";
+let lastFocus = null;
 
-    closeLightboxButton.focus();
+document.querySelectorAll('.photo-gallery button')
+  .forEach(button => {
+
+    button.addEventListener('click', () => {
+      const photo = button.querySelector('img');
+
+      lastFocus = document.activeElement;
+
+      lightboxImage.src = photo.src;
+      lightboxImage.alt = photo.alt;
+
+      lightbox.classList.add('active');
+      lightbox.setAttribute('aria-hidden', 'false');
+
+      document.body.style.overflow = 'hidden';
+      closeButton.focus();
+    });
 
   });
 
-});
-
 function closeViewer() {
+  lightbox.classList.remove('active');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxImage.removeAttribute('src');
+  document.body.style.overflow = '';
 
-  lightbox.classList.remove("active");
-
-  lightboxImage.removeAttribute("src");
-
-  document.body.style.overflow = "";
-
-  if (previousFocus) {
-    previousFocus.focus();
+  if (lastFocus) {
+    lastFocus.focus();
   }
-
 }
 
-closeLightboxButton.addEventListener(
-  "click",
-  closeViewer
-);
+closeButton.addEventListener('click', closeViewer);
 
-lightbox.addEventListener("click", event => {
-
+lightbox.addEventListener('click', event => {
   if (event.target === lightbox) {
     closeViewer();
   }
-
 });
 
-document.addEventListener("keydown", event => {
-
+document.addEventListener('keydown', event => {
   if (
-    event.key === "Escape" &&
-    lightbox.classList.contains("active")
+    event.key === 'Escape' &&
+    lightbox.classList.contains('active')
   ) {
     closeViewer();
   }
-
 });
-</script>
 
+</script>
 </body>
 </html>
+
