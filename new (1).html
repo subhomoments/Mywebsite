@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#42182c">
+<meta name="description" content="Ankit and Sneha's royal wedding invitation, 2 December 2026.">
+<title>Ankit &amp; Sneha | Royal Wedding Invitation</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--wine:#42182c;--deep:#250e1b;--rose:#85465d;--gold:#e7c58b;--cream:#fff7ed;--text:#fdf1e6}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--deep);color:var(--text);font-family:Poppins,sans-serif;overflow-x:hidden}body.locked{overflow:hidden}button,a{-webkit-tap-highlight-color:transparent}button{font-family:inherit;cursor:pointer}a{text-decoration:none}h1,h2,h3,p{margin-top:0}h2{font-family:Cinzel,serif;color:var(--gold)}section{padding:65px 18px;position:relative}.container{max-width:1080px;margin:auto}.center{text-align:center}.script{font-family:'Great Vibes',cursive}.gold{color:var(--gold)}.small-title{color:var(--gold);letter-spacing:3px;font-size:11px;text-transform:uppercase}.section-title{font-size:clamp(23px,5vw,35px);text-align:center;margin-bottom:10px}.section-desc{text-align:center;opacity:.8;font-size:13px;margin-bottom:35px}.ornament{color:var(--gold);text-align:center;font-size:25px;margin:16px 0}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 25px;border:1px solid var(--gold);border-radius:40px;color:var(--deep);background:var(--gold);font-weight:600;font-size:13px;transition:.3s}.btn:hover{transform:translateY(-3px);box-shadow:0 8px 25px #0003}.reveal{opacity:0;transform:translateY(35px);transition:opacity .9s,transform .9s}.reveal.visible{opacity:1;transform:translateY(0)}
+/* Premium envelope opening */
+#opening{position:fixed;inset:0;z-index:1000;background:radial-gradient(circle,#733c50,#321425 78%);display:flex;justify-content:center;align-items:center;text-align:center;padding:20px;transition:opacity .8s}.opening-content{width:100%;max-width:450px}.opening-content h1{font-family:'Great Vibes',cursive;font-weight:400;font-size:clamp(54px,12vw,78px);color:var(--gold);margin:20px 0}.envelope{position:relative;width:min(310px,85vw);height:205px;margin:35px auto;perspective:800px;filter:drop-shadow(0 18px 20px #0005)}.env-back{position:absolute;inset:0;background:#e2bd85;border:2px solid #f7dfa8;border-radius:6px}.env-letter{position:absolute;width:84%;height:155px;top:20px;left:8%;background:#fff7e9;border:2px solid #b99158;display:flex;align-items:center;justify-content:center;flex-direction:column;color:#6b3042;transition:transform 1.2s;z-index:2}.env-letter span{font-family:'Great Vibes',cursive;font-size:34px}.env-front{position:absolute;inset:0;background:linear-gradient(145deg,#f1d29c,#c99b60);clip-path:polygon(0 0,50% 52%,100% 0,100% 100%,0 100%);z-index:3}.env-flap{position:absolute;top:0;width:100%;height:115px;background:#f1d39e;clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform 1s;z-index:5}.seal{position:absolute;z-index:6;left:50%;top:87px;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;display:grid;place-items:center;color:#ffe7b7;background:radial-gradient(circle,#ad344e,#75172f);border:3px double #dba276;box-shadow:0 4px 12px #0005;font-family:Cinzel,serif;font-size:15px;transition:opacity .4s,box-shadow .3s;animation:sealPulse 2.3s ease-in-out infinite}.seal:hover,.seal:focus-visible{box-shadow:0 0 0 7px #e7c58b44,0 4px 12px #0005;outline:2px solid var(--gold);outline-offset:4px}@keyframes sealPulse{50%{box-shadow:0 0 0 8px #e7c58b33,0 4px 12px #0005}}.envelope.open .env-flap{transform:rotateX(180deg);z-index:1}.envelope.open .env-letter{transform:translateY(-95px)}.envelope.open .seal{opacity:0;pointer-events:none}.opening-content .hint{font-size:12px;opacity:.8;margin-top:20px}
+/* Scratch: hidden date is beneath removable gold canvas */
+#scratchScreen{position:fixed;inset:0;z-index:900;background:radial-gradient(circle,#704055,#260f1e);display:none;justify-content:center;align-items:center;text-align:center;padding:18px;transition:opacity .8s}.scratch-card{width:min(430px,100%);padding:40px 22px;border:2px solid var(--gold);outline:1px solid #d9b77b88;outline-offset:-10px;border-radius:145px 145px 15px 15px;background:#4d2034;box-shadow:0 0 60px #0005}.scratch-card h2{font-family:'Great Vibes',cursive;font-size:55px;font-weight:400;margin:15px 0}.scratch-area{width:min(290px,100%);height:125px;position:relative;margin:25px auto;border-radius:12px;overflow:hidden;touch-action:none}.scratch-secret{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#fff3df;color:#6d2941;font-family:Cinzel,serif;font-weight:600;font-size:19px}.scratch-secret small{font-size:11px;margin-top:10px}#scratchCanvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}#scratchHint{font-size:12px;min-height:20px}#petalLayer{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:950}.petal{position:absolute;top:-40px;width:14px;height:20px;background:linear-gradient(130deg,#ffc0cd,#bc536e);border-radius:90% 0 90% 0;animation:fall var(--duration) linear forwards;opacity:.9}@keyframes fall{from{transform:translate3d(0,-30px,0) rotate(0)}to{transform:translate3d(var(--drift),110vh,0) rotate(720deg)}}
+/* Main site */
+.hero{min-height:100svh;display:flex;justify-content:center;align-items:center;padding:50px 18px;background:radial-gradient(circle at 50% 35%,#88435a55,transparent 55%),linear-gradient(145deg,#4a1a31,#220d1b)}.hero-frame{position:relative;width:min(620px,100%);padding:65px 20px;border:2px solid var(--gold);border-radius:200px 200px 18px 18px;text-align:center;box-shadow:0 0 65px #0005,inset 0 0 35px #d4aa6930}.hero-frame:before{content:"";position:absolute;inset:9px;border:1px solid #e7c58b70;border-radius:190px 190px 12px 12px;pointer-events:none}.crown{font-size:46px;color:var(--gold)}.hero-names{font-family:'Great Vibes',cursive;font-weight:400;color:var(--gold);font-size:clamp(65px,14vw,100px);line-height:1.15;margin:28px 0;text-shadow:0 0 25px #e7c58b30}.hero-names span{display:block;font-size:45px}.hero-date{font-family:Cinzel,serif;letter-spacing:2px}.float-flower{position:absolute;font-size:35px;animation:float 5s ease-in-out infinite;pointer-events:none}.flower-left{left:4%;top:24%}.flower-right{right:4%;bottom:20%;animation-delay:2s}@keyframes float{50%{transform:translateY(-18px) rotate(15deg)}}.intro{background:var(--cream);color:#5a3040;text-align:center}.intro h2{color:#9d5d61}.intro p{max-width:650px;margin:auto;line-height:2;font-size:14px}.countdown{text-align:center;background:linear-gradient(140deg,#321324,#693148)}.timer{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}.time-box{width:75px;padding:15px 5px;border:1px solid var(--gold);border-radius:10px;background:#ffffff0a}.time-box strong{display:block;color:var(--gold);font-size:26px}.time-box span{font-size:10px;text-transform:uppercase}
+.festivities{background:var(--cream);color:#50283b}.festivities h2{color:#8b4356}.event-list{max-width:650px;margin:auto;display:grid;gap:25px}.event-card{position:relative;height:390px;overflow:hidden;border-radius:18px;background:linear-gradient(135deg,#ac7181,#4e263d);box-shadow:0 12px 30px #42182c25;border:2px solid #d3ad72;isolation:isolate}.event-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}.event-card:hover .event-bg{transform:scale(1.06)}.event-shade{position:absolute;inset:0;background:linear-gradient(180deg,#1e0d1b25 0%,#1e0d1b50 35%,#1e0d1be8 100%)}.event-number{position:absolute;top:18px;left:18px;color:#fff4d9;border:1px solid #e7c58b99;background:#32142580;padding:7px 12px;border-radius:20px;font-size:11px}.event-overlay{position:absolute;bottom:14px;left:14px;right:14px;color:#fff8ee;text-align:center;padding:18px 12px;background:#2b1024b8;border:1px solid #e7c58b99;border-radius:13px;backdrop-filter:blur(9px);-webkit-backdrop-filter:blur(9px)}.event-overlay h3{font-family:'Playfair Display',serif;color:#f7d69d;font-size:clamp(23px,5vw,29px);margin:5px 0 10px}.event-overlay p{font-size:12px;margin:6px 0}.event-overlay .btn{margin-top:10px;padding:10px 20px;font-size:12px}.photo-placeholder{position:absolute;inset:0;display:grid;place-items:center;color:#fff8e3b0;font-size:13px;text-align:center;padding:20px}.photo-placeholder span{display:block;font-size:38px}
+/* One photo per view, five total, 4-second automatic rotation */
+.gallery{background:linear-gradient(160deg,#321324,#5b2941)}.gallery-slider{width:min(480px,100%);margin:auto;position:relative}.gallery-window{overflow:hidden;border-radius:18px;border:2px solid var(--gold);box-shadow:0 16px 40px #0006;touch-action:pan-y}.gallery-track{display:flex;transition:transform .65s cubic-bezier(.22,.61,.36,1);will-change:transform}.gallery-slide{min-width:100%;position:relative;aspect-ratio:4/5;background:linear-gradient(145deg,#965a71,#43182f);display:flex;align-items:center;justify-content:center;overflow:hidden}.gallery-slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.gallery-fallback{text-align:center;color:#f7d6ad;font-family:'Playfair Display',serif;font-size:18px}.gallery-fallback span{display:block;font-size:42px}.gallery-counter{position:absolute;top:12px;right:12px;background:#250e1b9c;border:1px solid #e7c58b99;color:#fff7ed;border-radius:20px;padding:5px 12px;font-size:12px}.gallery-controls{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:17px}.gallery-arrow{border:1px solid var(--gold);background:#e7c58b19;color:var(--gold);width:43px;height:43px;border-radius:50%;font-size:25px;line-height:1}.gallery-arrow:hover{background:var(--gold);color:var(--deep)}.gallery-dots{display:flex;gap:8px;align-items:center;justify-content:center}.gallery-dot{width:9px;height:9px;border:0;border-radius:99px;background:#e7c58b66;padding:0;transition:width .3s,background .3s}.gallery-dot.active{width:25px;background:var(--gold)}
+.thanks{text-align:center;background:var(--cream);color:#69374a}.thanks h2{font-family:'Great Vibes',cursive;font-size:50px;font-weight:400;color:#9c4d67}.thanks p{max-width:580px;margin:0 auto 20px;line-height:1.9}footer{padding:30px 15px;text-align:center;background:var(--deep);color:var(--gold);font-size:12px}.music-btn{position:fixed;right:18px;bottom:18px;z-index:50;width:52px;height:52px;border-radius:50%;border:1px solid #fff2d4;background:var(--gold);color:var(--deep);font-size:23px;box-shadow:0 5px 25px #0005}
+@media(max-width:420px){section{padding:55px 14px}.hero-frame{padding:55px 12px}.event-card{height:365px}.event-overlay{padding:13px 9px}.event-overlay h3{font-size:23px}.event-overlay p{font-size:11px}.time-box{width:70px}.gallery-slider{max-width:340px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}}
+
+/* Continuous cinematic envelope sequence: GPU-friendly transforms, no abrupt z-index changes */
+#opening{will-change:opacity;transition:opacity 1.15s cubic-bezier(.22,1,.36,1)}
+.envelope{transform-style:preserve-3d;transition:transform 1.7s cubic-bezier(.22,1,.36,1);will-change:transform}
+.env-flap{backface-visibility:hidden;will-change:transform;transition:transform 1.3s cubic-bezier(.22,.7,.18,1)!important}
+.env-letter{will-change:transform,filter;transition:transform 1.65s cubic-bezier(.22,1,.36,1),filter 1.65s ease!important}
+.envelope.open .env-flap{transform:rotateX(179deg)}
+.envelope.open .env-letter{transform:translate3d(0,-112px,0);filter:drop-shadow(0 9px 12px #0003);transition-delay:.26s!important}
+.envelope.open{transform:translateY(22px) scale(1.035)}
+.envelope.open .seal{animation:none;opacity:0;transform:translateX(-50%) scale(.65);transition:opacity .38s ease,transform .38s ease}
+#scratchScreen{display:flex;opacity:0;visibility:hidden;pointer-events:none;transform:scale(1.045);transition:opacity 1.15s ease,transform 1.4s cubic-bezier(.22,1,.36,1),visibility 0s linear 1.15s}
+#scratchScreen.ready{visibility:visible;opacity:1;transform:scale(1);pointer-events:auto;transition:opacity 1.15s ease,transform 1.4s cubic-bezier(.22,1,.36,1),visibility 0s}
+#scratchScreen.leaving{opacity:0;transform:scale(.98);pointer-events:none}
+@media(prefers-reduced-motion:reduce){#opening,#scratchScreen,.envelope,.env-letter,.env-flap{transition-duration:.01ms!important}}
+
+/* ROYAL ROSE EDITION */
+.royal-logo{display:block;width:88px;height:70px;object-fit:contain;margin:0 auto 12px;filter:drop-shadow(0 3px 8px #0003)}
+.scratch-card .royal-logo{width:86px;height:65px}
+.seal{overflow:hidden;padding:4px;background:radial-gradient(circle,#f7e4c1,#b47d48);border-color:#f6d49a;animation:none}
+.seal img{width:100%;height:100%;object-fit:contain;pointer-events:none;filter:drop-shadow(0 1px 2px #53251660)}
+#opening.fade-out{opacity:0;visibility:hidden;pointer-events:none}
+#scratchScreen{z-index:1100;transform:none!important}
+#scratchScreen.ready{transform:none!important}
+.envelope.open{transform:translateY(8px) scale(1.02)}
+.envelope.open .env-letter{transform:translate3d(0,-98px,0)}
+/* One-image-at-a-time gallery with a continuous dissolve, including last-to-first */
+.gallery-track{display:block;position:relative;aspect-ratio:4/5;transform:none!important;will-change:auto}
+.gallery-slide{position:absolute;inset:0;width:100%;height:100%;min-width:0;aspect-ratio:auto;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 1.05s ease,visibility 0s linear 1.05s}
+.gallery-slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:1;transition:opacity 1.05s ease,visibility 0s}
+/* Decorative sculpted roses instead of flower emoji */
+.floral-corner{position:absolute;width:125px;height:125px;pointer-events:none;filter:drop-shadow(0 8px 12px #0004);animation:roseSway 6s ease-in-out infinite alternate}
+.floral-left{top:12%;left:3%}.floral-right{right:3%;bottom:12%;transform:scale(.86);animation-delay:-3s}
+.rose-bloom{position:absolute;inset:22px;border-radius:50%;background:radial-gradient(ellipse at 45% 42%,#f9b2b8 0 8%,#c84d70 12% 20%,#7f1d40 26% 34%,#df7993 40% 51%,#922448 56% 67%,#5d1630 72%);box-shadow:inset -8px -8px 14px #4b112b88,0 0 0 7px #a92b5090;transform:rotate(-18deg)}
+.rose-bloom:before,.rose-bloom:after{content:"";position:absolute;border:8px solid #d65d7b;border-right-color:transparent;border-bottom-color:#862044;border-radius:50%;inset:14px;transform:rotate(30deg)}
+.rose-bloom:after{inset:28px;border-width:5px;transform:rotate(100deg)}
+.rose-leaf{position:absolute;left:12px;bottom:10px;width:44px;height:23px;border-radius:100% 0 100% 0;background:linear-gradient(145deg,#8c9b60,#314d36);transform:rotate(-35deg);box-shadow:88px -10px 0 -3px #536f49}
+@keyframes roseSway{from{translate:0 0}to{translate:0 -11px}}
+/* Delicate gold-edged butterflies: no emoji artwork */
+.butterfly{position:absolute;width:55px;height:52px;pointer-events:none;z-index:2;animation:butterflyFly 9s ease-in-out infinite alternate}
+.butterfly-one{top:18%;right:15%}.butterfly-two{bottom:17%;left:12%;animation-delay:-5s;scale:.7}
+.butterfly:before,.butterfly:after{content:"";position:absolute;top:5px;width:26px;height:36px;background:radial-gradient(ellipse at 60% 40%,#f7c4a3,#b76e83 70%,#63334c);border:1px solid #e7c58b;border-radius:90% 12% 75% 15%;transform-origin:100% 75%;animation:wingLeft .42s ease-in-out infinite alternate}
+.butterfly:before{left:1px}.butterfly:after{right:1px;transform:scaleX(-1);transform-origin:0 75%;animation-name:wingRight}
+.butterfly i{position:absolute;top:13px;left:26px;width:3px;height:27px;background:#d7b276;border-radius:50%;z-index:2}
+@keyframes wingLeft{to{transform:rotateY(65deg) rotate(-12deg)}}
+@keyframes wingRight{to{transform:scaleX(-1) rotateY(65deg) rotate(-12deg)}}
+@keyframes butterflyFly{from{translate:-10px 10px}to{translate:25px -38px}}
+/* Premium rose petals */
+.petal{background:radial-gradient(ellipse at 35% 20%,#ffc5cb,#c14d72 60%,#7e2446);border-radius:85% 10% 75% 15%;box-shadow:inset -2px -2px 3px #7c22454a}
+@media(max-width:520px){.floral-corner{width:80px;height:80px;opacity:.85}.rose-bloom{inset:14px}.rose-leaf{scale:.65}.butterfly{scale:.7}.royal-logo{width:75px;height:60px}}
+@media(prefers-reduced-motion:reduce){.butterfly,.floral-corner,.butterfly:before,.butterfly:after{animation:none!important}}
+
+/* FINAL PREMIUM BOTANICAL ROSES & BUTTERFLIES */
+.floral-corner{width:clamp(125px,17vw,225px);height:clamp(145px,20vw,250px);z-index:2;opacity:.96;filter:drop-shadow(0 10px 14px #12071366);animation:roseSway 8s ease-in-out infinite alternate;transform-origin:50% 90%}
+.floral-left{left:max(-35px,calc(50% - 650px));top:12%}
+.floral-right{right:max(-35px,calc(50% - 650px));bottom:8%;transform:rotate(16deg) scale(.85)}
+.rose-art{width:100%;height:100%;overflow:visible}
+@keyframes roseSway{from{translate:0 0;rotate:-3deg}to{translate:0 -9px;rotate:3deg}}
+.butterfly{width:clamp(43px,6vw,72px);height:auto;aspect-ratio:10/9;z-index:3;filter:drop-shadow(0 5px 8px #13081877);animation:butterflyFly 11s ease-in-out infinite alternate}
+.butterfly svg{display:block;width:100%;height:100%;overflow:visible}
+.butterfly .wing{transform-box:fill-box;transform-origin:center right;animation:butterWingL .55s ease-in-out infinite alternate}
+.butterfly .wing-r{transform-origin:center left;animation-name:butterWingR}
+@keyframes butterWingL{to{transform:scaleX(.36)}}
+@keyframes butterWingR{to{transform:scaleX(.36)}}
+@keyframes butterflyFly{0%{translate:-18px 15px;rotate:-12deg}50%{translate:10px -24px;rotate:7deg}100%{translate:38px -48px;rotate:-5deg}}
+.butterfly-one{top:18%;right:10%}.butterfly-two{bottom:21%;left:9%;animation-delay:-5s;scale:.82}
+.hero-petal-field{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+.hero-petal{position:absolute;top:-35px;width:13px;height:20px;background:radial-gradient(ellipse at 30% 25%,#ffcfcb,#c75d7b 64%,#812b50);border-radius:90% 8% 80% 12%;opacity:.75;animation:heroPetalDrift var(--petal-time) linear infinite;animation-delay:var(--petal-delay);filter:drop-shadow(0 2px 2px #220b1833)}
+@keyframes heroPetalDrift{0%{transform:translate3d(0,-50px,0) rotate(0)}50%{transform:translate3d(var(--petal-sway),52vh,0) rotate(210deg)}100%{transform:translate3d(calc(var(--petal-sway) * -.6),110vh,0) rotate(490deg)}}
+@media(max-width:520px){.floral-corner{width:110px;height:128px;opacity:.8}.floral-left{left:-45px;top:10%}.floral-right{right:-42px;bottom:10%}.butterfly{width:43px;scale:1}.butterfly-two{scale:.7}}
+@media(prefers-reduced-motion:reduce){.hero-petal,.butterfly .wing{animation:none!important}.hero-petal{display:none}}
+
+/* MINIATURE ROSES & BUTTERFLIES — delicate emoji-scale accents */
+.floral-corner{width:42px!important;height:46px!important;opacity:.92!important;filter:drop-shadow(0 2px 3px #160a1844)!important;animation:miniRoseFloat 5s ease-in-out infinite alternate!important}
+.floral-left{left:8%!important;top:23%!important}
+.floral-right{right:8%!important;bottom:23%!important}
+.rose-art{width:100%;height:100%}
+.butterfly{width:27px!important;height:25px!important;aspect-ratio:auto!important;scale:1!important;animation:miniButterflyFlight 8s ease-in-out infinite alternate!important}
+.butterfly-one{top:16%!important;right:22%!important}
+.butterfly-two{bottom:15%!important;left:20%!important;animation-delay:-4s!important}
+.hero-petal{width:7px!important;height:10px!important;opacity:.6!important}
+.petal{width:8px!important;height:11px!important;opacity:.75!important}
+@keyframes miniRoseFloat{from{transform:translateY(0) rotate(-7deg)}to{transform:translateY(-9px) rotate(8deg)}}
+@keyframes miniButterflyFlight{0%{transform:translate(-8px,8px) rotate(-10deg)}50%{transform:translate(8px,-12px) rotate(8deg)}100%{transform:translate(19px,-24px) rotate(-7deg)}}
+@media(max-width:520px){.floral-corner{width:30px!important;height:34px!important}.floral-left{left:5%!important;top:26%!important}.floral-right{right:5%!important;bottom:25%!important}.butterfly{width:21px!important;height:20px!important}.butterfly-one{right:13%!important}.butterfly-two{left:12%!important}}
+@media(prefers-reduced-motion:reduce){.floral-corner,.butterfly{animation:none!important}}
+</style>
+</head>
+<body class="locked">
+<!-- Tap A&S wax seal to open. No extra button. -->
+<div id="opening"><div class="opening-content"><p class="small-title">A Royal Wedding Invitation</p><h1>Ankit &amp; Sneha</h1><p>With love, we invite you</p><div class="envelope" id="envelope"><div class="env-back"></div><div class="env-letter"><span>Ankit &amp; Sneha</span><small>02 December 2026</small></div><div class="env-front"></div><div class="env-flap"></div><button class="seal" id="sealBtn" type="button" onclick="openLetter()" aria-label="Open the invitation letter"><img src="ankitimages/ankitlogo.png" alt="A&S monogram"></button></div><p class="hint">Tap the A&amp;S seal to open your invitation</p></div></div>
+<!-- Scratch-to-reveal date. Auto-enter after celebration. -->
+<div id="scratchScreen"><div class="scratch-card"><img class="royal-logo" src="ankitimages/ankitlogo.png" alt="Ankit and Sneha monogram"><p class="small-title">You Are Cordially Invited</p><h2>Ankit &amp; Sneha</h2><p>Scratch to reveal our special day</p><div class="scratch-area"><div class="scratch-secret"><span>02 December 2026</span><small>Our Forever Begins</small></div><canvas id="scratchCanvas" aria-label="Scratch away the golden coating to reveal the wedding date"></canvas></div><p id="scratchHint">Gently scratch the golden card</p></div></div>
+<div id="petalLayer"></div>
+<audio id="bgMusic" loop preload="none"><source src="ankitimages/background-music.mp3" type="audio/mpeg"></audio><button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Play or pause music">♫</button>
+<header class="hero" id="home"><div class="floral-corner floral-left" aria-hidden="true"><svg class="rose-art" viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="rosePetal" cx="36%" cy="28%" r="75%"><stop stop-color="#f8c0c0"/><stop offset=".33" stop-color="#cb5576"/><stop offset=".73" stop-color="#8d254a"/><stop offset="1" stop-color="#48132c"/></radialGradient><linearGradient id="leafPaint" x2="1" y2="1"><stop stop-color="#a2a974"/><stop offset=".6" stop-color="#476449"/><stop offset="1" stop-color="#243e32"/></linearGradient></defs><path d="M113 137 C112 176 102 205 91 235" fill="none" stroke="#688054" stroke-width="5" stroke-linecap="round"/><path d="M109 180 Q55 128 28 169 Q62 208 109 180Z" fill="url(#leafPaint)" stroke="#c0a876" stroke-width="1.5"/><path d="M102 197 Q153 147 188 177 Q150 213 102 197Z" fill="url(#leafPaint)" stroke="#c0a876" stroke-width="1.5"/><path d="M31 168Q70 178 108 181 M184 178Q140 187 103 198" stroke="#d7c08a" fill="none" opacity=".6"/><g stroke="#e9a6a8" stroke-width="1.2"><path d="M108 39 C45 8 15 75 52 119 Q24 158 82 170 Q109 189 145 167 Q202 159 174 113 C206 69 162 13 108 39Z" fill="url(#rosePetal)"/><path d="M107 42 Q42 37 50 104 Q65 91 96 100 Q66 71 107 42Z" fill="#b43c60"/><path d="M113 41 Q178 37 173 105 Q150 89 125 103 Q148 69 113 41Z" fill="#9b2c51"/><path d="M51 108 Q35 148 87 168 Q77 128 109 113 Q78 125 51 108Z" fill="#aa3457"/><path d="M173 108 Q190 148 141 168 Q146 128 113 113 Q147 122 173 108Z" fill="#b73d60"/><path d="M74 89 Q106 63 142 88 Q155 113 128 139 Q109 157 89 137 Q65 112 74 89Z" fill="url(#rosePetal)"/><path d="M89 94 Q107 76 127 95 Q142 111 120 126 Q102 139 90 121 Q80 108 89 94Z" fill="#7f2345"/><path d="M97 102 Q111 89 120 102 Q125 112 113 118 Q101 120 97 109 Q96 105 103 103" fill="none" stroke="#f6b8b8" stroke-width="5" stroke-linecap="round"/><path d="M75 143 Q111 165 149 143" fill="none" stroke="#f2a2a6" stroke-width="3" opacity=".65"/></g></svg></div><div class="floral-corner floral-right" aria-hidden="true"><svg class="rose-art" viewBox="0 0 220 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="rosePetal" cx="36%" cy="28%" r="75%"><stop stop-color="#f8c0c0"/><stop offset=".33" stop-color="#cb5576"/><stop offset=".73" stop-color="#8d254a"/><stop offset="1" stop-color="#48132c"/></radialGradient><linearGradient id="leafPaint" x2="1" y2="1"><stop stop-color="#a2a974"/><stop offset=".6" stop-color="#476449"/><stop offset="1" stop-color="#243e32"/></linearGradient></defs><path d="M113 137 C112 176 102 205 91 235" fill="none" stroke="#688054" stroke-width="5" stroke-linecap="round"/><path d="M109 180 Q55 128 28 169 Q62 208 109 180Z" fill="url(#leafPaint)" stroke="#c0a876" stroke-width="1.5"/><path d="M102 197 Q153 147 188 177 Q150 213 102 197Z" fill="url(#leafPaint)" stroke="#c0a876" stroke-width="1.5"/><path d="M31 168Q70 178 108 181 M184 178Q140 187 103 198" stroke="#d7c08a" fill="none" opacity=".6"/><g stroke="#e9a6a8" stroke-width="1.2"><path d="M108 39 C45 8 15 75 52 119 Q24 158 82 170 Q109 189 145 167 Q202 159 174 113 C206 69 162 13 108 39Z" fill="url(#rosePetal)"/><path d="M107 42 Q42 37 50 104 Q65 91 96 100 Q66 71 107 42Z" fill="#b43c60"/><path d="M113 41 Q178 37 173 105 Q150 89 125 103 Q148 69 113 41Z" fill="#9b2c51"/><path d="M51 108 Q35 148 87 168 Q77 128 109 113 Q78 125 51 108Z" fill="#aa3457"/><path d="M173 108 Q190 148 141 168 Q146 128 113 113 Q147 122 173 108Z" fill="#b73d60"/><path d="M74 89 Q106 63 142 88 Q155 113 128 139 Q109 157 89 137 Q65 112 74 89Z" fill="url(#rosePetal)"/><path d="M89 94 Q107 76 127 95 Q142 111 120 126 Q102 139 90 121 Q80 108 89 94Z" fill="#7f2345"/><path d="M97 102 Q111 89 120 102 Q125 112 113 118 Q101 120 97 109 Q96 105 103 103" fill="none" stroke="#f6b8b8" stroke-width="5" stroke-linecap="round"/><path d="M75 143 Q111 165 149 143" fill="none" stroke="#f2a2a6" stroke-width="3" opacity=".65"/></g></svg></div><div class="butterfly butterfly-one" aria-hidden="true"><svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="wingTone"><stop stop-color="#f8dfb2"/><stop offset=".52" stop-color="#e5a7b3"/><stop offset="1" stop-color="#843e63"/></radialGradient></defs><g class="wing wing-l"><path d="M48 44 Q12 -9 3 23 Q-3 51 46 53 Q13 52 20 74 Q41 89 49 53Z" fill="url(#wingTone)" stroke="#e7c58b" stroke-width="2"/><path d="M41 40Q20 20 14 28M40 57Q26 65 31 72" fill="none" stroke="#fff0cf" stroke-width="2"/></g><g class="wing wing-r"><path d="M52 44 Q88 -9 97 23 Q103 51 54 53 Q87 52 80 74 Q59 89 51 53Z" fill="url(#wingTone)" stroke="#e7c58b" stroke-width="2"/><path d="M59 40Q80 20 86 28M60 57Q74 65 69 72" fill="none" stroke="#fff0cf" stroke-width="2"/></g><path d="M50 42 Q46 60 50 75 Q54 60 50 42Z" fill="#694052"/><path d="M49 44Q38 27 42 22M51 44Q62 27 58 22" stroke="#e7c58b" fill="none" stroke-width="2"/></svg></div><div class="butterfly butterfly-two" aria-hidden="true"><svg viewBox="0 0 100 90" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="wingTone"><stop stop-color="#f8dfb2"/><stop offset=".52" stop-color="#e5a7b3"/><stop offset="1" stop-color="#843e63"/></radialGradient></defs><g class="wing wing-l"><path d="M48 44 Q12 -9 3 23 Q-3 51 46 53 Q13 52 20 74 Q41 89 49 53Z" fill="url(#wingTone)" stroke="#e7c58b" stroke-width="2"/><path d="M41 40Q20 20 14 28M40 57Q26 65 31 72" fill="none" stroke="#fff0cf" stroke-width="2"/></g><g class="wing wing-r"><path d="M52 44 Q88 -9 97 23 Q103 51 54 53 Q87 52 80 74 Q59 89 51 53Z" fill="url(#wingTone)" stroke="#e7c58b" stroke-width="2"/><path d="M59 40Q80 20 86 28M60 57Q74 65 69 72" fill="none" stroke="#fff0cf" stroke-width="2"/></g><path d="M50 42 Q46 60 50 75 Q54 60 50 42Z" fill="#694052"/><path d="M49 44Q38 27 42 22M51 44Q62 27 58 22" stroke="#e7c58b" fill="none" stroke-width="2"/></svg></div><div class="hero-petal-field" id="heroPetals" aria-hidden="true"></div><div class="hero-frame"><img class="royal-logo" src="ankitimages/ankitlogo.png" alt="Ankit and Sneha monogram"><p class="small-title">Together With Our Families</p><p style="margin-top:20px">We joyfully invite you to celebrate</p><h1 class="hero-names">Ankit<span>&amp;</span>Sneha</h1><div class="ornament">❦</div><p class="small-title">The Royal Wedding</p><h3 class="hero-date gold">02 · 12 · 2026</h3><p>Wednesday | 5:15 PM onwards</p><p>Shree Sawariya Banquet</p><a class="btn" href="#festivities">Explore Our Celebration</a></div></header>
+<section class="intro"><div class="container reveal"><div class="ornament">❦</div><h2 class="script" style="font-size:48px">A Celebration of Love</h2><p>Two hearts, one beautiful journey. With immense happiness, we invite you to celebrate our wedding festivities. Your love, presence and blessings will make these moments unforgettable.</p><div class="ornament">❦</div></div></section>
+<section class="countdown"><div class="container reveal"><h2 class="section-title">Counting Down to Forever</h2><p class="section-desc">Until our wedding celebration begins</p><div class="timer"><div class="time-box"><strong id="days">00</strong><span>Days</span></div><div class="time-box"><strong id="hours">00</strong><span>Hours</span></div><div class="time-box"><strong id="minutes">00</strong><span>Minutes</span></div><div class="time-box"><strong id="seconds">00</strong><span>Seconds</span></div></div><p id="countdownMessage" style="margin-top:20px"></p></div></section>
+<section class="festivities" id="festivities"><div class="container"><div class="reveal"><div class="ornament">❦</div><h2 class="section-title">Our Wedding Festivities</h2><p class="section-desc">Seven celebrations, countless blessings and memories to treasure.</p></div><div class="event-list" id="eventList"></div></div></section>
+<section class="gallery" id="gallery"><div class="container"><div class="reveal"><div class="ornament">❦</div><h2 class="section-title">Our Beautiful Moments</h2><p class="section-desc">Five beautiful memories from our journey together</p></div><div class="gallery-slider reveal" id="gallerySlider" aria-label="Our Beautiful Moments photo carousel"><div class="gallery-window" id="galleryWindow"><div class="gallery-track" id="galleryTrack"></div></div><div class="gallery-controls"><button class="gallery-arrow" id="prevPhoto" type="button" aria-label="Previous photo">‹</button><div class="gallery-dots" id="galleryDots" aria-label="Choose photo"></div><button class="gallery-arrow" id="nextPhoto" type="button" aria-label="Next photo">›</button></div></div></div></section>
+<section class="thanks"><div class="container reveal"><div class="ornament">❦</div><h2>With Love &amp; Gratitude</h2><p>Your presence is the greatest gift we could ask for. We look forward to celebrating these beautiful moments with you and creating memories that last forever.</p><h2>Ankit &amp; Sneha</h2><button class="btn" onclick="shareInvitation()">♡ Share Invitation</button></div></section>
+<footer><p><img class="royal-logo" src="ankitimages/ankitlogo.png" alt="A&S monogram">Ankit &amp; Sneha</p><p>2 December 2026 · Made With Love</p></footer>
+<script>
+// Edit your event details here. Links are exactly those supplied by you.
+const EVENT_DETAILS=[
+{name:"Vivah Hath / Peela Chawal",date:"Thursday, 26 November 2026",time:"10:15 AM onwards",venue:"VIP Enclave",map:"https://share.google/p7an4A3jflh5JdQBa",image:"ankitimages/vivah-hath.jpg"},
+{name:"Mangal Path",date:"Sunday, 29 November 2026",time:"4:15 PM onwards",venue:"Bika Banquet",map:"https://maps.app.goo.gl/tveYvcxtEL5fB75FA?g_st=aw",image:"ankitimages/mangal-path.jpg"},
+{name:"Mehendi",date:"Monday, 30 November 2026",time:"11:15 AM onwards",venue:"Vrindavan Banquet",map:"https://share.google/RifkwYjHOFkSkj69m",image:"ankitimages/mehendi.jpg"},
+{name:"Mayra",date:"Tuesday, 1 December 2026",time:"9:15 AM onwards",venue:"Vrindavan Banquet",map:"https://share.google/RifkwYjHOFkSkj69m",image:"ankitimages/mayra.jpg"},
+{name:"Tilak & Sangeet",date:"Tuesday, 1 December 2026",time:"5:15 PM onwards",venue:"Sawariya Banquet",map:"https://maps.app.goo.gl/yMsbAMU7a1vbppQp6?g_st=aw",image:"ankitimages/tilak-sangeet.jpg"},
+{name:"Haldi",date:"Wednesday, 2 December 2026",time:"10:15 AM onwards",venue:"Vrindavan Banquet",map:"https://share.google/RifkwYjHOFkSkj69m",image:"ankitimages/haldi.jpg"},
+{name:"The Wedding Day",date:"Wednesday, 2 December 2026",time:"5:15 PM onwards",venue:"Shree Sawariya Banquet",map:"https://maps.app.goo.gl/yMsbAMU7a1vbppQp6?g_st=aw",image:"ankitimages/wedding.jpg"}
+];
+// Seven festivities remain full-width, stacked one under another.
+const eventList=document.getElementById('eventList');
+EVENT_DETAILS.forEach((event,index)=>{
+ const card=document.createElement('article');card.className='event-card reveal';
+ const placeholder=document.createElement('div');placeholder.className='photo-placeholder';placeholder.innerHTML='<div><span>❀</span>Add your celebration photo</div>';
+ const img=document.createElement('img');img.className='event-bg';img.alt=event.name+' celebration';img.loading='lazy';img.onload=()=>placeholder.remove();img.onerror=()=>img.remove();img.src=event.image;
+ const shade=document.createElement('div');shade.className='event-shade';
+ const number=document.createElement('div');number.className='event-number';number.textContent='CELEBRATION '+String(index+1).padStart(2,'0');
+ const overlay=document.createElement('div');overlay.className='event-overlay';
+ const title=document.createElement('h3');title.textContent=event.name;
+ const date=document.createElement('p');date.textContent=event.date;
+ const time=document.createElement('p');time.textContent='🕒 '+event.time;
+ const venue=document.createElement('p');venue.textContent='📍 '+event.venue;
+ const link=document.createElement('a');link.className='btn';link.textContent='Get Directions ↗';link.href=event.map;link.target='_blank';link.rel='noopener noreferrer';
+ overlay.append(title,date,time,venue,link);card.append(placeholder,img,shade,number,overlay);eventList.append(card);
+});
+// Five-photo gallery: exactly one slide visible at a time.
+const galleryTrack=document.getElementById('galleryTrack');const galleryDots=document.getElementById('galleryDots');const galleryWindow=document.getElementById('galleryWindow');const slider=document.getElementById('gallerySlider');
+const TOTAL_PHOTOS=5;let currentPhoto=0;let galleryTimer=null;const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+for(let i=0;i<TOTAL_PHOTOS;i++){
+ const slide=document.createElement('div');slide.className='gallery-slide';slide.setAttribute('aria-label','Photo '+(i+1)+' of '+TOTAL_PHOTOS);
+ const fallback=document.createElement('div');fallback.className='gallery-fallback';fallback.innerHTML='<span>♡</span>Photo '+(i+1)+'<br><small>Add ankitimages/photo'+(i+1)+'.jpg</small>';
+ const img=document.createElement('img');img.alt='Ankit and Sneha photo '+(i+1);img.loading='lazy';img.onload=()=>fallback.remove();img.onerror=()=>img.remove();img.src='ankitimages/photo'+(i+1)+'.jpg';
+ const counter=document.createElement('span');counter.className='gallery-counter';counter.textContent=(i+1)+' / '+TOTAL_PHOTOS;
+ slide.append(fallback,img,counter);galleryTrack.append(slide);
+ const dot=document.createElement('button');dot.className='gallery-dot';dot.type='button';dot.setAttribute('aria-label','Show photo '+(i+1));dot.onclick=()=>{showPhoto(i);restartGallery()};galleryDots.append(dot);
+}
+function showPhoto(i){currentPhoto=(i+TOTAL_PHOTOS)%TOTAL_PHOTOS;[...galleryTrack.children].forEach((slide,j)=>{slide.classList.toggle('active',j===currentPhoto);slide.setAttribute('aria-hidden',String(j!==currentPhoto))});[...galleryDots.children].forEach((dot,j)=>{dot.classList.toggle('active',j===currentPhoto);dot.setAttribute('aria-current',String(j===currentPhoto))})}
+function stopGallery(){if(galleryTimer){clearInterval(galleryTimer);galleryTimer=null}}
+function startGallery(){stopGallery();if(reducedMotion||document.hidden)return;galleryTimer=setInterval(()=>showPhoto(currentPhoto+1),4000)}
+function restartGallery(){startGallery()}
+document.getElementById('prevPhoto').onclick=()=>{showPhoto(currentPhoto-1);restartGallery()};
+document.getElementById('nextPhoto').onclick=()=>{showPhoto(currentPhoto+1);restartGallery()};
+let touchStartX=0;galleryWindow.addEventListener('touchstart',e=>{touchStartX=e.changedTouches[0].clientX},{passive:true});galleryWindow.addEventListener('touchend',e=>{const delta=e.changedTouches[0].clientX-touchStartX;if(Math.abs(delta)>40){showPhoto(currentPhoto+(delta<0?1:-1));restartGallery()}},{passive:true});
+slider.addEventListener('mouseenter',stopGallery);slider.addEventListener('mouseleave',startGallery);slider.addEventListener('focusin',stopGallery);slider.addEventListener('focusout',e=>{if(!slider.contains(e.relatedTarget))startGallery()});document.addEventListener('visibilitychange',()=>document.hidden?stopGallery():startGallery());
+showPhoto(0);startGallery();
+// Lightweight decorative rose petals float continuously behind the invitation.
+(function decorateHero(){
+ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ const layer=document.getElementById('heroPetals');if(!layer)return;
+ const count=window.matchMedia('(max-width: 520px)').matches?13:23;
+ for(let i=0;i<count;i++){
+  const p=document.createElement('span');p.className='hero-petal';
+  p.style.left=(Math.random()*100)+'%';
+  p.style.setProperty('--petal-time',(12+Math.random()*12)+'s');
+  p.style.setProperty('--petal-delay',(-Math.random()*24)+'s');
+  p.style.setProperty('--petal-sway',(Math.random()*140-70)+'px');
+  p.style.opacity=(.35+Math.random()*.35).toFixed(2);
+  layer.append(p);
+ }
+})();
+// Opening animation: click the A&S seal itself.
+let letterOpened=false;
+function openLetter(){
+ if(letterOpened)return;
+ letterOpened=true;
+ const seal=document.getElementById('sealBtn');
+ const envelope=document.getElementById('envelope');
+ const opening=document.getElementById('opening');
+ const scratch=document.getElementById('scratchScreen');
+ seal.disabled=true;
+ initializeScratch();
+ requestAnimationFrame(()=>envelope.classList.add('open'));
+ const delay=reducedMotion?30:1650;
+ setTimeout(()=>{scratch.classList.add('ready');opening.classList.add('fade-out')},delay);
+ setTimeout(()=>{opening.style.display='none'},delay+(reducedMotion?40:1100));
+}
+// Scratch-to-reveal: date is visibly shown for 2.2 seconds, then auto-enter.
+const canvas=document.getElementById('scratchCanvas');const ctx=canvas.getContext('2d');let scratching=false,lastPoint=null,scratchMoves=0,scratchComplete=false;
+function initializeScratch(){const rect=canvas.getBoundingClientRect();const dpr=window.devicePixelRatio||1;canvas.width=Math.round(rect.width*dpr);canvas.height=Math.round(rect.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#dcb77c';ctx.fillRect(0,0,rect.width,rect.height);ctx.fillStyle='#60334a';ctx.textAlign='center';ctx.font='bold 17px Poppins';ctx.fillText('✦ Scratch Here ✦',rect.width/2,rect.height/2+6)}
+function pointFrom(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+function scratchAt(p){if(scratchComplete)return;ctx.globalCompositeOperation='destination-out';ctx.lineWidth=36;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();if(lastPoint){ctx.moveTo(lastPoint.x,lastPoint.y);ctx.lineTo(p.x,p.y);ctx.stroke()}else{ctx.arc(p.x,p.y,18,0,Math.PI*2);ctx.fill()}lastPoint=p;scratchMoves++;if(scratchMoves>28)finishScratch()}
+canvas.addEventListener('pointerdown',e=>{scratching=true;lastPoint=null;canvas.setPointerCapture(e.pointerId);scratchAt(pointFrom(e))});canvas.addEventListener('pointermove',e=>{if(scratching)scratchAt(pointFrom(e))});function stopScratch(){scratching=false;lastPoint=null}canvas.addEventListener('pointerup',stopScratch);canvas.addEventListener('pointercancel',stopScratch);
+function finishScratch(){if(scratchComplete)return;scratchComplete=true;canvas.style.transition='opacity .5s';canvas.style.opacity='0';canvas.style.pointerEvents='none';document.getElementById('scratchHint').textContent='2 December 2026 — Let the celebrations begin!';flowerRain();setTimeout(enterWebsite,2600)}
+function flowerRain(){if(reducedMotion)return;const layer=document.getElementById('petalLayer');for(let i=0;i<48;i++){const p=document.createElement('div');p.className='petal';p.style.left=Math.random()*100+'%';p.style.setProperty('--drift',(Math.random()*250-125)+'px');p.style.setProperty('--duration',(3+Math.random()*4)+'s');p.style.animationDelay=Math.random()*1.5+'s';layer.append(p);setTimeout(()=>p.remove(),9500)}}
+function enterWebsite(){const scratch=document.getElementById('scratchScreen');scratch.classList.add('leaving');setTimeout(()=>{scratch.style.display='none';document.body.classList.remove('locked');sessionStorage.setItem('invitationOpened','yes');window.scrollTo(0,0);flowerRain();startMusic()},800)}
+if(sessionStorage.getItem('invitationOpened')==='yes'){document.getElementById('opening').style.display='none';document.getElementById('scratchScreen').style.display='none';document.body.classList.remove('locked')}
+// Wedding countdown 2 December 2026 at 5:15 PM India time.
+const weddingDate=new Date('2026-12-02T17:15:00+05:30').getTime();function updateCountdown(){const diff=weddingDate-Date.now(),ids=['days','hours','minutes','seconds'];if(diff<=0){ids.forEach(id=>document.getElementById(id).textContent='00');document.getElementById('countdownMessage').textContent='Our wedding day has arrived!';return}const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];ids.forEach((id,i)=>document.getElementById(id).textContent=String(vals[i]).padStart(2,'0'))}updateCountdown();setInterval(updateCountdown,1000);
+// Scroll animation.
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+// Music requires an actual audio file and browser playback permission.
+const music=document.getElementById('bgMusic'),musicBtn=document.getElementById('musicBtn');async function startMusic(){try{await music.play();musicBtn.textContent='❚❚'}catch(e){musicBtn.textContent='♫'}}function toggleMusic(){if(music.paused)startMusic();else{music.pause();musicBtn.textContent='♫'}}
+function shareInvitation(){const message='You are invited to Ankit & Sneha’s wedding! 💍\n2 December 2026 · 5:15 PM onwards\nShree Sawariya Banquet\n\n'+window.location.href;window.open('https://wa.me/?text='+encodeURIComponent(message),'_blank','noopener,noreferrer')}
+</script>
+</body>
+</html>
