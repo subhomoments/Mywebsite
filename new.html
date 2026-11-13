@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +21,13 @@
   --ivory: #fff6ea;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -39,8 +42,14 @@ body.locked {
   overflow: hidden;
 }
 
-button { cursor: pointer; font-family: inherit; }
-a { text-decoration: none; }
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
 
 section {
   padding: 55px 16px;
@@ -75,7 +84,9 @@ h2 {
   font-weight: 600;
 }
 
-.btn:hover { background: var(--gold-light); }
+.btn:hover {
+  background: var(--gold-light);
+}
 
 .wedding-hashtag {
   color: var(--gold);
@@ -182,7 +193,9 @@ h2 {
   font: 35px "Great Vibes", cursive;
 }
 
-.env-letter small { font-size: 10px; }
+.env-letter small {
+  font-size: 10px;
+}
 
 .env-front {
   position: absolute;
@@ -232,7 +245,6 @@ h2 {
   transform: rotateX(180deg);
 }
 
-/* Only a slight letter lift — prevents awkward large rectangle */
 .envelope.open .env-letter {
   transform: translateY(-20px);
   transition-delay: 0s;
@@ -243,7 +255,6 @@ h2 {
   pointer-events: none;
 }
 
-/* Entire envelope disappears smoothly */
 .envelope.envelope-exit {
   opacity: 0;
   transform: translateY(-25px) scale(.72);
@@ -252,7 +263,9 @@ h2 {
 }
 
 @keyframes pulse {
-  50% { box-shadow: 0 0 0 9px #e8c58d33; }
+  50% {
+    box-shadow: 0 0 0 9px #e8c58d33;
+  }
 }
 
 /* =====================================
@@ -279,10 +292,25 @@ h2 {
 }
 
 @keyframes flash {
-  0% { opacity: 0; transform: scale(.4); }
-  25% { opacity: 1; transform: scale(1.2); }
-  55% { opacity: .8; transform: scale(1.5); }
-  100% { opacity: 0; transform: scale(2); }
+  0% {
+    opacity: 0;
+    transform: scale(.4);
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+
+  55% {
+    opacity: .8;
+    transform: scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
 }
 
 #sparkleLayer,
@@ -293,8 +321,13 @@ h2 {
   overflow: hidden;
 }
 
-#sparkleLayer { z-index: 1060; }
-#flowerRain { z-index: 1100; }
+#sparkleLayer {
+  z-index: 1060;
+}
+
+#flowerRain {
+  z-index: 1100;
+}
 
 .sparkle {
   position: absolute;
@@ -305,8 +338,15 @@ h2 {
 }
 
 @keyframes sparkleBurst {
-  0% { opacity: 0; transform: scale(.2); }
-  25% { opacity: 1; }
+  0% {
+    opacity: 0;
+    transform: scale(.2);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
   100% {
     opacity: 0;
     transform: translate(var(--sx), var(--sy)) scale(1.3);
@@ -321,8 +361,15 @@ h2 {
 }
 
 @keyframes roseFall {
-  0% { opacity: 0; transform: translateY(-30px); }
-  12%, 85% { opacity: .9; }
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+
+  12%, 85% {
+    opacity: .9;
+  }
+
   100% {
     opacity: 0;
     transform: translate3d(var(--drift), 110vh, 0) rotate(35deg);
@@ -564,7 +611,8 @@ h2 {
 }
 
 /* =====================================
-   SCRATCH CARD
+   FIXED SCRATCH CARD
+   GOLD COVER VISIBLE IMMEDIATELY
 ===================================== */
 
 .scratch-area {
@@ -576,12 +624,14 @@ h2 {
   overflow: hidden;
   border: 1px solid #b48b55;
   border-radius: 12px;
+  background: #ddb980;
   touch-action: none;
 }
 
 .scratch-secret {
   position: absolute;
   inset: 0;
+  z-index: 1;
   display: grid;
   place-content: center;
   gap: 8px;
@@ -597,12 +647,18 @@ h2 {
 #scratchCanvas {
   position: absolute;
   inset: 0;
+  z-index: 2;
+  display: block;
   width: 100%;
   height: 100%;
+  background: #ddb980;
+  opacity: 1;
   touch-action: none;
 }
 
-#enterWeddingBtn { display: none; }
+#enterWeddingBtn {
+  display: none;
+}
 
 /* =====================================
    MAIN WEDDING WEBSITE
@@ -654,7 +710,9 @@ h2 {
   color: #633548;
 }
 
-.intro h2 { color: #934e64; }
+.intro h2 {
+  color: #934e64;
+}
 
 .intro p {
   max-width: 600px;
@@ -687,7 +745,9 @@ h2 {
   color: var(--gold);
 }
 
-.time-box span { font-size: 10px; }
+.time-box span {
+  font-size: 10px;
+}
 
 /* =====================================
    WEDDING VIDEOS — 9:16
@@ -698,7 +758,9 @@ h2 {
   color: #542a3c;
 }
 
-.festivities h2 { color: #934e64; }
+.festivities h2 {
+  color: #934e64;
+}
 
 .event-list {
   width: 100%;
@@ -773,7 +835,9 @@ h2 {
   text-shadow: 0 2px 8px #000;
 }
 
-.event-subtitle:empty { display: none; }
+.event-subtitle:empty {
+  display: none;
+}
 
 .event-overlay p {
   font-size: 11px;
@@ -781,7 +845,9 @@ h2 {
   text-shadow: 0 2px 6px #000;
 }
 
-.event-overlay .btn { margin-top: 8px; }
+.event-overlay .btn {
+  margin-top: 8px;
+}
 
 /* =====================================
    PHOTO GALLERY — 1024 x 1536
@@ -863,7 +929,9 @@ h2 {
   background: transparent;
 }
 
-.gallery-dot.active { background: var(--gold); }
+.gallery-dot.active {
+  background: var(--gold);
+}
 
 footer {
   padding: 40px 15px;
@@ -871,7 +939,9 @@ footer {
   background: #230c19;
 }
 
-footer p { font-size: 12px; }
+footer p {
+  font-size: 12px;
+}
 
 .music-btn {
   position: fixed;
@@ -899,13 +969,21 @@ footer p { font-size: 12px; }
 }
 
 /* =====================================
-   COMPACT MOBILE LAYOUT
+   MOBILE LAYOUT
 ===================================== */
 
 @media (max-width: 600px) {
-  section { padding: 45px 13px; }
-  .hero-frame { padding: 55px 12px; }
-  .event-overlay { padding: 12px 9px; }
+  section {
+    padding: 45px 13px;
+  }
+
+  .hero-frame {
+    padding: 55px 12px;
+  }
+
+  .event-overlay {
+    padding: 12px 9px;
+  }
 
   .invitation-book.flipped .invitation-front {
     transform: rotateY(-160deg);
@@ -929,12 +1007,31 @@ footer p { font-size: 12px; }
 }
 
 @media (max-height: 650px) {
-  .invitation-book { height: 96dvh; }
-  .invitation-page { gap: 1px; padding: 9px 15px; }
-  .letter-logo { width: 40px; height: 40px; }
-  .letter-heading { font-size: 34px; }
-  .letter-couple { font-size: 42px; }
-  .letter-couple span { font-size: 23px; }
+  .invitation-book {
+    height: 96dvh;
+  }
+
+  .invitation-page {
+    gap: 1px;
+    padding: 9px 15px;
+  }
+
+  .letter-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .letter-heading {
+    font-size: 34px;
+  }
+
+  .letter-couple {
+    font-size: 42px;
+  }
+
+  .letter-couple span {
+    font-size: 23px;
+  }
 
   .letter-intro,
   .letter-blessing,
@@ -952,7 +1049,9 @@ footer p { font-size: 12px; }
   }
 
   .sparkle,
-  .rain-flower { display: none; }
+  .rain-flower {
+    display: none;
+  }
 
   .invitation-front {
     transition: opacity .3s ease;
@@ -1063,6 +1162,7 @@ footer p { font-size: 12px; }
           <div>02 DECEMBER 2026</div>
           <small>Wednesday • 5:15 PM</small>
         </div>
+
         <canvas id="scratchCanvas"></canvas>
       </div>
 
@@ -1164,7 +1264,13 @@ footer p { font-size: 12px; }
 </footer>
 
 <audio id="bgMusic" src="ankitimages/background-music.mp3" loop></audio>
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Toggle music">♫</button>
+
+<button
+  class="music-btn"
+  id="musicBtn"
+  onclick="toggleMusic()"
+  aria-label="Toggle music"
+>♫</button>
 
 <script>
 /* =====================================
@@ -1237,7 +1343,9 @@ const events = [
   }
 ];
 
-/* RENDER VIDEOS */
+/* =====================================
+   RENDER EVENT VIDEOS
+===================================== */
 
 const eventList = document.getElementById("eventList");
 const eventVideos = [];
@@ -1294,7 +1402,9 @@ events.forEach(event => {
   eventVideos.push(video);
 });
 
-/* VIDEO AUTOPLAY */
+/* =====================================
+   AUTOPLAY VISIBLE VIDEOS
+===================================== */
 
 const videoObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -1310,15 +1420,21 @@ const videoObserver = new IntersectionObserver(entries => {
       video.pause();
     }
   });
-}, { threshold: .15, rootMargin: "120px 0px" });
+}, {
+  threshold: .15,
+  rootMargin: "120px 0px"
+});
 
 eventVideos.forEach(video => videoObserver.observe(video));
 
 function refreshVisibleVideos() {
-  if (document.hidden || document.body.classList.contains("locked")) return;
+  if (document.hidden || document.body.classList.contains("locked")) {
+    return;
+  }
 
   eventVideos.forEach(video => {
     const rect = video.getBoundingClientRect();
+
     if (rect.bottom > -120 && rect.top < innerHeight + 120) {
       video.play().catch(() => {});
     }
@@ -1390,7 +1506,9 @@ function showPhoto(index) {
 
 function restartGallery() {
   clearInterval(galleryTimer);
-  galleryTimer = setInterval(() => showPhoto(photoIndex + 1), 4000);
+  galleryTimer = setInterval(() => {
+    showPhoto(photoIndex + 1);
+  }, 4000);
 }
 
 document.getElementById("prevPhoto").onclick = () => {
@@ -1423,7 +1541,7 @@ showPhoto(0);
 restartGallery();
 
 /* =====================================
-   GOLDEN LIGHT AND SPARKLES
+   GOLDEN LIGHT
 ===================================== */
 
 function playGoldenOpening() {
@@ -1434,51 +1552,90 @@ function playGoldenOpening() {
   void flash.offsetWidth;
   flash.classList.add("active");
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
 
   for (let i = 0; i < 55; i++) {
     const sparkle = document.createElement("span");
     sparkle.className = "sparkle";
     sparkle.textContent = i % 3 === 0 ? "✦" : "✧";
+
     sparkle.style.left = "50%";
     sparkle.style.top = "50%";
     sparkle.style.fontSize = (12 + Math.random() * 18) + "px";
-    sparkle.style.setProperty("--sx", (Math.random() * 700 - 350) + "px");
-    sparkle.style.setProperty("--sy", (Math.random() * 850 - 425) + "px");
+
+    sparkle.style.setProperty(
+      "--sx",
+      (Math.random() * 700 - 350) + "px"
+    );
+
+    sparkle.style.setProperty(
+      "--sy",
+      (Math.random() * 850 - 425) + "px"
+    );
+
     sparkle.style.animationDelay = (Math.random() * 500) + "ms";
 
     layer.appendChild(sparkle);
-    sparkle.addEventListener("animationend", () => sparkle.remove(), { once: true });
+
+    sparkle.addEventListener(
+      "animationend",
+      () => sparkle.remove(),
+      { once: true }
+    );
   }
 }
+
+/* =====================================
+   ONE-TIME ROSE CELEBRATION
+===================================== */
 
 let roseCelebrationPlayed = false;
 
 function playRoseCelebrationOnce() {
   if (roseCelebrationPlayed) return;
+
   roseCelebrationPlayed = true;
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    return;
+  }
 
   const layer = document.getElementById("flowerRain");
 
   for (let i = 0; i < 35; i++) {
     const flower = document.createElement("span");
+
     flower.className = "rain-flower";
     flower.textContent = "🌹";
+
     flower.style.left = Math.random() * 100 + "%";
     flower.style.fontSize = (14 + Math.random() * 9) + "px";
-    flower.style.setProperty("--drift", (Math.random() * 90 - 45) + "px");
-    flower.style.animationDuration = (5 + Math.random() * 3) + "s";
-    flower.style.animationDelay = (Math.random() * 2200) + "ms";
+
+    flower.style.setProperty(
+      "--drift",
+      (Math.random() * 90 - 45) + "px"
+    );
+
+    flower.style.animationDuration =
+      (5 + Math.random() * 3) + "s";
+
+    flower.style.animationDelay =
+      (Math.random() * 2200) + "ms";
 
     layer.appendChild(flower);
-    flower.addEventListener("animationend", () => flower.remove(), { once: true });
+
+    flower.addEventListener(
+      "animationend",
+      () => flower.remove(),
+      { once: true }
+    );
   }
 }
 
 /* =====================================
-   SMOOTH SEAL-CLICK TRANSITION
+   SMOOTH ENVELOPE TRANSITION
 ===================================== */
 
 const opening = document.getElementById("opening");
@@ -1494,45 +1651,43 @@ document.getElementById("sealBtn").addEventListener("click", () => {
 
   const envelope = document.getElementById("envelope");
 
-  // Open flap gently
   envelope.classList.add("open");
-
-  // Golden light
   playGoldenOpening();
 
-  // Shrink and fade envelope before the empty rectangle appears
   setTimeout(() => {
     envelope.classList.add("envelope-exit");
   }, 450);
 
-  // Fade away the old opening screen
   setTimeout(() => {
     opening.classList.add("leave");
   }, 700);
 
-  // Reveal the invitation letter
   setTimeout(() => {
     invitationScreen.classList.add("visible");
     playRoseCelebrationOnce();
   }, 850);
 
-  // Remove opening screen completely
   setTimeout(() => {
     opening.style.display = "none";
   }, 2000);
 });
 
 /* =====================================
-   BOOK PAGE-TURN ANIMATION
+   FIXED BOOK PAGE TURN
+   INITIALIZE SCRATCH FIRST
 ===================================== */
 
 document.getElementById("flipPageBtn").addEventListener("click", () => {
   if (flipped) return;
+
+  // Draw the golden scratch cover BEFORE page animation.
+  initializeScratch();
+
   flipped = true;
 
-  invitationBook.classList.add("flipped");
-
-  setTimeout(initializeScratch, 1500);
+  requestAnimationFrame(() => {
+    invitationBook.classList.add("flipped");
+  });
 });
 
 /* =====================================
@@ -1549,24 +1704,32 @@ let scratchMoves = 0;
 
 function initializeScratch() {
   const rect = canvas.getBoundingClientRect();
-  const dpr = devicePixelRatio || 1;
+  const dpr = window.devicePixelRatio || 1;
 
   canvas.width = Math.round(rect.width * dpr);
   canvas.height = Math.round(rect.height * dpr);
 
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.globalCompositeOperation = "source-over";
+
   ctx.fillStyle = "#ddb980";
   ctx.fillRect(0, 0, rect.width, rect.height);
 
   ctx.fillStyle = "#653448";
   ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
   ctx.font = "bold 17px Poppins";
-  ctx.fillText("Scratch Here", rect.width / 2, rect.height / 2);
+
+  ctx.fillText(
+    "Scratch Here",
+    rect.width / 2,
+    rect.height / 2
+  );
 }
 
 function pointFromEvent(event) {
   const rect = canvas.getBoundingClientRect();
+
   return {
     x: event.clientX - rect.left,
     y: event.clientY - rect.top
@@ -1577,6 +1740,7 @@ function scratchMove(event) {
   if (!painting || scratched) return;
 
   const point = pointFromEvent(event);
+
   ctx.globalCompositeOperation = "destination-out";
   ctx.lineWidth = 36;
   ctx.lineCap = "round";
@@ -1594,7 +1758,9 @@ function scratchMove(event) {
   lastPoint = point;
   scratchMoves++;
 
-  if (scratchMoves > 28) finishScratch();
+  if (scratchMoves > 28) {
+    finishScratch();
+  }
 }
 
 canvas.addEventListener("pointerdown", event => {
@@ -1602,6 +1768,7 @@ canvas.addEventListener("pointerdown", event => {
 
   painting = true;
   lastPoint = null;
+
   canvas.setPointerCapture(event.pointerId);
   scratchMove(event);
 });
@@ -1617,6 +1784,7 @@ canvas.addEventListener("pointermove", scratchMove);
 
 function finishScratch() {
   if (scratched) return;
+
   scratched = true;
 
   canvas.style.transition = "opacity .5s";
@@ -1631,7 +1799,7 @@ function finishScratch() {
 }
 
 /* =====================================
-   ENTER MAIN WEBSITE
+   ENTER WEDDING WEBSITE
 ===================================== */
 
 document.getElementById("enterWeddingBtn").addEventListener("click", () => {
@@ -1640,7 +1808,9 @@ document.getElementById("enterWeddingBtn").addEventListener("click", () => {
   setTimeout(() => {
     invitationScreen.style.display = "none";
     document.body.classList.remove("locked");
+
     sessionStorage.setItem("invitationOpened", "yes");
+
     refreshVisibleVideos();
     startMusic();
   }, 1150);
@@ -1651,6 +1821,7 @@ document.getElementById("enterWeddingBtn").addEventListener("click", () => {
 if (sessionStorage.getItem("invitationOpened") === "yes") {
   opening.style.display = "none";
   invitationScreen.style.display = "none";
+
   document.body.classList.remove("locked");
   refreshVisibleVideos();
 }
@@ -1668,8 +1839,10 @@ function updateCountdown() {
     ["days", "hours", "minutes", "seconds"].forEach(id => {
       document.getElementById(id).textContent = "00";
     });
+
     document.getElementById("countdownMessage").textContent =
       "Our wedding day has arrived!";
+
     return;
   }
 
@@ -1689,7 +1862,9 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* SCROLL REVEAL */
+/* =====================================
+   SCROLL REVEAL
+===================================== */
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -1700,9 +1875,13 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: .08 });
 
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+document.querySelectorAll(".reveal").forEach(element => {
+  observer.observe(element);
+});
 
-/* MUSIC */
+/* =====================================
+   BACKGROUND MUSIC
+===================================== */
 
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
@@ -1725,7 +1904,9 @@ function toggleMusic() {
   }
 }
 
-/* WHATSAPP SHARE */
+/* =====================================
+   WHATSAPP SHARE
+===================================== */
 
 function shareInvitation() {
   const message =
@@ -1742,5 +1923,6 @@ function shareInvitation() {
   );
 }
 </script>
+
 </body>
 </html>
