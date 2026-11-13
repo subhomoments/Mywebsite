@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#321322">
-<meta name="description" content="Ankit & Sneha Wedding Invitation — 2 December 2026">
-<title>Ankit & Sneha | Royal Wedding Invitation</title>
+<meta name="description" content="Ankit & Sneha Royal Wedding Invitation">
+<title>Ankit & Sneha | Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,13 +22,9 @@
   --ivory: #fff6ea;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
@@ -47,9 +44,7 @@ button {
   font-family: inherit;
 }
 
-a {
-  text-decoration: none;
-}
+a { text-decoration: none; }
 
 section {
   padding: 55px 16px;
@@ -84,9 +79,7 @@ h2 {
   font-weight: 600;
 }
 
-.btn:hover {
-  background: var(--gold-light);
-}
+.btn:hover { background: var(--gold-light); }
 
 .wedding-hashtag {
   color: var(--gold);
@@ -95,7 +88,7 @@ h2 {
 }
 
 /* =====================================
-   ENVELOPE OPENING
+   OPENING SCREEN
 ===================================== */
 
 #opening,
@@ -132,9 +125,7 @@ h2 {
   max-width: 420px;
   padding: 20px;
   text-align: center;
-  transition:
-    opacity .8s ease,
-    transform .8s ease;
+  transition: opacity .8s ease, transform .8s ease;
 }
 
 #opening.leave .open-content {
@@ -152,6 +143,10 @@ h2 {
   font-size: 12px;
   color: #f5ddbb;
 }
+
+/* =====================================
+   ENVELOPE
+===================================== */
 
 .envelope {
   position: relative;
@@ -193,9 +188,7 @@ h2 {
   font: 35px "Great Vibes", cursive;
 }
 
-.env-letter small {
-  font-size: 10px;
-}
+.env-letter small { font-size: 10px; }
 
 .env-front {
   position: absolute;
@@ -247,7 +240,6 @@ h2 {
 
 .envelope.open .env-letter {
   transform: translateY(-20px);
-  transition-delay: 0s;
 }
 
 .envelope.open .seal {
@@ -263,13 +255,11 @@ h2 {
 }
 
 @keyframes pulse {
-  50% {
-    box-shadow: 0 0 0 9px #e8c58d33;
-  }
+  50% { box-shadow: 0 0 0 9px #e8c58d33; }
 }
 
 /* =====================================
-   GOLDEN FLASH AND ROSES
+   GOLDEN LIGHT AND FLOWERS
 ===================================== */
 
 #goldenFlash {
@@ -292,25 +282,10 @@ h2 {
 }
 
 @keyframes flash {
-  0% {
-    opacity: 0;
-    transform: scale(.4);
-  }
-
-  25% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-
-  55% {
-    opacity: .8;
-    transform: scale(1.5);
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(2);
-  }
+  0% { opacity: 0; transform: scale(.4); }
+  25% { opacity: 1; transform: scale(1.2); }
+  55% { opacity: .8; transform: scale(1.5); }
+  100% { opacity: 0; transform: scale(2); }
 }
 
 #sparkleLayer,
@@ -321,13 +296,8 @@ h2 {
   overflow: hidden;
 }
 
-#sparkleLayer {
-  z-index: 1060;
-}
-
-#flowerRain {
-  z-index: 1100;
-}
+#sparkleLayer { z-index: 1060; }
+#flowerRain { z-index: 1100; }
 
 .sparkle {
   position: absolute;
@@ -338,15 +308,8 @@ h2 {
 }
 
 @keyframes sparkleBurst {
-  0% {
-    opacity: 0;
-    transform: scale(.2);
-  }
-
-  25% {
-    opacity: 1;
-  }
-
+  0% { opacity: 0; transform: scale(.2); }
+  25% { opacity: 1; }
   100% {
     opacity: 0;
     transform: translate(var(--sx), var(--sy)) scale(1.3);
@@ -361,15 +324,8 @@ h2 {
 }
 
 @keyframes roseFall {
-  0% {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-
-  12%, 85% {
-    opacity: .9;
-  }
-
+  0% { opacity: 0; transform: translateY(-30px); }
+  12%, 85% { opacity: .9; }
   100% {
     opacity: 0;
     transform: translate3d(var(--drift), 110vh, 0) rotate(35deg);
@@ -386,9 +342,7 @@ h2 {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition:
-    opacity 1.1s ease,
-    visibility 1.1s;
+  transition: opacity 1.1s ease, visibility 1.1s;
 }
 
 #invitationScreen.visible {
@@ -450,13 +404,11 @@ h2 {
 }
 
 /* =====================================
-   BOOK PAGE-TURN ANIMATION
+   SLIDING BOOK PAGE ANIMATION
 ===================================== */
 
 .invitation-back {
   z-index: 1;
-  opacity: 1;
-  visibility: visible;
   background: linear-gradient(150deg, #fff8eb, #e8c79e);
   pointer-events: none;
   box-shadow:
@@ -467,7 +419,6 @@ h2 {
 .invitation-front {
   z-index: 3;
   opacity: 1;
-  visibility: visible;
   transform-origin: left center;
   transform: rotateY(0deg);
   backface-visibility: hidden;
@@ -476,9 +427,6 @@ h2 {
     transform 1.45s cubic-bezier(.65, 0, .25, 1),
     opacity .35s ease 1.05s;
   will-change: transform;
-  box-shadow:
-    inset -10px 0 22px rgba(80, 35, 50, .12),
-    8px 12px 30px rgba(0, 0, 0, .22);
 }
 
 .invitation-front::after {
@@ -517,7 +465,7 @@ h2 {
 }
 
 /* =====================================
-   LETTER DESIGN
+   FIRST LETTER PAGE
 ===================================== */
 
 .letter-logo {
@@ -611,8 +559,7 @@ h2 {
 }
 
 /* =====================================
-   FIXED SCRATCH CARD
-   GOLD COVER VISIBLE IMMEDIATELY
+   SCRATCH CARD - FIXED
 ===================================== */
 
 .scratch-area {
@@ -625,6 +572,7 @@ h2 {
   border: 1px solid #b48b55;
   border-radius: 12px;
   background: #ddb980;
+  isolation: isolate;
   touch-action: none;
 }
 
@@ -647,11 +595,11 @@ h2 {
 #scratchCanvas {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 3;
   display: block;
   width: 100%;
   height: 100%;
-  background: #ddb980;
+  background: transparent;
   opacity: 1;
   touch-action: none;
 }
@@ -661,7 +609,7 @@ h2 {
 }
 
 /* =====================================
-   MAIN WEDDING WEBSITE
+   MAIN WEBSITE
 ===================================== */
 
 .hero {
@@ -710,9 +658,7 @@ h2 {
   color: #633548;
 }
 
-.intro h2 {
-  color: #934e64;
-}
+.intro h2 { color: #934e64; }
 
 .intro p {
   max-width: 600px;
@@ -745,12 +691,10 @@ h2 {
   color: var(--gold);
 }
 
-.time-box span {
-  font-size: 10px;
-}
+.time-box span { font-size: 10px; }
 
 /* =====================================
-   WEDDING VIDEOS — 9:16
+   WEDDING VIDEOS - 9:16
 ===================================== */
 
 .festivities {
@@ -758,9 +702,7 @@ h2 {
   color: #542a3c;
 }
 
-.festivities h2 {
-  color: #934e64;
-}
+.festivities h2 { color: #934e64; }
 
 .event-list {
   width: 100%;
@@ -788,8 +730,6 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
-  visibility: visible;
 }
 
 .event-shade {
@@ -835,9 +775,7 @@ h2 {
   text-shadow: 0 2px 8px #000;
 }
 
-.event-subtitle:empty {
-  display: none;
-}
+.event-subtitle:empty { display: none; }
 
 .event-overlay p {
   font-size: 11px;
@@ -845,12 +783,10 @@ h2 {
   text-shadow: 0 2px 6px #000;
 }
 
-.event-overlay .btn {
-  margin-top: 8px;
-}
+.event-overlay .btn { margin-top: 8px; }
 
 /* =====================================
-   PHOTO GALLERY — 1024 x 1536
+   PHOTO GALLERY - ORIGINAL 2:3
 ===================================== */
 
 .gallery {
@@ -929,9 +865,7 @@ h2 {
   background: transparent;
 }
 
-.gallery-dot.active {
-  background: var(--gold);
-}
+.gallery-dot.active { background: var(--gold); }
 
 footer {
   padding: 40px 15px;
@@ -939,9 +873,7 @@ footer {
   background: #230c19;
 }
 
-footer p {
-  font-size: 12px;
-}
+footer p { font-size: 12px; }
 
 .music-btn {
   position: fixed;
@@ -969,21 +901,13 @@ footer p {
 }
 
 /* =====================================
-   MOBILE LAYOUT
+   MOBILE
 ===================================== */
 
 @media (max-width: 600px) {
-  section {
-    padding: 45px 13px;
-  }
-
-  .hero-frame {
-    padding: 55px 12px;
-  }
-
-  .event-overlay {
-    padding: 12px 9px;
-  }
+  section { padding: 45px 13px; }
+  .hero-frame { padding: 55px 12px; }
+  .event-overlay { padding: 12px 9px; }
 
   .invitation-book.flipped .invitation-front {
     transform: rotateY(-160deg);
@@ -1007,9 +931,7 @@ footer p {
 }
 
 @media (max-height: 650px) {
-  .invitation-book {
-    height: 96dvh;
-  }
+  .invitation-book { height: 96dvh; }
 
   .invitation-page {
     gap: 1px;
@@ -1021,17 +943,9 @@ footer p {
     height: 40px;
   }
 
-  .letter-heading {
-    font-size: 34px;
-  }
-
-  .letter-couple {
-    font-size: 42px;
-  }
-
-  .letter-couple span {
-    font-size: 23px;
-  }
+  .letter-heading { font-size: 34px; }
+  .letter-couple { font-size: 42px; }
+  .letter-couple span { font-size: 23px; }
 
   .letter-intro,
   .letter-blessing,
@@ -1049,13 +963,9 @@ footer p {
   }
 
   .sparkle,
-  .rain-flower {
-    display: none;
-  }
+  .rain-flower { display: none; }
 
-  .invitation-front {
-    transition: opacity .3s ease;
-  }
+  .invitation-front { transition: opacity .3s ease; }
 
   .invitation-book.flipped .invitation-front {
     transform: none;
@@ -1098,12 +1008,13 @@ footer p {
 <div id="sparkleLayer" aria-hidden="true"></div>
 <div id="flowerRain" aria-hidden="true"></div>
 
-<!-- INVITATION LETTER -->
+<!-- INVITATION BOOK -->
 
 <div id="invitationScreen">
   <div class="invitation-book" id="invitationBook">
 
     <!-- FIRST PAGE -->
+
     <div class="invitation-page invitation-front">
       <div class="letter-ornament">❦</div>
 
@@ -1149,12 +1060,14 @@ footer p {
     </div>
 
     <!-- SECOND PAGE -->
+
     <div class="invitation-page invitation-back">
       <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
 
       <h2>Reveal Our Date</h2>
 
       <p>A beautiful beginning, a lifetime of memories.</p>
+
       <p style="font-family:Cinzel,serif">SCRATCH TO DISCOVER</p>
 
       <div class="scratch-area">
@@ -1176,13 +1089,14 @@ footer p {
   </div>
 </div>
 
-<!-- MAIN WEDDING WEBSITE -->
+<!-- MAIN WEBSITE -->
 
 <main>
 
   <section class="hero">
     <div class="hero-frame">
       <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
+
       <p class="small-title">TOGETHER WITH OUR FAMILIES</p>
       <p>We joyfully invite you to celebrate</p>
 
@@ -1274,7 +1188,7 @@ footer p {
 
 <script>
 /* =====================================
-   WEDDING EVENTS
+   EVENT DATA
 ===================================== */
 
 const events = [
@@ -1363,9 +1277,9 @@ events.forEach(event => {
   video.loop = true;
   video.playsInline = true;
   video.preload = "auto";
+
   video.setAttribute("muted", "");
   video.setAttribute("playsinline", "");
-  video.load();
 
   const shade = document.createElement("div");
   shade.className = "event-shade";
@@ -1403,7 +1317,7 @@ events.forEach(event => {
 });
 
 /* =====================================
-   AUTOPLAY VISIBLE VIDEOS
+   VIDEO AUTOPLAY
 ===================================== */
 
 const videoObserver = new IntersectionObserver(entries => {
@@ -1450,7 +1364,7 @@ document.addEventListener("visibilitychange", () => {
 });
 
 /* =====================================
-   FIVE-PHOTO GALLERY
+   PHOTO GALLERY
 ===================================== */
 
 const galleryImages = [
@@ -1506,9 +1420,7 @@ function showPhoto(index) {
 
 function restartGallery() {
   clearInterval(galleryTimer);
-  galleryTimer = setInterval(() => {
-    showPhoto(photoIndex + 1);
-  }, 4000);
+  galleryTimer = setInterval(() => showPhoto(photoIndex + 1), 4000);
 }
 
 document.getElementById("prevPhoto").onclick = () => {
@@ -1552,15 +1464,13 @@ function playGoldenOpening() {
   void flash.offsetWidth;
   flash.classList.add("active");
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   for (let i = 0; i < 55; i++) {
     const sparkle = document.createElement("span");
+
     sparkle.className = "sparkle";
     sparkle.textContent = i % 3 === 0 ? "✦" : "✧";
-
     sparkle.style.left = "50%";
     sparkle.style.top = "50%";
     sparkle.style.fontSize = (12 + Math.random() * 18) + "px";
@@ -1588,19 +1498,16 @@ function playGoldenOpening() {
 }
 
 /* =====================================
-   ONE-TIME ROSE CELEBRATION
+   ONE-TIME ROSE RAIN
 ===================================== */
 
 let roseCelebrationPlayed = false;
 
 function playRoseCelebrationOnce() {
   if (roseCelebrationPlayed) return;
-
   roseCelebrationPlayed = true;
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    return;
-  }
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const layer = document.getElementById("flowerRain");
 
@@ -1609,7 +1516,6 @@ function playRoseCelebrationOnce() {
 
     flower.className = "rain-flower";
     flower.textContent = "🌹";
-
     flower.style.left = Math.random() * 100 + "%";
     flower.style.fontSize = (14 + Math.random() * 9) + "px";
 
@@ -1673,25 +1579,7 @@ document.getElementById("sealBtn").addEventListener("click", () => {
 });
 
 /* =====================================
-   FIXED BOOK PAGE TURN
-   INITIALIZE SCRATCH FIRST
-===================================== */
-
-document.getElementById("flipPageBtn").addEventListener("click", () => {
-  if (flipped) return;
-
-  // Draw the golden scratch cover BEFORE page animation.
-  initializeScratch();
-
-  flipped = true;
-
-  requestAnimationFrame(() => {
-    invitationBook.classList.add("flipped");
-  });
-});
-
-/* =====================================
-   SCRATCH CARD
+   SCRATCH CARD - INITIALIZE ON LOAD
 ===================================== */
 
 const canvas = document.getElementById("scratchCanvas");
@@ -1704,7 +1592,9 @@ let scratchMoves = 0;
 
 function initializeScratch() {
   const rect = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
+  const dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+  if (!rect.width || !rect.height) return;
 
   canvas.width = Math.round(rect.width * dpr);
   canvas.height = Math.round(rect.height * dpr);
@@ -1712,6 +1602,7 @@ function initializeScratch() {
   ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
   ctx.globalCompositeOperation = "source-over";
 
+  // Gold layer is drawn before page turn.
   ctx.fillStyle = "#ddb980";
   ctx.fillRect(0, 0, rect.width, rect.height);
 
@@ -1758,9 +1649,7 @@ function scratchMove(event) {
   lastPoint = point;
   scratchMoves++;
 
-  if (scratchMoves > 28) {
-    finishScratch();
-  }
+  if (scratchMoves > 28) finishScratch();
 }
 
 canvas.addEventListener("pointerdown", event => {
@@ -1784,7 +1673,6 @@ canvas.addEventListener("pointermove", scratchMove);
 
 function finishScratch() {
   if (scratched) return;
-
   scratched = true;
 
   canvas.style.transition = "opacity .5s";
@@ -1799,7 +1687,19 @@ function finishScratch() {
 }
 
 /* =====================================
-   ENTER WEDDING WEBSITE
+   BOOK PAGE TURN
+===================================== */
+
+document.getElementById("flipPageBtn").addEventListener("click", () => {
+  if (flipped) return;
+
+  // Scratch coating has already been drawn.
+  flipped = true;
+  invitationBook.classList.add("flipped");
+});
+
+/* =====================================
+   ENTER MAIN WEBSITE
 ===================================== */
 
 document.getElementById("enterWeddingBtn").addEventListener("click", () => {
@@ -1815,16 +1715,6 @@ document.getElementById("enterWeddingBtn").addEventListener("click", () => {
     startMusic();
   }, 1150);
 });
-
-/* SAME-TAB REFRESH */
-
-if (sessionStorage.getItem("invitationOpened") === "yes") {
-  opening.style.display = "none";
-  invitationScreen.style.display = "none";
-
-  document.body.classList.remove("locked");
-  refreshVisibleVideos();
-}
 
 /* =====================================
    COUNTDOWN
@@ -1875,12 +1765,12 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { threshold: .08 });
 
-document.querySelectorAll(".reveal").forEach(element => {
-  observer.observe(element);
+document.querySelectorAll(".reveal").forEach(el => {
+  observer.observe(el);
 });
 
 /* =====================================
-   BACKGROUND MUSIC
+   MUSIC
 ===================================== */
 
 const music = document.getElementById("bgMusic");
@@ -1905,7 +1795,7 @@ function toggleMusic() {
 }
 
 /* =====================================
-   WHATSAPP SHARE
+   WHATSAPP
 ===================================== */
 
 function shareInvitation() {
@@ -1922,7 +1812,30 @@ function shareInvitation() {
     "noopener,noreferrer"
   );
 }
-</script>
 
+/* =====================================
+   STARTUP - CRITICAL SCRATCH FIX
+===================================== */
+
+// Prepare scratch layer immediately while
+// the second page is still behind the first page.
+initializeScratch();
+
+// Recalculate only before scratching, if needed.
+window.addEventListener("resize", () => {
+  if (!scratched && !flipped) {
+    initializeScratch();
+  }
+});
+
+// Skip opening after invitation has already been entered.
+if (sessionStorage.getItem("invitationOpened") === "yes") {
+  opening.style.display = "none";
+  invitationScreen.style.display = "none";
+  document.body.classList.remove("locked");
+  refreshVisibleVideos();
+}
+
+</script>
 </body>
 </html>
