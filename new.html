@@ -4,23 +4,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#321322">
-<meta name="description" content="Ankit & Sneha Wedding Invitation - 2 December 2026 - #Ankitfullofsneha">
+<meta name="description" content="Ankit & Sneha Royal Wedding Invitation - 2 December 2026 - #Ankitfullofsneha">
 
-<title>Ankit & Sneha | Wedding Invitation</title>
+<title>Ankit & Sneha | Royal Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ==========================================
+   GLOBAL DESIGN
+========================================== */
+
 :root {
   --gold: #e8c58d;
   --gold-light: #f8e1b4;
   --wine: #42182c;
   --deep: #250e1b;
   --ivory: #fff6ea;
+  --rose: #914d68;
 }
 
 * {
@@ -41,6 +46,7 @@ body {
 
 body.locked {
   overflow: hidden;
+  height: 100dvh;
 }
 
 button {
@@ -93,7 +99,7 @@ h2 {
   border-radius: 30px;
   font-size: 13px;
   font-weight: 600;
-  transition: .3s;
+  transition: background .3s, transform .3s;
 }
 
 .btn:hover {
@@ -110,30 +116,45 @@ h2 {
   text-shadow: 0 0 14px #e8c58d55;
 }
 
-/* ENVELOPE */
+/* ==========================================
+   ENVELOPE OPENING
+========================================== */
 
 #opening {
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: radial-gradient(circle, #784054, #280e1d);
+
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+
+  width: 100%;
+  height: 100dvh;
+
   padding: 20px;
-  transition: opacity .8s;
   overflow: hidden;
+
+  background: radial-gradient(
+    circle at center,
+    #784054,
+    #280e1d
+  );
+
+  text-align: center;
+  transition: opacity .8s ease;
 }
 
 .open-content {
   width: 100%;
   max-width: 420px;
+  position: relative;
 }
 
 .open-content h1 {
-  font: normal 65px "Great Vibes", cursive;
+  font: normal clamp(45px, 10vw, 65px) "Great Vibes", cursive;
   color: var(--gold);
+  margin: 15px 0;
 }
 
 .envelope {
@@ -141,6 +162,7 @@ h2 {
   width: min(310px, 85vw);
   height: 205px;
   margin: 40px auto;
+
   perspective: 1000px;
   filter: drop-shadow(0 15px 20px #0006);
 }
@@ -159,11 +181,14 @@ h2 {
   top: 18px;
   width: 84%;
   height: 160px;
+
   background: #fff5e5;
   border: 2px solid #bb965f;
   color: #713448;
+
   display: grid;
   place-content: center;
+
   z-index: 2;
   transition: transform 1.2s ease;
 }
@@ -172,11 +197,28 @@ h2 {
   font: normal 34px "Great Vibes", cursive;
 }
 
+.env-letter small {
+  font-size: 11px;
+}
+
 .env-front {
   position: absolute;
   inset: 0;
-  background: linear-gradient(145deg, #f3d59f, #c79558);
-  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
+
+  background: linear-gradient(
+    145deg,
+    #f3d59f,
+    #c79558
+  );
+
+  clip-path: polygon(
+    0 0,
+    50% 55%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
   z-index: 3;
 }
 
@@ -185,10 +227,18 @@ h2 {
   top: 0;
   width: 100%;
   height: 115px;
+
   background: #f0d19a;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 100%
+  );
+
   transform-origin: top;
   transition: transform 1s ease;
+
   z-index: 5;
   backface-visibility: hidden;
 }
@@ -198,14 +248,20 @@ h2 {
   left: 50%;
   top: 85px;
   transform: translateX(-50%);
+
   width: 76px;
   height: 76px;
+
   border: 3px double var(--gold);
   border-radius: 50%;
+
   background: #79273e;
+
   z-index: 6;
+
   display: grid;
   place-items: center;
+
   animation: sealPulse 2.5s infinite;
   transition: opacity .4s;
 }
@@ -236,16 +292,20 @@ h2 {
   }
 }
 
-/* GOLDEN OPENING */
+/* ==========================================
+   BRIGHT GOLDEN LIGHT
+========================================== */
 
 #goldenFlash {
   position: fixed;
   inset: 0;
   z-index: 1050;
+
   pointer-events: none;
   opacity: 0;
+
   background: radial-gradient(
-    circle,
+    circle at center,
     #fffdf1 0%,
     #ffe6a6 12%,
     #f5bd5d99 32%,
@@ -262,14 +322,17 @@ h2 {
     opacity: 0;
     transform: scale(.4);
   }
+
   25% {
     opacity: 1;
     transform: scale(1.2);
   }
+
   55% {
     opacity: .85;
     transform: scale(1.5);
   }
+
   100% {
     opacity: 0;
     transform: scale(2);
@@ -280,8 +343,8 @@ h2 {
 #flowerRain {
   position: fixed;
   inset: 0;
-  pointer-events: none;
   overflow: hidden;
+  pointer-events: none;
 }
 
 #sparkleLayer {
@@ -305,16 +368,21 @@ h2 {
     opacity: 0;
     transform: translate(0, 0) scale(.2);
   }
+
   25% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
     transform:
       translate(var(--sx), var(--sy))
-      scale(1.4) rotate(180deg);
+      scale(1.4)
+      rotate(180deg);
   }
 }
+
+/* ONE-TIME ROSE CELEBRATION */
 
 .rain-flower {
   position: absolute;
@@ -328,9 +396,11 @@ h2 {
     opacity: 0;
     transform: translateY(-30px) rotate(-15deg);
   }
+
   12%, 85% {
     opacity: .9;
   }
+
   100% {
     opacity: 0;
     transform:
@@ -339,101 +409,180 @@ h2 {
   }
 }
 
-/* INVITATION BOOK */
+/* ==========================================
+   FIXED ONE-SCREEN INVITATION
+   NO 3D HANGING
+   NO INTERNAL SCROLLING
+========================================== */
 
 #invitationScreen {
   position: fixed;
   inset: 0;
   z-index: 950;
+
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 18px;
-  background: radial-gradient(circle, #784054, #280e1d);
+
+  width: 100%;
+  height: 100dvh;
+
+  padding: 12px;
+
+  background: radial-gradient(
+    circle at center,
+    #81465b 0%,
+    #4b2035 55%,
+    #250e1b 100%
+  );
+
   opacity: 0;
-  transition: opacity .8s;
-  perspective: 1400px;
+  overflow: hidden;
+  transition: opacity .8s ease;
 }
 
 .invitation-book {
   position: relative;
-  width: min(420px, 100%);
-  height: min(690px, 88dvh);
-  min-height: 430px;
-  transform-style: preserve-3d;
+
+  width: min(410px, 94vw);
+  height: min(690px, 94dvh);
+
+  margin: auto;
+  flex-shrink: 0;
 }
+
+/* BOTH PAGES SAME SIZE */
 
 .invitation-page {
   position: absolute;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 30px 20px;
-  border: 2px solid var(--gold);
-  border-radius: 150px 150px 16px 16px;
-  background: linear-gradient(150deg, #fff8ed, #f0d7b8);
+
+  gap: clamp(2px, .7dvh, 8px);
+
+  padding:
+    clamp(14px, 3dvh, 28px)
+    clamp(14px, 5vw, 28px);
+
+  border: 3px solid #d9b477;
+  border-radius: 145px 145px 18px 18px;
+
+  background: radial-gradient(
+    ellipse at 50% 35%,
+    #fffaf1 0%,
+    #f8e8d2 65%,
+    #efd6b7 100%
+  );
+
   color: #713448;
   text-align: center;
-  box-shadow: 0 15px 40px #0005;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  overflow-y: auto;
-  scrollbar-width: thin;
+
+  box-shadow:
+    inset 0 0 35px #d5aa6a22,
+    0 18px 55px #0006;
+
+  overflow: hidden;
 }
+
+/* INNER DECORATIVE BORDER */
 
 .invitation-page::before {
   content: "";
   position: absolute;
-  inset: 9px;
-  border: 1px solid #bd925e88;
-  border-radius: 140px 140px 10px 10px;
+  inset: 8px;
+
+  border: 1px solid #c9a16c;
+  border-radius: 137px 137px 12px 12px;
+
   pointer-events: none;
 }
 
+/* FIRST PAGE */
+
 .invitation-front {
   z-index: 2;
-  transform-origin: left center;
-  transition: transform 1.2s ease;
-  background: radial-gradient(
-    ellipse at 50% 35%,
-    #fffaf1,
-    #f8e8d2 65%,
-    #efd6b7
-  );
-  border: 3px solid #d9b477;
-  border-radius: 160px 160px 18px 18px;
-  padding: 30px 28px 25px;
+  opacity: 1;
+  visibility: visible;
+
+  transition:
+    opacity .65s ease,
+    visibility .65s ease;
 }
 
+/* SECOND PAGE */
+
+.invitation-back {
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+
+  background: linear-gradient(
+    150deg,
+    #fff8eb,
+    #e8c79e
+  );
+
+  transition:
+    opacity .65s ease,
+    visibility .65s ease;
+}
+
+/* SMOOTH PAGE CHANGE */
+
+.invitation-book.flipped .invitation-front {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.invitation-book.flipped .invitation-back {
+  opacity: 1;
+  visibility: visible;
+  z-index: 3;
+}
+
+/* PREMIUM LETTER CONTENT */
+
 .letter-logo {
-  width: 85px;
-  height: 85px;
+  width: clamp(48px, 9dvh, 78px);
+  height: clamp(48px, 9dvh, 78px);
   object-fit: contain;
   flex-shrink: 0;
 }
 
 .letter-eyebrow {
   font-family: "Cinzel", serif;
-  font-size: 10px;
-  letter-spacing: 2.5px;
+  font-size: clamp(8px, 1.5dvh, 10px);
+  letter-spacing: 1.5px;
+  margin: 2px 0;
   color: #87435a;
 }
 
 .letter-heading {
-  font: normal clamp(48px, 10vw, 65px) "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(36px, 7dvh, 59px);
+  font-weight: 400;
+  line-height: 1.05;
+  margin: 4px 0;
   color: #813b55;
-  margin: 10px 0;
 }
 
 .letter-divider {
   display: flex;
   align-items: center;
-  gap: 12px;
+  justify-content: center;
+  gap: 10px;
+
   width: 65%;
-  margin: 8px auto;
+  margin: 3px auto;
+
   color: #c19a61;
 }
 
@@ -443,70 +592,74 @@ h2 {
   background: #c19a61;
 }
 
-.letter-intro,
-.letter-message {
+.letter-intro {
+  font-size: clamp(9px, 1.55dvh, 12px);
+  line-height: 1.5;
+  margin: 3px auto;
   max-width: 300px;
   color: #75445a;
-  font-size: 12px;
-  line-height: 1.9;
 }
 
 .letter-couple {
-  font: normal clamp(58px, 12vw, 82px)/1.05 "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(46px, 9dvh, 76px);
+  line-height: .95;
+  margin: 5px 0;
   color: #80364f;
-  margin: 12px 0;
 }
 
 .letter-couple span {
   display: block;
-  font-size: 40px;
+  font-size: clamp(25px, 4dvh, 38px);
   color: #b98b51;
 }
 
 .letter-blessing {
   font-family: "Cinzel", serif;
-  font-size: 11px;
-  line-height: 1.9;
+  font-size: clamp(8px, 1.4dvh, 11px);
+  line-height: 1.5;
+  margin: 3px auto;
+  max-width: 290px;
   color: #87576a;
-  max-width: 285px;
 }
 
-.premium-turn-btn {
-  background: linear-gradient(135deg, #f1d7a7, #d7a968);
-  border: 1px solid #c79858;
-  margin-top: 8px;
-  flex-shrink: 0;
+.letter-message {
+  font-size: clamp(9px, 1.5dvh, 11px);
+  line-height: 1.5;
+  margin: 3px auto;
+  max-width: 280px;
+  color: #865568;
 }
 
 .letter-ornament {
   color: #bf965f;
-  font-size: 23px;
+  font-size: clamp(15px, 3dvh, 23px);
+  line-height: 1;
 }
 
-.invitation-back {
-  z-index: 1;
-  background: linear-gradient(150deg, #f9e9d4, #e8c79e);
+.premium-turn-btn {
+  margin-top: 5px;
+  padding: 10px 24px;
+  font-size: 11px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #f1d7a7, #d7a968);
+  border: 1px solid #c79858;
 }
+
+/* SECOND PAGE */
 
 .invitation-back h2 {
-  font: normal 50px "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(38px, 7dvh, 55px);
   color: #7b3550;
+  margin: 8px 0;
 }
 
 .invitation-back p {
-  font-size: 12px;
-  line-height: 1.8;
+  font-size: clamp(10px, 1.6dvh, 12px);
+  line-height: 1.5;
+  margin: 5px auto;
   max-width: 300px;
-}
-
-.invitation-book.flipped .invitation-front {
-  transform: rotateY(-180deg);
-  pointer-events: none;
-}
-
-.invitation-book.flipped .invitation-back {
-  z-index: 3;
-  transition: z-index 0s 1.2s;
 }
 
 /* SCRATCH DATE */
@@ -514,10 +667,12 @@ h2 {
 .scratch-area {
   position: relative;
   width: min(290px, 100%);
-  height: 125px;
+  height: clamp(95px, 17dvh, 125px);
   flex-shrink: 0;
-  margin: 22px auto;
+
+  margin: 12px auto;
   overflow: hidden;
+
   border-radius: 12px;
   touch-action: none;
   border: 1px solid #b48b55;
@@ -526,11 +681,14 @@ h2 {
 .scratch-secret {
   position: absolute;
   inset: 0;
-  background: #fff0da;
-  color: #632940;
+
   display: grid;
   place-content: center;
   gap: 8px;
+
+  background: #fff0da;
+  color: #632940;
+
   font-family: "Cinzel", serif;
   font-size: 19px;
 }
@@ -542,6 +700,7 @@ h2 {
 #scratchCanvas {
   position: absolute;
   inset: 0;
+
   width: 100%;
   height: 100%;
   touch-action: none;
@@ -549,33 +708,45 @@ h2 {
 
 #enterWeddingBtn {
   display: none;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
-/* HERO */
+/* ==========================================
+   MAIN WEDDING HERO
+========================================== */
 
 .hero {
   min-height: 100vh;
-  background: radial-gradient(circle, #683148, #250e1b);
+
+  background: radial-gradient(
+    circle at center,
+    #683148,
+    #250e1b
+  );
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-frame {
+  position: relative;
   width: min(620px, 100%);
+
   padding: 70px 20px;
+
   border: 2px solid var(--gold);
   border-radius: 200px 200px 18px 18px;
-  position: relative;
 }
 
 .hero-frame::before {
   content: "";
   position: absolute;
   inset: 9px;
+
   border: 1px solid #e8c58d88;
   border-radius: 190px 190px 12px 12px;
+
   pointer-events: none;
 }
 
@@ -596,7 +767,7 @@ h2 {
   letter-spacing: 3px;
 }
 
-/* INTRO */
+/* INTRODUCTION */
 
 .intro {
   background: var(--ivory);
@@ -643,10 +814,11 @@ h2 {
   font-size: 10px;
 }
 
-/* ======================================
+/* ==========================================
    WEDDING FESTIVITIES
-   FULL VIDEO + TRANSPARENT TEXT
-====================================== */
+   MP4 VIDEO ONLY
+   TRANSPARENT TEXT OVERLAY
+========================================== */
 
 .festivities {
   background: var(--ivory);
@@ -660,6 +832,7 @@ h2 {
 .event-list {
   max-width: 650px;
   margin: 30px auto;
+
   display: grid;
   gap: 28px;
 }
@@ -668,30 +841,31 @@ h2 {
   position: relative;
   height: 440px;
   overflow: hidden;
+
   border-radius: 22px;
   border: 2px solid #d7b47c;
+
   background: #42182c;
   box-shadow: 0 14px 30px #42182c25;
 }
 
-/* VIDEO COVERS ENTIRE CARD */
-
 .event-video {
   position: absolute;
   inset: 0;
+
   display: block;
   width: 100%;
   height: 100%;
+
   object-fit: cover;
   background: #42182c;
 }
-
-/* DARK GRADIENT FOR READABLE TEXT */
 
 .event-shade {
   position: absolute;
   inset: 0;
   pointer-events: none;
+
   background: linear-gradient(
     180deg,
     #00000005 0%,
@@ -700,8 +874,6 @@ h2 {
     #1e0b19e5 100%
   );
 }
-
-/* TRANSPARENT GLASS OVERLAY */
 
 .event-overlay {
   position: absolute;
@@ -714,6 +886,7 @@ h2 {
   border-radius: 16px;
 
   background: rgba(35, 12, 26, .28);
+
   border: 1px solid rgba(248, 225, 180, .55);
 
   backdrop-filter: blur(7px);
@@ -726,7 +899,9 @@ h2 {
 
 .event-overlay h3 {
   color: var(--gold-light);
+
   font: normal 27px "Cinzel", serif;
+
   margin: 5px 0;
   text-shadow: 0 2px 8px #0008;
 }
@@ -735,7 +910,9 @@ h2 {
   font-family: "Great Vibes", cursive;
   font-size: 33px;
   line-height: 1.3;
+
   color: #ffe4b5;
+
   margin: 4px 0 12px;
   text-shadow: 0 2px 8px #0008;
 }
@@ -754,9 +931,10 @@ h2 {
   margin-top: 10px;
 }
 
-/* ======================================
-   FIVE-PHOTO GALLERY
-====================================== */
+/* ==========================================
+   OUR BEAUTIFUL MOMENTS
+   EXACTLY FIVE PHOTOS
+========================================== */
 
 .gallery {
   background: linear-gradient(135deg, #321324, #67324b);
@@ -770,8 +948,10 @@ h2 {
 .gallery-window {
   position: relative;
   aspect-ratio: 4 / 5;
+
   border: 2px solid var(--gold);
   border-radius: 18px;
+
   overflow: hidden;
   background: #301322;
   touch-action: pan-y;
@@ -780,9 +960,13 @@ h2 {
 .gallery-slide {
   position: absolute;
   inset: 0;
+
   opacity: 0;
   visibility: hidden;
-  transition: opacity 1s ease, visibility 1s ease;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
 }
 
 .gallery-slide.active {
@@ -802,6 +986,7 @@ h2 {
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+
   margin-top: 18px;
 }
 
@@ -809,8 +994,10 @@ h2 {
   flex-shrink: 0;
   width: 44px;
   height: 44px;
+
   border-radius: 50%;
   border: 1px solid var(--gold);
+
   background: transparent;
   color: var(--gold);
   font-size: 24px;
@@ -831,6 +1018,7 @@ h2 {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+
   border: 1px solid var(--gold);
   background: transparent;
   padding: 0;
@@ -857,14 +1045,19 @@ footer p {
   bottom: 22px;
   right: 22px;
   z-index: 100;
+
   width: 58px;
   height: 58px;
+
   border-radius: 50%;
   background: var(--gold);
   border: 2px solid #fff2d8;
+
   font-size: 24px;
   color: #301020;
 }
+
+/* SCROLL REVEAL FOR MAIN WEBSITE */
 
 .reveal {
   opacity: 0;
@@ -877,7 +1070,9 @@ footer p {
   transform: none;
 }
 
-/* MOBILE */
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
 
 @media (max-width: 600px) {
   section {
@@ -904,10 +1099,6 @@ footer p {
     font-size: 29px;
   }
 
-  .open-content h1 {
-    font-size: 52px;
-  }
-
   .gallery-arrow {
     width: 40px;
     height: 40px;
@@ -915,33 +1106,18 @@ footer p {
 }
 
 @media (max-width: 400px) {
-  .invitation-front {
-    padding: 18px 17px;
-    gap: 4px;
+  .invitation-book {
+    width: 96vw;
+    height: 94dvh;
   }
 
-  .letter-logo {
-    width: 64px;
-    height: 64px;
+  .invitation-page {
+    border-radius: 110px 110px 15px 15px;
+    padding: 15px 16px;
   }
 
-  .letter-heading {
-    font-size: 47px;
-  }
-
-  .letter-couple {
-    font-size: 60px;
-  }
-
-  .letter-couple span {
-    font-size: 32px;
-  }
-
-  .letter-intro,
-  .letter-blessing,
-  .letter-message {
-    font-size: 10px;
-    line-height: 1.6;
+  .invitation-page::before {
+    border-radius: 102px 102px 10px 10px;
   }
 
   .event-card {
@@ -949,20 +1125,39 @@ footer p {
   }
 }
 
-@media (max-height: 680px) {
-  .invitation-front {
-    gap: 2px;
-    padding: 16px;
+@media (max-height: 650px) {
+  .invitation-book {
+    height: 96dvh;
+  }
+
+  .invitation-page {
+    gap: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
   }
 
   .letter-logo {
-    width: 58px;
-    height: 58px;
+    width: 42px;
+    height: 42px;
+  }
+
+  .letter-heading {
+    font-size: 35px;
   }
 
   .letter-couple {
-    font-size: 56px;
-    margin: 3px 0;
+    font-size: 43px;
+  }
+
+  .letter-couple span {
+    font-size: 24px;
+  }
+
+  .letter-intro,
+  .letter-blessing,
+  .letter-message {
+    font-size: 9px;
+    line-height: 1.3;
   }
 }
 
@@ -983,7 +1178,9 @@ footer p {
 
 <body class="locked">
 
-<!-- ENVELOPE -->
+<!-- ==========================================
+     ENVELOPE OPENING
+========================================== -->
 
 <div id="opening">
   <div class="open-content">
@@ -1024,19 +1221,21 @@ footer p {
   </div>
 </div>
 
-<!-- OPENING EFFECTS -->
+<!-- GOLDEN LIGHT, SPARKLES AND ROSES -->
 
 <div id="goldenFlash" aria-hidden="true"></div>
 <div id="sparkleLayer" aria-hidden="true"></div>
 <div id="flowerRain" aria-hidden="true"></div>
 
-<!-- INVITATION BOOK -->
+<!-- ==========================================
+     FIXED ONE-SCREEN INVITATION
+========================================== -->
 
 <div id="invitationScreen">
 
   <div class="invitation-book" id="invitationBook">
 
-    <!-- PAGE ONE -->
+    <!-- FIRST PAGE: PREMIUM LETTER -->
 
     <div class="invitation-page invitation-front">
 
@@ -1045,7 +1244,7 @@ footer p {
       <img
         class="letter-logo"
         src="ankitimages/ankitlogo.png"
-        alt="A&S"
+        alt="A&S Monogram"
       >
 
       <p class="letter-eyebrow">
@@ -1057,7 +1256,9 @@ footer p {
       </h2>
 
       <div class="letter-divider">
-        <span></span>✦<span></span>
+        <span></span>
+        ✦
+        <span></span>
       </div>
 
       <p class="letter-intro">
@@ -1073,7 +1274,9 @@ footer p {
       </div>
 
       <div class="letter-divider">
-        <span></span>❦<span></span>
+        <span></span>
+        ❦
+        <span></span>
       </div>
 
       <p class="letter-blessing">
@@ -1098,7 +1301,7 @@ footer p {
 
     </div>
 
-    <!-- PAGE TWO: SCRATCH -->
+    <!-- SECOND PAGE: DATE REVEAL -->
 
     <div class="invitation-page invitation-back">
 
@@ -1146,7 +1349,9 @@ footer p {
   </div>
 </div>
 
-<!-- MAIN WEBSITE -->
+<!-- ==========================================
+     MAIN WEDDING WEBSITE
+========================================== -->
 
 <main>
 
@@ -1166,7 +1371,9 @@ footer p {
         TOGETHER WITH OUR FAMILIES
       </p>
 
-      <p>We joyfully invite you to celebrate</p>
+      <p>
+        We joyfully invite you to celebrate
+      </p>
 
       <h1 class="hero-names">
         Ankit
@@ -1188,14 +1395,19 @@ footer p {
         02 · 12 · 2026
       </h3>
 
-      <p>Wednesday | 5:15 PM onwards</p>
-      <p>Shree Sawariya Banquet</p>
+      <p>
+        Wednesday | 5:15 PM onwards
+      </p>
+
+      <p>
+        Shree Sawariya Banquet
+      </p>
 
     </div>
 
   </section>
 
-  <!-- INTRO -->
+  <!-- INTRODUCTION -->
 
   <section class="intro">
 
@@ -1250,7 +1462,7 @@ footer p {
 
   </section>
 
-  <!-- SEVEN AUTOPLAY VIDEOS -->
+  <!-- SEVEN WEDDING VIDEOS -->
 
   <section class="festivities">
 
@@ -1356,7 +1568,10 @@ footer p {
     alt="A&S"
   >
 
-  <h2 class="script" style="font-size:40px">
+  <h2
+    class="script"
+    style="font-size:40px"
+  >
     Ankit & Sneha
   </h2>
 
@@ -1370,7 +1585,7 @@ footer p {
 
 </footer>
 
-<!-- MUSIC -->
+<!-- BACKGROUND MUSIC -->
 
 <audio
   id="bgMusic"
@@ -1388,10 +1603,10 @@ footer p {
 </button>
 
 <script>
-/* ======================================
-   SEVEN FESTIVITIES
-   MP4 VIDEO ONLY - NO JPG
-====================================== */
+/* ==========================================
+   SEVEN WEDDING EVENTS
+   VIDEO ONLY - NO JPG
+========================================== */
 
 const events = [
   {
@@ -1459,11 +1674,12 @@ const events = [
   }
 ];
 
-/* ======================================
-   CREATE AUTOPLAY VIDEO CARDS
-====================================== */
+/* ==========================================
+   RENDER WEDDING VIDEOS
+========================================== */
 
-const eventList = document.getElementById("eventList");
+const eventList =
+  document.getElementById("eventList");
 
 const eventVideos = [];
 
@@ -1477,20 +1693,18 @@ events.forEach(event => {
   video.className = "event-video";
   video.src = event.video;
 
-  // AUTOPLAY SETTINGS
   video.autoplay = true;
   video.muted = true;
   video.defaultMuted = true;
   video.loop = true;
   video.playsInline = true;
   video.preload = "auto";
+  video.controls = false;
 
   video.setAttribute("autoplay", "");
   video.setAttribute("muted", "");
   video.setAttribute("loop", "");
   video.setAttribute("playsinline", "");
-
-  video.controls = false;
 
   const shade = document.createElement("div");
   shade.className = "event-shade";
@@ -1541,8 +1755,7 @@ events.forEach(event => {
   eventVideos.push(video);
 });
 
-/* AUTOPLAY VISIBLE VIDEOS
-   AND LOOP CONTINUOUSLY */
+/* AUTOPLAY VIDEOS WHILE VISIBLE */
 
 const videoObserver = new IntersectionObserver(
   entries => {
@@ -1568,7 +1781,7 @@ const videoObserver = new IntersectionObserver(
 
   },
   {
-    threshold: 0.15,
+    threshold: .15,
     rootMargin: "150px 0px"
   }
 );
@@ -1617,9 +1830,9 @@ document.addEventListener(
   }
 );
 
-/* ======================================
+/* ==========================================
    EXACTLY FIVE GALLERY PHOTOS
-====================================== */
+========================================== */
 
 const galleryImages = [
   "ankitimages/ankit&sheha.jpeg",
@@ -1653,7 +1866,6 @@ galleryImages.forEach((source, i) => {
   slides.appendChild(slide);
 
   const dot = document.createElement("button");
-
   dot.className = "gallery-dot";
 
   dot.setAttribute(
@@ -1721,7 +1933,7 @@ document.getElementById("nextPhoto").onclick = () => {
 
 };
 
-/* MOBILE SWIPE */
+/* MOBILE GALLERY SWIPE */
 
 let startX = 0;
 
@@ -1762,9 +1974,9 @@ galleryWindow.addEventListener(
 showPhoto(0);
 restartGallery();
 
-/* ======================================
-   GOLDEN LIGHT
-====================================== */
+/* ==========================================
+   GOLDEN LIGHT OPENING
+========================================== */
 
 function playGoldenOpening() {
 
@@ -1826,9 +2038,9 @@ function playGoldenOpening() {
   }
 }
 
-/* ======================================
+/* ==========================================
    ONE-TIME ROSE CELEBRATION
-====================================== */
+========================================== */
 
 const flowerRain =
   document.getElementById("flowerRain");
@@ -1883,9 +2095,9 @@ function playRoseCelebrationOnce() {
   }
 }
 
-/* ======================================
-   ENVELOPE / PAGE FLIP
-====================================== */
+/* ==========================================
+   FIXED ENVELOPE AND LETTER OPENING
+========================================== */
 
 const opening =
   document.getElementById("opening");
@@ -1908,6 +2120,8 @@ let last = null;
 let finished = false;
 let scratchMoves = 0;
 
+/* CLICK THE A&S SEAL */
+
 document.getElementById("sealBtn").onclick = () => {
 
   if (opened) return;
@@ -1917,26 +2131,36 @@ document.getElementById("sealBtn").onclick = () => {
   document.getElementById("envelope")
     .classList.add("open");
 
+  // Bright golden light
   playGoldenOpening();
 
+  // Show fully centered letter
   setTimeout(() => {
 
     invitationScreen.style.display = "flex";
 
+    invitationBook.classList.remove("flipped");
+
     requestAnimationFrame(() => {
+
       invitationScreen.style.opacity = "1";
+
     });
 
     opening.style.opacity = "0";
 
     setTimeout(() => {
+
       opening.style.display = "none";
+
     }, 800);
 
     playRoseCelebrationOnce();
 
-  }, 2100);
+  }, 1900);
 };
+
+/* CHANGE PAGE WITHOUT 3D HANGING */
 
 document.getElementById("flipPageBtn").onclick = () => {
 
@@ -1946,12 +2170,16 @@ document.getElementById("flipPageBtn").onclick = () => {
 
   invitationBook.classList.add("flipped");
 
-  setTimeout(initializeScratch, 1250);
+  setTimeout(() => {
+
+    initializeScratch();
+
+  }, 700);
 };
 
-/* ======================================
-   SCRATCH REVEAL
-====================================== */
+/* ==========================================
+   SCRATCH DATE REVEAL
+========================================== */
 
 function initializeScratch() {
 
@@ -2082,6 +2310,8 @@ canvas.addEventListener(
   }
 );
 
+/* FINISH SCRATCH */
+
 function finishScratch() {
 
   if (finished) return;
@@ -2098,6 +2328,8 @@ function finishScratch() {
   document.getElementById("enterWeddingBtn")
     .style.display = "inline-block";
 }
+
+/* ENTER MAIN WEDDING WEBSITE */
 
 document.getElementById("enterWeddingBtn").onclick = () => {
 
@@ -2120,6 +2352,8 @@ document.getElementById("enterWeddingBtn").onclick = () => {
   }, 800);
 };
 
+/* SKIP INTRO ON SAME-TAB REFRESH */
+
 if (
   sessionStorage.getItem("invitationOpened") === "yes"
 ) {
@@ -2132,9 +2366,9 @@ if (
   refreshVisibleVideos();
 }
 
-/* ======================================
+/* ==========================================
    COUNTDOWN
-====================================== */
+========================================== */
 
 const weddingDate =
   new Date("2026-12-02T17:15:00+05:30").getTime();
@@ -2187,7 +2421,9 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* SCROLL ANIMATION */
+/* ==========================================
+   MAIN WEBSITE SCROLL REVEAL
+========================================== */
 
 const observer = new IntersectionObserver(
   entries => {
@@ -2210,9 +2446,9 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal")
   .forEach(element => observer.observe(element));
 
-/* ======================================
-   MUSIC
-====================================== */
+/* ==========================================
+   BACKGROUND MUSIC
+========================================== */
 
 const music =
   document.getElementById("bgMusic");
@@ -2249,9 +2485,9 @@ function toggleMusic() {
   }
 }
 
-/* ======================================
+/* ==========================================
    WHATSAPP SHARING
-====================================== */
+========================================== */
 
 function shareInvitation() {
 
