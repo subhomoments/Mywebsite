@@ -1,30 +1,26 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#321322">
+<meta name="description" content="Ankit & Sneha Wedding Invitation - 2 December 2026 - #Ankitfullofsneha">
 
-<title>Ankit & Sneha | Royal Wedding Invitation</title>
+<title>Ankit & Sneha | Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
-
-/* ==============================
-   GLOBAL DESIGN
-============================== */
-
 :root {
   --gold: #e8c58d;
   --gold-light: #f8e1b4;
   --wine: #42182c;
   --deep: #250e1b;
   --ivory: #fff6ea;
-  --rose: #914d68;
 }
 
 * {
@@ -67,17 +63,25 @@ h2 {
   font-weight: 500;
 }
 
-.gold {
-  color: var(--gold);
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.logo {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
 }
 
 .script {
   font-family: "Great Vibes", cursive;
 }
 
-.container {
-  max-width: 900px;
-  margin: auto;
+.small-title {
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
 }
 
 .btn {
@@ -89,29 +93,24 @@ h2 {
   border-radius: 30px;
   font-size: 13px;
   font-weight: 600;
-  transition: transform .3s, background .3s;
+  transition: .3s;
 }
 
 .btn:hover {
-  transform: translateY(-2px);
   background: var(--gold-light);
+  transform: translateY(-2px);
 }
 
-.logo {
-  width: 76px;
-  height: 76px;
-  object-fit: contain;
-}
-
-.small-title {
-  letter-spacing: 3px;
-  font-size: 11px;
+.wedding-hashtag {
+  font-family: "Cinzel", serif;
   color: var(--gold);
+  font-size: clamp(13px, 3.5vw, 18px);
+  letter-spacing: 1px;
+  overflow-wrap: anywhere;
+  text-shadow: 0 0 14px #e8c58d55;
 }
 
-/* ==============================
-   OPENING ENVELOPE
-============================== */
+/* ENVELOPE */
 
 #opening {
   position: fixed;
@@ -123,7 +122,8 @@ h2 {
   justify-content: center;
   text-align: center;
   padding: 20px;
-  transition: opacity .8s ease;
+  transition: opacity .8s;
+  overflow: hidden;
 }
 
 .open-content {
@@ -176,13 +176,7 @@ h2 {
   position: absolute;
   inset: 0;
   background: linear-gradient(145deg, #f3d59f, #c79558);
-  clip-path: polygon(
-    0 0,
-    50% 55%,
-    100% 0,
-    100% 100%,
-    0 100%
-  );
+  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
   z-index: 3;
 }
 
@@ -242,9 +236,110 @@ h2 {
   }
 }
 
-/* ==============================
-   FULL INVITATION BOOK
-============================== */
+/* GOLDEN OPENING */
+
+#goldenFlash {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle,
+    #fffdf1 0%,
+    #ffe6a6 12%,
+    #f5bd5d99 32%,
+    transparent 75%
+  );
+}
+
+#goldenFlash.active {
+  animation: goldenFlash 2.1s ease-out forwards;
+}
+
+@keyframes goldenFlash {
+  0% {
+    opacity: 0;
+    transform: scale(.4);
+  }
+  25% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  55% {
+    opacity: .85;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+#sparkleLayer,
+#flowerRain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#sparkleLayer {
+  z-index: 1060;
+}
+
+#flowerRain {
+  z-index: 1100;
+}
+
+.sparkle {
+  position: absolute;
+  color: #ffe6a1;
+  opacity: 0;
+  text-shadow: 0 0 12px #fff4bc;
+  animation: sparkleBurst 2.5s ease-out forwards;
+}
+
+@keyframes sparkleBurst {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(.2);
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform:
+      translate(var(--sx), var(--sy))
+      scale(1.4) rotate(180deg);
+  }
+}
+
+.rain-flower {
+  position: absolute;
+  top: -50px;
+  opacity: 0;
+  animation: roseCelebration linear forwards;
+}
+
+@keyframes roseCelebration {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) rotate(-15deg);
+  }
+  12%, 85% {
+    opacity: .9;
+  }
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--drift), 110vh, 0)
+      rotate(35deg);
+  }
+}
+
+/* INVITATION BOOK */
 
 #invitationScreen {
   position: fixed;
@@ -256,7 +351,7 @@ h2 {
   padding: 18px;
   background: radial-gradient(circle, #784054, #280e1d);
   opacity: 0;
-  transition: opacity .8s ease;
+  transition: opacity .8s;
   perspective: 1400px;
 }
 
@@ -285,6 +380,8 @@ h2 {
   box-shadow: 0 15px 40px #0005;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  overflow-y: auto;
+  scrollbar-width: thin;
 }
 
 .invitation-page::before {
@@ -296,66 +393,44 @@ h2 {
   pointer-events: none;
 }
 
-/* ==============================
-   PREMIUM FIRST LETTER PAGE
-============================== */
-
 .invitation-front {
   z-index: 2;
   transform-origin: left center;
   transition: transform 1.2s ease;
-
   background: radial-gradient(
     ellipse at 50% 35%,
-    #fffaf1 0%,
+    #fffaf1,
     #f8e8d2 65%,
-    #efd6b7 100%
+    #efd6b7
   );
-
   border: 3px solid #d9b477;
   border-radius: 160px 160px 18px 18px;
   padding: 30px 28px 25px;
-  gap: 8px;
-
-  box-shadow:
-    inset 0 0 35px #d5aa6a22,
-    0 18px 55px #0006;
-}
-
-.invitation-front::before {
-  inset: 9px;
-  border: 1px solid #c9a16c;
-  border-radius: 150px 150px 12px 12px;
 }
 
 .letter-logo {
   width: 85px;
   height: 85px;
   object-fit: contain;
-  filter: drop-shadow(0 3px 5px #b78d5733);
+  flex-shrink: 0;
 }
 
-.invitation-front .letter-eyebrow {
+.letter-eyebrow {
   font-family: "Cinzel", serif;
   font-size: 10px;
   letter-spacing: 2.5px;
   color: #87435a;
-  margin: 6px 0;
 }
 
-.invitation-front .letter-heading {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(48px, 10vw, 65px);
-  font-weight: 400;
-  line-height: 1.2;
+.letter-heading {
+  font: normal clamp(48px, 10vw, 65px) "Great Vibes", cursive;
   color: #813b55;
-  margin: 10px 0 2px;
+  margin: 10px 0;
 }
 
 .letter-divider {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 12px;
   width: 65%;
   margin: 8px auto;
@@ -365,92 +440,48 @@ h2 {
 .letter-divider span {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, #c19a61);
+  background: #c19a61;
 }
 
-.letter-divider span:last-child {
-  transform: rotate(180deg);
-}
-
-.letter-divider b {
-  font-size: 19px;
-  font-weight: 400;
-}
-
-.invitation-front .letter-intro {
+.letter-intro,
+.letter-message {
   max-width: 300px;
   color: #75445a;
   font-size: 12px;
   line-height: 1.9;
-  margin: 8px auto;
 }
 
 .letter-couple {
-  font-family: "Great Vibes", cursive;
-  font-size: clamp(58px, 12vw, 82px);
-  line-height: 1.05;
+  font: normal clamp(58px, 12vw, 82px)/1.05 "Great Vibes", cursive;
   color: #80364f;
   margin: 12px 0;
-  text-shadow: 0 2px 1px #fff7e8;
 }
 
 .letter-couple span {
   display: block;
   font-size: 40px;
   color: #b98b51;
-  margin: 0;
 }
 
-.invitation-front .letter-blessing {
+.letter-blessing {
   font-family: "Cinzel", serif;
   font-size: 11px;
   line-height: 1.9;
-  letter-spacing: .4px;
   color: #87576a;
   max-width: 285px;
-  margin: 8px auto;
-}
-
-.invitation-front .letter-message {
-  font-size: 11px;
-  line-height: 1.8;
-  color: #865568;
-  max-width: 280px;
-  margin: 6px auto 12px;
 }
 
 .premium-turn-btn {
   background: linear-gradient(135deg, #f1d7a7, #d7a968);
-  color: #50243a;
   border: 1px solid #c79858;
-  padding: 13px 30px;
-  font-size: 12px;
-  letter-spacing: .4px;
-  box-shadow: 0 5px 15px #a6794433;
   margin-top: 8px;
-}
-
-.premium-turn-btn span {
-  margin-left: 8px;
-  font-size: 18px;
+  flex-shrink: 0;
 }
 
 .letter-ornament {
   color: #bf965f;
   font-size: 23px;
 }
-
-.top-ornament {
-  margin-bottom: -5px;
-}
-
-.bottom-ornament {
-  margin-top: 5px;
-}
-
-/* ==============================
-   SECOND INVITATION PAGE
-============================== */
 
 .invitation-back {
   z-index: 1;
@@ -466,7 +497,6 @@ h2 {
   font-size: 12px;
   line-height: 1.8;
   max-width: 300px;
-  margin: 5px 0;
 }
 
 .invitation-book.flipped .invitation-front {
@@ -479,48 +509,18 @@ h2 {
   transition: z-index 0s 1.2s;
 }
 
-.letter-btn {
-  margin-top: 14px;
-}
-
-/* ==============================
-   SCRATCH CARD
-============================== */
-
-#scratchScreen {
-  position: fixed;
-  inset: 0;
-  z-index: 900;
-  background: radial-gradient(circle, #784054, #280e1d);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 18px;
-  text-align: center;
-  opacity: 0;
-  transition: opacity .8s ease;
-}
-
-.scratch-card {
-  width: min(420px, 100%);
-  padding: 45px 20px;
-  background: #4d2034;
-  border: 2px solid var(--gold);
-  border-radius: 150px 150px 16px 16px;
-}
-
-.scratch-card h2 {
-  font: normal 53px "Great Vibes", cursive;
-}
+/* SCRATCH DATE */
 
 .scratch-area {
   position: relative;
   width: min(290px, 100%);
   height: 125px;
-  margin: 25px auto;
+  flex-shrink: 0;
+  margin: 22px auto;
   overflow: hidden;
   border-radius: 12px;
   touch-action: none;
+  border: 1px solid #b48b55;
 }
 
 .scratch-secret {
@@ -536,8 +536,7 @@ h2 {
 }
 
 .scratch-secret small {
-  font-family: "Poppins", sans-serif;
-  font-size: 11px;
+  font: 11px "Poppins", sans-serif;
 }
 
 #scratchCanvas {
@@ -548,54 +547,16 @@ h2 {
   touch-action: none;
 }
 
-/* ==============================
-   ONE-TIME ROSE CELEBRATION
-============================== */
-
-#flowerRain {
-  position: fixed;
-  inset: 0;
-  z-index: 1100;
-  overflow: hidden;
-  pointer-events: none;
+#enterWeddingBtn {
+  display: none;
+  margin-top: 12px;
 }
 
-.rain-flower {
-  position: absolute;
-  top: -50px;
-  opacity: 0;
-  pointer-events: none;
-  animation: roseCelebration linear forwards;
-  will-change: transform, opacity;
-}
-
-@keyframes roseCelebration {
-  0% {
-    transform: translate3d(0, -30px, 0) rotate(-15deg);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: .9;
-  }
-
-  85% {
-    opacity: .9;
-  }
-
-  100% {
-    transform: translate3d(var(--drift), 110vh, 0) rotate(35deg);
-    opacity: 0;
-  }
-}
-
-/* ==============================
-   HERO
-============================== */
+/* HERO */
 
 .hero {
   min-height: 100vh;
-  background: radial-gradient(circle at center, #683148, #250e1b);
+  background: radial-gradient(circle, #683148, #250e1b);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -621,7 +582,7 @@ h2 {
 .hero-names {
   font: normal clamp(65px, 13vw, 100px)/1.15 "Great Vibes", cursive;
   color: var(--gold);
-  margin: 35px 0;
+  margin: 35px 0 15px;
 }
 
 .hero-names span {
@@ -635,9 +596,7 @@ h2 {
   letter-spacing: 3px;
 }
 
-/* ==============================
-   INTRODUCTION
-============================== */
+/* INTRO */
 
 .intro {
   background: var(--ivory);
@@ -654,9 +613,7 @@ h2 {
   line-height: 2;
 }
 
-/* ==============================
-   COUNTDOWN
-============================== */
+/* COUNTDOWN */
 
 .countdown {
   background: linear-gradient(135deg, #351525, #6c344c);
@@ -686,9 +643,10 @@ h2 {
   font-size: 10px;
 }
 
-/* ==============================
-   WEDDING EVENTS
-============================== */
+/* ======================================
+   WEDDING FESTIVITIES
+   FULL VIDEO + TRANSPARENT TEXT
+====================================== */
 
 .festivities {
   background: var(--ivory);
@@ -703,61 +661,102 @@ h2 {
   max-width: 650px;
   margin: 30px auto;
   display: grid;
-  gap: 25px;
+  gap: 28px;
 }
 
 .event-card {
-  height: 390px;
   position: relative;
+  height: 440px;
   overflow: hidden;
-  border-radius: 18px;
+  border-radius: 22px;
   border: 2px solid #d7b47c;
-  background: #6a3549;
+  background: #42182c;
+  box-shadow: 0 14px 30px #42182c25;
 }
 
-.event-card > img {
+/* VIDEO COVERS ENTIRE CARD */
+
+.event-video {
+  position: absolute;
+  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  background: #42182c;
 }
+
+/* DARK GRADIENT FOR READABLE TEXT */
 
 .event-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(transparent, #1e0b19e8);
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    #00000005 0%,
+    #1e0b1922 35%,
+    #1e0b19a8 70%,
+    #1e0b19e5 100%
+  );
 }
+
+/* TRANSPARENT GLASS OVERLAY */
 
 .event-overlay {
   position: absolute;
   bottom: 14px;
   left: 14px;
   right: 14px;
-  padding: 18px 12px;
-  border-radius: 13px;
-  border: 1px solid #e8c58d99;
-  background: #291123bb;
-  backdrop-filter: blur(8px);
-  color: #fff;
+  z-index: 2;
+
+  padding: 20px 14px;
+  border-radius: 16px;
+
+  background: rgba(35, 12, 26, .28);
+  border: 1px solid rgba(248, 225, 180, .55);
+
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+
+  color: white;
+  text-align: center;
+  box-shadow: 0 8px 30px #0002;
 }
 
 .event-overlay h3 {
-  color: var(--gold);
-  font: normal 27px Georgia, serif;
-  margin: 6px;
+  color: var(--gold-light);
+  font: normal 27px "Cinzel", serif;
+  margin: 5px 0;
+  text-shadow: 0 2px 8px #0008;
+}
+
+.event-subtitle {
+  font-family: "Great Vibes", cursive;
+  font-size: 33px;
+  line-height: 1.3;
+  color: #ffe4b5;
+  margin: 4px 0 12px;
+  text-shadow: 0 2px 8px #0008;
+}
+
+.event-subtitle:empty {
+  display: none;
 }
 
 .event-overlay p {
   font-size: 12px;
-  margin: 7px;
+  margin: 7px 0;
+  text-shadow: 0 2px 6px #0008;
 }
 
 .event-overlay .btn {
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
-/* ==============================
+/* ======================================
    FIVE-PHOTO GALLERY
-============================== */
+====================================== */
 
 .gallery {
   background: linear-gradient(135deg, #321324, #67324b);
@@ -841,9 +840,7 @@ h2 {
   background: var(--gold);
 }
 
-/* ==============================
-   FOOTER / MUSIC / REVEAL
-============================== */
+/* FOOTER */
 
 footer {
   padding: 45px 18px;
@@ -853,7 +850,6 @@ footer {
 
 footer p {
   font-size: 12px;
-  opacity: .8;
 }
 
 .music-btn {
@@ -873,7 +869,7 @@ footer p {
 .reveal {
   opacity: 0;
   transform: translateY(25px);
-  transition: opacity .8s ease, transform .8s ease;
+  transition: opacity .8s, transform .8s;
 }
 
 .reveal.visible {
@@ -881,9 +877,7 @@ footer p {
   transform: none;
 }
 
-/* ==============================
-   MOBILE RESPONSIVENESS
-============================== */
+/* MOBILE */
 
 @media (max-width: 600px) {
   section {
@@ -895,7 +889,19 @@ footer p {
   }
 
   .event-card {
-    height: 360px;
+    height: 410px;
+  }
+
+  .event-overlay {
+    padding: 16px 10px;
+  }
+
+  .event-overlay h3 {
+    font-size: 21px;
+  }
+
+  .event-subtitle {
+    font-size: 29px;
   }
 
   .open-content h1 {
@@ -919,7 +925,7 @@ footer p {
     height: 64px;
   }
 
-  .invitation-front .letter-heading {
+  .letter-heading {
     font-size: 47px;
   }
 
@@ -931,23 +937,22 @@ footer p {
     font-size: 32px;
   }
 
-  .letter-divider {
-    margin: 3px auto;
-  }
-
-  .invitation-front .letter-intro,
-  .invitation-front .letter-blessing,
-  .invitation-front .letter-message {
+  .letter-intro,
+  .letter-blessing,
+  .letter-message {
     font-size: 10px;
     line-height: 1.6;
+  }
+
+  .event-card {
+    height: 390px;
   }
 }
 
 @media (max-height: 680px) {
   .invitation-front {
     gap: 2px;
-    padding-top: 16px;
-    padding-bottom: 14px;
+    padding: 16px;
   }
 
   .letter-logo {
@@ -959,34 +964,28 @@ footer p {
     font-size: 56px;
     margin: 3px 0;
   }
-
-  .letter-divider {
-    margin: 2px auto;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   .seal,
+  .sparkle,
   .rain-flower {
     animation: none !important;
   }
 
+  .sparkle,
   .rain-flower {
     display: none;
   }
 }
-
 </style>
 </head>
 
 <body class="locked">
 
-<!-- ==============================
-     ENVELOPE OPENING
-============================== -->
+<!-- ENVELOPE -->
 
 <div id="opening">
-
   <div class="open-content">
 
     <p class="small-title">
@@ -1010,7 +1009,7 @@ footer p {
       <button
         class="seal"
         id="sealBtn"
-        aria-label="Open wedding invitation"
+        aria-label="Open invitation"
       >
         <img
           src="ankitimages/ankitlogo.png"
@@ -1023,29 +1022,30 @@ footer p {
     <p>Tap the golden A&S seal to open</p>
 
   </div>
-
 </div>
 
-<!-- ==============================
-     FULL INVITATION BOOK
-============================== -->
+<!-- OPENING EFFECTS -->
+
+<div id="goldenFlash" aria-hidden="true"></div>
+<div id="sparkleLayer" aria-hidden="true"></div>
+<div id="flowerRain" aria-hidden="true"></div>
+
+<!-- INVITATION BOOK -->
 
 <div id="invitationScreen">
 
   <div class="invitation-book" id="invitationBook">
 
-    <!-- PREMIUM FIRST PAGE -->
+    <!-- PAGE ONE -->
 
     <div class="invitation-page invitation-front">
 
-      <div class="letter-ornament top-ornament">
-        ❦
-      </div>
+      <div class="letter-ornament">❦</div>
 
       <img
         class="letter-logo"
         src="ankitimages/ankitlogo.png"
-        alt="Ankit and Sneha Monogram"
+        alt="A&S"
       >
 
       <p class="letter-eyebrow">
@@ -1057,9 +1057,7 @@ footer p {
       </h2>
 
       <div class="letter-divider">
-        <span></span>
-        <b>✦</b>
-        <span></span>
+        <span></span>✦<span></span>
       </div>
 
       <p class="letter-intro">
@@ -1075,9 +1073,7 @@ footer p {
       </div>
 
       <div class="letter-divider">
-        <span></span>
-        <b>❦</b>
-        <span></span>
+        <span></span>❦<span></span>
       </div>
 
       <p class="letter-blessing">
@@ -1095,16 +1091,14 @@ footer p {
         class="btn premium-turn-btn"
         id="flipPageBtn"
       >
-        Turn the Page <span>→</span>
+        Turn the Page →
       </button>
 
-      <div class="letter-ornament bottom-ornament">
-        ❦
-      </div>
+      <div class="letter-ornament">❦</div>
 
     </div>
 
-    <!-- SECOND PAGE -->
+    <!-- PAGE TWO: SCRATCH -->
 
     <div class="invitation-page invitation-back">
 
@@ -1114,7 +1108,7 @@ footer p {
         alt="A&S"
       >
 
-      <h2>A Special Date</h2>
+      <h2>Reveal Our Date</h2>
 
       <p>
         A beautiful beginning,
@@ -1122,66 +1116,37 @@ footer p {
       </p>
 
       <p style="font-family:Cinzel,serif">
-        OUR FOREVER BEGINS
+        SCRATCH TO DISCOVER
+      </p>
+
+      <div class="scratch-area">
+
+        <div class="scratch-secret">
+          <div>02 DECEMBER 2026</div>
+          <small>Wednesday • 5:15 PM</small>
+        </div>
+
+        <canvas id="scratchCanvas"></canvas>
+
+      </div>
+
+      <p id="scratchHint">
+        Gently scratch the golden card
       </p>
 
       <button
-        class="btn letter-btn"
-        id="continueToScratch"
+        class="btn"
+        id="enterWeddingBtn"
       >
-        Reveal Our Date
+        Enter Wedding Invitation →
       </button>
 
     </div>
 
   </div>
-
 </div>
 
-<!-- ==============================
-     SCRATCH CARD
-============================== -->
-
-<div id="scratchScreen">
-
-  <div class="scratch-card">
-
-    <img
-      class="logo"
-      src="ankitimages/ankitlogo.png"
-      alt="A&S Logo"
-    >
-
-    <h2>Save the Date</h2>
-
-    <p>Scratch to reveal our special day</p>
-
-    <div class="scratch-area">
-
-      <div class="scratch-secret">
-        <div>02 DECEMBER 2026</div>
-        <small>Wednesday • 5:15 PM</small>
-      </div>
-
-      <canvas id="scratchCanvas"></canvas>
-
-    </div>
-
-    <p id="scratchHint">
-      Gently scratch the golden card
-    </p>
-
-  </div>
-
-</div>
-
-<!-- ONE-TIME ROSE CELEBRATION -->
-
-<div id="flowerRain" aria-hidden="true"></div>
-
-<!-- ==============================
-     MAIN WEDDING WEBSITE
-============================== -->
+<!-- MAIN WEBSITE -->
 
 <main>
 
@@ -1194,7 +1159,7 @@ footer p {
       <img
         class="logo"
         src="ankitimages/ankitlogo.png"
-        alt="Ankit and Sneha Monogram"
+        alt="A&S"
       >
 
       <p class="small-title">
@@ -1209,7 +1174,11 @@ footer p {
         Sneha
       </h1>
 
-      <p class="gold">❦</p>
+      <p class="wedding-hashtag">
+        #Ankitfullofsneha
+      </p>
+
+      <p style="color:var(--gold)">❦</p>
 
       <p class="small-title">
         THE ROYAL WEDDING
@@ -1220,14 +1189,13 @@ footer p {
       </h3>
 
       <p>Wednesday | 5:15 PM onwards</p>
-
       <p>Shree Sawariya Banquet</p>
 
     </div>
 
   </section>
 
-  <!-- INTRODUCTION -->
+  <!-- INTRO -->
 
   <section class="intro">
 
@@ -1282,7 +1250,7 @@ footer p {
 
   </section>
 
-  <!-- WEDDING EVENTS -->
+  <!-- SEVEN AUTOPLAY VIDEOS -->
 
   <section class="festivities">
 
@@ -1293,11 +1261,14 @@ footer p {
       countless beautiful memories
     </p>
 
-    <div class="event-list" id="eventList"></div>
+    <div
+      class="event-list"
+      id="eventList"
+    ></div>
 
   </section>
 
-  <!-- FIVE-PHOTO GALLERY -->
+  <!-- EXACTLY FIVE PHOTOS -->
 
   <section class="gallery">
 
@@ -1307,7 +1278,10 @@ footer p {
 
     <div class="gallery-slider">
 
-      <div class="gallery-window" id="galleryWindow">
+      <div
+        class="gallery-window"
+        id="galleryWindow"
+      >
         <div id="gallerySlides"></div>
       </div>
 
@@ -1340,7 +1314,7 @@ footer p {
 
   </section>
 
-  <!-- INVITATION MESSAGE -->
+  <!-- FINAL INVITATION -->
 
   <section>
 
@@ -1355,6 +1329,10 @@ footer p {
     <p>
       Join us for a celebration of love,
       family and togetherness.
+    </p>
+
+    <p class="wedding-hashtag">
+      #Ankitfullofsneha
     </p>
 
     <button
@@ -1384,11 +1362,15 @@ footer p {
 
   <p>02 December 2026</p>
 
+  <p class="wedding-hashtag">
+    #Ankitfullofsneha
+  </p>
+
   <p>Made with love for our special day</p>
 
 </footer>
 
-<!-- BACKGROUND MUSIC -->
+<!-- MUSIC -->
 
 <audio
   id="bgMusic"
@@ -1400,89 +1382,115 @@ footer p {
   class="music-btn"
   id="musicBtn"
   onclick="toggleMusic()"
-  aria-label="Toggle background music"
+  aria-label="Toggle music"
 >
   ♫
 </button>
 
 <script>
-
-/* ==============================
-   SEVEN WEDDING EVENTS
-============================== */
+/* ======================================
+   SEVEN FESTIVITIES
+   MP4 VIDEO ONLY - NO JPG
+====================================== */
 
 const events = [
   {
     name: "Vivah Hath / Peela Chawal",
+    subtitle: "",
     date: "Thursday, 26 November 2026",
     time: "10:15 AM onwards",
     venue: "VIP Enclave",
-    map: "https://share.google/p7an4A3jflh5JdQBa",
-    image: "ankitimages/vivah-hath.jpg"
+    map: "https://maps.app.goo.gl/iVJ4Hx1dnaMtcNuk9?g_st=aw",
+    video: "ankitimages/1.mp4"
   },
   {
     name: "Mangal Path",
+    subtitle: "",
     date: "Sunday, 29 November 2026",
     time: "4:15 PM onwards",
     venue: "Bika Banquet",
     map: "https://maps.app.goo.gl/tveYvcxtEL5fB75FA?g_st=aw",
-    image: "ankitimages/mangal-path.jpg"
+    video: "ankitimages/2.mp4"
   },
   {
     name: "Mehendi",
+    subtitle: "Green Inked Love",
     date: "Monday, 30 November 2026",
     time: "11:15 AM onwards",
     venue: "Vrindavan Banquet",
-    map: "https://share.google/RifkwYjHOFkSkj69m",
-    image: "ankitimages/mehendi.jpg"
+    map: "https://share.google/yJ4LzJSDvwYttfniZ",
+    video: "ankitimages/3.mp4"
   },
   {
     name: "Mayra",
+    subtitle: "",
     date: "Tuesday, 1 December 2026",
     time: "9:15 AM onwards",
     venue: "Vrindavan Banquet",
-    map: "https://share.google/RifkwYjHOFkSkj69m",
-    image: "ankitimages/mayra.jpg"
+    map: "https://share.google/yJ4LzJSDvwYttfniZ",
+    video: "ankitimages/4.mp4"
   },
   {
     name: "Tilak & Sangeet",
+    subtitle: "Glitter & Grooves",
     date: "Tuesday, 1 December 2026",
     time: "5:15 PM onwards",
     venue: "Sawariya Banquet",
-    map: "https://maps.app.goo.gl/yMsbAMU7a1vbppQp6?g_st=aw",
-    image: "ankitimages/tilak-sangeet.jpg"
+    map: "https://share.google/BcH0Vn5BXWdBLf6l6",
+    video: "ankitimages/5.mp4"
   },
   {
     name: "Haldi",
+    subtitle: "The Turmeric Tales",
     date: "Wednesday, 2 December 2026",
     time: "10:15 AM onwards",
     venue: "Vrindavan Banquet",
-    map: "https://share.google/RifkwYjHOFkSkj69m",
-    image: "ankitimages/haldi.jpg"
+    map: "https://share.google/yJ4LzJSDvwYttfniZ",
+    video: "ankitimages/6.mp4"
   },
   {
-    name: "The Wedding Day",
+    name: "The Wedding",
+    subtitle: "The Forever Chapter",
     date: "Wednesday, 2 December 2026",
     time: "5:15 PM onwards",
     venue: "Shree Sawariya Banquet",
-    map: "https://maps.app.goo.gl/yMsbAMU7a1vbppQp6?g_st=aw",
-    image: "ankitimages/wedding.jpg"
+    map: "https://share.google/BcH0Vn5BXWdBLf6l6",
+    video: "ankitimages/7.mp4"
   }
 ];
 
-/* Render event cards */
+/* ======================================
+   CREATE AUTOPLAY VIDEO CARDS
+====================================== */
 
 const eventList = document.getElementById("eventList");
+
+const eventVideos = [];
 
 events.forEach(event => {
 
   const card = document.createElement("article");
   card.className = "event-card reveal";
 
-  const img = document.createElement("img");
-  img.src = event.image;
-  img.alt = event.name;
-  img.loading = "lazy";
+  const video = document.createElement("video");
+
+  video.className = "event-video";
+  video.src = event.video;
+
+  // AUTOPLAY SETTINGS
+  video.autoplay = true;
+  video.muted = true;
+  video.defaultMuted = true;
+  video.loop = true;
+  video.playsInline = true;
+  video.preload = "auto";
+
+  video.setAttribute("autoplay", "");
+  video.setAttribute("muted", "");
+  video.setAttribute("loop", "");
+  video.setAttribute("playsinline", "");
+
+  video.controls = false;
 
   const shade = document.createElement("div");
   shade.className = "event-shade";
@@ -1492,6 +1500,10 @@ events.forEach(event => {
 
   const title = document.createElement("h3");
   title.textContent = event.name;
+
+  const subtitle = document.createElement("div");
+  subtitle.className = "event-subtitle";
+  subtitle.textContent = event.subtitle;
 
   const date = document.createElement("p");
   date.textContent = event.date;
@@ -1509,26 +1521,119 @@ events.forEach(event => {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
 
-  overlay.append(title, date, time, venue, link);
-  card.append(img, shade, overlay);
+  overlay.append(
+    title,
+    subtitle,
+    date,
+    time,
+    venue,
+    link
+  );
+
+  card.append(
+    video,
+    shade,
+    overlay
+  );
 
   eventList.appendChild(card);
+
+  eventVideos.push(video);
 });
 
-/* ==============================
-   FIVE-PHOTO GALLERY
-============================== */
+/* AUTOPLAY VISIBLE VIDEOS
+   AND LOOP CONTINUOUSLY */
+
+const videoObserver = new IntersectionObserver(
+  entries => {
+
+    entries.forEach(entry => {
+
+      const video = entry.target;
+
+      if (
+        entry.isIntersecting &&
+        !document.hidden &&
+        !document.body.classList.contains("locked")
+      ) {
+
+        video.play().catch(() => {});
+
+      } else {
+
+        video.pause();
+
+      }
+    });
+
+  },
+  {
+    threshold: 0.15,
+    rootMargin: "150px 0px"
+  }
+);
+
+eventVideos.forEach(video => {
+  videoObserver.observe(video);
+});
+
+function refreshVisibleVideos() {
+
+  if (
+    document.hidden ||
+    document.body.classList.contains("locked")
+  ) {
+    return;
+  }
+
+  eventVideos.forEach(video => {
+
+    const rect = video.getBoundingClientRect();
+
+    if (
+      rect.bottom > -150 &&
+      rect.top < window.innerHeight + 150
+    ) {
+
+      video.play().catch(() => {});
+
+    }
+  });
+}
+
+document.addEventListener(
+  "visibilitychange",
+  () => {
+
+    if (document.hidden) {
+
+      eventVideos.forEach(video => video.pause());
+
+    } else {
+
+      refreshVisibleVideos();
+
+    }
+  }
+);
+
+/* ======================================
+   EXACTLY FIVE GALLERY PHOTOS
+====================================== */
 
 const galleryImages = [
-  "ankitimages/ankit&sneha.jpeg",
-  "ankitimages/photo2.jpg",
-  "ankitimages/photo3.jpg",
-  "ankitimages/photo4.jpg",
-  "ankitimages/photo5.jpg"
+  "ankitimages/ankit&sheha.jpeg",
+  "ankitimages/1.jpeg",
+  "ankitimages/2.jpeg",
+  "ankitimages/3.jpeg",
+  "ankitimages/4.jpeg"
 ];
 
-const slides = document.getElementById("gallerySlides");
-const dots = document.getElementById("galleryDots");
+const slides =
+  document.getElementById("gallerySlides");
+
+const dots =
+  document.getElementById("galleryDots");
 
 let photoIndex = 0;
 let galleryTimer;
@@ -1539,6 +1644,7 @@ galleryImages.forEach((source, i) => {
   slide.className = "gallery-slide";
 
   const img = document.createElement("img");
+
   img.src = source;
   img.alt = "Ankit and Sneha photo " + (i + 1);
   img.loading = i === 0 ? "eager" : "lazy";
@@ -1547,15 +1653,19 @@ galleryImages.forEach((source, i) => {
   slides.appendChild(slide);
 
   const dot = document.createElement("button");
+
   dot.className = "gallery-dot";
+
   dot.setAttribute(
     "aria-label",
     "Show photo " + (i + 1)
   );
 
   dot.onclick = () => {
+
     showPhoto(i);
     restartGallery();
+
   };
 
   dots.appendChild(dot);
@@ -1564,14 +1674,25 @@ galleryImages.forEach((source, i) => {
 function showPhoto(index) {
 
   photoIndex =
-    (index + galleryImages.length) % galleryImages.length;
+    (index + galleryImages.length) %
+    galleryImages.length;
 
   [...slides.children].forEach((slide, i) => {
-    slide.classList.toggle("active", i === photoIndex);
+
+    slide.classList.toggle(
+      "active",
+      i === photoIndex
+    );
+
   });
 
   [...dots.children].forEach((dot, i) => {
-    dot.classList.toggle("active", i === photoIndex);
+
+    dot.classList.toggle(
+      "active",
+      i === photoIndex
+    );
+
   });
 }
 
@@ -1580,21 +1701,27 @@ function restartGallery() {
   clearInterval(galleryTimer);
 
   galleryTimer = setInterval(() => {
+
     showPhoto(photoIndex + 1);
+
   }, 4000);
 }
 
 document.getElementById("prevPhoto").onclick = () => {
+
   showPhoto(photoIndex - 1);
   restartGallery();
+
 };
 
 document.getElementById("nextPhoto").onclick = () => {
+
   showPhoto(photoIndex + 1);
   restartGallery();
+
 };
 
-/* Mobile swipe */
+/* MOBILE SWIPE */
 
 let startX = 0;
 
@@ -1604,7 +1731,10 @@ const galleryWindow =
 galleryWindow.addEventListener(
   "touchstart",
   event => {
-    startX = event.changedTouches[0].clientX;
+
+    startX =
+      event.changedTouches[0].clientX;
+
   },
   { passive: true }
 );
@@ -1623,6 +1753,7 @@ galleryWindow.addEventListener(
       );
 
       restartGallery();
+
     }
   },
   { passive: true }
@@ -1631,249 +1762,23 @@ galleryWindow.addEventListener(
 showPhoto(0);
 restartGallery();
 
-/* ==============================
-   ENVELOPE / INVITATION / SCRATCH
-============================== */
+/* ======================================
+   GOLDEN LIGHT
+====================================== */
 
-const opening = document.getElementById("opening");
+function playGoldenOpening() {
 
-const invitationScreen =
-  document.getElementById("invitationScreen");
+  const flash =
+    document.getElementById("goldenFlash");
 
-const invitationBook =
-  document.getElementById("invitationBook");
+  const layer =
+    document.getElementById("sparkleLayer");
 
-const scratch = document.getElementById("scratchScreen");
+  flash.classList.remove("active");
 
-const canvas = document.getElementById("scratchCanvas");
-const ctx = canvas.getContext("2d");
+  void flash.offsetWidth;
 
-let opened = false;
-let flipped = false;
-let painting = false;
-let last = null;
-let finished = false;
-let scratchMoves = 0;
-
-/* Tap the A&S seal */
-
-document.getElementById("sealBtn").onclick = () => {
-
-  if (opened) return;
-  opened = true;
-
-  document.getElementById("envelope")
-    .classList.add("open");
-
-  setTimeout(() => {
-
-    invitationScreen.style.display = "flex";
-
-    requestAnimationFrame(() => {
-      invitationScreen.style.opacity = "1";
-    });
-
-    opening.style.opacity = "0";
-
-    setTimeout(() => {
-      opening.style.display = "none";
-    }, 800);
-
-    playRoseCelebrationOnce();
-
-  }, 2100);
-};
-
-/* Turn invitation page */
-
-document.getElementById("flipPageBtn").onclick = () => {
-
-  if (flipped) return;
-  flipped = true;
-
-  invitationBook.classList.add("flipped");
-};
-
-/* Open scratch card */
-
-document.getElementById("continueToScratch").onclick = () => {
-
-  scratch.style.display = "flex";
-
-  requestAnimationFrame(() => {
-    scratch.style.opacity = "1";
-  });
-
-  initializeScratch();
-
-  invitationScreen.style.opacity = "0";
-
-  setTimeout(() => {
-    invitationScreen.style.display = "none";
-  }, 800);
-};
-
-/* ==============================
-   SCRATCH CARD
-============================== */
-
-function initializeScratch() {
-
-  const rect = canvas.getBoundingClientRect();
-  const dpr = window.devicePixelRatio || 1;
-
-  canvas.width = Math.round(rect.width * dpr);
-  canvas.height = Math.round(rect.height * dpr);
-
-  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-  ctx.globalCompositeOperation = "source-over";
-  ctx.fillStyle = "#ddb980";
-
-  ctx.fillRect(0, 0, rect.width, rect.height);
-
-  ctx.fillStyle = "#653448";
-  ctx.textAlign = "center";
-  ctx.font = "bold 17px Poppins";
-
-  ctx.fillText(
-    "Scratch Here",
-    rect.width / 2,
-    rect.height / 2
-  );
-}
-
-function getScratchPoint(event) {
-
-  const rect = canvas.getBoundingClientRect();
-
-  return {
-    x: event.clientX - rect.left,
-    y: event.clientY - rect.top
-  };
-}
-
-function scratchMove(event) {
-
-  if (!painting || finished) return;
-
-  const point = getScratchPoint(event);
-
-  ctx.globalCompositeOperation = "destination-out";
-  ctx.lineWidth = 36;
-  ctx.lineCap = "round";
-
-  ctx.beginPath();
-
-  if (last) {
-
-    ctx.moveTo(last.x, last.y);
-    ctx.lineTo(point.x, point.y);
-    ctx.stroke();
-
-  } else {
-
-    ctx.arc(
-      point.x,
-      point.y,
-      18,
-      0,
-      Math.PI * 2
-    );
-
-    ctx.fill();
-  }
-
-  last = point;
-  scratchMoves++;
-
-  if (scratchMoves > 28) {
-    finishScratch();
-  }
-}
-
-canvas.addEventListener("pointerdown", event => {
-
-  painting = true;
-  last = null;
-
-  canvas.setPointerCapture(event.pointerId);
-  scratchMove(event);
-});
-
-canvas.addEventListener("pointermove", scratchMove);
-
-canvas.addEventListener("pointerup", () => {
-  painting = false;
-  last = null;
-});
-
-canvas.addEventListener("pointercancel", () => {
-  painting = false;
-  last = null;
-});
-
-/* Finish scratch reveal */
-
-function finishScratch() {
-
-  if (finished) return;
-  finished = true;
-
-  canvas.style.transition = "opacity .5s";
-  canvas.style.opacity = "0";
-  canvas.style.pointerEvents = "none";
-
-  document.getElementById("scratchHint")
-    .textContent = "Let the celebrations begin!";
-
-  setTimeout(() => {
-
-    scratch.style.opacity = "0";
-
-    setTimeout(() => {
-
-      scratch.style.display = "none";
-      document.body.classList.remove("locked");
-
-      sessionStorage.setItem(
-        "invitationOpened",
-        "yes"
-      );
-
-      startMusic();
-
-    }, 800);
-
-  }, 2200);
-}
-
-/* Skip opening on refresh in same tab */
-
-if (
-  sessionStorage.getItem("invitationOpened") === "yes"
-) {
-
-  opening.style.display = "none";
-  invitationScreen.style.display = "none";
-  scratch.style.display = "none";
-
-  document.body.classList.remove("locked");
-}
-
-/* ==============================
-   ONE-TIME ROSE CELEBRATION
-============================== */
-
-const flowerRain =
-  document.getElementById("flowerRain");
-
-let roseCelebrationPlayed = false;
-
-function playRoseCelebrationOnce() {
-
-  if (roseCelebrationPlayed) return;
-  roseCelebrationPlayed = true;
+  flash.classList.add("active");
 
   if (
     window.matchMedia(
@@ -1883,8 +1788,66 @@ function playRoseCelebrationOnce() {
     return;
   }
 
-  // Only one flower celebration.
-  // No continuous flower rain.
+  for (let i = 0; i < 55; i++) {
+
+    const sparkle = document.createElement("span");
+
+    sparkle.className = "sparkle";
+
+    sparkle.textContent =
+      i % 3 === 0 ? "✦" : "✧";
+
+    sparkle.style.left = "50%";
+    sparkle.style.top = "50%";
+
+    sparkle.style.fontSize =
+      (12 + Math.random() * 18) + "px";
+
+    sparkle.style.setProperty(
+      "--sx",
+      (Math.random() * 700 - 350) + "px"
+    );
+
+    sparkle.style.setProperty(
+      "--sy",
+      (Math.random() * 850 - 425) + "px"
+    );
+
+    sparkle.style.animationDelay =
+      (Math.random() * 500) + "ms";
+
+    layer.appendChild(sparkle);
+
+    sparkle.addEventListener(
+      "animationend",
+      () => sparkle.remove(),
+      { once: true }
+    );
+  }
+}
+
+/* ======================================
+   ONE-TIME ROSE CELEBRATION
+====================================== */
+
+const flowerRain =
+  document.getElementById("flowerRain");
+
+let roseCelebrationPlayed = false;
+
+function playRoseCelebrationOnce() {
+
+  if (roseCelebrationPlayed) return;
+
+  roseCelebrationPlayed = true;
+
+  if (
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches
+  ) {
+    return;
+  }
 
   for (let i = 0; i < 35; i++) {
 
@@ -1920,24 +1883,280 @@ function playRoseCelebrationOnce() {
   }
 }
 
-/* ==============================
-   COUNTDOWN
-============================== */
+/* ======================================
+   ENVELOPE / PAGE FLIP
+====================================== */
 
-const weddingDate = new Date(
-  "2026-12-02T17:15:00+05:30"
-).getTime();
+const opening =
+  document.getElementById("opening");
+
+const invitationScreen =
+  document.getElementById("invitationScreen");
+
+const invitationBook =
+  document.getElementById("invitationBook");
+
+const canvas =
+  document.getElementById("scratchCanvas");
+
+const ctx = canvas.getContext("2d");
+
+let opened = false;
+let flipped = false;
+let painting = false;
+let last = null;
+let finished = false;
+let scratchMoves = 0;
+
+document.getElementById("sealBtn").onclick = () => {
+
+  if (opened) return;
+
+  opened = true;
+
+  document.getElementById("envelope")
+    .classList.add("open");
+
+  playGoldenOpening();
+
+  setTimeout(() => {
+
+    invitationScreen.style.display = "flex";
+
+    requestAnimationFrame(() => {
+      invitationScreen.style.opacity = "1";
+    });
+
+    opening.style.opacity = "0";
+
+    setTimeout(() => {
+      opening.style.display = "none";
+    }, 800);
+
+    playRoseCelebrationOnce();
+
+  }, 2100);
+};
+
+document.getElementById("flipPageBtn").onclick = () => {
+
+  if (flipped) return;
+
+  flipped = true;
+
+  invitationBook.classList.add("flipped");
+
+  setTimeout(initializeScratch, 1250);
+};
+
+/* ======================================
+   SCRATCH REVEAL
+====================================== */
+
+function initializeScratch() {
+
+  const rect =
+    canvas.getBoundingClientRect();
+
+  const dpr =
+    window.devicePixelRatio || 1;
+
+  canvas.width =
+    Math.round(rect.width * dpr);
+
+  canvas.height =
+    Math.round(rect.height * dpr);
+
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+  ctx.globalCompositeOperation = "source-over";
+
+  ctx.fillStyle = "#ddb980";
+
+  ctx.fillRect(
+    0,
+    0,
+    rect.width,
+    rect.height
+  );
+
+  ctx.fillStyle = "#653448";
+  ctx.textAlign = "center";
+  ctx.font = "bold 17px Poppins";
+
+  ctx.fillText(
+    "Scratch Here",
+    rect.width / 2,
+    rect.height / 2
+  );
+}
+
+function getScratchPoint(event) {
+
+  const rect =
+    canvas.getBoundingClientRect();
+
+  return {
+    x: event.clientX - rect.left,
+    y: event.clientY - rect.top
+  };
+}
+
+function scratchMove(event) {
+
+  if (!painting || finished) return;
+
+  const point =
+    getScratchPoint(event);
+
+  ctx.globalCompositeOperation = "destination-out";
+  ctx.lineWidth = 36;
+  ctx.lineCap = "round";
+  ctx.beginPath();
+
+  if (last) {
+
+    ctx.moveTo(last.x, last.y);
+    ctx.lineTo(point.x, point.y);
+    ctx.stroke();
+
+  } else {
+
+    ctx.arc(
+      point.x,
+      point.y,
+      18,
+      0,
+      Math.PI * 2
+    );
+
+    ctx.fill();
+
+  }
+
+  last = point;
+  scratchMoves++;
+
+  if (scratchMoves > 28) {
+    finishScratch();
+  }
+}
+
+canvas.addEventListener(
+  "pointerdown",
+  event => {
+
+    if (!flipped || finished) return;
+
+    painting = true;
+    last = null;
+
+    canvas.setPointerCapture(event.pointerId);
+
+    scratchMove(event);
+  }
+);
+
+canvas.addEventListener(
+  "pointermove",
+  scratchMove
+);
+
+canvas.addEventListener(
+  "pointerup",
+  () => {
+
+    painting = false;
+    last = null;
+
+  }
+);
+
+canvas.addEventListener(
+  "pointercancel",
+  () => {
+
+    painting = false;
+    last = null;
+
+  }
+);
+
+function finishScratch() {
+
+  if (finished) return;
+
+  finished = true;
+
+  canvas.style.transition = "opacity .5s";
+  canvas.style.opacity = "0";
+  canvas.style.pointerEvents = "none";
+
+  document.getElementById("scratchHint")
+    .textContent = "Let the celebrations begin!";
+
+  document.getElementById("enterWeddingBtn")
+    .style.display = "inline-block";
+}
+
+document.getElementById("enterWeddingBtn").onclick = () => {
+
+  invitationScreen.style.opacity = "0";
+
+  setTimeout(() => {
+
+    invitationScreen.style.display = "none";
+
+    document.body.classList.remove("locked");
+
+    sessionStorage.setItem(
+      "invitationOpened",
+      "yes"
+    );
+
+    refreshVisibleVideos();
+    startMusic();
+
+  }, 800);
+};
+
+if (
+  sessionStorage.getItem("invitationOpened") === "yes"
+) {
+
+  opening.style.display = "none";
+  invitationScreen.style.display = "none";
+
+  document.body.classList.remove("locked");
+
+  refreshVisibleVideos();
+}
+
+/* ======================================
+   COUNTDOWN
+====================================== */
+
+const weddingDate =
+  new Date("2026-12-02T17:15:00+05:30").getTime();
 
 function updateCountdown() {
 
-  const difference = weddingDate - Date.now();
+  const difference =
+    weddingDate - Date.now();
 
   if (difference <= 0) {
 
-    ["days", "hours", "minutes", "seconds"]
-      .forEach(id => {
-        document.getElementById(id).textContent = "00";
-      });
+    [
+      "days",
+      "hours",
+      "minutes",
+      "seconds"
+    ].forEach(id => {
+
+      document.getElementById(id)
+        .textContent = "00";
+
+    });
 
     document.getElementById("countdownMessage")
       .textContent = "Our wedding day has arrived!";
@@ -1952,21 +2171,23 @@ function updateCountdown() {
     Math.floor(difference / 1000) % 60
   ];
 
-  ["days", "hours", "minutes", "seconds"]
-    .forEach((id, index) => {
+  [
+    "days",
+    "hours",
+    "minutes",
+    "seconds"
+  ].forEach((id, i) => {
 
-      document.getElementById(id).textContent =
-        String(values[index]).padStart(2, "0");
+    document.getElementById(id).textContent =
+      String(values[i]).padStart(2, "0");
 
-    });
+  });
 }
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
-/* ==============================
-   SCROLL REVEAL
-============================== */
+/* SCROLL ANIMATION */
 
 const observer = new IntersectionObserver(
   entries => {
@@ -1976,6 +2197,7 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
 
         entry.target.classList.add("visible");
+
         observer.unobserve(entry.target);
 
       }
@@ -1988,18 +2210,22 @@ const observer = new IntersectionObserver(
 document.querySelectorAll(".reveal")
   .forEach(element => observer.observe(element));
 
-/* ==============================
-   BACKGROUND MUSIC
-============================== */
+/* ======================================
+   MUSIC
+====================================== */
 
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
+const music =
+  document.getElementById("bgMusic");
+
+const musicBtn =
+  document.getElementById("musicBtn");
 
 async function startMusic() {
 
   try {
 
     await music.play();
+
     musicBtn.textContent = "❚❚";
 
   } catch (error) {
@@ -2012,23 +2238,28 @@ async function startMusic() {
 function toggleMusic() {
 
   if (music.paused) {
+
     startMusic();
+
   } else {
+
     music.pause();
     musicBtn.textContent = "♫";
+
   }
 }
 
-/* ==============================
+/* ======================================
    WHATSAPP SHARING
-============================== */
+====================================== */
 
 function shareInvitation() {
 
   const message =
     "You are invited to Ankit & Sneha's wedding!\n" +
     "2 December 2026, 5:15 PM\n" +
-    "Shree Sawariya Banquet\n\n" +
+    "Shree Sawariya Banquet\n" +
+    "#Ankitfullofsneha\n\n" +
     location.href;
 
   window.open(
@@ -2039,6 +2270,5 @@ function shareInvitation() {
 }
 
 </script>
-
 </body>
 </html>
