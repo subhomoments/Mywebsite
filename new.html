@@ -4,412 +4,230 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#321222">
-<meta name="description" content="Ankit & Sneha Royal Wedding Invitation — 2 December 2026">
 <title>Ankit & Sneha | Royal Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Italianno&family=Great+Vibes&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Italianno&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --deep:#2a1020;
-  --wine:#681c39;
+:root{
+  --wine:#681d3b;
+  --deep:#29101e;
   --gold:#e8c58d;
-  --cream:#fff3df;
-  --burgundy:#811e3c;
+  --cream:#fff3e1;
+  --ink:#812840;
 }
 
-* {
-  box-sizing:border-box;
-}
-
-html {
-  scroll-behavior:smooth;
-}
-
-body {
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
   margin:0;
-  overflow-x:hidden;
   background:var(--deep);
   color:var(--cream);
   font-family:Poppins,sans-serif;
+  overflow-x:hidden;
 }
-
-body.locked {
-  height:100dvh;
-  overflow:hidden;
+body.locked{height:100dvh;overflow:hidden}
+button{font:inherit;cursor:pointer}
+a{text-decoration:none}
+button:focus-visible,a:focus-visible{
+  outline:3px solid #fff1c9;
+  outline-offset:3px;
 }
-
-button {
-  cursor:pointer;
-  font:inherit;
-}
-
-a {
-  text-decoration:none;
-}
-
-button:focus-visible,
-a:focus-visible {
-  outline:3px solid #ffe4a8;
-  outline-offset:4px;
-}
-
-section {
-  padding:55px 16px;
-  text-align:center;
-}
-
-section h2 {
-  font:500 clamp(23px,5vw,34px) Cinzel,serif;
+section{padding:55px 16px;text-align:center}
+section h2{
+  font:500 clamp(22px,5vw,34px) Cinzel,serif;
   color:var(--gold);
 }
-
-.btn {
+.btn{
   display:inline-block;
-  padding:12px 22px;
   border:0;
   border-radius:30px;
-  background:linear-gradient(135deg,#fff1c7,#ddb273);
-  color:#321523;
+  padding:12px 22px;
+  background:linear-gradient(130deg,#fff0bd,#d8a962);
+  color:#38192b;
   font-size:12px;
   font-weight:600;
-  box-shadow:0 5px 15px #0002;
+}
+.logo{width:65px;height:65px;object-fit:contain}
+
+/* PREMIUM CALLIGRAPHY ON ALL PAGES */
+
+.script-name{
+  font-family:"Great Vibes",cursive;
+  font-weight:400;
+  letter-spacing:.3px;
+  line-height:1.25;
+}
+.gold-name{
+  color:#f4d59b;
+  text-shadow:0 2px 10px #1b061d88;
+}
+.wine-name{
+  color:#8c2944;
+  text-shadow:0 2px 2px #fff5;
 }
 
-.logo {
-  width:70px;
-  height:70px;
-  object-fit:contain;
-}
+/* =====================================
+   FIRST SCREEN - GANESH JI ROYAL GATE
+   NO EXTRA SEAL OR HEADING
+===================================== */
 
-.hashtag {
-  color:var(--gold);
-  font:500 clamp(12px,3vw,17px) Cinzel,serif;
-  overflow-wrap:anywhere;
-}
-
-/* ======================================
-   STYLISH CALLIGRAPHY - ALL PAGES
-====================================== */
-
-.opening-names,
-.hero-names,
-.couple-name,
-.footer-names {
-  font-family:"Italianno",cursive !important;
-  font-weight:400 !important;
-  font-style:normal !important;
-  letter-spacing:0 !important;
-  line-height:1.2;
-}
-
-.opening-names,
-.hero-names,
-.footer-names {
-  color:var(--gold);
-  background:linear-gradient(
-    120deg,
-    #fff8df 0%,
-    #f4d9a1 28%,
-    #d4a15d 58%,
-    #fff0bd 82%,
-    #b98442 100%
-  );
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-  filter:drop-shadow(0 3px 5px #0005);
-}
-
-.opening-names {
-  font-size:clamp(65px,14vw,100px);
-  margin:0;
-}
-
-.hero-names {
-  font-size:clamp(80px,16vw,125px);
-  margin:22px 0;
-}
-
-.hero-names span {
-  display:block;
-  font-size:48px;
-}
-
-.couple-name {
-  width:100%;
-  padding:0 8px;
-  font-size:clamp(85px,19vw,125px);
-  line-height:1.05;
-  background:linear-gradient(
-    110deg,
-    #a04d5a,
-    #7b1936 55%,
-    #ae6650
-  );
-  -webkit-background-clip:text;
-  background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.footer-names {
-  font-size:clamp(65px,13vw,95px);
-  margin:10px 0;
-}
-
-/* ======================================
-   ROYAL GANESH JI GATE
-====================================== */
-
-#opening {
+#opening{
   position:fixed;
   inset:0;
   z-index:1000;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:grid;
+  place-items:center;
+  padding:0;
   overflow:hidden;
   background:radial-gradient(
     circle at center,
-    #8b3049,
-    #4b162d 65%,
-    #250b18
+    #823a4a,
+    #3a1024 75%,
+    #230915
   );
-  transition:opacity 1.1s,visibility 1.1s;
+  transition:opacity 1s,visibility 1s;
 }
-
-#opening.leave {
+#opening.leave{
   opacity:0;
   visibility:hidden;
   pointer-events:none;
 }
 
-.opening-content {
-  width:100%;
-  min-height:100%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:15px;
-  text-align:center;
-}
-
-.opening-eyebrow {
-  color:#ffe4ad;
-  font:500 clamp(10px,2.3vw,13px) Cinzel,serif;
-  letter-spacing:2px;
-}
-
-.opening-instruction {
-  color:#ffe4ad;
-  font-size:12px;
-  letter-spacing:.4px;
-}
-
-/* The two images come from the royal gate artwork.
-   Each image represents one half of the gate. */
-
-.royal-gate {
+.gate-wrap{
   position:relative;
-  width:min(95vw,680px);
+  width:min(100vw,1100px);
   aspect-ratio:3/2;
-  perspective:1500px;
-  filter:drop-shadow(0 12px 25px #0008);
+  perspective:1600px;
+  isolation:isolate;
+  cursor:pointer;
+  outline-offset:5px;
+  filter:drop-shadow(0 15px 35px #0008);
+}
+.gate-wrap:focus-visible{
+  outline:3px solid #ffe5a4;
 }
 
-.gate-light {
+/* GOLDEN LIGHT BEHIND DOORS */
+
+.gate-glow{
   position:absolute;
-  inset:3%;
+  inset:0;
   z-index:0;
   background:radial-gradient(
     circle,
-    #fff7dc 0%,
-    #f3d38d 28%,
-    #b77a47 65%,
-    #5c2332 100%
+    #fff8d7 0%,
+    #f6d78b 27%,
+    #cf8b49 58%,
+    #71304b 100%
   );
-  box-shadow:0 0 70px #ffdf9480;
+  box-shadow:0 0 90px #ffd47a88;
 }
 
-.gate-blessing {
+.gate-behind{
   position:absolute;
-  z-index:1;
   inset:0;
+  z-index:1;
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  color:#74213c;
   text-align:center;
+  color:#832b43;
   font-family:"Noto Serif Devanagari",serif;
   font-weight:700;
 }
-
-.gate-blessing .om {
-  font-size:clamp(70px,15vw,125px);
+.gate-behind .om{
+  font-size:clamp(65px,15vw,130px);
+}
+.gate-behind p{
+  font-size:clamp(12px,3vw,23px);
 }
 
-.gate-blessing p {
-  font-size:clamp(13px,3vw,20px);
-}
+/* THE ACTUAL TWO HALVES OF YOUR GATE IMAGE */
 
-.gate-half {
+.gate-half{
   position:absolute;
   top:0;
-  height:100%;
   width:50%;
+  height:100%;
   z-index:3;
   background-repeat:no-repeat;
   background-size:100% 100%;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
-  transition:transform 2s cubic-bezier(.55,.03,.18,1);
+  transition:transform 2.1s cubic-bezier(.58,.02,.18,1);
+  will-change:transform;
 }
 
-.gate-left {
+.gate-half.left{
   left:0;
   background-image:url("ankitimages/gate-left.webp");
   transform-origin:left center;
 }
 
-.gate-right {
+.gate-half.right{
   right:0;
   background-image:url("ankitimages/gate-right.webp");
   transform-origin:right center;
 }
 
-.royal-gate.open .gate-left {
-  transform:rotateY(-108deg);
+.gate-wrap.open .gate-half.left{
+  transform:rotateY(-112deg);
+}
+.gate-wrap.open .gate-half.right{
+  transform:rotateY(112deg);
 }
 
-.royal-gate.open .gate-right {
-  transform:rotateY(108deg);
-}
+/* LIGHT FLASH AND PETALS */
 
-.gate-seal {
-  position:absolute;
-  z-index:8;
-  left:50%;
-  top:68%;
-  transform:translate(-50%,-50%);
-  display:grid;
-  place-items:center;
-  width:clamp(65px,12vw,90px);
-  height:clamp(65px,12vw,90px);
-  padding:5px;
-  border:4px double #ffdf9d;
-  border-radius:50%;
-  background:radial-gradient(circle,#842541,#4a1028);
-  box-shadow:
-    0 0 0 6px #dba95599,
-    0 0 30px #ffd890aa;
-  animation:sealPulse 2s infinite;
-  transition:opacity .5s,transform .5s;
-}
-
-.gate-seal img {
-  width:100%;
-  height:100%;
-  object-fit:contain;
-}
-
-.royal-gate.open .gate-seal {
-  opacity:0;
-  transform:translate(-50%,-50%) scale(.5);
-  pointer-events:none;
-}
-
-@keyframes sealPulse {
-  50% {
-    box-shadow:
-      0 0 0 12px #dba95555,
-      0 0 40px #ffd890bb;
-  }
-}
-
-/* ======================================
-   GOLDEN LIGHT AND ROSE PETALS
-====================================== */
-
-#goldenFlash,
-#sparkleLayer,
-#flowerRain {
+#flash,#petals{
   position:fixed;
   inset:0;
-  overflow:hidden;
   pointer-events:none;
+  overflow:hidden;
 }
-
-#goldenFlash {
-  z-index:1050;
+#flash{
+  z-index:1100;
   opacity:0;
   background:radial-gradient(
     circle,
-    #fffdf0,
-    #ffe7a8aa 35%,
-    transparent 80%
+    #fff8dc,
+    #f5c66b88 45%,
+    transparent 78%
   );
 }
-
-#goldenFlash.active {
-  animation:flashEffect 2s forwards;
+#flash.play{animation:flash 2.4s forwards}
+@keyframes flash{
+  0%{opacity:0}
+  35%{opacity:.85}
+  100%{opacity:0}
 }
-
-@keyframes flashEffect {
-  0% {opacity:0;transform:scale(.5)}
-  35% {opacity:.9;transform:scale(1)}
-  100% {opacity:0;transform:scale(1.8)}
-}
-
-#sparkleLayer {
-  z-index:1060;
-}
-
-#flowerRain {
-  z-index:1100;
-}
-
-.sparkle {
-  position:absolute;
-  color:#ffe5a0;
-  animation:sparkleMove 2.5s ease-out forwards;
-}
-
-@keyframes sparkleMove {
-  0% {opacity:0;transform:scale(.2)}
-  25% {opacity:1}
-  100% {
-    opacity:0;
-    transform:translate(var(--sx),var(--sy)) scale(1.2);
-  }
-}
-
-.rain-flower {
+#petals{z-index:1120}
+.petal{
   position:absolute;
   top:-40px;
-  animation:roseFall linear forwards;
+  animation:fall linear forwards;
 }
-
-@keyframes roseFall {
-  0% {opacity:0;transform:translateY(-30px)}
-  15%,85% {opacity:1}
-  100% {
+@keyframes fall{
+  0%{transform:translateY(-40px) rotate(0);opacity:0}
+  15%{opacity:1}
+  85%{opacity:1}
+  100%{
+    transform:translate3d(var(--drift),110vh,0) rotate(360deg);
     opacity:0;
-    transform:translate3d(var(--drift),110vh,0) rotate(35deg);
   }
 }
 
-/* ======================================
-   INVITATION BOOK
-====================================== */
+/* =====================================
+   THREE INVITATION PAGES
+===================================== */
 
-#invitationScreen {
+#invitationScreen{
   position:fixed;
   inset:0;
   z-index:950;
@@ -418,51 +236,39 @@ section h2 {
   height:100dvh;
   padding:10px;
   overflow:hidden;
-  background:radial-gradient(circle,#805068,#2b1020);
+  background:radial-gradient(circle,#815067,#2a101f);
   opacity:0;
   visibility:hidden;
   pointer-events:none;
   transition:opacity 1s,visibility 1s;
 }
-
-#invitationScreen.visible {
+#invitationScreen.visible{
   opacity:1;
   visibility:visible;
   pointer-events:auto;
 }
 
-.invitation-book {
+.invitation-book{
   position:relative;
-  width:min(420px,95vw);
-  height:min(730px,95dvh);
+  width:min(420px,96vw);
+  height:min(730px,96dvh);
   perspective:1600px;
   isolation:isolate;
 }
-
-.invitation-page {
+.invitation-page{
   position:absolute;
   inset:0;
   overflow:hidden;
   border:3px solid #c49b67;
   border-radius:13px;
   background:
-    radial-gradient(
-      ellipse at 20% 20%,
-      #fff4dc80,
-      transparent 50%
-    ),
     repeating-linear-gradient(
       0deg,
       transparent 0,
       #7e4b2510 2px,
       transparent 4px
     ),
-    linear-gradient(
-      135deg,
-      #e6cda7,
-      #f5e4c5 45%,
-      #e1c197
-    );
+    linear-gradient(135deg,#e6cda7,#f5e4c5 45%,#e1c197);
   box-shadow:0 20px 55px #0007;
   transform-origin:left center;
   backface-visibility:hidden;
@@ -470,33 +276,29 @@ section h2 {
     transform 1.3s cubic-bezier(.65,0,.25,1),
     opacity .25s ease 1.02s;
 }
-
-.invitation-page::after {
+.invitation-page:after{
   content:"";
   position:absolute;
   inset:9px;
-  z-index:8;
   border:1px solid #a97549aa;
   border-radius:8px;
   pointer-events:none;
 }
-
-.invitation-page.page-turned {
+.invitation-page.page-turned{
   transform:rotateY(-175deg);
   opacity:0;
   pointer-events:none;
 }
+#ganeshPage{z-index:5}
+#invitePage{z-index:4}
+#scratchPage{z-index:3}
 
-#ganeshPage {z-index:5}
-#invitePage {z-index:4}
-#scratchPage {z-index:3}
-
-.paper-inner {
+.paper-inner{
   position:relative;
   z-index:2;
   width:100%;
   height:100%;
-  padding:20px 16px;
+  padding:20px 15px;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -505,42 +307,33 @@ section h2 {
   scrollbar-width:none;
   text-align:center;
 }
-
-.paper-inner::-webkit-scrollbar {
-  display:none;
-}
-
-.hindi {
+.paper-inner::-webkit-scrollbar{display:none}
+.hindi{
   font-family:"Noto Serif Devanagari",serif;
-  color:var(--burgundy);
+  color:var(--ink);
 }
-
-.ganesh-heading {
+.ganesh-heading{
   font-size:clamp(14px,2.5dvh,19px);
   font-weight:700;
   margin:8px 0;
 }
-
-.ganesh-symbol {
+.ganesh-symbol{
   font-size:clamp(70px,14dvh,110px);
   line-height:1.3;
   margin:12px 0;
 }
-
-.shloka {
+.shloka{
   font-size:clamp(12px,2.1dvh,17px);
   font-weight:600;
   line-height:1.9;
   margin:12px 0;
 }
-
-.jeen-mata {
+.jeen-mata{
   font-size:clamp(14px,2.4dvh,19px);
   font-weight:700;
   margin:12px 0;
 }
-
-.paper-divider {
+.paper-divider{
   display:flex;
   align-items:center;
   width:75%;
@@ -548,99 +341,75 @@ section h2 {
   margin:10px 0;
   color:#b78a54;
 }
-
-.paper-divider::before,
-.paper-divider::after {
+.paper-divider:before,
+.paper-divider:after{
   content:"";
   flex:1;
   height:1px;
   background:#b78a54;
 }
-
-.floral {
-  position:absolute;
-  z-index:1;
-  width:130px;
-  height:130px;
-  pointer-events:none;
-  opacity:.9;
-}
-
-.floral.top-right {
-  top:-25px;
-  right:-25px;
-}
-
-.floral.bottom-left {
-  bottom:-25px;
-  left:-25px;
-  transform:rotate(180deg);
-}
-
-.floral svg {
-  width:100%;
-  height:100%;
-}
-
-.invite-title {
+.invite-title{
   font:400 clamp(42px,8dvh,65px) "Italianno",cursive;
   color:#762039;
   margin:6px 0;
 }
-
-.invite-subtitle {
+.invite-subtitle{
   font:500 clamp(9px,1.4dvh,11px) Cinzel,serif;
   color:#8b5260;
   letter-spacing:.7px;
   margin:5px 0;
 }
-
-.parent-name {
+.couple-name{
+  font-size:clamp(75px,17vw,110px);
+  line-height:1.12;
+  padding:0 8px;
+  width:100%;
+  background:linear-gradient(110deg,#a04d5a,#7b1936 55%,#ae6650);
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-family:"Great Vibes",cursive;
+  font-weight:400;
+}
+.parent-name{
   font-size:clamp(9px,1.5dvh,11px);
   color:#6e3e4c;
   line-height:1.6;
   margin:3px 0 6px;
 }
-
-.ampersand {
+.ampersand{
   font:400 45px "Italianno",cursive;
   color:#b17c43;
   line-height:1;
 }
-
-.letter-message {
+.letter-message{
   max-width:310px;
   font-size:clamp(9px,1.5dvh,11px);
   line-height:1.6;
   color:#754556;
   margin:7px 0;
 }
-
-.turn-btn {
+.turn-btn{
   flex-shrink:0;
   margin-top:10px;
   padding:10px 20px;
   font-size:11px;
 }
-
-.reveal-title {
+.reveal-title{
   font:400 clamp(48px,8dvh,65px) "Italianno",cursive;
-  color:var(--burgundy);
+  color:var(--ink);
   margin:12px 0;
 }
-
-.reveal-description {
+.reveal-description{
   color:#764558;
   font-size:12px;
   line-height:1.7;
   margin:7px 0;
 }
 
-/* ======================================
-   SCRATCH CARD
-====================================== */
+/* SCRATCH CARD */
 
-.scratch-area {
+.scratch-area{
   position:relative;
   width:min(290px,100%);
   height:120px;
@@ -653,8 +422,7 @@ section h2 {
   isolation:isolate;
   touch-action:none;
 }
-
-.scratch-secret {
+.scratch-secret{
   position:absolute;
   inset:0;
   z-index:1;
@@ -665,60 +433,63 @@ section h2 {
   color:#632940;
   font:17px Cinzel,serif;
 }
-
-.scratch-secret small {
+.scratch-secret small{
   font:11px Poppins,sans-serif;
 }
-
-#scratchCanvas {
+#scratchCanvas{
   position:absolute;
   inset:0;
   z-index:3;
-  display:block;
   width:100%;
   height:100%;
   background:#ddb980;
   touch-action:none;
 }
-
-#scratchCanvas.revealed {
+#scratchCanvas.done{
   opacity:0;
   pointer-events:none;
   transition:opacity .55s;
 }
+#enterBtn{display:none}
 
-#enterWeddingBtn {
-  display:none;
-}
+/* =====================================
+   MAIN WEDDING PAGE
+===================================== */
 
-/* ======================================
-   MAIN WEDDING HERO
-====================================== */
-
-.hero {
+.hero{
   min-height:100dvh;
   display:grid;
   place-items:center;
-  position:relative;
   padding-bottom:100px;
   background:radial-gradient(circle,#683148,#250e1b);
 }
-
-.hero-frame {
+.hero-frame{
   width:min(600px,100%);
   padding:55px 14px;
   border:2px solid var(--gold);
   border-radius:170px 170px 16px 16px;
 }
-
-.hero-date {
+.hero-names{
+  font-size:clamp(75px,15vw,120px);
+  margin:22px 0;
+}
+.hero-names span{
+  display:block;
+  font-size:48px;
+}
+.hero-date{
   font:500 21px Cinzel,serif;
   color:var(--gold);
+}
+.hashtag{
+  color:var(--gold);
+  font:500 clamp(12px,3vw,17px) Cinzel,serif;
+  overflow-wrap:anywhere;
 }
 
 /* FLOATING SCROLL BUTTON */
 
-.floating-scroll-btn {
+#scrollDown{
   position:fixed;
   bottom:85px;
   left:50%;
@@ -730,97 +501,74 @@ section h2 {
   padding:10px 18px;
   border:1px solid var(--gold);
   border-radius:30px;
-  background:rgba(43,16,32,.9);
+  background:#2b1020e8;
   color:var(--gold);
   font-size:10px;
   letter-spacing:2px;
   white-space:nowrap;
-  backdrop-filter:blur(8px);
-  box-shadow:0 4px 15px #0005;
   animation:floatScroll 2s ease-in-out infinite;
 }
-
-.floating-scroll-btn .scroll-icon {
+#scrollDown span:last-child{
   font-size:24px;
   line-height:1;
 }
-
-@keyframes floatScroll {
-  0%,100% {
-    transform:translate(-50%,0);
-  }
-  50% {
-    transform:translate(-50%,8px);
-  }
+@keyframes floatScroll{
+  0%,100%{transform:translate(-50%,0)}
+  50%{transform:translate(-50%,8px)}
 }
 
-/* ======================================
-   INTRO AND COUNTDOWN
-====================================== */
+/* INTRO */
 
-.intro {
+.intro{
   background:var(--cream);
   color:#633548;
 }
-
-.intro h2,
-.festivities h2 {
-  color:#934e64;
-}
-
-.intro p {
+.intro h2,.festivities h2{color:#934e64}
+.intro p{
   max-width:600px;
   margin:auto;
   font-size:13px;
   line-height:2;
 }
 
-.countdown {
+/* COUNTDOWN */
+
+.countdown{
   background:linear-gradient(135deg,#351525,#6c344c);
 }
-
-.timer {
+.timer{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:9px;
 }
-
-.time-box {
+.time-box{
   width:75px;
   padding:14px 4px;
   border:1px solid var(--gold);
   border-radius:10px;
 }
-
-.time-box strong {
+.time-box strong{
   display:block;
   font-size:25px;
   color:var(--gold);
 }
+.time-box span{font-size:10px}
 
-.time-box span {
-  font-size:10px;
-}
+/* EVENTS */
 
-/* ======================================
-   EVENT VIDEOS
-====================================== */
-
-.festivities {
+.festivities{
   background:var(--cream);
   color:#542a3c;
 }
-
-.event-list {
+.event-list{
   width:100%;
   max-width:520px;
   margin:28px auto;
   display:grid;
   gap:28px;
 }
-
-.event-card {
+.event-card{
   position:relative;
   width:100%;
   aspect-ratio:9/16;
@@ -830,16 +578,14 @@ section h2 {
   background:#42182c;
   box-shadow:0 12px 25px #42182c22;
 }
-
-.event-video {
+.event-video{
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
 }
-
-.event-shade {
+.event-shade{
   position:absolute;
   inset:0;
   pointer-events:none;
@@ -851,8 +597,7 @@ section h2 {
     #14050f55 100%
   );
 }
-
-.event-overlay {
+.event-overlay{
   position:absolute;
   z-index:2;
   bottom:12px;
@@ -861,50 +606,40 @@ section h2 {
   padding:13px 10px;
   border:1px solid #f8e1b455;
   border-radius:15px;
-  background:rgba(30,10,25,.1);
+  background:#1e0a191a;
   backdrop-filter:blur(2px);
-  color:#fff;
+  color:white;
 }
-
-.event-overlay h3 {
+.event-overlay h3{
   font:400 clamp(18px,4.5vw,27px) Cinzel,serif;
   color:#ffe4b5;
   margin:5px 0;
   text-shadow:0 2px 8px #000;
 }
-
-.event-subtitle {
+.event-subtitle{
   font:400 clamp(30px,7vw,42px) "Italianno",cursive;
   color:#ffe4b5;
   margin:4px 0 9px;
   text-shadow:0 2px 8px #000;
 }
-
-.event-subtitle:empty {
-  display:none;
-}
-
-.event-overlay p {
+.event-subtitle:empty{display:none}
+.event-overlay p{
   font-size:11px;
   margin:6px 0;
   text-shadow:0 2px 6px #000;
 }
 
-/* ======================================
-   PHOTO GALLERY
-====================================== */
+/* GALLERY */
 
-.gallery {
+.gallery{
   background:linear-gradient(135deg,#321324,#67324b);
 }
-
-.gallery-slider {
+.gallery-slider{
   width:100%;
   max-width:480px;
   margin:25px auto 0;
 }
-
-.gallery-window {
+.gallery-window{
   position:relative;
   width:100%;
   aspect-ratio:2/3;
@@ -914,38 +649,32 @@ section h2 {
   background:#301322;
   touch-action:pan-y;
 }
-
-.gallery-slide {
+.gallery-slide{
   position:absolute;
   inset:0;
   opacity:0;
   visibility:hidden;
   transition:opacity 1s,visibility 1s;
 }
-
-.gallery-slide.active {
+.gallery-slide.active{
   opacity:1;
   visibility:visible;
   z-index:2;
 }
-
-.gallery-slide img {
-  display:block;
+.gallery-slide img{
   width:100%;
   height:100%;
+  display:block;
   object-fit:contain;
-  object-position:center;
 }
-
-.gallery-controls {
+.gallery-controls{
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
   margin-top:15px;
 }
-
-.gallery-arrow {
+.gallery-arrow{
   width:42px;
   height:42px;
   border:1px solid var(--gold);
@@ -954,13 +683,8 @@ section h2 {
   color:var(--gold);
   font-size:23px;
 }
-
-.gallery-dots {
-  display:flex;
-  gap:9px;
-}
-
-.gallery-dot {
+.gallery-dots{display:flex;gap:9px}
+.gallery-dot{
   width:10px;
   height:10px;
   padding:0;
@@ -968,45 +692,32 @@ section h2 {
   border-radius:50%;
   background:transparent;
 }
+.gallery-dot.active{background:var(--gold)}
 
-.gallery-dot.active {
-  background:var(--gold);
-}
+/* CLOSING */
 
-/* ======================================
-   CLOSING AND FOOTER
-====================================== */
-
-.family-signature {
+.family-signature{
   background:var(--cream);
   color:#713448;
 }
-
-.family-signature h2 {
-  color:#8c4057;
-}
-
-.family-name {
+.family-signature h2{color:#8c4057}
+.family-name{
   font:400 clamp(36px,9vw,52px) "Italianno",cursive;
   color:#7b2942;
   margin:15px 0;
 }
-
-.family-signature p {
-  font-size:13px;
-}
-
-footer {
+.family-signature p{font-size:13px}
+footer{
   background:#230c19;
   padding:40px 15px;
   text-align:center;
 }
-
-footer p {
-  font-size:12px;
+.footer-names{
+  font-size:clamp(60px,12vw,90px);
+  margin:10px 0;
 }
-
-.music-btn {
+footer p{font-size:12px}
+.music-btn{
   position:fixed;
   z-index:100;
   right:18px;
@@ -1019,98 +730,47 @@ footer p {
   color:var(--deep);
   font-size:23px;
 }
-
-.reveal {
+.reveal{
   opacity:0;
   transform:translateY(20px);
   transition:opacity .8s,transform .8s;
 }
-
-.reveal.visible {
+.reveal.visible{
   opacity:1;
   transform:none;
 }
 
-/* ======================================
-   MOBILE RESPONSIVE
-====================================== */
+/* RESPONSIVE */
 
-@media(max-width:420px) {
-  .invitation-book {
+@media(max-width:600px){
+  .gate-wrap{
+    width:100vw;
+    aspect-ratio:3/2;
+  }
+}
+@media(max-width:420px){
+  .invitation-book{
     width:96vw;
     height:96dvh;
   }
-
-  .paper-inner {
-    padding:15px 12px;
+  .paper-inner{padding:15px 12px}
+  .couple-name{
+    font-size:clamp(70px,19vw,100px);
   }
-
-  .floral {
-    width:105px;
-    height:105px;
-  }
-
-  .couple-name {
-    font-size:clamp(75px,20vw,105px);
-  }
-
-  .hero-names {
+  .hero-names{
     font-size:clamp(70px,18vw,105px);
   }
-
-  .event-overlay {
-    padding:11px 8px;
-  }
-
-  .royal-gate {
-    width:98vw;
-  }
 }
-
-@media(max-height:650px) {
-  .paper-inner {
-    justify-content:flex-start;
-  }
-
-  .ganesh-symbol {
-    font-size:55px;
-  }
-
-  .shloka {
-    font-size:11px;
-  }
-
-  .couple-name {
-    font-size:70px;
-  }
-
-  .parent-name {
-    font-size:9px;
-  }
-
-  .royal-gate {
-    width:min(80vw,480px);
-  }
+@media(max-height:650px){
+  .paper-inner{justify-content:flex-start}
+  .ganesh-symbol{font-size:55px}
+  .shloka{font-size:11px}
+  .couple-name{font-size:70px}
 }
-
-@media(prefers-reduced-motion:reduce) {
-  .gate-seal,
-  .sparkle,
-  .rain-flower,
-  .floating-scroll-btn {
-    animation:none!important;
-  }
-
-  .sparkle,
-  .rain-flower {
-    display:none;
-  }
-
-  .invitation-page {
-    transition:opacity .3s;
-  }
-
-  .invitation-page.page-turned {
+@media(prefers-reduced-motion:reduce){
+  .petal,#scrollDown{animation:none!important}
+  .invitation-page{transition:opacity .3s}
+  .invitation-page.page-turned{
     transform:none;
     opacity:0;
   }
@@ -1120,103 +780,44 @@ footer p {
 
 <body class="locked">
 
-<!-- ======================================
-     FIRST SCREEN: ROYAL GANESH JI GATE
-====================================== -->
+<!-- =====================================
+     FIRST SCREEN - GANESH JI GATE ONLY
+===================================== -->
 
 <div id="opening">
+  <div
+    class="gate-wrap"
+    id="royalGate"
+    role="button"
+    tabindex="0"
+    aria-label="Open the royal wedding gate"
+  >
+    <div class="gate-glow"></div>
 
-  <div class="opening-content">
-
-    <p class="opening-eyebrow">
-      A ROYAL WEDDING INVITATION
-    </p>
-
-    <h1 class="opening-names">
-      Ankit &amp; Sneha
-    </h1>
-
-    <div class="royal-gate" id="royalGate">
-
-      <div class="gate-light"></div>
-
-      <div class="gate-blessing">
-        <div class="om">ॐ</div>
-        <p>॥ श्री गणेशाय नमः ॥</p>
-      </div>
-
-      <div class="gate-half gate-left"></div>
-      <div class="gate-half gate-right"></div>
-
-      <button
-        class="gate-seal"
-        id="gateSeal"
-        aria-label="Open wedding invitation"
-      >
-        <img
-          src="ankitimages/ankitlogo.png"
-          alt="A&S"
-        >
-      </button>
-
+    <div class="gate-behind">
+      <div class="om">ॐ</div>
+      <p>॥ श्री गणेशाय नमः ॥</p>
     </div>
 
-    <p class="opening-instruction">
-      Tap the A&amp;S seal to open your invitation
-    </p>
-
+    <div class="gate-half left"></div>
+    <div class="gate-half right"></div>
   </div>
-
 </div>
 
-<div id="goldenFlash" aria-hidden="true"></div>
-<div id="sparkleLayer" aria-hidden="true"></div>
-<div id="flowerRain" aria-hidden="true"></div>
+<div id="flash" aria-hidden="true"></div>
+<div id="petals" aria-hidden="true"></div>
 
-<!-- ======================================
-     THREE INVITATION PAGES
-====================================== -->
+<!-- =====================================
+     INVITATION BOOK
+===================================== -->
 
 <div id="invitationScreen">
 
   <div class="invitation-book">
 
-    <!-- PAGE 1 -->
+    <!-- PAGE 1: GANESH BLESSINGS -->
 
     <div class="invitation-page" id="ganeshPage">
-
-      <div class="floral top-right" aria-hidden="true">
-        <svg viewBox="0 0 150 150">
-          <g fill="#287c7b" stroke="#173c42" stroke-width="2">
-            <ellipse cx="120" cy="18" rx="16" ry="30" transform="rotate(-30 120 18)"/>
-            <ellipse cx="95" cy="20" rx="15" ry="29" transform="rotate(-65 95 20)"/>
-            <ellipse cx="145" cy="55" rx="16" ry="30" transform="rotate(30 145 55)"/>
-            <ellipse cx="110" cy="60" rx="16" ry="27" transform="rotate(-25 110 60)"/>
-            <ellipse cx="80" cy="55" rx="15" ry="28" transform="rotate(-65 80 55)"/>
-            <ellipse cx="125" cy="100" rx="15" ry="28" transform="rotate(35 125 100)"/>
-            <ellipse cx="75" cy="95" rx="15" ry="27" transform="rotate(-50 75 95)"/>
-          </g>
-          <circle cx="105" cy="45" r="13" fill="#e9c65b"/>
-          <circle cx="70" cy="115" r="9" fill="#e9c65b"/>
-        </svg>
-      </div>
-
-      <div class="floral bottom-left" aria-hidden="true">
-        <svg viewBox="0 0 150 150">
-          <g fill="#287c7b" stroke="#173c42" stroke-width="2">
-            <ellipse cx="120" cy="18" rx="16" ry="30" transform="rotate(-30 120 18)"/>
-            <ellipse cx="95" cy="20" rx="15" ry="29" transform="rotate(-65 95 20)"/>
-            <ellipse cx="145" cy="55" rx="16" ry="30" transform="rotate(30 145 55)"/>
-            <ellipse cx="110" cy="60" rx="16" ry="27" transform="rotate(-25 110 60)"/>
-            <ellipse cx="80" cy="55" rx="15" ry="28" transform="rotate(-65 80 55)"/>
-            <ellipse cx="125" cy="100" rx="15" ry="28" transform="rotate(35 125 100)"/>
-            <ellipse cx="75" cy="95" rx="15" ry="27" transform="rotate(-50 75 95)"/>
-          </g>
-          <circle cx="105" cy="45" r="13" fill="#e9c65b"/>
-          <circle cx="70" cy="115" r="9" fill="#e9c65b"/>
-        </svg>
-      </div>
-
       <div class="paper-inner">
 
         <p class="hindi ganesh-heading">
@@ -1244,18 +845,14 @@ footer p {
         </button>
 
       </div>
-
     </div>
 
-    <!-- PAGE 2 -->
+    <!-- PAGE 2: COUPLE -->
 
     <div class="invitation-page" id="invitePage">
-
       <div class="paper-inner">
 
-        <p class="hindi ganesh-heading">
-          ॥ शुभ विवाह ॥
-        </p>
+        <p class="hindi ganesh-heading">॥ शुभ विवाह ॥</p>
 
         <img
           class="logo"
@@ -1265,17 +862,13 @@ footer p {
 
         <div class="paper-divider">❦</div>
 
-        <h2 class="invite-title">
-          You're Invited
-        </h2>
+        <h2 class="invite-title">You're Invited</h2>
 
         <p class="invite-subtitle">
           WITH THE BLESSINGS OF OUR FAMILIES
         </p>
 
-        <div class="couple-name">
-          Ankit
-        </div>
+        <div class="couple-name">Ankit</div>
 
         <p class="parent-name">
           S/O Devendra Joshi &amp; Premlata Joshi
@@ -1283,9 +876,7 @@ footer p {
 
         <div class="ampersand">&amp;</div>
 
-        <div class="couple-name">
-          Sneha
-        </div>
+        <div class="couple-name">Sneha</div>
 
         <p class="parent-name">
           D/O Dr. Subhash Sharma &amp; Vinita Sharma
@@ -1304,18 +895,14 @@ footer p {
         </button>
 
       </div>
-
     </div>
 
-    <!-- PAGE 3 -->
+    <!-- PAGE 3: SCRATCH DATE -->
 
     <div class="invitation-page" id="scratchPage">
-
       <div class="paper-inner">
 
-        <p class="hindi ganesh-heading">
-          ॥ शुभ विवाह ॥
-        </p>
+        <p class="hindi ganesh-heading">॥ शुभ विवाह ॥</p>
 
         <img
           class="logo"
@@ -1323,9 +910,7 @@ footer p {
           alt="A&S"
         >
 
-        <h2 class="reveal-title">
-          Reveal Our Date
-        </h2>
+        <h2 class="reveal-title">Reveal Our Date</h2>
 
         <p class="reveal-description">
           A beautiful beginning,<br>
@@ -1351,7 +936,7 @@ footer p {
           Gently scratch the golden card
         </p>
 
-        <button class="btn" id="enterWeddingBtn">
+        <button class="btn" id="enterBtn">
           Enter Wedding Invitation →
         </button>
 
@@ -1362,23 +947,18 @@ footer p {
         </p>
 
       </div>
-
     </div>
 
   </div>
-
 </div>
 
-<!-- ======================================
+<!-- =====================================
      MAIN WEDDING WEBSITE
-====================================== -->
+===================================== -->
 
 <main>
 
-  <!-- HERO -->
-
   <section class="hero" id="home">
-
     <div class="hero-frame">
 
       <img
@@ -1391,106 +971,70 @@ footer p {
         TOGETHER WITH OUR FAMILIES
       </p>
 
-      <p>
-        We joyfully invite you to celebrate
-      </p>
+      <p>We joyfully invite you to celebrate</p>
 
-      <h1 class="hero-names">
+      <h1 class="hero-names script-name gold-name">
         Ankit
         <span>&amp;</span>
         Sneha
       </h1>
 
-      <p class="hashtag">
-        #AnkitFoundHisSneha
-      </p>
+      <p class="hashtag">#AnkitFoundHisSneha</p>
 
       <p style="color:var(--gold)">❦</p>
+      <p style="color:var(--gold)">THE ROYAL WEDDING</p>
 
-      <p style="color:var(--gold)">
-        THE ROYAL WEDDING
-      </p>
-
-      <h3 class="hero-date">
-        02 · 12 · 2026
-      </h3>
+      <h3 class="hero-date">02 · 12 · 2026</h3>
 
       <p>Wednesday | 6:15 PM onwards</p>
       <p>Shree Sawariya Banquet</p>
 
     </div>
-
   </section>
 
-  <!-- CELEBRATION -->
-
   <section class="intro" id="celebration">
-
     <h2>Our Wedding Celebration</h2>
-
     <p>
       With the blessings of our families and the warmth
       of our loved ones, we invite you to join us as we
       begin a beautiful new chapter together.
       Your presence will make our celebration truly special.
     </p>
-
   </section>
 
-  <!-- COUNTDOWN -->
-
   <section class="countdown">
-
     <h2>Counting Down to Forever</h2>
 
     <div class="timer">
-
       <div class="time-box">
         <strong id="days">00</strong>
         <span>Days</span>
       </div>
-
       <div class="time-box">
         <strong id="hours">00</strong>
         <span>Hours</span>
       </div>
-
       <div class="time-box">
         <strong id="minutes">00</strong>
         <span>Minutes</span>
       </div>
-
       <div class="time-box">
         <strong id="seconds">00</strong>
         <span>Seconds</span>
       </div>
-
     </div>
 
     <p id="countdownMessage"></p>
-
   </section>
-
-  <!-- EVENTS -->
 
   <section class="festivities" id="events">
-
     <h2>Wedding Festivities</h2>
-
-    <p>
-      Seven celebrations, countless beautiful memories
-    </p>
-
+    <p>Seven celebrations, countless beautiful memories</p>
     <div class="event-list" id="eventList"></div>
-
   </section>
 
-  <!-- GALLERY -->
-
   <section class="gallery" id="gallery">
-
     <h2>Our Beautiful Moments</h2>
-
     <p>Memories we cherish</p>
 
     <div class="gallery-slider">
@@ -1518,10 +1062,7 @@ footer p {
       </div>
 
     </div>
-
   </section>
-
-  <!-- FAMILY CLOSING -->
 
   <section class="family-signature">
 
@@ -1531,23 +1072,17 @@ footer p {
       alt="A&S"
     >
 
-    <h2>
-      Together in Love &amp; Togetherness
-    </h2>
+    <h2>Together in Love &amp; Togetherness</h2>
 
-    <p>
-      With love, blessings, and warm regards
-    </p>
+    <p>With love, blessings, and warm regards</p>
 
     <div class="family-name">
       ~ Joshi Family 🙏❤️
     </div>
 
-    <p>
-      We look forward to celebrating with you!
-    </p>
+    <p>We look forward to celebrating with you!</p>
 
-    <button class="btn" onclick="shareInvitation()">
+    <button class="btn" id="shareBtn">
       Share on WhatsApp
     </button>
 
@@ -1555,18 +1090,12 @@ footer p {
 
   <!-- FLOATING SCROLL BUTTON -->
 
-  <a
-    href="#celebration"
-    class="floating-scroll-btn"
-    id="floatingScrollBtn"
-  >
+  <a href="#celebration" id="scrollDown">
     <span>SCROLL DOWN</span>
-    <span class="scroll-icon">↓</span>
+    <span>↓</span>
   </a>
 
 </main>
-
-<!-- FOOTER -->
 
 <footer>
 
@@ -1576,21 +1105,17 @@ footer p {
     alt="A&S"
   >
 
-  <h2 class="footer-names">
+  <h2 class="footer-names script-name gold-name">
     Ankit &amp; Sneha
   </h2>
 
   <p>02 December 2026 | 6:15 PM</p>
 
-  <p class="hashtag">
-    #AnkitFoundHisSneha
-  </p>
+  <p class="hashtag">#AnkitFoundHisSneha</p>
 
   <p>With love ~ Joshi Family 🙏❤️</p>
 
 </footer>
-
-<!-- MUSIC -->
 
 <audio
   id="bgMusic"
@@ -1601,14 +1126,15 @@ footer p {
 <button
   class="music-btn"
   id="musicBtn"
-  onclick="toggleMusic()"
-  aria-label="Toggle music"
+  aria-label="Toggle background music"
 >♫</button>
 
 <script>
-/* ======================================
-   ALL SEVEN WEDDING EVENTS
-====================================== */
+const $ = id => document.getElementById(id);
+
+/* =====================================
+   SEVEN WEDDING EVENTS
+===================================== */
 
 const events = [
   {
@@ -1617,8 +1143,8 @@ const events = [
     date:"Thursday, 26 November 2026",
     time:"10:15 AM onwards",
     venue:"VIP Enclave",
-    map:"https://maps.app.goo.gl/iVJ4Hx1dnaMtcNuk9?g_st=aw",
-    video:"ankitimages/1.mp4"
+    video:"ankitimages/1.mp4",
+    map:"https://maps.app.goo.gl/iVJ4Hx1dnaMtcNuk9?g_st=aw"
   },
   {
     name:"Mangal Path",
@@ -1626,17 +1152,17 @@ const events = [
     date:"Sunday, 29 November 2026",
     time:"4:15 PM onwards",
     venue:"Bika Banquet",
-    map:"https://maps.app.goo.gl/tveYvcxtEL5fB75FA?g_st=aw",
-    video:"ankitimages/2.mp4"
+    video:"ankitimages/2.mp4",
+    map:"https://maps.app.goo.gl/tveYvcxtEL5fB75FA?g_st=aw"
   },
   {
-    name:"Mehendi / Tel Baan",
+    name:"Mehendi",
     subtitle:"Green Inked Love",
     date:"Monday, 30 November 2026",
     time:"11:15 AM onwards",
     venue:"Vrindavan Banquet",
-    map:"https://share.google/yJ4LzJSDvwYttfniZ",
-    video:"ankitimages/3.mp4"
+    video:"ankitimages/3.mp4",
+    map:"https://share.google/yJ4LzJSDvwYttfniZ"
   },
   {
     name:"Mayra",
@@ -1644,8 +1170,8 @@ const events = [
     date:"Tuesday, 1 December 2026",
     time:"10:15 AM onwards",
     venue:"Vrindavan Banquet",
-    map:"https://share.google/yJ4LzJSDvwYttfniZ",
-    video:"ankitimages/5.mp4"
+    video:"ankitimages/4.mp4",
+    map:"https://share.google/yJ4LzJSDvwYttfniZ"
   },
   {
     name:"Tilak & Sangeet",
@@ -1653,8 +1179,8 @@ const events = [
     date:"Tuesday, 1 December 2026",
     time:"5:15 PM onwards",
     venue:"Sawariya Banquet",
-    map:"https://share.google/BcH0Vn5BXWdBLf6l6",
-    video:"ankitimages/4.mp4"
+    video:"ankitimages/5.mp4",
+    map:"https://share.google/BcH0Vn5BXWdBLf6l6"
   },
   {
     name:"Haldi",
@@ -1662,8 +1188,8 @@ const events = [
     date:"Wednesday, 2 December 2026",
     time:"10:15 AM onwards",
     venue:"Vrindavan Banquet",
-    map:"https://share.google/yJ4LzJSDvwYttfniZ",
-    video:"ankitimages/6.mp4"
+    video:"ankitimages/6.mp4",
+    map:"https://share.google/yJ4LzJSDvwYttfniZ"
   },
   {
     name:"The Wedding",
@@ -1671,15 +1197,10 @@ const events = [
     date:"Wednesday, 2 December 2026",
     time:"6:15 PM onwards",
     venue:"Shree Sawariya Banquet",
-    map:"https://share.google/BcH0Vn5BXWdBLf6l6",
-    video:"ankitimages/7.mp4"
+    video:"ankitimages/7.mp4",
+    map:"https://share.google/BcH0Vn5BXWdBLf6l6"
   }
 ];
-
-/* CREATE EVENT CARDS */
-
-const eventList =
-  document.getElementById("eventList");
 
 const eventVideos = [];
 
@@ -1690,15 +1211,15 @@ events.forEach(event => {
   const video = document.createElement("video");
   video.className = "event-video";
   video.src = event.video;
-  video.autoplay = true;
   video.muted = true;
   video.defaultMuted = true;
+  video.autoplay = true;
   video.loop = true;
   video.playsInline = true;
   video.preload = "metadata";
 
-  video.setAttribute("autoplay","");
   video.setAttribute("muted","");
+  video.setAttribute("autoplay","");
   video.setAttribute("loop","");
   video.setAttribute("playsinline","");
 
@@ -1731,58 +1252,44 @@ events.forEach(event => {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
 
-  overlay.append(
-    title,
-    subtitle,
-    date,
-    time,
-    venue,
-    link
-  );
-
+  overlay.append(title,subtitle,date,time,venue,link);
   card.append(video,shade,overlay);
-  eventList.appendChild(card);
+  $("eventList").appendChild(card);
   eventVideos.push(video);
 });
 
 /* VIDEO PLAYBACK */
 
-function refreshVisibleVideos() {
+function refreshVideos(){
   eventVideos.forEach(video => {
     const rect = video.getBoundingClientRect();
 
     const visible =
       rect.bottom > 0 &&
-      rect.top < window.innerHeight &&
+      rect.top < innerHeight &&
       !document.hidden &&
       !document.body.classList.contains("locked");
 
-    if (visible) {
-      video.play().catch(() => {});
-    } else {
+    if(visible){
+      video.play().catch(()=>{});
+    }else{
       video.pause();
     }
   });
 }
 
-const videoObserver =
-  new IntersectionObserver(
-    () => refreshVisibleVideos(),
-    {threshold:.1}
-  );
-
-eventVideos.forEach(video => {
-  videoObserver.observe(video);
-});
-
-document.addEventListener(
-  "visibilitychange",
-  refreshVisibleVideos
+const videoIO = new IntersectionObserver(
+  refreshVideos,
+  {threshold:.1}
 );
 
-/* ======================================
+eventVideos.forEach(video => videoIO.observe(video));
+
+document.addEventListener("visibilitychange",refreshVideos);
+
+/* =====================================
    PHOTO GALLERY
-====================================== */
+===================================== */
 
 const galleryImages = [
   "ankitimages/5.jpeg",
@@ -1791,12 +1298,6 @@ const galleryImages = [
   "ankitimages/3.jpeg",
   "ankitimages/4.jpeg"
 ];
-
-const slides =
-  document.getElementById("gallerySlides");
-
-const dots =
-  document.getElementById("galleryDots");
 
 let photoIndex = 0;
 let galleryTimer;
@@ -1808,82 +1309,64 @@ galleryImages.forEach((source,i) => {
   const img = document.createElement("img");
   img.src = source;
   img.alt = "Ankit and Sneha photo " + (i+1);
-  img.loading = i === 0 ? "eager" : "lazy";
+  img.loading = i===0 ? "eager" : "lazy";
 
   slide.appendChild(img);
-  slides.appendChild(slide);
+  $("gallerySlides").appendChild(slide);
 
   const dot = document.createElement("button");
   dot.className = "gallery-dot";
-
-  dot.setAttribute(
-    "aria-label",
-    "Show photo " + (i+1)
-  );
+  dot.setAttribute("aria-label","Show photo "+(i+1));
 
   dot.onclick = () => {
     showPhoto(i);
     restartGallery();
   };
 
-  dots.appendChild(dot);
+  $("galleryDots").appendChild(dot);
 });
 
-function showPhoto(index) {
+function showPhoto(index){
   photoIndex =
-    (index + galleryImages.length) % galleryImages.length;
+    (index+galleryImages.length)%galleryImages.length;
 
-  [...slides.children].forEach((slide,i) => {
-    slide.classList.toggle(
-      "active",
-      i === photoIndex
-    );
+  [...$("gallerySlides").children].forEach((slide,i)=>{
+    slide.classList.toggle("active",i===photoIndex);
   });
 
-  [...dots.children].forEach((dot,i) => {
-    dot.classList.toggle(
-      "active",
-      i === photoIndex
-    );
+  [...$("galleryDots").children].forEach((dot,i)=>{
+    dot.classList.toggle("active",i===photoIndex);
   });
 }
 
-function restartGallery() {
+function restartGallery(){
   clearInterval(galleryTimer);
-
-  galleryTimer = setInterval(() => {
+  galleryTimer = setInterval(()=>{
     showPhoto(photoIndex+1);
   },4000);
 }
 
-document.getElementById("prevPhoto").onclick = () => {
+$("prevPhoto").onclick = ()=>{
   showPhoto(photoIndex-1);
   restartGallery();
 };
 
-document.getElementById("nextPhoto").onclick = () => {
+$("nextPhoto").onclick = ()=>{
   showPhoto(photoIndex+1);
   restartGallery();
 };
 
-let startX = 0;
+let touchStartX = 0;
 
-const galleryWindow =
-  document.getElementById("galleryWindow");
-
-galleryWindow.addEventListener("touchstart",event => {
-  startX = event.changedTouches[0].clientX;
+$("galleryWindow").addEventListener("touchstart",e=>{
+  touchStartX=e.changedTouches[0].clientX;
 },{passive:true});
 
-galleryWindow.addEventListener("touchend",event => {
-  const difference =
-    event.changedTouches[0].clientX-startX;
+$("galleryWindow").addEventListener("touchend",e=>{
+  const delta=e.changedTouches[0].clientX-touchStartX;
 
-  if (Math.abs(difference)>40) {
-    showPhoto(
-      photoIndex+(difference<0?1:-1)
-    );
-
+  if(Math.abs(delta)>40){
+    showPhoto(photoIndex+(delta<0?1:-1));
     restartGallery();
   }
 },{passive:true});
@@ -1891,461 +1374,320 @@ galleryWindow.addEventListener("touchend",event => {
 showPhoto(0);
 restartGallery();
 
-/* ======================================
-   GOLDEN OPENING EFFECT
-====================================== */
+/* =====================================
+   ROYAL GATE OPENING ANIMATION
+===================================== */
 
-function playGoldenOpening() {
-  const flash =
-    document.getElementById("goldenFlash");
+let gateOpened = false;
 
-  const layer =
-    document.getElementById("sparkleLayer");
+function createPetals(){
+  const layer = $("petals");
 
-  flash.classList.remove("active");
-  void flash.offsetWidth;
-  flash.classList.add("active");
+  for(let i=0;i<35;i++){
+    const petal = document.createElement("span");
+    petal.className = "petal";
+    petal.textContent = "🌹";
 
-  if (
-    matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) return;
-
-  for (let i=0;i<45;i++) {
-    const sparkle = document.createElement("span");
-    sparkle.className = "sparkle";
-    sparkle.textContent = i%3 ? "✧" : "✦";
-
-    sparkle.style.left = "50%";
-    sparkle.style.top = "50%";
-
-    sparkle.style.fontSize =
-      (12+Math.random()*16)+"px";
-
-    sparkle.style.setProperty(
-      "--sx",
-      (Math.random()*700-350)+"px"
-    );
-
-    sparkle.style.setProperty(
-      "--sy",
-      (Math.random()*850-425)+"px"
-    );
-
-    sparkle.style.animationDelay =
-      Math.random()*500+"ms";
-
-    layer.appendChild(sparkle);
-
-    sparkle.addEventListener(
-      "animationend",
-      () => sparkle.remove(),
-      {once:true}
-    );
-  }
-}
-
-/* ROSE PETALS */
-
-let rosesPlayed = false;
-
-function playRoses() {
-  if (rosesPlayed) return;
-  rosesPlayed = true;
-
-  if (
-    matchMedia("(prefers-reduced-motion: reduce)").matches
-  ) return;
-
-  const layer =
-    document.getElementById("flowerRain");
-
-  for (let i=0;i<30;i++) {
-    const flower = document.createElement("span");
-    flower.className = "rain-flower";
-    flower.textContent = "🌹";
-
-    flower.style.left =
-      Math.random()*100+"%";
-
-    flower.style.fontSize =
-      (14+Math.random()*8)+"px";
-
-    flower.style.animationDuration =
+    petal.style.left = Math.random()*100+"%";
+    petal.style.fontSize = (12+Math.random()*12)+"px";
+    petal.style.animationDuration =
       (5+Math.random()*3)+"s";
+    petal.style.animationDelay =
+      Math.random()*1500+"ms";
 
-    flower.style.animationDelay =
-      Math.random()*2000+"ms";
-
-    flower.style.setProperty(
+    petal.style.setProperty(
       "--drift",
-      (Math.random()*90-45)+"px"
+      (Math.random()*100-50)+"px"
     );
 
-    layer.appendChild(flower);
+    layer.appendChild(petal);
 
-    flower.addEventListener(
+    petal.addEventListener(
       "animationend",
-      () => flower.remove(),
+      ()=>petal.remove(),
       {once:true}
     );
   }
 }
 
-/* ======================================
-   OPEN GANESH JI GATE
-====================================== */
+function openGate(){
+  if(gateOpened)return;
+  gateOpened=true;
 
-const opening =
-  document.getElementById("opening");
+  $("royalGate").classList.add("open");
+  $("flash").classList.add("play");
 
-const invitationScreen =
-  document.getElementById("invitationScreen");
+  setTimeout(()=>{
+    $("opening").classList.add("leave");
+    $("invitationScreen").classList.add("visible");
 
-const royalGate =
-  document.getElementById("royalGate");
-
-let opened = false;
-let currentPage = 0;
-
-document.getElementById("gateSeal").onclick = () => {
-  if (opened) return;
-  opened = true;
-
-  royalGate.classList.add("open");
-  playGoldenOpening();
-
-  setTimeout(() => {
-    opening.classList.add("leave");
-    invitationScreen.classList.add("visible");
-    playRoses();
+    if(!matchMedia("(prefers-reduced-motion: reduce)").matches){
+      createPetals();
+    }
   },2100);
 
-  setTimeout(() => {
-    opening.style.display = "none";
+  setTimeout(()=>{
+    $("opening").style.display="none";
   },3300);
-};
+}
 
-/* ======================================
-   INVITATION PAGE NAVIGATION
-====================================== */
+$("royalGate").addEventListener("click",openGate);
 
-const ganeshPage =
-  document.getElementById("ganeshPage");
-
-const invitePage =
-  document.getElementById("invitePage");
-
-document.getElementById("ganeshNextBtn").onclick = () => {
-  if (currentPage !== 0) return;
-
-  currentPage = 1;
-  ganeshPage.classList.add("page-turned");
-};
-
-document.getElementById("inviteNextBtn").onclick = () => {
-  if (currentPage !== 1) return;
-
-  if (!scratchReady) {
-    initializeScratch();
+$("royalGate").addEventListener("keydown",e=>{
+  if(e.key==="Enter"||e.key===" "){
+    e.preventDefault();
+    openGate();
   }
+});
 
-  currentPage = 2;
-  invitePage.classList.add("page-turned");
+/* =====================================
+   INVITATION PAGE TURN
+===================================== */
+
+let page=0;
+
+$("ganeshNextBtn").onclick=()=>{
+  if(page!==0)return;
+  page=1;
+  $("ganeshPage").classList.add("page-turned");
 };
 
-/* ======================================
-   SCRATCH TO REVEAL
-====================================== */
+$("inviteNextBtn").onclick=()=>{
+  if(page!==1)return;
 
-const canvas =
-  document.getElementById("scratchCanvas");
+  if(!scratchReady)initializeScratch();
 
-const ctx =
-  canvas.getContext("2d");
+  page=2;
+  $("invitePage").classList.add("page-turned");
+};
 
-let painting = false;
-let lastPoint = null;
-let scratched = false;
-let scratchDistance = 0;
-let scratchReady = false;
+/* =====================================
+   SCRATCH CARD
+===================================== */
 
-function initializeScratch() {
-  if (currentPage===2 || scratched || !ctx) return;
+const canvas=$("scratchCanvas");
+const ctx=canvas.getContext("2d");
 
-  const rect =
-    canvas.getBoundingClientRect();
+let scratchReady=false;
+let scratched=false;
+let painting=false;
+let lastPoint=null;
+let scratchDistance=0;
 
-  if (!rect.width || !rect.height) return;
+function initializeScratch(){
+  if(scratched||page===2||!ctx)return;
 
-  const dpr =
-    Math.min(window.devicePixelRatio || 1,2);
+  const rect=canvas.getBoundingClientRect();
+  if(!rect.width||!rect.height)return;
 
-  canvas.width =
-    Math.round(rect.width*dpr);
+  const dpr=Math.min(devicePixelRatio||1,2);
 
-  canvas.height =
-    Math.round(rect.height*dpr);
+  canvas.width=Math.round(rect.width*dpr);
+  canvas.height=Math.round(rect.height*dpr);
 
   ctx.setTransform(dpr,0,0,dpr,0,0);
-  ctx.globalCompositeOperation = "source-over";
-
-  ctx.fillStyle = "#ddb980";
+  ctx.globalCompositeOperation="source-over";
+  ctx.fillStyle="#ddb980";
   ctx.fillRect(0,0,rect.width,rect.height);
 
-  ctx.fillStyle = "#653448";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.font = "bold 17px Poppins";
-
+  ctx.fillStyle="#653448";
+  ctx.textAlign="center";
+  ctx.textBaseline="middle";
+  ctx.font="bold 17px Poppins";
   ctx.fillText(
     "✦ Scratch Here ✦",
     rect.width/2,
     rect.height/2
   );
 
-  scratchReady = true;
+  scratchReady=true;
 }
 
 initializeScratch();
 
-function getPoint(event) {
-  const rect =
-    canvas.getBoundingClientRect();
+function getPoint(e){
+  const rect=canvas.getBoundingClientRect();
 
-  return {
-    x:event.clientX-rect.left,
-    y:event.clientY-rect.top
+  return{
+    x:e.clientX-rect.left,
+    y:e.clientY-rect.top
   };
 }
 
-function scratchMove(event) {
-  if (
-    !painting ||
-    scratched ||
-    !scratchReady
-  ) return;
+function scratchMove(e){
+  if(!painting||scratched||!scratchReady)return;
 
-  const point = getPoint(event);
+  const p=getPoint(e);
 
-  ctx.globalCompositeOperation = "destination-out";
-  ctx.lineWidth = 34;
-  ctx.lineCap = "round";
-  ctx.lineJoin = "round";
+  ctx.globalCompositeOperation="destination-out";
+  ctx.lineWidth=34;
+  ctx.lineCap="round";
+  ctx.lineJoin="round";
   ctx.beginPath();
 
-  if (lastPoint) {
+  if(lastPoint){
     ctx.moveTo(lastPoint.x,lastPoint.y);
-    ctx.lineTo(point.x,point.y);
+    ctx.lineTo(p.x,p.y);
     ctx.stroke();
 
-    scratchDistance += Math.hypot(
-      point.x-lastPoint.x,
-      point.y-lastPoint.y
+    scratchDistance+=Math.hypot(
+      p.x-lastPoint.x,
+      p.y-lastPoint.y
     );
-  } else {
-    ctx.arc(
-      point.x,
-      point.y,
-      17,
-      0,
-      Math.PI*2
-    );
-
+  }else{
+    ctx.arc(p.x,p.y,17,0,Math.PI*2);
     ctx.fill();
   }
 
-  lastPoint = point;
+  lastPoint=p;
 
-  if (scratchDistance>750) {
-    finishScratch();
+  if(scratchDistance>750){
+    scratched=true;
+    canvas.classList.add("done");
+
+    $("scratchHint").textContent=
+      "Let the celebrations begin!";
+
+    $("enterBtn").style.display="inline-block";
   }
 }
 
-canvas.addEventListener("pointerdown",event => {
-  if (
-    currentPage!==2 ||
-    scratched ||
-    !scratchReady
-  ) return;
+canvas.addEventListener("pointerdown",e=>{
+  if(page!==2||scratched||!scratchReady)return;
 
-  painting = true;
-  lastPoint = null;
+  painting=true;
+  lastPoint=null;
 
-  canvas.setPointerCapture(event.pointerId);
-  scratchMove(event);
+  canvas.setPointerCapture(e.pointerId);
+  scratchMove(e);
 });
 
-canvas.addEventListener(
-  "pointermove",
-  scratchMove
-);
+canvas.addEventListener("pointermove",scratchMove);
 
-["pointerup","pointercancel"].forEach(type => {
-  canvas.addEventListener(type,() => {
-    painting = false;
-    lastPoint = null;
+["pointerup","pointercancel"].forEach(type=>{
+  canvas.addEventListener(type,()=>{
+    painting=false;
+    lastPoint=null;
   });
 });
 
-function finishScratch() {
-  if (scratched) return;
+window.addEventListener("resize",()=>{
+  if(!scratched&&page!==2){
+    initializeScratch();
+  }
+});
 
-  scratched = true;
-  canvas.classList.add("revealed");
+/* =====================================
+   ENTER MAIN WEBSITE
+===================================== */
 
-  document.getElementById("scratchHint").textContent =
-    "Let the celebrations begin!";
+const music=$("bgMusic");
 
-  document.getElementById("enterWeddingBtn").style.display =
-    "inline-block";
+async function startMusic(){
+  try{
+    await music.play();
+    $("musicBtn").textContent="❚❚";
+  }catch{
+    $("musicBtn").textContent="♫";
+  }
 }
 
-/* ======================================
-   ENTER MAIN WEDDING WEBSITE
-====================================== */
-
-document.getElementById("enterWeddingBtn").onclick = () => {
-  invitationScreen.classList.remove("visible");
-
-  setTimeout(() => {
-    invitationScreen.style.display = "none";
-
-    document.body.classList.remove("locked");
-
-    sessionStorage.setItem(
-      "invitationOpened",
-      "yes"
-    );
-
-    refreshVisibleVideos();
-    updateFloatingScrollButton();
+$("musicBtn").onclick=()=>{
+  if(music.paused){
     startMusic();
-  },1150);
+  }else{
+    music.pause();
+    $("musicBtn").textContent="♫";
+  }
 };
 
-/* ======================================
-   COUNTDOWN
-====================================== */
+$("enterBtn").onclick=()=>{
+  $("invitationScreen").classList.remove("visible");
 
-const weddingDate =
+  setTimeout(()=>{
+    $("invitationScreen").style.display="none";
+    document.body.classList.remove("locked");
+
+    sessionStorage.setItem("invitationOpened","yes");
+
+    refreshVideos();
+    updateScrollButton();
+    startMusic();
+  },1050);
+};
+
+/* =====================================
+   WEDDING COUNTDOWN
+===================================== */
+
+const weddingDate=
   new Date("2026-12-02T18:15:00+05:30").getTime();
 
-function updateCountdown() {
-  const difference =
-    weddingDate-Date.now();
+function updateCountdown(){
+  const diff=weddingDate-Date.now();
 
-  if (difference<=0) {
-    ["days","hours","minutes","seconds"].forEach(id => {
-      document.getElementById(id).textContent = "00";
+  if(diff<=0){
+    ["days","hours","minutes","seconds"].forEach(id=>{
+      $(id).textContent="00";
     });
 
-    document.getElementById("countdownMessage").textContent =
+    $("countdownMessage").textContent=
       "Our wedding day has arrived!";
 
     return;
   }
 
-  const values = [
-    Math.floor(difference/86400000),
-    Math.floor(difference/3600000)%24,
-    Math.floor(difference/60000)%60,
-    Math.floor(difference/1000)%60
+  const values=[
+    Math.floor(diff/86400000),
+    Math.floor(diff/3600000)%24,
+    Math.floor(diff/60000)%60,
+    Math.floor(diff/1000)%60
   ];
 
-  ["days","hours","minutes","seconds"].forEach((id,i) => {
-    document.getElementById(id).textContent =
-      String(values[i]).padStart(2,"0");
+  ["days","hours","minutes","seconds"].forEach((id,i)=>{
+    $(id).textContent=String(values[i]).padStart(2,"0");
   });
 }
 
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-/* ======================================
-   SCROLL ANIMATION
-====================================== */
+/* =====================================
+   SCROLL ANIMATIONS
+===================================== */
 
-const revealObserver =
-  new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },{threshold:.08});
+const revealIO=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      revealIO.unobserve(entry.target);
+    }
+  });
+},{threshold:.08});
 
-document.querySelectorAll(".reveal").forEach(el => {
-  revealObserver.observe(el);
+document.querySelectorAll(".reveal").forEach(el=>{
+  revealIO.observe(el);
 });
 
-/* FLOATING SCROLL BUTTON */
-
-const floatingScrollBtn =
-  document.getElementById("floatingScrollBtn");
-
-function updateFloatingScrollButton() {
-  const hero =
-    document.getElementById("home");
-
-  const rect =
-    hero.getBoundingClientRect();
-
-  const mainVisible =
-    !document.body.classList.contains("locked");
-
-  floatingScrollBtn.style.display =
-    mainVisible && rect.bottom>100
+function updateScrollButton(){
+  $("scrollDown").style.display=
+    !document.body.classList.contains("locked") &&
+    $("home").getBoundingClientRect().bottom>100
       ? "flex"
       : "none";
 }
 
-window.addEventListener(
-  "scroll",
-  updateFloatingScrollButton
-);
+window.addEventListener("scroll",updateScrollButton);
+window.addEventListener("resize",updateScrollButton);
 
-window.addEventListener(
-  "resize",
-  updateFloatingScrollButton
-);
+updateScrollButton();
 
-updateFloatingScrollButton();
-
-/* ======================================
-   BACKGROUND MUSIC
-====================================== */
-
-const music =
-  document.getElementById("bgMusic");
-
-const musicBtn =
-  document.getElementById("musicBtn");
-
-async function startMusic() {
-  try {
-    await music.play();
-    musicBtn.textContent = "❚❚";
-  } catch {
-    musicBtn.textContent = "♫";
-  }
-}
-
-function toggleMusic() {
-  if (music.paused) {
-    startMusic();
-  } else {
-    music.pause();
-    musicBtn.textContent = "♫";
-  }
-}
-
-/* ======================================
+/* =====================================
    WHATSAPP SHARING
-====================================== */
+===================================== */
 
-function shareInvitation() {
-  const message =
+$("shareBtn").onclick=()=>{
+  const message=
     "You are invited to Ankit & Sneha's wedding!\n"+
     "2 December 2026, 6:15 PM\n"+
     "Shree Sawariya Banquet\n"+
@@ -2357,36 +1699,26 @@ function shareInvitation() {
     "_blank",
     "noopener,noreferrer"
   );
-}
+};
 
-/* ======================================
-   RESIZE SCRATCH CARD
-====================================== */
+/* =====================================
+   REPLAY GATE USING ?preview=1
+===================================== */
 
-window.addEventListener("resize",() => {
-  if (currentPage!==2 && !scratched) {
-    initializeScratch();
-  }
-});
-
-/* ======================================
-   SAME-TAB REFRESH AND PREVIEW MODE
-====================================== */
-
-const previewMode =
+const previewMode=
   new URLSearchParams(location.search).get("preview")==="1";
 
-if (
+if(
   sessionStorage.getItem("invitationOpened")==="yes" &&
   !previewMode
-) {
-  opening.style.display = "none";
-  invitationScreen.style.display = "none";
+){
+  $("opening").style.display="none";
+  $("invitationScreen").style.display="none";
 
   document.body.classList.remove("locked");
 
-  refreshVisibleVideos();
-  updateFloatingScrollButton();
+  refreshVideos();
+  updateScrollButton();
 }
 </script>
 
