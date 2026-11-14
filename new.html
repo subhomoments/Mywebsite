@@ -4,24 +4,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#321322">
-<meta name="description" content="Ankit and Sneha's Royal Wedding Invitation">
-<title>Ankit & Sneha | Wedding Invitation</title>
+<meta name="theme-color" content="#301020">
+<meta name="description" content="Ankit & Sneha — Royal Wedding Invitation, 2 December 2026">
+<title>Ankit & Sneha | Royal Wedding Invitation</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Great+Vibes&family=Poppins:wght@400;500;600&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alex+Brush&family=Cinzel:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
-  --deep:#2b1020;
-  --wine:#671e37;
+  --wine:#651e38;
+  --deep:#2a1020;
   --gold:#e8c58d;
   --cream:#fff5e7;
-  --paper:#ecd6b1;
   --ink:#75152b;
-  --teal:#287c7b;
+  --paper:#efd9b7;
 }
+
 * {box-sizing:border-box}
 html {scroll-behavior:smooth}
 body {
@@ -35,166 +35,322 @@ body.locked {height:100dvh;overflow:hidden}
 button {font:inherit;cursor:pointer}
 a {text-decoration:none}
 button:focus-visible,a:focus-visible {
-  outline:3px solid #ffe2a1;
+  outline:3px solid #ffe7ac;
   outline-offset:4px;
 }
-section {padding:55px 15px;text-align:center}
+section {padding:55px 16px;text-align:center}
 section h2 {
-  font:500 clamp(22px,5vw,32px) Cinzel,serif;
+  font:500 clamp(23px,5vw,34px) Cinzel,serif;
   color:var(--gold);
 }
 .btn {
   display:inline-block;
-  padding:11px 20px;
   border:0;
   border-radius:30px;
-  background:var(--gold);
-  color:var(--deep);
+  padding:12px 22px;
+  background:linear-gradient(135deg,#fff1c7,#ddb273);
+  color:#361625;
   font-size:12px;
   font-weight:600;
+  box-shadow:0 5px 15px #0002;
 }
-.btn:hover {background:#ffe5b5}
-.logo {width:68px;height:68px;object-fit:contain}
+.btn:hover {filter:brightness(1.08)}
+.logo {width:70px;height:70px;object-fit:contain}
 .hashtag {
   color:var(--gold);
-  font:500 clamp(12px,3.3vw,17px) Cinzel,serif;
+  font:500 clamp(12px,3vw,17px) Cinzel,serif;
   overflow-wrap:anywhere;
 }
 
-/* OPENING */
+/* ==========================================
+   PREMIUM STYLISH ANKIT & SNEHA FONT
+========================================== */
 
-#opening,#invitationScreen {
+.opening-names,
+.hero-names,
+.couple-name,
+.footer-names {
+  font-family:"Great Vibes",cursive !important;
+  font-weight:400 !important;
+  font-style:normal;
+  letter-spacing:1px;
+  background:linear-gradient(
+    135deg,
+    #fff8df 0%,
+    #f4d9a1 25%,
+    #d6a45c 55%,
+    #fff0bd 78%,
+    #b98442 100%
+  );
+  -webkit-background-clip:text;
+  background-clip:text;
+  -webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 3px 5px #0004);
+}
+
+.opening-names {
+  font-size:clamp(58px,13vw,90px);
+  line-height:1.25;
+  margin:0;
+}
+.hero-names {
+  font-size:clamp(75px,15vw,120px);
+  line-height:1.12;
+  margin:25px 0;
+}
+.hero-names span {
+  display:block;
+  font-size:45px;
+}
+.couple-name {
+  font-size:clamp(57px,12vw,82px);
+  line-height:1.05;
+  margin:8px 0 0;
+}
+.footer-names {
+  font-size:60px;
+  line-height:1.3;
+  margin:12px 0;
+}
+
+/* ==========================================
+   ROYAL TEMPLE DOOR OPENING
+========================================== */
+
+#opening {
   position:fixed;
   inset:0;
-  height:100dvh;
+  z-index:1000;
   display:grid;
   place-items:center;
   overflow:hidden;
-  background:radial-gradient(circle,#805068,#2b1020);
-}
-#opening {
-  z-index:1000;
+  background:
+    radial-gradient(circle at 50% 35%,#916447,#654035 42%,#29111e);
   opacity:1;
   visibility:visible;
-  transition:opacity 1.15s ease,transform 1.15s ease,visibility 1.15s;
+  transition:opacity 1.15s ease,visibility 1.15s;
 }
 #opening.leave {
   opacity:0;
   visibility:hidden;
-  transform:scale(1.06);
   pointer-events:none;
 }
-.open-content {
+.opening-content {
   width:100%;
-  max-width:420px;
-  padding:18px;
+  height:100%;
+  padding:12px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(7px,2dvh,18px);
   text-align:center;
 }
-.open-content h1 {
-  font:clamp(49px,12vw,72px) "Great Vibes",cursive;
-  color:var(--gold);
-  margin:15px 0;
+.opening-eyebrow {
+  color:#ffe5ae;
+  font:500 clamp(9px,2.4vw,12px) Cinzel,serif;
+  letter-spacing:2px;
 }
-.open-content p {font-size:12px;color:#f3dfbd}
-.open-content .eyebrow {font-size:10px;letter-spacing:2px}
-
-/* ENVELOPE */
-
-.envelope {
+.opening-instruction {
+  font-size:11px;
+  color:#ffe3ae;
+}
+.temple {
   position:relative;
-  width:min(300px,82vw);
-  height:200px;
-  margin:40px auto;
-  perspective:1000px;
-  filter:drop-shadow(0 14px 18px #0007);
-  transition:opacity .8s,transform .9s,filter .8s;
+  width:min(370px,86vw);
+  height:min(510px,65dvh);
+  min-height:280px;
+  perspective:1400px;
+  filter:drop-shadow(0 15px 20px #0008);
 }
-.env-back {
+.temple-outer {
   position:absolute;
   inset:0;
-  background:#ddb27b;
-  border:2px solid #f9e1b0;
+  border:3px solid #ffe6b0;
+  border-radius:48% 48% 10px 10px / 27% 27% 10px 10px;
+  background:linear-gradient(
+    120deg,
+    #8e5829,#ffe4a2 25%,#a86b34 48%,
+    #f5d18a 70%,#8d552b
+  );
+  box-shadow:
+    inset 0 0 0 4px #855024,
+    inset 0 0 0 8px #f5d69a,
+    0 0 35px #e4a75255;
 }
-.env-letter {
+.temple-inner {
   position:absolute;
-  z-index:2;
-  left:8%;
-  top:15px;
-  width:84%;
-  height:160px;
-  display:grid;
-  place-content:center;
-  background:#fff5e5;
-  border:2px solid #bb965f;
-  color:var(--wine);
-  transition:transform .7s ease;
+  inset:17px;
+  overflow:hidden;
+  border:3px solid #9b662f;
+  border-radius:47% 47% 5px 5px / 26% 26% 5px 5px;
+  background:radial-gradient(circle,#ffedbb,#a66a49 55%,#4c1b30);
 }
-.env-letter span {font:35px "Great Vibes",cursive}
-.env-letter small {font-size:10px}
-.env-front {
+.temple-inner::before {
+  content:"";
   position:absolute;
-  inset:0;
-  z-index:3;
-  background:linear-gradient(145deg,#f3d59f,#c79558);
-  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%);
-}
-.env-flap {
-  position:absolute;
+  inset:8px;
   z-index:5;
-  top:0;
-  width:100%;
-  height:115px;
-  background:#f0d19a;
-  clip-path:polygon(0 0,100% 0,50% 100%);
-  transform-origin:top;
-  backface-visibility:hidden;
-  transition:transform .85s ease;
+  border:2px solid #f4d38c;
+  border-radius:46% 46% 3px 3px / 26% 26% 3% 3%;
+  pointer-events:none;
 }
-.seal {
+.temple-reveal {
   position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:20px;
+  background:radial-gradient(circle,#fff0cb,#dfbb83 65%,#b2784e);
+}
+.temple-reveal .om {
+  font:600 clamp(75px,16dvh,120px) "Noto Serif Devanagari",serif;
+  color:#79243b;
+}
+.temple-reveal p {
+  font:600 14px "Noto Serif Devanagari",serif;
+  color:#702039;
+}
+.temple-reveal small {
+  font:12px Cinzel,serif;
+  color:#7b3b44;
+}
+.temple-doors {
+  position:absolute;
+  inset:0;
   z-index:6;
+  perspective:1400px;
+}
+.door {
+  position:absolute;
+  top:0;
+  bottom:0;
+  width:50%;
+  overflow:hidden;
+  border:2px solid #f6d898;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      #ffe6ad22 8px,
+      #69361833 11px,
+      transparent 19px
+    ),
+    linear-gradient(110deg,#9a552c,#e6b86d 40%,#c88e49 70%,#8c4a28);
+  box-shadow:inset 0 0 0 5px #8c4a25,inset 0 0 0 8px #efc77d;
+  backface-visibility:hidden;
+  transition:transform 1.8s cubic-bezier(.55,.03,.18,1);
+}
+.door-left {
+  left:0;
+  transform-origin:left center;
+  border-radius:85% 0 0 0 / 27% 0 0 0;
+}
+.door-right {
+  right:0;
+  transform-origin:right center;
+  border-radius:0 85% 0 0 / 0 27% 0 0;
+}
+.door::before {
+  content:"";
+  position:absolute;
+  top:17%;
+  bottom:8%;
+  left:13%;
+  right:13%;
+  border:3px double #ffe6a4;
+  border-radius:60px 60px 8px 8px;
+}
+.door::after {
+  content:"❦";
+  position:absolute;
+  top:47%;
   left:50%;
-  top:84px;
-  transform:translateX(-50%);
-  width:74px;
-  height:74px;
-  border:3px double var(--gold);
-  border-radius:50%;
-  background:#79273e;
+  transform:translate(-50%,-50%);
+  color:#ffe2a2;
+  font-size:44px;
+  text-shadow:0 2px 8px #5b2b1f;
+}
+.temple.open .door-left {transform:rotateY(-108deg)}
+.temple.open .door-right {transform:rotateY(108deg)}
+.temple.open .temple-doors {pointer-events:none}
+.temple-seal {
+  position:absolute;
+  z-index:10;
+  left:50%;
+  top:57%;
+  transform:translate(-50%,-50%);
+  width:76px;
+  height:76px;
   display:grid;
   place-items:center;
-  animation:pulse 2.5s infinite;
+  border:3px double #ffdf9d;
+  border-radius:50%;
+  background:radial-gradient(circle,#8f3d4d,#54152b);
+  box-shadow:0 0 0 6px #e5b46a77,0 0 25px #ffdb8d88;
+  animation:sealPulse 2s infinite;
+  transition:opacity .5s,transform .6s;
 }
-.seal img {width:62px;height:62px;object-fit:contain}
-.envelope.open .env-flap {transform:rotateX(180deg)}
-.envelope.open .env-letter {transform:translateY(-22px)}
-.envelope.open .seal {opacity:0;pointer-events:none}
-.envelope.exit {
+.temple-seal img {width:64px;height:64px;object-fit:contain}
+.temple.open .temple-seal {
   opacity:0;
-  transform:translateY(-25px) scale(.78);
+  transform:translate(-50%,-50%) scale(.5);
+  pointer-events:none;
+}
+@keyframes sealPulse {
+  50% {
+    box-shadow:0 0 0 12px #e5b46a44,0 0 35px #ffdb8daa;
+  }
+}
+.temple-flower {
+  position:absolute;
+  z-index:8;
+  font-size:25px;
+  pointer-events:none;
+  filter:drop-shadow(0 2px 4px #0006);
+}
+.temple-flower.one {top:15%;left:-12px}
+.temple-flower.two {top:15%;right:-12px}
+.temple-flower.three {bottom:8%;left:-12px}
+.temple-flower.four {bottom:8%;right:-12px}
+.temple.fade-away {
+  opacity:0;
+  transform:scale(1.08);
   filter:blur(8px);
-}
-@keyframes pulse {
-  50% {box-shadow:0 0 0 9px #e8c58d33}
+  transition:opacity 1s,transform 1s,filter 1s;
 }
 
-/* GOLDEN FLASH AND ROSES */
+/* ==========================================
+   GOLDEN SPARKLES AND FLOWERS
+========================================== */
 
-#goldenFlash,#sparkleLayer,#flowerRain {
+#goldenFlash,
+#sparkleLayer,
+#flowerRain {
   position:fixed;
   inset:0;
-  pointer-events:none;
   overflow:hidden;
+  pointer-events:none;
 }
 #goldenFlash {
   z-index:1050;
   opacity:0;
-  background:radial-gradient(circle,#fffdf1,#ffe6a6aa 30%,transparent 75%);
+  background:radial-gradient(
+    circle,
+    #fffdf1,
+    #ffe6a6aa 30%,
+    transparent 75%
+  );
 }
-#goldenFlash.active {animation:goldenFlash 1.8s ease-out forwards}
+#goldenFlash.active {
+  animation:goldenFlash 2s ease-out forwards;
+}
 @keyframes goldenFlash {
   0% {opacity:0;transform:scale(.5)}
-  30% {opacity:1;transform:scale(1.1)}
+  35% {opacity:.85;transform:scale(1)}
   100% {opacity:0;transform:scale(1.8)}
 }
 #sparkleLayer {z-index:1060}
@@ -227,11 +383,20 @@ section h2 {
   }
 }
 
-/* THREE-PAGE INVITATION */
+/* ==========================================
+   THREE-PAGE INVITATION BOOK
+========================================== */
 
 #invitationScreen {
+  position:fixed;
+  inset:0;
   z-index:950;
+  display:grid;
+  place-items:center;
+  height:100dvh;
   padding:10px;
+  overflow:hidden;
+  background:radial-gradient(circle,#805068,#2b1020);
   opacity:0;
   visibility:hidden;
   pointer-events:none;
@@ -246,11 +411,11 @@ section h2 {
   position:relative;
   width:min(420px,95vw);
   height:min(730px,95dvh);
-  opacity:0;
-  transform:translateY(35px) scale(.94);
   perspective:1600px;
   isolation:isolate;
-  transition:opacity 1.1s,transform 1.2s ease;
+  opacity:0;
+  transform:translateY(30px) scale(.95);
+  transition:opacity 1.1s,transform 1.1s;
 }
 #invitationScreen.visible .invitation-book {
   opacity:1;
@@ -262,11 +427,16 @@ section h2 {
   overflow:hidden;
   border:3px solid #c49b67;
   border-radius:13px;
-  box-shadow:0 20px 55px #0007;
   background:
     radial-gradient(ellipse at 20% 20%,#fff4dc80,transparent 50%),
-    repeating-linear-gradient(0deg,transparent 0,#7e4b2510 2px,transparent 4px),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0,
+      #7e4b2510 2px,
+      transparent 4px
+    ),
     linear-gradient(135deg,#e6cda7,#f5e4c5 45%,#e1c197);
+  box-shadow:0 20px 55px #0007;
   transform-origin:left center;
   backface-visibility:hidden;
   -webkit-backface-visibility:hidden;
@@ -278,10 +448,10 @@ section h2 {
   content:"";
   position:absolute;
   inset:9px;
+  z-index:8;
   border:1px solid #a97549aa;
   border-radius:8px;
   pointer-events:none;
-  z-index:8;
 }
 .invitation-page.page-turned {
   transform:rotateY(-175deg);
@@ -291,9 +461,6 @@ section h2 {
 #ganeshPage {z-index:5}
 #invitePage {z-index:4}
 #scratchPage {z-index:3}
-
-/* TRADITIONAL PAPER */
-
 .paper-inner {
   position:relative;
   z-index:2;
@@ -313,21 +480,6 @@ section h2 {
   font-family:"Noto Serif Devanagari",serif;
   color:var(--ink);
 }
-.floral {
-  position:absolute;
-  z-index:1;
-  width:145px;
-  height:145px;
-  pointer-events:none;
-  opacity:.9;
-}
-.floral.top-right {top:-32px;right:-32px}
-.floral.bottom-left {
-  bottom:-36px;
-  left:-36px;
-  transform:rotate(180deg);
-}
-.floral svg {width:100%;height:100%}
 .ganesh-heading {
   font-size:clamp(14px,2.5dvh,19px);
   font-weight:700;
@@ -364,6 +516,21 @@ section h2 {
   height:1px;
   background:#b78a54;
 }
+.floral {
+  position:absolute;
+  z-index:1;
+  width:145px;
+  height:145px;
+  pointer-events:none;
+  opacity:.9;
+}
+.floral.top-right {top:-32px;right:-32px}
+.floral.bottom-left {
+  bottom:-36px;
+  left:-36px;
+  transform:rotate(180deg);
+}
+.floral svg {width:100%;height:100%}
 .invite-title {
   font:400 clamp(37px,7dvh,55px) "Great Vibes",cursive;
   color:#762039;
@@ -375,11 +542,10 @@ section h2 {
   letter-spacing:.7px;
   margin:6px 0;
 }
-.couple-name {
-  font:400 clamp(45px,8dvh,64px) "Great Vibes",cursive;
-  color:#78203b;
-  line-height:1;
-  margin:7px 0 0;
+#invitePage .couple-name {
+  background:linear-gradient(135deg,#a75257,#762039,#b36e49);
+  -webkit-background-clip:text;
+  background-clip:text;
 }
 .parent-name {
   font-size:clamp(9px,1.5dvh,11px);
@@ -416,7 +582,9 @@ section h2 {
   margin:7px 0;
 }
 
-/* SCRATCH DATE */
+/* ==========================================
+   SCRATCH TO REVEAL
+========================================== */
 
 .scratch-area {
   position:relative;
@@ -442,7 +610,9 @@ section h2 {
   color:#632940;
   font:17px Cinzel,serif;
 }
-.scratch-secret small {font:11px Poppins,sans-serif}
+.scratch-secret small {
+  font:11px Poppins,sans-serif;
+}
 #scratchCanvas {
   position:absolute;
   inset:0;
@@ -456,19 +626,21 @@ section h2 {
 #scratchCanvas.revealed {
   opacity:0;
   pointer-events:none;
-  transition:opacity .55s ease;
+  transition:opacity .55s;
 }
 #enterWeddingBtn {display:none}
 
-/* MAIN HERO */
+/* ==========================================
+   MAIN WEDDING HERO
+========================================== */
 
 .hero {
   min-height:100dvh;
   display:grid;
   place-items:center;
   position:relative;
+  padding-bottom:100px;
   background:radial-gradient(circle,#683148,#250e1b);
-  padding-bottom:90px;
 }
 .hero-frame {
   width:min(600px,100%);
@@ -476,38 +648,46 @@ section h2 {
   border:2px solid var(--gold);
   border-radius:170px 170px 16px 16px;
 }
-.hero-names {
-  font:400 clamp(58px,13vw,95px) "Great Vibes",cursive;
-  color:var(--gold);
-  line-height:1.1;
-  margin:25px 0;
-}
-.hero-names span {display:block;font-size:40px}
 .hero-date {
   font:500 21px Cinzel,serif;
   color:var(--gold);
 }
-.scroll-down {
-  position:absolute;
-  bottom:22px;
+
+/* FLOATING SCROLL BUTTON */
+
+.floating-scroll-btn {
+  position:fixed;
+  bottom:85px;
   left:50%;
-  transform:translateX(-50%);
-  display:flex;
+  z-index:90;
+  display:none;
   flex-direction:column;
   align-items:center;
   gap:4px;
+  padding:10px 18px;
+  border:1px solid var(--gold);
+  border-radius:30px;
+  background:rgba(43,16,32,.9);
   color:var(--gold);
   font-size:10px;
   letter-spacing:2px;
+  white-space:nowrap;
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  box-shadow:0 4px 15px #0005;
+  animation:floatScroll 2s ease-in-out infinite;
 }
-.scroll-down .arrow {
-  font-size:30px;
-  animation:arrowBounce 1.6s ease-in-out infinite;
+.floating-scroll-btn .scroll-icon {
+  font-size:24px;
+  line-height:1;
 }
-@keyframes arrowBounce {
-  0%,100% {transform:translateY(0)}
-  50% {transform:translateY(9px)}
+@keyframes floatScroll {
+  0%,100% {transform:translate(-50%,0)}
+  50% {transform:translate(-50%,8px)}
 }
+
+/* INTRO AND COUNTDOWN */
+
 .intro {
   background:var(--cream);
   color:#633548;
@@ -541,7 +721,9 @@ section h2 {
 }
 .time-box span {font-size:10px}
 
-/* 9:16 EVENT VIDEOS */
+/* ==========================================
+   SEVEN EVENT VIDEO CARDS
+========================================== */
 
 .festivities {
   background:var(--cream);
@@ -590,12 +772,12 @@ section h2 {
   left:12px;
   right:12px;
   padding:13px 10px;
-  border-radius:15px;
-  background:rgba(30,10,25,.10);
   border:1px solid #f8e1b455;
+  border-radius:15px;
+  background:rgba(30,10,25,.1);
   backdrop-filter:blur(2px);
   -webkit-backdrop-filter:blur(2px);
-  color:white;
+  color:#fff;
 }
 .event-overlay h3 {
   font:400 clamp(18px,4.5vw,27px) Cinzel,serif;
@@ -616,7 +798,9 @@ section h2 {
   text-shadow:0 2px 6px #000;
 }
 
-/* PHOTO GALLERY */
+/* ==========================================
+   FIVE-PHOTO GALLERY
+========================================== */
 
 .gallery {
   background:linear-gradient(135deg,#321324,#67324b);
@@ -682,7 +866,9 @@ section h2 {
 }
 .gallery-dot.active {background:var(--gold)}
 
-/* FAMILY SIGNATURE */
+/* ==========================================
+   FAMILY CLOSING
+========================================== */
 
 .family-signature {
   background:var(--cream);
@@ -724,23 +910,27 @@ footer p {font-size:12px}
   transform:none;
 }
 
-/* MOBILE */
+/* ==========================================
+   MOBILE RESPONSIVE
+========================================== */
 
 @media(max-width:420px) {
   .invitation-book {width:96vw;height:96dvh}
   .paper-inner {padding:15px 13px}
   .floral {width:105px;height:105px}
   .event-overlay {padding:11px 8px}
+  .hero-names {font-size:clamp(67px,16vw,95px)}
 }
 @media(max-height:650px) {
   .paper-inner {justify-content:flex-start}
   .ganesh-symbol {font-size:55px}
   .shloka {font-size:11px}
-  .couple-name {font-size:38px}
+  .couple-name {font-size:44px}
   .parent-name {font-size:9px}
+  .temple {height:55dvh;min-height:240px}
 }
 @media(prefers-reduced-motion:reduce) {
-  .seal,.sparkle,.rain-flower,.scroll-down .arrow {
+  .temple-seal,.sparkle,.rain-flower,.floating-scroll-btn {
     animation:none!important;
   }
   .sparkle,.rain-flower {display:none}
@@ -755,27 +945,59 @@ footer p {font-size:12px}
 
 <body class="locked">
 
-<!-- ENVELOPE -->
+<!-- ==========================================
+     ROYAL TEMPLE DOOR OPENING
+========================================== -->
 
 <div id="opening">
-  <div class="open-content">
-    <p class="eyebrow">A ROYAL WEDDING INVITATION</p>
-    <h1>Ankit &amp; Sneha</h1>
+  <div class="opening-content">
 
-    <div class="envelope" id="envelope">
-      <div class="env-back"></div>
-      <div class="env-letter">
-        <span>Ankit &amp; Sneha</span>
-        <small>You're Invited</small>
+    <p class="opening-eyebrow">
+      A ROYAL WEDDING INVITATION
+    </p>
+
+    <h1 class="opening-names">
+      Ankit &amp; Sneha
+    </h1>
+
+    <div class="temple" id="temple">
+
+      <div class="temple-outer"></div>
+
+      <div class="temple-inner">
+
+        <div class="temple-reveal">
+          <div class="om">ॐ</div>
+          <p>॥ श्री गणेशाय नमः ॥</p>
+          <small>Ankit &amp; Sneha</small>
+        </div>
+
+        <div class="temple-doors">
+          <div class="door door-left"></div>
+          <div class="door door-right"></div>
+        </div>
+
       </div>
-      <div class="env-front"></div>
-      <div class="env-flap"></div>
-      <button class="seal" id="sealBtn" aria-label="Open invitation">
+
+      <span class="temple-flower one">🌸</span>
+      <span class="temple-flower two">🌸</span>
+      <span class="temple-flower three">🌼</span>
+      <span class="temple-flower four">🌼</span>
+
+      <button
+        class="temple-seal"
+        id="sealBtn"
+        aria-label="Open wedding invitation"
+      >
         <img src="ankitimages/ankitlogo.png" alt="A&S">
       </button>
+
     </div>
 
-    <p>Tap the golden A&amp;S seal to open</p>
+    <p class="opening-instruction">
+      Tap the golden A&amp;S seal to open
+    </p>
+
   </div>
 </div>
 
@@ -783,10 +1005,12 @@ footer p {font-size:12px}
 <div id="sparkleLayer" aria-hidden="true"></div>
 <div id="flowerRain" aria-hidden="true"></div>
 
-<!-- THREE-PAGE BOOK -->
+<!-- ==========================================
+     THREE-PAGE INVITATION
+========================================== -->
 
 <div id="invitationScreen">
-  <div class="invitation-book" id="invitationBook">
+  <div class="invitation-book">
 
     <!-- PAGE 1: GANESH BLESSINGS -->
 
@@ -830,9 +1054,12 @@ footer p {font-size:12px}
       </div>
 
       <div class="paper-inner">
-        <p class="hindi ganesh-heading">॥ श्री गणेशाय नमः ॥</p>
 
-        <div class="ganesh-symbol hindi" aria-label="Om">ॐ</div>
+        <p class="hindi ganesh-heading">
+          ॥ श्री गणेशाय नमः ॥
+        </p>
+
+        <div class="ganesh-symbol hindi">ॐ</div>
 
         <div class="paper-divider">❦</div>
 
@@ -843,17 +1070,15 @@ footer p {font-size:12px}
 
         <div class="paper-divider">✦</div>
 
-        <p class="hindi jeen-mata">
-          ॥ श्री जीण माता नमः ॥
-        </p>
-
         <p class="hindi shloka">
-          माँ विंध्यवासिनी की असीम अनुकम्पा से
+          मान्यवर,<br>
+          माँ जीण माता की असीम अनुकम्पा से
         </p>
 
         <button class="btn turn-btn" id="ganeshNextBtn">
           Next — You're Invited →
         </button>
+
       </div>
     </div>
 
@@ -862,19 +1087,28 @@ footer p {font-size:12px}
     <div class="invitation-page" id="invitePage">
       <div class="paper-inner">
 
-        <p class="hindi ganesh-heading">॥ शुभ विवाह ॥</p>
+        <p class="hindi ganesh-heading">
+          ॥ शुभ विवाह ॥
+        </p>
 
-        <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
+        <img
+          class="logo"
+          src="ankitimages/ankitlogo.png"
+          alt="A&S"
+        >
 
         <div class="paper-divider">❦</div>
 
-        <h2 class="invite-title">You're Invited</h2>
+        <h2 class="invite-title">
+          You're Invited
+        </h2>
 
         <p class="invite-subtitle">
           WITH THE BLESSINGS OF OUR FAMILIES
         </p>
 
         <div class="couple-name">Ankit</div>
+
         <p class="parent-name">
           S/O Devendra Joshi &amp; Premlata Joshi
         </p>
@@ -882,6 +1116,7 @@ footer p {font-size:12px}
         <div class="ampersand">&amp;</div>
 
         <div class="couple-name">Sneha</div>
+
         <p class="parent-name">
           D/O Dr. Subhash Sharma &amp; Vinita Sharma
         </p>
@@ -897,19 +1132,28 @@ footer p {font-size:12px}
         <button class="btn turn-btn" id="inviteNextBtn">
           Turn the Page →
         </button>
+
       </div>
     </div>
 
-    <!-- PAGE 3: SCRATCH TO REVEAL -->
+    <!-- PAGE 3: SCRATCH DATE -->
 
     <div class="invitation-page" id="scratchPage">
       <div class="paper-inner">
 
-        <p class="hindi ganesh-heading">॥ शुभ विवाह ॥</p>
+        <p class="hindi ganesh-heading">
+          ॥ शुभ विवाह ॥
+        </p>
 
-        <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
+        <img
+          class="logo"
+          src="ankitimages/ankitlogo.png"
+          alt="A&S"
+        >
 
-        <h2 class="reveal-title">Reveal Our Date</h2>
+        <h2 class="reveal-title">
+          Reveal Our Date
+        </h2>
 
         <p class="reveal-description">
           A beautiful beginning,<br>
@@ -921,11 +1165,14 @@ footer p {font-size:12px}
         </p>
 
         <div class="scratch-area">
+
           <div class="scratch-secret">
             <div>02 DECEMBER 2026</div>
             <small>Wednesday • 6:15 PM</small>
           </div>
+
           <canvas id="scratchCanvas"></canvas>
+
         </div>
 
         <p id="scratchHint" class="reveal-description">
@@ -937,21 +1184,34 @@ footer p {font-size:12px}
         </button>
 
         <div class="paper-divider">❦</div>
-        <p class="hindi jeen-mata">॥ श्री जीण माता नमः ॥</p>
+
+        <p class="hindi jeen-mata">
+          ॥ श्री जीण माता नमः ॥
+        </p>
+
       </div>
     </div>
 
   </div>
 </div>
 
-<!-- MAIN WEBSITE -->
+<!-- ==========================================
+     MAIN WEDDING WEBSITE
+========================================== -->
 
 <main>
 
+  <!-- HERO -->
+
   <section class="hero" id="home">
+
     <div class="hero-frame">
 
-      <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
+      <img
+        class="logo"
+        src="ankitimages/ankitlogo.png"
+        alt="A&S"
+      >
 
       <p style="color:var(--gold);font-size:11px;letter-spacing:2px">
         TOGETHER WITH OUR FAMILIES
@@ -960,118 +1220,220 @@ footer p {font-size:12px}
       <p>We joyfully invite you to celebrate</p>
 
       <h1 class="hero-names">
-        Ankit <span>&amp;</span> Sneha
+        Ankit
+        <span>&amp;</span>
+        Sneha
       </h1>
 
-      <p class="hashtag">#AnkitFoundHisSneha</p>
+      <p class="hashtag">
+        #AnkitFoundHisSneha
+      </p>
+
       <p style="color:var(--gold)">❦</p>
 
-      <p style="color:var(--gold)">THE ROYAL WEDDING</p>
-      <h3 class="hero-date">02 · 12 · 2026</h3>
+      <p style="color:var(--gold)">
+        THE ROYAL WEDDING
+      </p>
+
+      <h3 class="hero-date">
+        02 · 12 · 2026
+      </h3>
 
       <p>Wednesday | 6:15 PM onwards</p>
       <p>Shree Sawariya Banquet</p>
 
     </div>
 
-    <a class="scroll-down" href="#celebration" aria-label="Scroll down">
-      <span>SCROLL DOWN</span>
-      <span class="arrow">↓</span>
-    </a>
   </section>
 
+  <!-- INTRODUCTION -->
+
   <section class="intro" id="celebration">
+
     <h2>Our Wedding Celebration</h2>
+
     <p>
       With the blessings of our families and the warmth
       of our loved ones, we invite you to join us as we
       begin a beautiful new chapter together.
       Your presence will make our celebration truly special.
     </p>
+
   </section>
 
+  <!-- COUNTDOWN -->
+
   <section class="countdown">
+
     <h2>Counting Down to Forever</h2>
 
     <div class="timer">
+
       <div class="time-box">
-        <strong id="days">00</strong><span>Days</span>
+        <strong id="days">00</strong>
+        <span>Days</span>
       </div>
+
       <div class="time-box">
-        <strong id="hours">00</strong><span>Hours</span>
+        <strong id="hours">00</strong>
+        <span>Hours</span>
       </div>
+
       <div class="time-box">
-        <strong id="minutes">00</strong><span>Minutes</span>
+        <strong id="minutes">00</strong>
+        <span>Minutes</span>
       </div>
+
       <div class="time-box">
-        <strong id="seconds">00</strong><span>Seconds</span>
+        <strong id="seconds">00</strong>
+        <span>Seconds</span>
       </div>
+
     </div>
 
     <p id="countdownMessage"></p>
+
   </section>
 
-  <section class="festivities">
+  <!-- ALL SEVEN WEDDING EVENTS -->
+
+  <section class="festivities" id="events">
+
     <h2>Wedding Festivities</h2>
-    <p>Seven celebrations, countless beautiful memories</p>
+
+    <p>
+      Seven celebrations, countless beautiful memories
+    </p>
+
     <div class="event-list" id="eventList"></div>
+
   </section>
 
-  <section class="gallery">
+  <!-- PHOTO GALLERY -->
+
+  <section class="gallery" id="gallery">
+
     <h2>Our Beautiful Moments</h2>
+
     <p>Memories we cherish</p>
 
     <div class="gallery-slider">
+
       <div class="gallery-window" id="galleryWindow">
         <div id="gallerySlides"></div>
       </div>
 
       <div class="gallery-controls">
-        <button class="gallery-arrow" id="prevPhoto" aria-label="Previous photo">❮</button>
+
+        <button
+          class="gallery-arrow"
+          id="prevPhoto"
+          aria-label="Previous photo"
+        >❮</button>
+
         <div class="gallery-dots" id="galleryDots"></div>
-        <button class="gallery-arrow" id="nextPhoto" aria-label="Next photo">❯</button>
+
+        <button
+          class="gallery-arrow"
+          id="nextPhoto"
+          aria-label="Next photo"
+        >❯</button>
+
       </div>
+
     </div>
+
   </section>
 
+  <!-- JOSHI FAMILY CLOSING -->
+
   <section class="family-signature">
-    <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
 
-    <h2>Together in Love &amp; Togetherness</h2>
+    <img
+      class="logo"
+      src="ankitimages/ankitlogo.png"
+      alt="A&S"
+    >
 
-    <p>With love, blessings, and warm regards</p>
+    <h2>
+      Together in Love &amp; Togetherness
+    </h2>
 
-    <div class="family-name">~ Joshi Family 🙏❤️</div>
+    <p>
+      With love, blessings, and warm regards
+    </p>
 
-    <p>We look forward to celebrating with you!</p>
+    <div class="family-name">
+      ~ Joshi Family 🙏❤️
+    </div>
+
+    <p>
+      We look forward to celebrating with you!
+    </p>
 
     <button class="btn" onclick="shareInvitation()">
       Share on WhatsApp
     </button>
+
   </section>
+
+  <!-- FLOATING SCROLL DOWN BUTTON -->
+
+  <a
+    href="#celebration"
+    class="floating-scroll-btn"
+    id="floatingScrollBtn"
+    aria-label="Scroll down to wedding celebration"
+  >
+    <span>SCROLL DOWN</span>
+    <span class="scroll-icon">↓</span>
+  </a>
 
 </main>
 
-<footer>
-  <img class="logo" src="ankitimages/ankitlogo.png" alt="A&S">
+<!-- FOOTER -->
 
-  <h2 style="font:40px 'Great Vibes',cursive;color:var(--gold)">
+<footer>
+
+  <img
+    class="logo"
+    src="ankitimages/ankitlogo.png"
+    alt="A&S"
+  >
+
+  <h2 class="footer-names">
     Ankit &amp; Sneha
   </h2>
 
   <p>02 December 2026 | 6:15 PM</p>
-  <p class="hashtag">#AnkitFoundHisSneha</p>
+
+  <p class="hashtag">
+    #AnkitFoundHisSneha
+  </p>
+
   <p>With love ~ Joshi Family 🙏❤️</p>
+
 </footer>
 
-<audio id="bgMusic" src="ankitimages/background-music.mp3" loop></audio>
+<!-- MUSIC -->
 
-<button class="music-btn" id="musicBtn" onclick="toggleMusic()" aria-label="Toggle music">
-  ♫
-</button>
+<audio
+  id="bgMusic"
+  src="ankitimages/background-music.mp3"
+  loop
+></audio>
+
+<button
+  class="music-btn"
+  id="musicBtn"
+  onclick="toggleMusic()"
+  aria-label="Toggle background music"
+>♫</button>
 
 <script>
-/* WEDDING EVENTS */
+/* ==========================================
+   SEVEN WEDDING EVENTS
+========================================== */
 
 const events = [
   {
@@ -1192,14 +1554,21 @@ events.forEach(event => {
   link.target = "_blank";
   link.rel = "noopener noreferrer";
 
-  overlay.append(title,subtitle,date,time,venue,link);
-  card.append(video,shade,overlay);
+  overlay.append(
+    title,
+    subtitle,
+    date,
+    time,
+    venue,
+    link
+  );
 
+  card.append(video,shade,overlay);
   eventList.appendChild(card);
   eventVideos.push(video);
 });
 
-/* VIDEO PLAYBACK */
+/* PLAY EVENT VIDEOS WHEN VISIBLE */
 
 function refreshVisibleVideos() {
   eventVideos.forEach(video => {
@@ -1225,9 +1594,15 @@ const videoObserver = new IntersectionObserver(
 );
 
 eventVideos.forEach(video => videoObserver.observe(video));
-document.addEventListener("visibilitychange",refreshVisibleVideos);
 
-/* PHOTO GALLERY */
+document.addEventListener(
+  "visibilitychange",
+  refreshVisibleVideos
+);
+
+/* ==========================================
+   FIVE-PHOTO GALLERY
+========================================== */
 
 const galleryImages = [
   "ankitimages/5.jpeg",
@@ -1249,7 +1624,7 @@ galleryImages.forEach((source,i) => {
 
   const img = document.createElement("img");
   img.src = source;
-  img.alt = "Ankit and Sneha photo " + (i + 1);
+  img.alt = "Ankit and Sneha photo " + (i+1);
   img.loading = i === 0 ? "eager" : "lazy";
 
   slide.appendChild(img);
@@ -1257,7 +1632,10 @@ galleryImages.forEach((source,i) => {
 
   const dot = document.createElement("button");
   dot.className = "gallery-dot";
-  dot.setAttribute("aria-label","Show photo " + (i + 1));
+  dot.setAttribute(
+    "aria-label",
+    "Show photo " + (i+1)
+  );
 
   dot.onclick = () => {
     showPhoto(i);
@@ -1268,44 +1646,59 @@ galleryImages.forEach((source,i) => {
 });
 
 function showPhoto(index) {
-  photoIndex = (index + galleryImages.length) % galleryImages.length;
+  photoIndex =
+    (index + galleryImages.length) % galleryImages.length;
 
   [...slides.children].forEach((slide,i) => {
-    slide.classList.toggle("active",i === photoIndex);
+    slide.classList.toggle(
+      "active",
+      i === photoIndex
+    );
   });
 
   [...dots.children].forEach((dot,i) => {
-    dot.classList.toggle("active",i === photoIndex);
+    dot.classList.toggle(
+      "active",
+      i === photoIndex
+    );
   });
 }
 
 function restartGallery() {
   clearInterval(galleryTimer);
-  galleryTimer = setInterval(() => showPhoto(photoIndex + 1),4000);
+
+  galleryTimer = setInterval(() => {
+    showPhoto(photoIndex+1);
+  },4000);
 }
 
 document.getElementById("prevPhoto").onclick = () => {
-  showPhoto(photoIndex - 1);
+  showPhoto(photoIndex-1);
   restartGallery();
 };
 
 document.getElementById("nextPhoto").onclick = () => {
-  showPhoto(photoIndex + 1);
+  showPhoto(photoIndex+1);
   restartGallery();
 };
 
 let startX = 0;
-const galleryWindow = document.getElementById("galleryWindow");
+
+const galleryWindow =
+  document.getElementById("galleryWindow");
 
 galleryWindow.addEventListener("touchstart",event => {
   startX = event.changedTouches[0].clientX;
 },{passive:true});
 
 galleryWindow.addEventListener("touchend",event => {
-  const difference = event.changedTouches[0].clientX - startX;
+  const difference =
+    event.changedTouches[0].clientX-startX;
 
-  if (Math.abs(difference) > 40) {
-    showPhoto(photoIndex + (difference < 0 ? 1 : -1));
+  if (Math.abs(difference)>40) {
+    showPhoto(
+      photoIndex+(difference<0?1:-1)
+    );
     restartGallery();
   }
 },{passive:true});
@@ -1313,44 +1706,59 @@ galleryWindow.addEventListener("touchend",event => {
 showPhoto(0);
 restartGallery();
 
-/* GOLDEN OPENING */
+/* ==========================================
+   GOLDEN DOOR OPENING EFFECTS
+========================================== */
 
 function playGoldenOpening() {
-  const flash = document.getElementById("goldenFlash");
-  const layer = document.getElementById("sparkleLayer");
+  const flash =
+    document.getElementById("goldenFlash");
+
+  const layer =
+    document.getElementById("sparkleLayer");
 
   flash.classList.remove("active");
   void flash.offsetWidth;
   flash.classList.add("active");
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (
+    matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
 
   for (let i=0;i<45;i++) {
     const sparkle = document.createElement("span");
     sparkle.className = "sparkle";
-    sparkle.textContent = i % 3 ? "✧" : "✦";
+    sparkle.textContent = i%3 ? "✧" : "✦";
 
     sparkle.style.left = "50%";
     sparkle.style.top = "50%";
-    sparkle.style.fontSize = (12 + Math.random()*16) + "px";
+    sparkle.style.fontSize =
+      (12+Math.random()*16)+"px";
 
     sparkle.style.setProperty(
       "--sx",
-      (Math.random()*700-350) + "px"
+      (Math.random()*700-350)+"px"
     );
+
     sparkle.style.setProperty(
       "--sy",
-      (Math.random()*850-425) + "px"
+      (Math.random()*850-425)+"px"
     );
 
-    sparkle.style.animationDelay = Math.random()*500 + "ms";
+    sparkle.style.animationDelay =
+      Math.random()*500+"ms";
 
     layer.appendChild(sparkle);
-    sparkle.addEventListener("animationend",() => sparkle.remove(),{once:true});
+
+    sparkle.addEventListener(
+      "animationend",
+      () => sparkle.remove(),
+      {once:true}
+    );
   }
 }
 
-/* ONE-TIME ROSES */
+/* ROSE FLOWER RAIN */
 
 let rosesPlayed = false;
 
@@ -1358,34 +1766,53 @@ function playRoses() {
   if (rosesPlayed) return;
   rosesPlayed = true;
 
-  if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  if (
+    matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) return;
 
-  const layer = document.getElementById("flowerRain");
+  const layer =
+    document.getElementById("flowerRain");
 
   for (let i=0;i<30;i++) {
     const flower = document.createElement("span");
     flower.className = "rain-flower";
     flower.textContent = "🌹";
 
-    flower.style.left = Math.random()*100 + "%";
-    flower.style.fontSize = (14 + Math.random()*8) + "px";
-    flower.style.animationDuration = (5 + Math.random()*3) + "s";
-    flower.style.animationDelay = Math.random()*2000 + "ms";
+    flower.style.left = Math.random()*100+"%";
+    flower.style.fontSize =
+      (14+Math.random()*8)+"px";
+
+    flower.style.animationDuration =
+      (5+Math.random()*3)+"s";
+
+    flower.style.animationDelay =
+      Math.random()*2000+"ms";
 
     flower.style.setProperty(
       "--drift",
-      (Math.random()*90-45) + "px"
+      (Math.random()*90-45)+"px"
     );
 
     layer.appendChild(flower);
-    flower.addEventListener("animationend",() => flower.remove(),{once:true});
+
+    flower.addEventListener(
+      "animationend",
+      () => flower.remove(),
+      {once:true}
+    );
   }
 }
 
-/* ENVELOPE TRANSITION */
+/* ==========================================
+   OPEN ROYAL TEMPLE DOORS
+========================================== */
 
 const opening = document.getElementById("opening");
-const invitationScreen = document.getElementById("invitationScreen");
+
+const invitationScreen =
+  document.getElementById("invitationScreen");
+
+const temple = document.getElementById("temple");
 
 let opened = false;
 let currentPage = 0;
@@ -1394,45 +1821,57 @@ document.getElementById("sealBtn").onclick = () => {
   if (opened) return;
   opened = true;
 
-  const envelope = document.getElementById("envelope");
-  envelope.classList.add("open");
-
+  temple.classList.add("open");
   playGoldenOpening();
 
-  setTimeout(() => envelope.classList.add("exit"),450);
-  setTimeout(() => opening.classList.add("leave"),700);
+  setTimeout(() => {
+    temple.classList.add("fade-away");
+  },1700);
 
   setTimeout(() => {
+    opening.classList.add("leave");
     invitationScreen.classList.add("visible");
     playRoses();
-  },850);
+  },1900);
 
   setTimeout(() => {
     opening.style.display = "none";
-  },2000);
+  },3200);
 };
 
-/* THREE-PAGE BOOK */
+/* ==========================================
+   THREE-PAGE INVITATION NAVIGATION
+========================================== */
 
-const ganeshPage = document.getElementById("ganeshPage");
-const invitePage = document.getElementById("invitePage");
+const ganeshPage =
+  document.getElementById("ganeshPage");
+
+const invitePage =
+  document.getElementById("invitePage");
 
 document.getElementById("ganeshNextBtn").onclick = () => {
   if (currentPage !== 0) return;
+
   currentPage = 1;
   ganeshPage.classList.add("page-turned");
 };
 
 document.getElementById("inviteNextBtn").onclick = () => {
   if (currentPage !== 1) return;
+
   if (!scratchReady) initializeScratch();
+
   currentPage = 2;
   invitePage.classList.add("page-turned");
 };
 
-/* SCRATCH CARD - INITIALIZED BEFORE PAGE TURN */
+/* ==========================================
+   SCRATCH CARD
+========================================== */
 
-const canvas = document.getElementById("scratchCanvas");
+const canvas =
+  document.getElementById("scratchCanvas");
+
 const ctx = canvas.getContext("2d");
 
 let painting = false;
@@ -1442,15 +1881,20 @@ let scratchDistance = 0;
 let scratchReady = false;
 
 function initializeScratch() {
-  if (currentPage === 2 || scratched) return;
+  if (currentPage===2 || scratched || !ctx) return;
 
   const rect = canvas.getBoundingClientRect();
+
   if (!rect.width || !rect.height) return;
 
-  const dpr = Math.min(window.devicePixelRatio || 1,2);
+  const dpr =
+    Math.min(window.devicePixelRatio || 1,2);
 
-  canvas.width = Math.round(rect.width*dpr);
-  canvas.height = Math.round(rect.height*dpr);
+  canvas.width =
+    Math.round(rect.width*dpr);
+
+  canvas.height =
+    Math.round(rect.height*dpr);
 
   ctx.setTransform(dpr,0,0,dpr,0,0);
   ctx.globalCompositeOperation = "source-over";
@@ -1463,7 +1907,12 @@ function initializeScratch() {
   ctx.textBaseline = "middle";
   ctx.font = "bold 17px Poppins";
 
-  ctx.fillText("✦ Scratch Here ✦",rect.width/2,rect.height/2);
+  ctx.fillText(
+    "✦ Scratch Here ✦",
+    rect.width/2,
+    rect.height/2
+  );
+
   scratchReady = true;
 }
 
@@ -1471,6 +1920,7 @@ initializeScratch();
 
 function getPoint(event) {
   const rect = canvas.getBoundingClientRect();
+
   return {
     x:event.clientX-rect.left,
     y:event.clientY-rect.top
@@ -1478,7 +1928,11 @@ function getPoint(event) {
 }
 
 function scratchMove(event) {
-  if (!painting || scratched || !scratchReady) return;
+  if (
+    !painting ||
+    scratched ||
+    !scratchReady
+  ) return;
 
   const point = getPoint(event);
 
@@ -1504,11 +1958,17 @@ function scratchMove(event) {
 
   lastPoint = point;
 
-  if (scratchDistance > 750) finishScratch();
+  if (scratchDistance>750) {
+    finishScratch();
+  }
 }
 
 canvas.addEventListener("pointerdown",event => {
-  if (currentPage !== 2 || scratched || !scratchReady) return;
+  if (
+    currentPage!==2 ||
+    scratched ||
+    !scratchReady
+  ) return;
 
   painting = true;
   lastPoint = null;
@@ -1517,7 +1977,10 @@ canvas.addEventListener("pointerdown",event => {
   scratchMove(event);
 });
 
-canvas.addEventListener("pointermove",scratchMove);
+canvas.addEventListener(
+  "pointermove",
+  scratchMove
+);
 
 ["pointerup","pointercancel"].forEach(type => {
   canvas.addEventListener(type,() => {
@@ -1528,8 +1991,8 @@ canvas.addEventListener("pointermove",scratchMove);
 
 function finishScratch() {
   if (scratched) return;
-  scratched = true;
 
+  scratched = true;
   canvas.classList.add("revealed");
 
   document.getElementById("scratchHint").textContent =
@@ -1539,7 +2002,9 @@ function finishScratch() {
     "inline-block";
 }
 
-/* ENTER MAIN WEBSITE */
+/* ==========================================
+   ENTER WEDDING WEBSITE
+========================================== */
 
 document.getElementById("enterWeddingBtn").onclick = () => {
   invitationScreen.classList.remove("visible");
@@ -1548,27 +2013,35 @@ document.getElementById("enterWeddingBtn").onclick = () => {
     invitationScreen.style.display = "none";
     document.body.classList.remove("locked");
 
-    sessionStorage.setItem("invitationOpened","yes");
+    sessionStorage.setItem(
+      "invitationOpened",
+      "yes"
+    );
 
     refreshVisibleVideos();
+    updateFloatingScrollButton();
     startMusic();
   },1150);
 };
 
-/* WEDDING COUNTDOWN: 6:15 PM IST */
+/* ==========================================
+   WEDDING COUNTDOWN - 6:15 PM IST
+========================================== */
 
-const weddingDate = new Date("2026-12-02T18:15:00+05:30").getTime();
+const weddingDate =
+  new Date("2026-12-02T18:15:00+05:30").getTime();
 
 function updateCountdown() {
   const difference = weddingDate-Date.now();
 
-  if (difference <= 0) {
+  if (difference<=0) {
     ["days","hours","minutes","seconds"].forEach(id => {
       document.getElementById(id).textContent = "00";
     });
 
     document.getElementById("countdownMessage").textContent =
       "Our wedding day has arrived!";
+
     return;
   }
 
@@ -1588,25 +2061,68 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown,1000);
 
-/* SCROLL REVEAL */
+/* ==========================================
+   EVENT SCROLL ANIMATION
+========================================== */
 
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      revealObserver.unobserve(entry.target);
-    }
-  });
-},{threshold:.08});
+const revealObserver =
+  new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08});
 
 document.querySelectorAll(".reveal").forEach(el => {
   revealObserver.observe(el);
 });
 
-/* MUSIC */
+/* ==========================================
+   FLOATING SCROLL DOWN BUTTON
+========================================== */
 
-const music = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicBtn");
+const floatingScrollBtn =
+  document.getElementById("floatingScrollBtn");
+
+function updateFloatingScrollButton() {
+  const hero =
+    document.getElementById("home");
+
+  const rect =
+    hero.getBoundingClientRect();
+
+  const isMainWebsiteVisible =
+    !document.body.classList.contains("locked");
+
+  floatingScrollBtn.style.display =
+    isMainWebsiteVisible && rect.bottom>100
+      ? "flex"
+      : "none";
+}
+
+window.addEventListener(
+  "scroll",
+  updateFloatingScrollButton
+);
+
+window.addEventListener(
+  "resize",
+  updateFloatingScrollButton
+);
+
+updateFloatingScrollButton();
+
+/* ==========================================
+   BACKGROUND MUSIC
+========================================== */
+
+const music =
+  document.getElementById("bgMusic");
+
+const musicBtn =
+  document.getElementById("musicBtn");
 
 async function startMusic() {
   try {
@@ -1626,39 +2142,51 @@ function toggleMusic() {
   }
 }
 
-/* WHATSAPP SHARING */
+/* ==========================================
+   WHATSAPP SHARING
+========================================== */
 
 function shareInvitation() {
   const message =
-    "You are invited to Ankit & Sneha's wedding!\n" +
-    "2 December 2026, 6:15 PM\n" +
-    "Shree Sawariya Banquet\n" +
-    "#AnkitFoundHisSneha\n\n" +
+    "You are invited to Ankit & Sneha's wedding!\n"+
+    "2 December 2026, 6:15 PM\n"+
+    "Shree Sawariya Banquet\n"+
+    "#AnkitFoundHisSneha\n\n"+
     location.href;
 
   window.open(
-    "https://wa.me/?text=" + encodeURIComponent(message),
+    "https://wa.me/?text="+encodeURIComponent(message),
     "_blank",
     "noopener,noreferrer"
   );
 }
 
-/* RESIZE SCRATCH COVER */
+/* ==========================================
+   SCRATCH CARD RESIZE
+========================================== */
 
 window.addEventListener("resize",() => {
-  if (currentPage !== 2 && !scratched) {
+  if (currentPage!==2 && !scratched) {
     initializeScratch();
   }
 });
 
-/* SAME-TAB REFRESH */
+/* ==========================================
+   SKIP INTRO AFTER SAME-TAB REFRESH
+========================================== */
 
-if (sessionStorage.getItem("invitationOpened") === "yes") {
+if (
+  sessionStorage.getItem("invitationOpened")==="yes"
+) {
   opening.style.display = "none";
   invitationScreen.style.display = "none";
+
   document.body.classList.remove("locked");
+
   refreshVisibleVideos();
+  updateFloatingScrollButton();
 }
 </script>
+
 </body>
 </html>
