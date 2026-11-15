@@ -35,6 +35,32 @@
 #opening .gate-behind{gap:15px;}
 #opening .gate-behind span:last-child{font:700 clamp(12px,2.6vw,23px) 'Noto Serif Devanagari',serif;}
 @media(max-width:600px){#opening .gate-wrap{width:100vw;}}
+
+/* ADDED: tap label, vertical gate, confetti, fit-to-screen pages */
+.gate-tap{position:absolute;left:50%;top:calc(73% + clamp(38px,8vw,72px));transform:translateX(-50%);z-index:6;white-space:nowrap;font:600 clamp(10px,2.4vw,15px) Cinzel,serif;letter-spacing:2px;color:#ffe6b2;text-shadow:0 2px 8px #000c;animation:tapPulse 1.6s ease-in-out infinite;transition:opacity .4s}
+.gate-wrap.open .gate-tap{opacity:0}
+@keyframes tapPulse{50%{opacity:.45;transform:translateX(-50%) scale(1.06)}}
+@media(orientation:portrait){
+ #opening .gate-wrap{width:100vw;height:100dvh;aspect-ratio:auto;max-width:none}
+ #opening .gate-glow{inset:0;border-radius:0}
+ #opening .gate-half{background-size:auto 100%}
+ #opening .gate-half.left{background-position:calc(50vw - 75dvh) center}
+ #opening .gate-half.right{background-position:calc(-75dvh) center}
+ #opening .gate-behind{inset:12% 8%}
+ .gate-tap{top:calc(73% + 15vw)}
+}
+/* page 2 + 3 fit one phone screen, no scrolling */
+#page2 .paper,#page3 .paper{overflow:hidden;justify-content:center;padding:14px 12px}
+#page2 .logo{width:clamp(42px,8dvh,65px);height:clamp(42px,8dvh,65px)}
+#page2 .paper-name{font-size:clamp(54px,10.5dvh,100px)!important;margin:0}
+#page2 .paper-title{font-size:clamp(30px,5dvh,46px);margin:2px 0}
+#page2 .divider{margin:6px auto}
+#page2 .parents{margin:0 0 4px}
+#page2 .paper-small{font-size:clamp(9px,1.6dvh,11px);line-height:1.5}
+#page2 .btn{margin-top:8px}
+#page3 .scratch{margin:10px auto}
+/* party popper */
+#confetti{position:fixed;inset:0;z-index:1300;pointer-events:none;width:100%;height:100%}
 </style>
 </head>
 <body class="locked">
@@ -44,9 +70,10 @@
     <span class="gate-behind" aria-hidden="true"><span class="om">ॐ</span><span>॥ श्री गणेशाय नमः ॥</span></span>
     <span class="gate-half left" aria-hidden="true"></span>
     <span class="gate-half right" aria-hidden="true"></span>
+    <span class="gate-tap" aria-hidden="true">TAP A&amp;S BUTTON</span>
   </button>
 </div>
-<div id="flash" aria-hidden="true"></div><div id="petals" aria-hidden="true"></div>
+<canvas id="confetti" aria-hidden="true"></canvas><div id="flash" aria-hidden="true"></div><div id="petals" aria-hidden="true"></div>
 <div id="invitationScreen"><div class="book">
   <div class="page" id="page1"><div class="paper">
     <p class="hindi prayer">॥ श्री गणेशाय नमः ॥</p><div class="paper-om">ॐ</div><div class="divider">❦</div>
@@ -65,13 +92,12 @@
     <button class="btn" id="next2">Turn the Page →</button>
   </div></div>
   <div class="page" id="page3"><div class="paper">
-    <p class="hindi prayer">॥ शुभ विवाह ॥</p><img class="logo" src="ankitimages/ankitlogo.png" alt="A&amp;S">
     <h2 class="paper-title">Reveal Our Date</h2><p class="paper-small">A beautiful beginning,<br>a lifetime of memories.</p>
     <p class="paper-small">SCRATCH TO DISCOVER</p>
     <div class="scratch"><div class="scratch-secret"><div>02 DECEMBER 2026</div><small>Wednesday • 6:15 PM</small></div><canvas id="scratchCanvas"></canvas></div>
     <p class="paper-small" id="scratchHint">Gently scratch the golden card</p>
     <button class="btn" id="enterBtn">Enter Wedding Invitation →</button>
-    <div class="divider">❦</div><p class="hindi prayer">॥ श्री जीण माता नमः ॥</p>
+    
   </div></div>
 </div></div>
 <main>
@@ -106,7 +132,9 @@ function refreshVideos(){videos.forEach(v=>{const r=v.getBoundingClientRect();if
 const photos=['ankitimages/5.jpeg','ankitimages/1.jpeg','ankitimages/2.jpeg','ankitimages/3.jpeg','ankitimages/4.jpeg'];let photoIndex=0,galleryTimer;photos.forEach((src,i)=>{const s=document.createElement('div');s.className='gallery-slide';const img=document.createElement('img');img.src=src;img.alt='Ankit and Sneha photo '+(i+1);img.loading=i?'lazy':'eager';s.append(img);$('gallerySlides').append(s);const d=document.createElement('button');d.className='gallery-dot';d.setAttribute('aria-label','Photo '+(i+1));d.onclick=()=>{showPhoto(i);restartGallery()};$('galleryDots').append(d)});function showPhoto(n){photoIndex=(n+photos.length)%photos.length;[...$('gallerySlides').children].forEach((e,i)=>e.classList.toggle('active',i===photoIndex));[...$('galleryDots').children].forEach((e,i)=>e.classList.toggle('active',i===photoIndex))}function restartGallery(){clearInterval(galleryTimer);galleryTimer=setInterval(()=>showPhoto(photoIndex+1),4000)}$('prevPhoto').onclick=()=>{showPhoto(photoIndex-1);restartGallery()};$('nextPhoto').onclick=()=>{showPhoto(photoIndex+1);restartGallery()};let touchX=0;$('galleryWindow').addEventListener('touchstart',e=>touchX=e.changedTouches[0].clientX,{passive:true});$('galleryWindow').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-touchX;if(Math.abs(dx)>40){showPhoto(photoIndex+(dx<0?1:-1));restartGallery()}},{passive:true});showPhoto(0);restartGallery();
 let opened=false,page=0;$('gate').onclick=()=>{if(opened)return;opened=true;$('gate').classList.add('open');$('flash').classList.add('play');if(!matchMedia('(prefers-reduced-motion: reduce)').matches){for(let i=0;i<30;i++){const p=document.createElement('span');p.className='petal';p.textContent='🌹';p.style.left=Math.random()*100+'%';p.style.fontSize=(14+Math.random()*10)+'px';p.style.animationDuration=(5+Math.random()*3)+'s';p.style.animationDelay=Math.random()*1500+'ms';p.style.setProperty('--dx',(Math.random()*120-60)+'px');$('petals').append(p);p.addEventListener('animationend',()=>p.remove(),{once:true})}}setTimeout(()=>{$('opening').classList.add('leave');$('invitationScreen').classList.add('visible')},2200);setTimeout(()=>$('opening').style.display='none',3400)};
 $('next1').onclick=()=>{if(page!==0)return;page=1;$('page1').classList.add('turned')};$('next2').onclick=()=>{if(page!==1)return;initializeScratch();page=2;$('page2').classList.add('turned')};
-const canvas=$('scratchCanvas'),ctx=canvas.getContext('2d');let painting=false,lastPoint=null,scratchDistance=0,scratchReady=false,scratched=false;function initializeScratch(){if(scratched||!ctx)return;const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;const d=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#ddb980';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#653448';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold 17px Poppins';ctx.fillText('✦ Scratch Here ✦',r.width/2,r.height/2);scratchReady=true}initializeScratch();function scratchPoint(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}function scratchMove(e){if(!painting||scratched||!scratchReady)return;const p=scratchPoint(e);ctx.globalCompositeOperation='destination-out';ctx.lineWidth=34;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();if(lastPoint){ctx.moveTo(lastPoint.x,lastPoint.y);ctx.lineTo(p.x,p.y);ctx.stroke();scratchDistance+=Math.hypot(p.x-lastPoint.x,p.y-lastPoint.y)}else{ctx.arc(p.x,p.y,17,0,Math.PI*2);ctx.fill()}lastPoint=p;if(scratchDistance>750){scratched=true;canvas.classList.add('done');$('scratchHint').textContent='Let the celebrations begin!';$('enterBtn').style.display='inline-block'}}canvas.addEventListener('pointerdown',e=>{if(page!==2||scratched||!scratchReady)return;painting=true;lastPoint=null;canvas.setPointerCapture(e.pointerId);scratchMove(e)});canvas.addEventListener('pointermove',scratchMove);['pointerup','pointercancel'].forEach(type=>canvas.addEventListener(type,()=>{painting=false;lastPoint=null}));window.addEventListener('resize',()=>{if(!scratched&&page!==2)initializeScratch()});
+const canvas=$('scratchCanvas'),ctx=canvas.getContext('2d');let painting=false,lastPoint=null,scratchDistance=0,scratchReady=false,scratched=false;function initializeScratch(){if(scratched||!ctx)return;const r=canvas.getBoundingClientRect();if(!r.width||!r.height)return;const d=Math.min(devicePixelRatio||1,2);canvas.width=Math.round(r.width*d);canvas.height=Math.round(r.height*d);ctx.setTransform(d,0,0,d,0,0);ctx.globalCompositeOperation='source-over';ctx.fillStyle='#ddb980';ctx.fillRect(0,0,r.width,r.height);ctx.fillStyle='#653448';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold 17px Poppins';ctx.fillText('✦ Scratch Here ✦',r.width/2,r.height/2);scratchReady=true}initializeScratch();function scratchPoint(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}function scratchMove(e){if(!painting||scratched||!scratchReady)return;const p=scratchPoint(e);ctx.globalCompositeOperation='destination-out';ctx.lineWidth=34;ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();if(lastPoint){ctx.moveTo(lastPoint.x,lastPoint.y);ctx.lineTo(p.x,p.y);ctx.stroke();scratchDistance+=Math.hypot(p.x-lastPoint.x,p.y-lastPoint.y)}else{ctx.arc(p.x,p.y,17,0,Math.PI*2);ctx.fill()}lastPoint=p;if(scratchDistance>750){scratched=true;canvas.classList.add('done');$('scratchHint').textContent='Let the celebrations begin!';$('enterBtn').style.display='inline-block';partyPopper()}}canvas.addEventListener('pointerdown',e=>{if(page!==2||scratched||!scratchReady)return;painting=true;lastPoint=null;canvas.setPointerCapture(e.pointerId);scratchMove(e)});canvas.addEventListener('pointermove',scratchMove);['pointerup','pointercancel'].forEach(type=>canvas.addEventListener(type,()=>{painting=false;lastPoint=null}));window.addEventListener('resize',()=>{if(!scratched&&page!==2)initializeScratch()});
+
+function partyPopper(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const c=$('confetti'),x=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;const cols=['#ffd36b','#ff5d8f','#7be0ff','#a6ff8a','#ffffff','#ff9f43','#c58bff'];const ps=[];[[0,1],[1,1]].forEach(([sx,sy])=>{for(let i=0;i<90;i++){const a=(sx?Math.PI-.35-Math.random()*.9:.35+Math.random()*.9)*-1+(sx?0:0);const v=11+Math.random()*13;ps.push({x:sx*c.width,y:c.height*.85,vx:Math.cos(sx?Math.PI+(.35+Math.random()*.9):-(.35+Math.random()*.9))*v*-1*(sx?-1:1)*(sx?1:1),vy:-(8+Math.random()*14),w:5+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,col:cols[i%cols.length]})}});ps.forEach(p=>{p.vx=(p.x?-1:1)*(2+Math.random()*7)});const t0=performance.now();(function f(t){const el=t-t0;x.clearRect(0,0,c.width,c.height);ps.forEach(p=>{p.vy+=.35;p.vx*=.99;p.x+=p.vx;p.y+=p.vy;p.r+=p.vr;x.save();x.translate(p.x,p.y);x.rotate(p.r);x.globalAlpha=Math.max(0,1-el/3800);x.fillStyle=p.col;x.fillRect(-p.w/2,-p.h/2,p.w,p.h);x.restore()});if(el<3800)requestAnimationFrame(f);else x.clearRect(0,0,c.width,c.height)})(t0)}
 const music=$('bgMusic');async function startMusic(){try{await music.play();$('musicBtn').textContent='❚❚'}catch{$('musicBtn').textContent='♫'}}$('musicBtn').onclick=()=>{if(music.paused)startMusic();else{music.pause();$('musicBtn').textContent='♫'}};$('enterBtn').onclick=()=>{$('invitationScreen').classList.remove('visible');setTimeout(()=>{$('invitationScreen').style.display='none';document.body.classList.remove('locked');sessionStorage.setItem('invitationOpened','yes');refreshVideos();updateScrollButton();startMusic()},1050)};
 const weddingDate=new Date('2026-12-02T18:15:00+05:30').getTime();function updateCountdown(){const diff=weddingDate-Date.now();if(diff<=0){['days','hours','minutes','seconds'].forEach(id=>$(id).textContent='00');$('countdownMessage').textContent='Our wedding day has arrived!';return}const values=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];['days','hours','minutes','seconds'].forEach((id,i)=>$(id).textContent=String(values[i]).padStart(2,'0'))}updateCountdown();setInterval(updateCountdown,1000);
 const revealIO=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');revealIO.unobserve(e.target)}}),{threshold:.08});document.querySelectorAll('.reveal').forEach(e=>revealIO.observe(e));function updateScrollButton(){$('scrollDown').style.display=!document.body.classList.contains('locked')&&$('home').getBoundingClientRect().bottom>100?'flex':'none'}window.addEventListener('scroll',updateScrollButton);window.addEventListener('resize',updateScrollButton);updateScrollButton();$('shareBtn').onclick=()=>{const msg="You are invited to Ankit & Sneha's wedding!\n2 December 2026, 6:15 PM\nShree Sawariya Banquet\n#AnkitFoundHisSneha\n\n"+location.href;window.open('https://wa.me/?text='+encodeURIComponent(msg),'_blank','noopener,noreferrer')};
