@@ -164,12 +164,7 @@ function mark(){dots.forEach(function(d,k){d.className=k===i%5?'on':'';});}
 mark();
 setInterval(function(){i++;track.style.transition='transform 1s ease';track.style.transform='translateX(-'+i*100+'%)';mark();
 if(i===5){setTimeout(function(){track.style.transition='none';i=0;track.style.transform='translateX(0)';mark();},1050);}},5000);
-var wl='https://wa.me/?text='+encodeURIComponent('You are cordially invited to the RECEPTION of Kaushik & Sneha! 💍
-
-RECEPTION : 31 JANUARY 2027
-Time : 7 PM onwords 
-
-Join us for our wedding festivities!\nOpen your invitation: '+location.href);
+var wl='https://wa.me/?text='+encodeURIComponent('You are cordially invited to the RECEPTION of Kaushik & Sneha! 💍 RECEPTION : 31 JANUARY 2027 Time : 7 PM onwords  Join us for our wedding festivities!'\nOpen your invitation: '+location.href);
 document.querySelectorAll('.wa').forEach(function(a){a.href=wl;});
 // Falling flowers in Celebrations
 (function(){var ev=document.getElementById('ev'),sec=ev.parentNode;sec.classList.add('fl');
