@@ -349,6 +349,32 @@ footer{padding:30px 0 40px;color:var(--muted);text-align:center;border-top:1px s
 @keyframes x_arc{0%{opacity:0;translate:0 7cqw;scale:.95}14%,86%{opacity:1;translate:0 0;scale:1}100%{opacity:0;translate:0 -3cqw;scale:1.02}}
 @keyframes x_fadeup{0%,10%{opacity:0;translate:0 3cqw}26%,86%{opacity:1;translate:0 0}100%{opacity:0}}
 @keyframes x_shim{from{background-position:160% 0}to{background-position:-60% 0}}
+
+/* ---- choose / pay / details flow ---- */
+#pick{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));background:#1b1113f2;color:#f6ead6;border-top:2px solid #d9962b;font-family:'Hind',system-ui,sans-serif}
+#pick.on{display:flex}
+#pick .pi{flex:1;min-width:0;line-height:1.25}#pick .pi b{display:block;font-size:17px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#pick .pi span{font-size:14px;color:#e5ac4a}
+#pick .btn{background:#d9962b;color:#1b1113;white-space:nowrap}#pick .btn.lk{background:#4a3035;color:#c9b39f}
+#inv.on{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+#co{position:fixed;inset:0;z-index:90;display:none;overflow:auto;background:var(--bg);color:var(--ink);padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+#co.on{display:block}
+#co .box{max-width:560px;margin:0 auto;padding:20px 20px 60px}
+#co .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+#co .top h2{font-size:26px;color:var(--maroon)}
+#co .x2{width:44px;height:44px;border-radius:50%;border:2px solid var(--gold);background:var(--card);color:var(--ink);font-size:18px;cursor:pointer}
+.steps{display:flex;gap:8px;margin-bottom:18px}.steps i{flex:1;height:6px;border-radius:6px;background:var(--line)}.steps i.d{background:var(--gold)}
+.sum{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px}.sum .price{font-size:32px}
+#co form{max-width:none}
+#co textarea{padding:13px;border-radius:10px;border:2px solid var(--line);background:var(--card);color:var(--ink);min-height:96px;font:inherit}
+#co .hint{font-size:15px;color:var(--muted);font-weight:400}
+#co .err{color:#c0392b;font-weight:600;min-height:1.4em;margin:0}
+.upirow{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin:14px 0}
+#qr{background:#fff;padding:8px;border-radius:10px;line-height:0}
+.upiid{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.upiid code{background:var(--card);border:1px solid var(--line);padding:8px 12px;border-radius:8px;font-size:17px}
+.slot{display:grid;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px}
+.slot .pv{display:flex;gap:8px;flex-wrap:wrap}.slot .pv img{width:72px;height:72px;object-fit:cover;border-radius:8px;border:2px solid var(--gold)}
+.slot input[type=file]{padding:10px;min-height:0}
+.dl a{display:inline-block;margin:4px 8px 4px 0}
 </style>
 </head>
 <body>
@@ -389,9 +415,9 @@ footer{padding:30px 0 40px;color:var(--muted);text-align:center;border-top:1px s
 <section><div class="wrap">
  <h2>Three steps to your link</h2>
  <div class="grid">
-  <div class="card"><h3>1. Choose</h3><p>Open the demos and pick the one that feels like your wedding.</p></div>
-  <div class="card"><h3>2. Send details</h3><p>Names, functions, venues, photos and your song, in the form below.</p></div>
-  <div class="card"><h3>3. Pay and share</h3><p>Pay by UPI. We send your live link to share with family.</p></div>
+  <div class="card"><h3>1. Choose</h3><p>Open any demo. Like it? Tap “Choose this design” at the bottom.</p></div>
+  <div class="card"><h3>2. Pay by UPI</h3><p>GPay, PhonePe or Paytm. The price shown is the price you pay.</p></div>
+  <div class="card"><h3>3. Add details &amp; photos</h3><p>Fill the form made for your design, upload photos, and we send your live link.</p></div>
  </div>
 </div></section>
 
@@ -746,10 +772,10 @@ document.addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.tar
 $('#dyb').onclick=()=>{$('#dy').classList.add('lit');drone();setTimeout(openCard,1800)};
 const shr=()=>{window.open(wa('','Please join us for '+D.share+'. '+location.href.split('#')[0]),'_blank')};
 /* after the opening animation: invite page, scratch page, then the full card */
-function openCard(){Object.values(IN).forEach(s=>$(s).classList.add('gone'));$('#cv').classList.add('gone');$('#snd').style.display='block';$('#card').style.display='none';$('#pg').style.display='block';showPage('#p1')}
+function openCard(){Object.values(IN).forEach(s=>$(s).classList.add('gone'));$('#cv').classList.add('gone');$('#snd').style.display='block';$('#card').style.display='none';$('#pg').style.display='block';$('#p1n').textContent=$('#inv').dataset.t==='royal'?'See the invitation →':'Turn the Page →';showPage('#p1')}
 function showPage(id){['#p1','#p2'].forEach(q=>$(q).classList.remove('show'));$(id).classList.add('show');$('#pg').scrollTop=0;if(id==='#p2')setTimeout(initScratch,60)}
 function toCard(){fin();$('#pg').style.display='none';$('#card').style.display='block';$('#inv').scrollTop=0;extras();ambient()}
-$('#p1n').onclick=()=>showPage('#p2');
+$('#p1n').onclick=()=>{$('#inv').dataset.t==='royal'?toCard():showPage('#p2')};
 $('#p2n').onclick=toCard;
 let sx,sdone,sn;
 function initScratch(){const c=$('#sc'),r=c.parentNode.getBoundingClientRect();if(!r.width)return;c.width=r.width;c.height=r.height;c.style.opacity=1;c.style.pointerEvents='auto';sx=c.getContext('2d');sdone=false;sn=0;
@@ -822,6 +848,8 @@ FC.birthday.push('daisy.pk+tulip.rd+daisy.yl|rise','poppy.rd+sunflower.yl+daisy.
 FIN.birthday.push(['Pop In for Balloons, Giggles &amp; Cake!','#{a}PopsIntoFive'],['Open the Box, the Fun Is Inside!','#{a}UnwrapsFive'],['Make a Wish and Blow Them Out!','#{a}WishesAt5'],['Swing, Smash &amp; Scramble for Sweets!','#{a}PinataParty'],['The Star Takes the Stage!','#{a}Showtime5'],['Abracadabra, the Party Begins!','#{a}MagicFive'],['Every Colour Is Invited!','#{a}RainbowFive'],['Pop, Pop, Hooray!','#{a}BubbleBash'],['Three, Two, One, Blast Off!','#{a}LaunchesTo5'],['Floating Into the Fun!','#{a}FloatsAt5'],['One Golden Ticket to the Party!','#{a}GoldenFive'],['Boogie Down for Five!','#{a}DiscoAt5']);
 LQ.birthday.push('Another year, another reason to pop a balloon and shout hooray.','The best presents come wrapped in giggles, hugs and a big bow.','Close your eyes, make a wish, and let the candles do the rest.','Swing hard, dream big, and share every sweet that falls.','Every little star deserves a spotlight and a loud round of applause.','A little magic, a lot of cake, and a day nobody forgets.','Life is brighter in every colour, and so is a birthday.','Joy floats like bubbles, so catch as many as you can.','Five years young and ready to launch into the biggest adventure yet.','Hold on to the balloons, because this year is going to fly.','You are the golden ticket to the best party in town.','Turn up the music, because five years young means dancing all night.');
 BT.push(...Array(10));[{n:'Balloon Bells',s:'maj',w:'sine',b:112,hi:1,p:[0,0,4,4,5,5,4,null,3,3,2,2,1,1,0,null]},{n:'Unwrap Jingle',s:'pent',w:'triangle',b:108,pl:1,p:[0,2,4,2,0,2,4,7,4,2,0,null,2,4,2,null]},{n:'Candle Waltz',s:'maj',w:'triangle',b:90,p:[0,2,4,2,0,2,4,5,7,5,4,2,0,2,4,null,2,0]},{n:'Pinata Polka',s:'mix',w:'square',b:120,pc:1,lp:1,p:[0,2,4,0,2,4,5,4,2,0,2,4,2,0,null,null]},{n:'Showtime Fanfare',s:'maj',w:'sawtooth',b:104,pl:1,p:[0,0,4,7,4,7,9,7,4,0,2,4,2,0,null,null]},{n:'Magic Chimes',s:'lyd',w:'sine',b:96,hi:1,pad:1,p:[0,2,4,6,7,6,4,2,0,null,2,4,6,4,2,null]},{n:'Rainbow Run',s:'pent',w:'triangle',b:116,pl:1,p:[0,2,4,7,9,7,4,2,0,2,4,7,4,2,0,null]},{n:'Bubble Pop',s:'pent',w:'sine',b:122,hi:1,pl:1,p:[4,7,4,9,7,4,2,4,7,9,7,4,2,0,null,null]},{n:'Countdown Blast',s:'mix',w:'sawtooth',b:126,pc:1,pl:1,p:[0,0,0,2,4,4,4,5,7,7,5,4,2,0,null,null]},{n:'Cloud Drift',s:'kafi',w:'sine',b:78,dr:1,p:[0,null,2,3,5,3,2,null,3,5,7,5,3,2,0,null]},{n:'Golden Swing',s:'maj',w:'triangle',b:100,p:[0,2,4,5,4,2,4,7,5,4,2,0,4,2,0,null]},{n:'Disco Fever',s:'pent',w:'sawtooth',b:128,pc:1,pl:1,p:[0,0,4,4,7,7,4,4,2,2,5,5,9,9,5,2]}].forEach((x,k)=>BT[10+k]=x);
+/* birthday: keep only the first 12 designs */
+[OC.birthday.ds,TI.birthday,NF.birthday,BF.birthday,FC.birthday,FIN.birthday,LQ.birthday,BV,BN,BT].forEach(a=>a.length=Math.min(a.length,12));
 /* ---- 2 extra engagement invitations (designs 11 and 12) ---- */
 OC.engagement.ds.push(...mk('Ring Box,royal,#fff1ec,#1f3a5f,#e0705a,0,1|Dil Ki Dhadkan,night,#07202b,#ff8fa3,#ffd1a1,1,0'));
 TI.engagement.push('💍~Ring Box~Open to a promise','💓~Dil Ki Dhadkan~Two hearts, one beat');
@@ -858,5 +886,158 @@ $('#cl').onclick=()=>{stop();clean();$('#inv').classList.remove('on');document.b
 $('#of').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target);
  window.open(wa(OWNER,`Hello Shubh Dwar! I want an invitation website.\nOccasion: ${f.get('o')}\nNames: ${f.get('n')}\nDate: ${f.get('d')}\nDesign: ${f.get('s')}\nPlan: ${f.get('p')}`),'_blank')};
 </script>
+
+<div id="pick" role="region" aria-label="Choose this design"><div class="pi"><b id="pkn"></b><span id="pkp"></span></div><button class="btn" id="pkb" type="button">Choose this design</button></div>
+
+<div id="co" role="dialog" aria-modal="true" aria-label="Order your invitation"><div class="box">
+ <div class="top"><h2 id="coh">Your order</h2><button class="x2" id="cox" aria-label="Back to the demo" type="button">✕</button></div>
+ <div class="steps"><i id="s1"></i><i id="s2"></i><i id="s3"></i></div>
+
+ <div id="st1">
+  <p class="hint">You have seen the full demo. Not sure? Tap ✕ to go back and watch it again.</p>
+  <div class="card sum"><div><b id="cdn"></b><div class="hint" id="cdp"></div></div><div class="price" id="cdm"></div></div>
+  <h3>Step 1 · Pay with UPI</h3>
+  <p class="hint">On a phone, tap the button to open GPay, PhonePe, Paytm or any UPI app. On a computer, scan the QR with your phone.</p>
+  <div class="upirow"><a class="btn" id="upib" href="#">Pay with UPI</a><div id="qr" aria-label="UPI QR code"></div></div>
+  <div class="upiid"><span>UPI ID:</span><code id="upid"></code><button class="btn alt" id="upic" type="button" style="padding:6px 14px;min-height:40px">Copy</button></div>
+  <form id="f1" style="margin-top:18px">
+   <label>UPI transaction ID (UTR)<input name="utr" required inputmode="numeric" autocomplete="off" placeholder="12-digit number from your payment screen"></label>
+   <label>Your WhatsApp number<input name="ph" required inputmode="tel" autocomplete="tel" placeholder="98300 12345"></label>
+   <p class="err" id="e1" role="alert"></p>
+   <button class="btn" type="submit">I have paid, continue →</button>
+  </form>
+ </div>
+
+ <div id="st2" hidden>
+  <h3>Step 2 · Your details</h3>
+  <p class="hint" id="dh"></p>
+  <form id="f2"></form>
+ </div>
+
+ <div id="st3" hidden>
+  <h3>Step 3 · Your photos</h3>
+  <p class="hint" id="ph3"></p>
+  <div id="slots" style="display:grid;gap:14px;margin-top:14px"></div>
+  <p class="err" id="e3" role="alert"></p>
+  <button class="btn" id="send" type="button" style="margin-top:6px">Send details &amp; photos to Shubh Dwar</button>
+  <div class="dl" id="dl" hidden></div>
+  <button class="btn alt" id="back2" type="button" style="margin-top:12px">← Back to details</button>
+ </div>
+
+ <div id="st4" hidden>
+  <h3>All sent. Thank you!</h3>
+  <p>We have your details. We will check your payment and send your live invitation link on WhatsApp.</p>
+  <button class="btn" id="done" type="button">Close</button>
+ </div>
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function(){
+/* ======= EDIT THESE TWO ======= */
+const UPI_ID='yourname@upi', PAYEE='Shubh Dwar';
+/* =============================== */
+const q=s=>document.querySelector(s);
+const TIERS={royal:['Best',299],sage:['Classic',599],night:['Premium',999]};
+let CUR=null,ORDER={},PH={},seen=false;
+function lock(v){seen=!v;const b=q('#pkb');b.textContent=seen?'Choose this design':'Finish the preview first';b.classList.toggle('lk',!seen);
+ if(CUR)q('#pkp').textContent=seen?TIERS[CUR.t][0]+' plan · ₹'+TIERS[CUR.t][1]:'Open the invite and scroll to the very end to unlock'}
+const LB={wedding:['Bride','Groom'],engagement:['Bride','Groom'],anniversary:['Husband','Wife'],birthday:['Birthday star']};
+
+/* remember which demo is open */
+document.addEventListener('click',e=>{
+ const b=e.target.closest('[data-demo],[data-ext]');if(!b)return;
+ if(b.dataset.ext){CUR={oc:'wedding',t:'night',name:'Ganesh Dwar',ext:1}}
+ else{const oc=b.dataset.oc||'wedding',i=+(b.dataset.i||0),d=OC[oc].ds[i],t=b.dataset.demo;CUR={oc,t,name:(d&&d[0])||PN(oc,t)}}
+ const tr=TIERS[CUR.t];q('#pkn').textContent=CUR.name+' · '+OC[CUR.oc].label;lock(true);q('#pick').classList.add('on');
+},true);
+function PN(oc,t){return OC[oc].pn[t]}
+function syncBar(){const open=q('#inv').classList.contains('on')||q('#ex').style.display==='block';q('#pick').classList.toggle('on',open&&!!CUR)}
+new MutationObserver(syncBar).observe(q('#inv'),{attributes:true,attributeFilter:['class']});
+new MutationObserver(syncBar).observe(q('#ex'),{attributes:true,attributeFilter:['style']});
+
+setInterval(()=>{if(!CUR||seen||!q('#pick').classList.contains('on'))return;let ok=false;
+ if(CUR.ext){try{const e=q('#ex iframe').contentDocument.scrollingElement;ok=e.scrollHeight>e.clientHeight*1.5&&e.scrollTop+e.clientHeight>=e.scrollHeight-100}catch(x){}}
+ else{const v=q('#inv'),c=q('#card');ok=c.style.display==='block'&&v.scrollTop+v.clientHeight>=v.scrollHeight-100}
+ if(ok)lock(false)},500);
+function step(n){[1,2,3,4].forEach(i=>q('#st'+i).hidden=i!==n);[1,2,3].forEach(i=>q('#s'+i).classList.toggle('d',i<=n));q('#co').scrollTop=0}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* ---- open checkout ---- */
+q('#pkb').onclick=()=>{
+ if(!seen){const h=q('#pkp');h.textContent='Please view the full invitation to the end, then choose';h.style.color='#fff';setTimeout(()=>{h.style.color='';lock(true)},2600);return}
+ const tr=TIERS[CUR.t],amt=tr[1],lab=OC[CUR.oc].label;
+ q('#cdn').textContent=CUR.name+' · '+lab;q('#cdp').textContent=tr[0]+' plan';q('#cdm').textContent='₹'+amt;
+ q('#upid').textContent=UPI_ID;
+ const link='upi://pay?pa='+encodeURIComponent(UPI_ID)+'&pn='+encodeURIComponent(PAYEE)+'&am='+amt+'&cu=INR&tn='+encodeURIComponent('Shubh Dwar '+CUR.name);
+ q('#upib').href=link;q('#upib').textContent='Pay ₹'+amt+' with UPI';
+ const qr=q('#qr');qr.innerHTML='';try{new QRCode(qr,{text:link,width:150,height:150})}catch(e){qr.style.display='none'}
+ q('#f1').reset();q('#e1').textContent='';PH={};q('#dl').hidden=true;q('#dl').innerHTML='';
+ buildDetails();buildSlots();step(1);q('#co').classList.add('on');document.body.style.overflow='hidden'};
+q('#cox').onclick=q('#done').onclick=()=>{q('#co').classList.remove('on');document.body.style.overflow=(q('#inv').classList.contains('on')||q('#ex').style.display==='block')?'hidden':''};
+q('#upic').onclick=async()=>{try{await navigator.clipboard.writeText(UPI_ID);q('#upic').textContent='Copied'}catch(e){q('#upic').textContent='Select & copy'}setTimeout(()=>q('#upic').textContent='Copy',1800)};
+
+/* ---- step 1: payment reference ---- */
+q('#f1').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),utr=String(f.get('utr')).replace(/\s/g,''),ph=String(f.get('ph')).replace(/[^\d+]/g,'');
+ if(!/^[A-Za-z0-9]{10,22}$/.test(utr)){q('#e1').textContent='Please enter the transaction ID shown in your UPI app (usually 12 digits).';return}
+ if(ph.replace(/\D/g,'').length<10){q('#e1').textContent='Please enter a valid WhatsApp number.';return}
+ ORDER.utr=utr;ORDER.ph=ph;q('#e1').textContent='';step(2)};
+
+/* ---- step 2: details change with occasion and plan ---- */
+function fields(){
+ const o=CUR.oc,t=CUR.t,L=LB[o];let F=[];
+ if(o==='wedding'||o==='engagement'){
+  F=[['a',L[0]+'’s name',1],['b',L[1]+'’s name',1],['pa',L[0]+'’s parents (e.g. D/O Name & Name)'],['pb',L[1]+'’s parents (e.g. S/O Name & Name)'],['date','Date of '+(o==='wedding'?'wedding':'engagement')+' (and time)',1],
+  ['ev',(o==='wedding'?'Functions':'Ceremonies')+'. One per line: name, date, time, venue, dress code',1,'ta'],['map','Google Maps link of the venue']]}
+ else if(o==='anniversary'){
+  F=[['a',L[0]+'’s name',1],['b',L[1]+'’s name',1],['yrs','Which anniversary? (e.g. 25th)'],['date','Date and time',1],['ev','Events. One per line: name, time, venue',1,'ta'],['map','Google Maps link of the venue']]}
+ else{
+  F=[['a','Child’s name',1],['age','Turning age (e.g. 5)',1],['date','Party date and time',1],['ev','Party plan. One per line: activity, time, venue',1,'ta'],['map','Google Maps link of the venue'],['host','Hosted by (parents’ names)']]}
+ F.push(['rsvp','WhatsApp number for RSVPs (guests will message this)',1]);
+ F.push(['song','Favourite song or music style']);
+ if(t==='night'||CUR.ext) F.push(['story',o==='birthday'?'About the birthday star':'Your story (a few lines)',0,'ta']);
+ F.push(['note','Anything else we should know','','ta']);
+ return F}
+function buildDetails(){
+ const F=fields(),f=q('#f2');
+ q('#dh').textContent='These are the exact fields your '+OC[CUR.oc].label.toLowerCase()+' invitation uses. Fields marked * are needed.';
+ f.innerHTML=F.map(x=>`<label>${esc(x[1])}${x[2]?' *':''}${x[3]==='ta'?`<textarea name="${x[0]}" ${x[2]?'required':''}></textarea>`:`<input name="${x[0]}" ${x[2]?'required':''}>`}</label>`).join('')+'<button class="btn" type="submit">Next: add photos →</button>';
+ f.onsubmit=e=>{e.preventDefault();ORDER.d=Object.fromEntries(new FormData(f));ORDER.F=F;step(3)}}
+q('#back2').onclick=()=>step(2);
+
+/* ---- step 3: photo slots by occasion and plan ---- */
+function slots(){
+ const o=CUR.oc,t=CUR.t,S=LB[o].map((l,i)=>({k:'p'+i,l:l+' photo',n:1}));
+ if(t!=='royal'||CUR.ext)S.push({k:'gal',l:'Gallery photos (up to 5)',n:5});
+ return S}
+function buildSlots(){
+ const S=slots();
+ q('#ph3').textContent=CUR.t==='royal'?'Add one clear photo for the invitation. Good light, face visible.':'Add the main photos and up to 5 gallery photos. Photos are resized on your phone so they send quickly.';
+ q('#slots').innerHTML=S.map(s=>`<div class="slot"><b>${esc(s.l)}</b><input type="file" accept="image/*" data-k="${s.k}" data-n="${s.n}" ${s.n>1?'multiple':''}><div class="pv" id="pv_${s.k}"></div></div>`).join('');
+ q('#slots').querySelectorAll('input[type=file]').forEach(inp=>inp.onchange=async()=>{
+  const k=inp.dataset.k,n=+inp.dataset.n,fl=[...inp.files].slice(0,n),out=[];
+  for(const f of fl){try{out.push(await shrink(f,(k==='gal'?'gallery-':k==='p0'?'photo1-':'photo2-')+(out.length+1)))}catch(e){}}
+  PH[k]=out;const pv=q('#pv_'+k);pv.innerHTML='';out.forEach(f=>{const im=new Image();im.src=URL.createObjectURL(f);im.alt='';pv.appendChild(im)})})}
+function shrink(file,name){return new Promise((res,rej)=>{const im=new Image(),u=URL.createObjectURL(file);im.onload=()=>{const m=1200,r=Math.min(1,m/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=Math.round(im.width*r);c.height=Math.round(im.height*r);c.getContext('2d').drawImage(im,0,0,c.width,c.height);URL.revokeObjectURL(u);c.toBlob(b=>b?res(new File([b],name+'.jpg',{type:'image/jpeg'})):rej(),'image/jpeg',.82)};im.onerror=rej;im.src=u})}
+
+/* ---- send ---- */
+function summary(){
+ const tr=TIERS[CUR.t],L=[];
+ L.push('*New order · Shubh Dwar*','Design: '+CUR.name+' ('+OC[CUR.oc].label+', '+tr[0]+' ₹'+tr[1]+')','Paid via UPI · Ref: '+ORDER.utr,'Customer WhatsApp: '+ORDER.ph,'');
+ ORDER.F.forEach(x=>{const v=(ORDER.d[x[0]]||'').trim();if(v)L.push(x[1].replace(/\s*\(.*\)$/,'')+': '+v)});
+ return L.join('\n')}
+q('#send').onclick=async()=>{
+ const S=slots(),files=Object.values(PH).flat();
+ if(!(PH.p0&&PH.p0.length)){q('#e3').textContent='Please add the first photo before sending.';return}
+ q('#e3').textContent='';const text=summary();
+ try{
+  if(navigator.canShare&&navigator.canShare({files})){await navigator.share({files,text,title:'Shubh Dwar order'});step(4);return}
+ }catch(e){if(e&&e.name==='AbortError')return}
+ /* fallback: WhatsApp text opens, photos offered as downloads to attach */
+ const d=q('#dl');d.hidden=false;d.innerHTML='<p><b>Two quick taps:</b> 1) Save the photos below. 2) Open WhatsApp and attach them in the chat.</p>';
+ files.forEach(f=>{const a=document.createElement('a');a.className='btn alt';a.textContent='Save '+f.name;a.href=URL.createObjectURL(f);a.download=f.name;d.appendChild(a)});
+ const w=document.createElement('a');w.className='btn';w.textContent='Open WhatsApp with my details';w.target='_blank';w.rel='noopener';w.href=wa(OWNER,text);w.onclick=()=>setTimeout(()=>step(4),600);d.appendChild(w)};
+})();
+</script>
 </body>
 </html>
+
